@@ -9,7 +9,7 @@
 </head>
 <body>
     <fieldset>
-  <form action="/submit.php"  method="post" onsubmit="return CHECK()">
+  <form action="/submit.php"  method="post" onsubmit="return CHECK();">
 
     <label class="" for="nome_utente">Nome Utente:</label>
     <input type="text" name="nome" value="" id="nome_utente">
@@ -26,7 +26,7 @@
     <label>password</label>
     <input type="password" name="password" value="" id="password">
     <br/>
-    <input type="checkbox" onclick="show()"> 
+    <input type="checkbox" onclick="show();"> 
     <b>Show Password</b> 
     <br/>
     <label>conferma password</label>
