@@ -16,11 +16,12 @@
 		<script src="learnMap.js"></script>
 	</head>
 
-	<body>
+	<body onload="assegnaEventHandlers();">
 		<!-- posso usare la navbar di bootstrap ! (https://getbootstrap.com/docs/4.4/components/navbar/)-->
 		<!--js per il collapse della navbar caricato prima-->
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js-->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per -->
 			<a class="navbar-brand" href="#">Navbar</a>
 			<!-- ancora come in questo caso -->
 			<button
@@ -40,7 +41,9 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+						<a id="home" class="nav-link" href="#"
+							>Home <span class="sr-only">(current)</span></a
+						>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Link</a>
@@ -66,12 +69,12 @@
 					</li>
 					<li class="nav-item">
 						<a
-							class="nav-link disabled test1"
-							href="#"
+							id="abdis"
+							class="nav-link disabled"
+							href="http://www.google.it"
 							tabindex="-1"
 							aria-disabled="true"
-							>Abilitabile Raggiunto un certo traguardo (al momento test
-							doppioclick)</a
+							>Abilitabile traguardo (test)</a
 						>
 					</li>
 				</ul>
@@ -91,9 +94,85 @@
 			</div>
 		</nav>
 		<!-- uso emmet per comletare e testare (consiglio l'uso per velocizzare la scrittura di codice)-->
-		<p class="lead">
-			Testinggg big cocks!
-		</p>
+
+		<div class="row">
+			<div class="col-4">
+				<div class="list-group" id="list-tab" role="tablist">
+					<a
+						class="list-group-item list-group-item-action active"
+						id="list-home-list"
+						data-toggle="list"
+						href="#list-home"
+						role="tab"
+						aria-controls="home"
+						>Primo</a
+					>
+					<a
+						class="list-group-item list-group-item-action"
+						id="list-profile-list"
+						data-toggle="list"
+						href="#list-profile"
+						role="tab"
+						aria-controls="profile"
+						>Secondo</a
+					>
+					<a
+						class="list-group-item list-group-item-action"
+						id="list-messages-list"
+						data-toggle="list"
+						href="#list-messages"
+						role="tab"
+						aria-controls="messages"
+						>Terzo</a
+					>
+					<a
+						class="list-group-item list-group-item-action"
+						id="list-settings-list"
+						data-toggle="list"
+						href="#list-settings"
+						role="tab"
+						aria-controls="settings"
+						>Quarto</a
+					>
+				</div>
+			</div>
+			<div class="col-8">
+				<div class="tab-content" id="nav-tabContent">
+					<div
+						class="tab-pane fade show active"
+						id="list-home"
+						role="tabpanel"
+						aria-labelledby="list-home-list"
+					>
+						<a href="#">test 1</a>
+					</div>
+					<div
+						class="tab-pane fade"
+						id="list-profile"
+						role="tabpanel"
+						aria-labelledby="list-profile-list"
+					>
+						<a href="#" class="fa-apple">test 2</a>
+					</div>
+					<div
+						class="tab-pane fade"
+						id="list-messages"
+						role="tabpanel"
+						aria-labelledby="list-messages-list"
+					>
+						<a href="#">test 3</a>
+					</div>
+					<div
+						class="tab-pane fade"
+						id="list-settings"
+						role="tabpanel"
+						aria-labelledby="list-settings-list"
+					>
+						test 4
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
 
@@ -105,7 +184,7 @@
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     
     <!-- stessa cosa faccio con jquery in modo da non dover scaricare anche quello (con link google) 
-     src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+     	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
     <!--parte js di bootstrap necessaria a far funzionare ad esempio la navbar
-     src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+     	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
 -->
