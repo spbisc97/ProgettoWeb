@@ -13,4 +13,20 @@ function assegnaEventHandlers() {
 		c1Doc[i].addEventListener("mouseenter", coloraBianco);
 		c1Doc[i].addEventListener("mouseleave", decolora);
 	}
+	var documenti = document.getElementsByTagName("button");
+	for (var i = 0; i < documenti.length; i++) {
+		documenti[i].onclick = caricaDocumento;
+	}
+}
+
+function caricaDocumento(e) {
+	var httpRequest = new XMLHttpRequest();
+	httpRequest.onreadystatechange = gestisciResponse;
+	httpRequest.open("GET", "materie/" + e.target.innerHTML + ".html", true);
+	httpRequest.send();
+}
+function gestisciResponse(e) {
+	if (e.target.readyState == 4 && e.target.status == 200) {
+		document.getElementById("zonadinamica").innerHTML = e.target.responseText;
+	}
 }
