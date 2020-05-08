@@ -1,13 +1,15 @@
+/** @format */
+
 @charset "UTF-8";
 /** @format */
 body {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body h1 {
-  font-size: 1rem;
-  padding: 10;
+	font-size: 1rem;
+	padding: 10;
 }
 
 /** (test)questo file scss è per creare il file css in modo semplice, uso l'estensione sass compile(vscode) 

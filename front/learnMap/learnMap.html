@@ -15,11 +15,16 @@
         quindi le funzioni di bootstrap utilizzano in parte jquery-->
 		<script src="learnMap.js"></script>
 	</head>
-
-	<body onload="assegnaEventHandlers();">
+	<body
+		style="background-image: url('The_Kiss.jpg'); background-size: cover;"
+		onload="assegnaEventHandlers();"
+	>
+		<a href="http://www.google.it"> </a>
+		<div class="contenuto"></div>
+		<a href="http://www.google.it"> </a>
 		<!-- posso usare la navbar di bootstrap ! (https://getbootstrap.com/docs/4.4/components/navbar/)-->
 		<!--js per il collapse della navbar caricato prima-->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
 			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 			uso a invece che span per rendere il contenuto interattivo  -->
@@ -108,6 +113,9 @@
 					logica
 				</button>
 				<button class="materie btn btn-primary">python</button>
+				<button class="materie btn btn-primary">
+					statistica
+				</button>
 			</div>
 			<hr />
 			<div id="zonadinamica">

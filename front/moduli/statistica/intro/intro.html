@@ -1,0 +1,149 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en" ">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Introduzione alla statistica</title>
+		<link rel="stylesheet" href="../../../bootstrap-4.4.1-dist/css/bootstrap.css" />
+		<script src="../../../jQuery/jquery.min.js"></script>
+		<script src="../../../bootstrap-4.4.1-dist/js/bootstrap.min.js" lang="--js"></script>
+		<style>
+			body {
+			  background-image: url('../art.jpg');
+			  background-repeat: no-repeat;
+			  background-attachment: fixed;
+			  background-size: cover;
+			}
+			.bg-blur {
+			background-color: rgba(255, 255, 255, 0.4);
+			}
+			</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
+			uso a invece che span per rendere il contenuto interattivo  -->
+			<a class="navbar-brand" href="#">Edu@home</a>
+			<!-- ancora come in questo caso -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+                mentre sotto abbiamo una parte collapsable ovvero 
+                che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
+			<div class="collapse navbar-collapse"  id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a
+							id="home"
+							class="nav-link"
+							href="/ProgettoWeb/front/learnMap/learnMap.html"
+							>Home <span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbarDropdown"
+							role="button"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
+						>
+							Settaggi Vari
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a
+							id="abdis"
+							class="nav-link disabled"
+							href="http://www.google.it"
+							tabindex="-1"
+							aria-disabled="true"
+							>Abilitabile traguardo (test)</a
+						>
+					</li>
+				</ul>
+				<!-- //inutile il search per ora  
+				<form class="form-inline my-2 my-lg-0">
+					<input
+						class="form-control mr-sm-2"
+						type="search"
+						placeholder="Matematica"
+						aria-label="Cerca"
+					/>
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+						Cerca
+					</button>
+                </form>
+                -->
+			</div>
+		</nav>
+		<br /><br /><br />
+		
+		<div class="bg-blur container xl text-monospace" >
+			<h2>Cosa è la statistica?</h2>
+			<div>
+				La statistica è una disciplina che ha come fine lo studio quantitativo e qualitativo
+				di un particolare fenomeno collettivo in condizioni di incertezza o non
+				<span class="bg-light more-info" id="fen">determinismo,</span>
+				<div class="bg-light" style="display: none;" id="sfen">
+					<hr />
+					Il determinismo, in filosofia e filosofia della scienza, indica quella
+					concezione per cui in natura nulla avviene per caso, invece tutto accade secondo
+					rapporti di causa effetto
+					<hr />
+				</div>
+				cioè di non completa conoscenza di esso o parte di esso.
+				<br />
+				La storia della statistica parte da tempi antichi, già gli egizi censivano il
+				popolo!
+				<br />Inizirono addirittura a rilevare i beni ,tenevano liste delle famiglie dei
+				soldati,dei dipendenti statali e delle merci <br />
+				Nel popolo di istraele i censimenti iniziarono dopo la loro fuga dall'egitto
+				<a
+					class="bg-light more-info"
+					id="numeri"
+					href="https://it.wikipedia.org/wiki/Numeri_(Bibbia)"
+				>
+					nel deserto del sinai
+				</a>
+				<div class="bg-light" style="display: none;" id="snumeri">
+					da qui "libro dei numeri" che racconta nella prima parte di esso i censimenti
+					degli ebrei
+				</div>
+				ma la maggior parte delle popolazioni nel passato censivano i propri cittadini ,
+				proprio come avviene adesso!
+				<br><br><br>
+				<h2>MORE....</h2>
+				<br><br><br><br>
+				<a href="introtest.html">
+					<button class="btn btn-primary">Portami al test!!!</button>
+				</a>
+				<!--del quale non abbiamo completa conoscenza-->
+			</div>
+		</div>
+		<script src="intro.js"></script>
+	</body>
+</html>

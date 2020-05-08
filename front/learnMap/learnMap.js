@@ -30,3 +30,4 @@ function gestisciResponse(e) {
 		document.getElementById("zonadinamica").innerHTML = e.target.responseText;
 	}
 }
+$(document).ready(function () {});
