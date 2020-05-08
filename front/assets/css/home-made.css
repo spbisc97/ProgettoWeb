@@ -1,5 +1,8 @@
 /** @format */
 
 .bg-blur {
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(255, 255, 255, 0.4);
+}
+.bg-more-blur {
+	background-color: rgba(255, 255, 255, 0.8);
 }

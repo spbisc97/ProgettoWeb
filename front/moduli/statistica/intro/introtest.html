@@ -5,9 +5,184 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
+		<script src="../../../assets/js/jquery.min.js"></script>
+		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
+		<style>
+			body {
+				background-image: url(../art.jpg);
+			}
+		</style>
+		<script type="text/javascript" src="introtest.js"></script>
 	</head>
 	<body>
-		<h1>TODO</h1>
-		TODO form
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
+			uso a invece che span per rendere il contenuto interattivo  -->
+			<a class="navbar-brand" href="#">Edu@home</a>
+			<!-- ancora come in questo caso -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+                mentre sotto abbiamo una parte collapsable ovvero 
+                che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a id="home" class="nav-link" href="../../../learnMap/learnMap.html"
+							>Home <span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbarDropdown"
+							role="button"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
+						>
+							Settaggi Vari
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a
+							id="abdis"
+							class="nav-link disabled"
+							href="http://www.google.it"
+							tabindex="-1"
+							aria-disabled="true"
+							>Abilitabile traguardo (test)</a
+						>
+					</li>
+				</ul>
+				<!-- //inutile il search per ora  
+				<form class="form-inline my-2 my-lg-0">
+					<input
+						class="form-control mr-sm-2"
+						type="search"
+						placeholder="Matematica"
+						aria-label="Cerca"
+					/>
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+						Cerca
+					</button>
+                </form>
+                -->
+			</div>
+		</nav>
+		<br /><br /><br />
+		<div class="container-xl text-monospace bg-blur">
+			<h1>Concentrati!</h1>
+			Questo è il primo test di statistica, non preoccuparti se ora va male!
+			<br /><br />
+			<!--cambiare poi in post-->
+			<form action="introtest.php" method="POST" onsubmit="return verifica();">
+				<div class="row">
+					<div class="col-3">
+						<div class="list-group" id="list-tab" role="tablist">
+							<a
+								class="list-group-item list-group-item-action active"
+								id="list-primad"
+								data-toggle="list"
+								href="#primad"
+								role="tab"
+								aria-controls="home"
+								>Prima</a
+							>
+							<a
+								class="list-group-item list-group-item-action"
+								id="list-secondad"
+								data-toggle="list"
+								href="#secondad"
+								role="tab"
+								aria-controls="profile"
+								>Seconda</a
+							>
+							<a
+								class="list-group-item list-group-item-action"
+								id="list-terzad"
+								data-toggle="list"
+								href="#terzad"
+								role="tab"
+								aria-controls="messages"
+								>Terza</a
+							>
+							<a
+								class="list-group-item list-group-item-action"
+								id="list-quartad"
+								data-toggle="list"
+								href="#quartad"
+								role="tab"
+								>Quarta</a
+							>
+						</div>
+					</div>
+					<div class="col-8 bg-more-blur rounded-lg">
+						<div class="tab-content" id="nav-tabContent">
+							<div class="tab-pane fade show active" id="primad" role="tabpanel">
+								Quale popolazione ha per prima iniziato a censire i beni?
+								<br />
+								<input type="radio" class="col-1" name="intro1" id="ebrei" />Ebrei
+								<input type="radio" class="col-1" name="intro1" id="egizi" />Egizi
+								<input
+									type="radio"
+									class="col-1"
+									name="intro1"
+									id="romani"
+								/>Romani<input
+									type="radio"
+									class="col-1"
+									name="intro1"
+									id="babilonesi"
+								/>babilonesi
+							</div>
+							<div class="tab-pane fade" id="secondad" role="tabpanel">
+								<span
+									>Come si chiama il libro che racconta il censimento degli
+									ebrei?</span
+								>
+								<input type="text" name="libro" id="libro" />
+							</div>
+							<div class="tab-pane fade" id="terzad" role="tabpanel">
+								<a align="center" href="#">TODO!!</a>
+							</div>
+							<div class="tab-pane fade" id="quartad" role="tabpanel">
+								<a href="http://www.google.it"> Link a sito esterno </a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p align="center" class="col-10">
+					<br />
+					<button type="submit" class="btn btn-primary">
+						Controlla!
+					</button>
+					<br />
+					<br />
+				</p>
+			</form>
+		</div>
 	</body>
 </html>
