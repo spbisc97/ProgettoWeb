@@ -32,11 +32,10 @@
 			{
 				"label": "Iniziale",
 				"type": "shell",
-				"command": "echo Ciao belli,aprite il file di Setup del workspace!!",
+				"command": "echo 'Ciao belli,aprite il file di Setup del workspace!!    \n mi raccomando , pushate più che potete\n Buon Lavoro!!'",
 				"runOptions": {
 					"runOn": "folderOpen"
 				},
-				"problemMatcher": [],
 				"group": {
 					"kind": "build",
 					"isDefault": true
