@@ -8,15 +8,41 @@
 		"[html]": {
 			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		},
-		//"[php]": {
-		//	"editor.defaultFormatter": "esbenp.prettier-vscode"
-		//},
+		"[php]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"prettier.printWidth": 100,
 		"prettier.singleQuote": false,
 		"prettier.tabWidth": 4,
 		"editor.formatOnSave": true,
 		"indentRainbow.errorColor": "rgba(128,32,32,0.3)"
+	},
+	"extensions": {
+		"recommendations": [
+			"esbenp.prettier-vscode",
+			"rifi2k.format-html-in-php",
+			"oderwat.indent-rainbow",
+			"CoenraadS.bracket-pair-colorizer-2"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Iniziale",
+				"type": "shell",
+				"command": "echo Ciao belli,aprite il file di Setup del workspace!!",
+				"runOptions": {
+					"runOn": "folderOpen"
+				},
+				"problemMatcher": [],
+				"group": {
+					"kind": "build",
+					"isDefault": true
+				}
+			}
+		]
 	}
 }
 //you can install prettier for php globally with
