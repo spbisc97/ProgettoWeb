@@ -8,6 +8,9 @@
 		"[html]": {
 			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		},
+		"[php]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
 		"prettier.printWidth": 100,
 		"prettier.singleQuote": false,
 		"prettier.tabWidth": 4,
@@ -15,5 +18,5 @@
 		"indentRainbow.errorColor": "rgba(128,32,32,0.3)"
 	}
 }
-//you can install prettier for php with
+//you can install prettier for php globally with
 //           $ npm install --global prettier @prettier/plugin-php
