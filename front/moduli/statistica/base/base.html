@@ -5,20 +5,21 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Introduzione alla statistica</title>
+		<title>Elementi di statistica</title>
 		<link rel="stylesheet" href="../../../bootstrap-4.4.1-dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
 		<script src="../../../jQuery/jquery.min.js"></script>
 		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
+		<script src="../../../assets/js/vue.js"></script>
 		<style>
 			body {
-				background-image: url("../art.jpg");
+				background-image: url("../art2.jpg");
 				background-repeat: no-repeat;
 				background-attachment: fixed;
 				background-size: cover;
 			}
 			.bg-blur {
-				background-color: rgba(255, 255, 255, 0.4);
+				background-color: rgba(0, 0, 0, 0.4);
 			}
 		</style>
 	</head>
@@ -100,41 +101,60 @@
 		</nav>
 		<br /><br /><br />
 
-		<div class="bg-blur container xl text-monospace">
-			<h2>Cosa è la statistica?</h2>
+		<div class="bg-blur container xl text-monospace text-light">
+			<h2>La statistica tutti i giorni</h2>
 			<div>
-				La statistica è una disciplina che ha come fine lo studio quantitativo e qualitativo
-				di un particolare fenomeno collettivo in condizioni di incertezza o non
-				<span class="bg-light more-info" id="fen">determinismo,</span>
-				<div class="bg-light" style="display: none;" id="sfen">
+				Quando pensiamo alla statistica pensiamo ad una
+				<span class="bg-blur more-info" id="scienza">scienza,</span>
+				<div class="bg-blur" style="display: none;" id="sscienza">
 					<hr />
-					Il determinismo, in filosofia e filosofia della scienza, indica quella
-					concezione per cui in natura nulla avviene per caso, invece tutto accade secondo
-					rapporti di causa effetto
+					Per scienza si intende un sistema di conoscenze ottenute attraverso un'attività
+					di ricerca prevalentemente organizzata con procedimenti metodici e rigorosi
 					<hr />
 				</div>
-				cioè di non completa conoscenza di esso o parte di esso.
+				astrusa e strana. Valori casuali e poco interessanti nel mondo reale .
 				<br />
-				La storia della statistica parte da tempi antichi, già gli egizi censivano il
-				popolo!
-				<br />Inizirono addirittura a rilevare i beni ,tenevano liste delle famiglie dei
-				soldati,dei dipendenti statali e delle merci <br />
-				Nel popolo di istraele i censimenti iniziarono dopo la loro fuga dall'egitto
+				Occupiamoci della parte di statistica che più abbiamo vicina, i suoi parametri!
+				<br />La prima cosa che ci viene in mente è infatti la media, tutti conosciamo come
+				si fa la media vero? <br />
+
 				<a
-					class="bg-light more-info"
+					class="bg-blur more-info"
 					id="numeri"
-					href="https://it.wikipedia.org/wiki/Numeri_(Bibbia)"
+					href="https://it.wikipedia.org/wiki/Valore_atteso"
 				>
-					nel deserto del sinai
+					La media
 				</a>
-				<div class="bg-light" style="display: none;" id="snumeri">
-					da qui "libro dei numeri" che racconta nella prima parte di esso i censimenti
-					degli ebrei
+				<div class="bg-blur" style="display: none;" id="snumeri">
+					chiamato anche valore atteso, speranza o speranza matematica
 				</div>
-				ma la maggior parte delle popolazioni nel passato censivano i propri cittadini ,
-				proprio come avviene adesso!
+				la otteniamo sommando i valori e dividendo per il numero di essi <br />(questo se
+				tutti i valori hanno importanza uguale ma ci arriveremo più tardi)
 				<br /><br /><br />
-				<h2>MORE....</h2>
+				<h4>Prova qui!</h4>
+				<div id="app">
+					<p>
+						La media è : {{ media }} ,il totale:{{ totale }}, e il numero di valori
+						aggiunti : {{ numer }}
+					</p>
+					<table>
+						<tr>
+							<th>
+								<input
+									type="number"
+									v-model.number="nuovovalore"
+									class="input-group-text"
+								/>
+							</th>
+							<th>
+								<button v-on:click="newmedia" class="btn btn-primary">
+									aggiungi
+								</button>
+							</th>
+						</tr>
+					</table>
+					<br />
+				</div>
 				<br /><br /><br /><br />
 				<a href="introtest.html">
 					<button class="btn btn-primary">Portami al test!!!</button>
@@ -142,6 +162,6 @@
 				<!--del quale non abbiamo completa conoscenza-->
 			</div>
 		</div>
-		<script src="intro.js"></script>
+		<script src="base.js"></script>
 	</body>
 </html>
