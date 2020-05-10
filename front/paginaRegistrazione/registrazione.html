@@ -1,15 +1,14 @@
 <html>
     <head>
     <title>prova_registrazione</title>
-    
-   
+        
     <link rel="stylesheet" href="styl1.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,300" rel="stylesheet" type="text/css">
     <script type="text/javascript" lang="javascript" src="reg.js"> </script>
 </head>
 <body>
     <fieldset>
-  <form action="registrazione.php"  method="post" onsubmit="return CHECK();">
+  <form action="validateRegistrazione.php"  class="form-signin" method="POST" onsubmit="return CHECK();"> 
 
     <label class="" for="nick">Nickname:</label>
     <input type="text" name="nick" value="" id="nick">
@@ -27,12 +26,12 @@
     <input type="password" name="password" value="" id="password">
     <br/>
     <input type="checkbox" onclick="show();"> 
-    <b>Show Password</b> 
+    <b>Mostra Password</b> 
     <br/>
     <label>conferma password</label>
     <input type="password" name="bassword" value="" id="bassword">
 
-    <p><input type="submit" value="send" name="Submit">
+    <p><input type="submit"  name="Submit">
     </fieldset> 
 </form>
 </body>
