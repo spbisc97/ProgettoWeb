@@ -1,38 +1,60 @@
+<!-- @format -->
+
+<!DOCTYPE html>
 <html>
-    <head>
-    <title>prova_registrazione</title>
-        
-    <link rel="stylesheet" href="styl1.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,300" rel="stylesheet" type="text/css">
-    <script type="text/javascript" lang="javascript" src="reg.js"> </script>
-</head>
-<body>
-    <fieldset>
-  <form action="validateRegistrazione.php"  class="form-signin" method="POST" onsubmit="return CHECK();"> 
+	<head>
+		<title>prova_registrazione</title>
+		<link rel="shortcut icon" href="../favicon.ico" />
 
-    <label class="" for="nick">Nickname:</label>
-    <input type="text" name="nick" value="" id="nick">
+		<link rel="stylesheet" href="styl1.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Nunito:400,300"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<style>
+			.mycheckbox {
+				background: whitesmoke;
+				border-radius: 15px;
+			};
+		</style>
+		<script type="text/javascript" lang="javascript" src="reg.js"></script>
+	</head>
+	<body>
+		<fieldset>
+			<form
+				action="validateRegistrazione.php"
+				class="form-signin"
+				method="POST"
+				onsubmit="return CHECK();"
+			>
+				<label class="" for="nick">Nickname:</label>
+				<input type="text" name="nick" value="" id="nick" />
 
-    <label class="" for="nome">Nome:</label>
-    <input type="text" name="nome" value="" id="name">
+				<label class="" for="nome">Nome:</label>
+				<input type="text" name="nome" value="" id="name" />
 
-    <label class="" for="cognome">cognome:</label>
-    <input type="text" name="cognome" value="" id="surname">
+				<label class="" for="cognome">cognome:</label>
+				<input type="text" name="cognome" value="" id="surname" />
 
-    <label class="" for="email">Email:</label>
-    <input type="email" name="email" value="" id="email">
-    
-    <label>password</label>
-    <input type="password" name="password" value="" id="password">
-    <br/>
-    <input type="checkbox" onclick="show();"> 
-    <b>Mostra Password</b> 
-    <br/>
-    <label>conferma password</label>
-    <input type="password" name="bassword" value="" id="bassword">
+				<label class="" for="email">Email:</label>
+				<input type="email" name="email" value="" id="email" />
 
-    <p><input type="submit"  name="Submit">
-    </fieldset> 
-</form>
-</body>
+				<label>password</label>
+				<input type="password" name="password" value="" id="password" />
+				<br />
+				<table>
+					<tr>
+						<td>Mostra password</td>
+						<td><input  class="mycheckbox" type="button" onclick="show()" /></td>
+					</tr>
+				</table border=2>
+
+				<br />
+				<label>conferma password</label>
+				<input type="password" name="bassword" value="" id="bassword" />
+				<input type="submit" name="Submit" />
+			</form>
+		</fieldset>
+	</body>
 </html>
