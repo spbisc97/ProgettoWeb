@@ -3,7 +3,7 @@
 $(document).ready();
 
 function verifica() {
-	if ($("input[name = 'intro1']:checked").size() == 0) {
+	if (!$("input[name = 'intro1']:checked").val()) {
 		$("#list-tab *").css("color", "initial");
 		$("#list-primad").css("color", "red");
 		return false;
