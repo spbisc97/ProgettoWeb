@@ -32,7 +32,7 @@
 			{
 				"label": "Iniziale",
 				"type": "shell",
-				"command": "echo 'Ciao belli,aprite il file di Setup del workspace!!    \n mi raccomando , pushate più che potete\n Buon Lavoro!!'",
+				"command": "git pull && echo 'Ciao belli pull già fatto,aprite il file di Setup del workspace!!    \n Pushate più che potete e Buon Lavoro!! \n ps. installate le estensioni del workspace consigliate <3'",
 				"runOptions": {
 					"runOn": "folderOpen"
 				},
