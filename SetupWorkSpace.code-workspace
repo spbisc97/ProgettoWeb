@@ -1,48 +1,61 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"[html]": {
-			"editor.defaultFormatter": "esbenp.prettier-vscode"
-		},
-		"[php]": {
-			"editor.defaultFormatter": "esbenp.prettier-vscode"
-		},
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"prettier.printWidth": 100,
-		"prettier.singleQuote": false,
-		"prettier.tabWidth": 4,
-		"editor.formatOnSave": true,
-		"indentRainbow.errorColor": "rgba(128,32,32,0.3)"
-	},
-	"extensions": {
-		"recommendations": [
-			"esbenp.prettier-vscode",
-			"rifi2k.format-html-in-php",
-			"oderwat.indent-rainbow",
-			"CoenraadS.bracket-pair-colorizer-2"
-		]
-	},
-	"tasks": {
-		"version": "2.0.0",
-		"tasks": [
-			{
-				"label": "Iniziale",
-				"type": "shell",
-				"command": "echo 'Ciao belli pull già fatto,aprite il file di Setup del workspace!!    \n Pushate più che potete e Buon Lavoro!! \n ps. installate le estensioni del workspace consigliate <3' && sleep 5 && git pull",
-				"runOptions": {
-					"runOn": "folderOpen"
-				},
-				"group": {
-					"kind": "build",
-					"isDefault": true
-				}
-			}
-		]
-	}
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "[html]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[php]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "prettier.printWidth": 100,
+        "prettier.singleQuote": false,
+        "prettier.tabWidth": 4,
+        "editor.formatOnSave": true,
+        "indentRainbow.errorColor": "rgba(128,32,32,0.3)"
+    },
+    "extensions": {
+        "recommendations": [
+            "esbenp.prettier-vscode",
+            "rifi2k.format-html-in-php",
+            "oderwat.indent-rainbow",
+            "CoenraadS.bracket-pair-colorizer-2"
+        ]
+    },
+    "tasks": {
+        "presentation": {
+            "echo": false,
+            "reveal": "always",
+            "focus": true,
+            "panel": "shared",
+            "showReuseMessage": true,
+            "clear": false
+        },
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "Saluto",
+                "type": "shell",
+                "windows": {
+                    "command": "echo 'Ciao belli pull già fatto,aprite il file di Setup del workspace!!    \n Pushate più che potete e Buon Lavoro!! \n ps. installate le estensioni del workspace consigliate <3' ; sleep 5 ; git pull ; echo 'per mantenere aggiornata la base di lavoro' "
+                },
+                "linux": {
+                    "command": "echo 'Ciao belli pull già fatto,aprite il file di Setup del workspace!!    \n Pushate più che potete e Buon Lavoro!! \n ps. installate le estensioni del workspace consigliate <3' && sleep 5 && git pull && echo 'per mantenere aggionata la base di lavoro'"
+                },
+                "runOptions": {
+                    "runOn": "folderOpen"
+                },
+                "group": {
+                    "kind": "build",
+                    "isDefault": true
+                }
+            }
+        ]
+    }
 }
 //you can install prettier for php globally with
 //           $ npm install --global prettier @prettier/plugin-php
