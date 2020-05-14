@@ -4,16 +4,17 @@
 
 <body>
     <?php
+    
     ($dbconn = pg_connect(
         "host=localhost port=5433 dbname=Edu@homedb user=postgres password=pippopluto"
     )) or die("Could not connect: " . preg_last_error());
     if (!isset($_POST['Login'])) {
-        header("Location: ../index.html");
+        header("Location: ../index.php");
     } else {
         $email = $_POST['email'];
         $q1 = "select * from utente where email= $1";
         $result = pg_query_params($dbconn, $q1, [$email]);
-        if ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+        if (!($line = pg_fetch_array($result, null, PGSQL_ASSOC))) {
             echo "<h1>non hai un account registrato<h1>
                             <a href=../paginaRegistrazione/registrazione.html> clicca qui per registrarti</a>";
         }
@@ -25,11 +26,14 @@
                 echo "<h1> La password è sbagliata</h1>
                     <a href=login.html> clicca qui per il login<h/a>";
             } else {
-                $nome = $line["nome"];
-                echo "<a href=../learnMap/learnMap.php> Premi qui</a>";
+                 // $nome = $line["nome"]; potrei aggiungerlo in un secondo momento 
+                echo "<a href=../index.html> Premi qui</a>";
             }
         }
     }
+    session_start(); 
+    $_SESSION['id'] = $row['id'];
+    $_SESSION['nick'] = $row['nick'];
     ?>
 
 

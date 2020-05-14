@@ -34,6 +34,6 @@
     }
     ?>
 </body>
-<<<<<<< HEAD Nome:=======>>>>>>> 05598aed8cdd385a551abb8b9124009a2a6fbc0e
+
 
 </html>
