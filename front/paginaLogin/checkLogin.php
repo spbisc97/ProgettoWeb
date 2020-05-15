@@ -26,17 +26,18 @@
                 echo "<h1> La password è sbagliata</h1>
                     <a href=login.html> clicca qui per il login<h/a>";
             } else {
-                 // $nome = $line["nome"]; potrei aggiungerlo in un secondo momento 
-                echo "<a href=../index.html> Premi qui</a>";
+                session_start();
+                $_SESSION['id'] = "select * from utente where id= $1";
+                $_SESSION['nick'] = $row['nick'];
+             $nome = $line["nome"]; 
+                 // echo "<a href=../index.html> Premi qui</a>";
+                header("Location: ../index.php?login=corretto,benvenuto$nicm");
+                exit();
             }
         }
     }
-    session_start(); 
-    $_SESSION['id'] = $row['id'];
-    $_SESSION['nick'] = $row['nick'];
+   
     ?>
-
-
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 
-<?php session_start()?>
-<!DOCTYPE html>
+
+<?php session_start();?>
+
 
 <html>
 	<head>
@@ -11,10 +12,30 @@
 	</head>
 	<body>
 		<!-- Header -->
+		<?php 
+		if (isset($_SESSION['id'])){  // and $_SESSION['loggedin'] = true
+		echo '
 		<header id="header">
-			<div class="inner">
+		 <div class="inner">
 				<a href="index.html" class="logo"><strong>Edu@home</strong></a>
 				<nav id="nav">
+					<a href="index.html">Home</a>
+					<a href="learnMap/learnMap.html">Allenati</a>
+					<a href="snake/snake.html">divertiti</a>
+					<a href="profilo.php">profilo</a>
+					<form action="logout.php" metho="post">
+					<button type="submit name=login-submit">Logout</button>
+				</nav>
+				<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+			</div>
+		</header>';
+		}
+		else {
+			echo '<header id="header">
+		 <div class="inner">
+				<a href="index.html" class="logo"><strong>Edu@home</strong></a>
+
+					<nav id="nav">
 					<a href="index.html">Home</a>
 					<a href="info.html">Info</a>
 					<a href="contatti.html">Contatti</a>
@@ -23,7 +44,10 @@
 				</nav>
 				<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 			</div>
-		</header>
+		</header>';
+
+		}
+		?>
 
 		<!-- Banner -->
 		<section id="banner">
@@ -94,35 +118,7 @@
 			</div>
 		</section>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<div class="inner">
-				<h3>Get in touch</h3>
-
-				<form action="#" method="post">
-					<div class="field half first">
-						<label for="name">Name</label>
-						<input name="name" id="name" type="text" placeholder="Name" />
-					</div>
-					<div class="field half">
-						<label for="email">Email</label>
-						<input name="email" id="email" type="email" placeholder="Email" />
-					</div>
-					<div class="field">
-						<label for="message">Message</label>
-						<textarea
-							name="message"
-							id="message"
-							rows="6"
-							placeholder="Message"
-						></textarea>
-					</div>
-					<ul class="actions">
-						<li><input value="Send Message" class="button alt" type="submit" /></li>
-					</ul>
-				</form>
-			</div>
-		</footer>
+		
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
