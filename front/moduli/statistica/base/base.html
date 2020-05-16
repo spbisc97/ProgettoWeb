@@ -12,6 +12,7 @@
 		<script src="../../../jQuery/jquery.min.js"></script>
 		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
 		<script src="../../../assets/js/vue.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<style>
 			body {
 				background-image: url("../art2.jpg");
@@ -148,7 +149,11 @@
 								/>
 							</th>
 							<th>
-								<button v-on:click="newmedia" class="btn btn-primary">
+								<button
+									v-on:click="newmedia"
+									onclick="return chart.render()"
+									class="btn btn-primary"
+								>
 									aggiungi
 								</button>
 							</th>
@@ -156,8 +161,11 @@
 					</table>
 					<br />
 				</div>
+				<div id="chart">
+					<apexchart type="bar" :options="options" :series="series"></apexchart>
+				</div>
 				<br /><br /><br /><br />
-				<a href="introtest.html">
+				<a href="basetest.html">
 					<button class="btn btn-primary">Portami al test!!!</button>
 				</a>
 				<!--del quale non abbiamo completa conoscenza-->

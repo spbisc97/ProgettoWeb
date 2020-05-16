@@ -1,5 +1,5 @@
 /** @format */
-
+valori: [];
 $(document).ready(
 	//alert("pagina caricata"),
 	//$("#sfen").show("slow"),
@@ -18,12 +18,27 @@ var app = new Vue({
 		media: 0,
 		numer: 0,
 		totale: 0,
+		valori: [],
+		nuovovalore: 0,
 	},
 	methods: {
 		newmedia: function () {
-			this.numer++,
-				(this.totale = this.totale + this.nuovovalore),
-				(this.media = this.totale / this.numer);
+			this.numer++;
+			this.totale = this.totale + this.nuovovalore;
+			this.media = this.totale / this.numer;
+			this.valori.push(this.nuovovalore);
 		},
 	},
 });
+var options = {
+	chart: {
+		type: "bar",
+	},
+	series: [
+		{
+			//	name: 'sales'
+			data: app.valori,
+		},
+	],
+};
+var chart = new ApexCharts(document.querySelector("#chart"), options);
