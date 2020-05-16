@@ -13,6 +13,7 @@
 		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
 		<script src="../../../assets/js/vue.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 		<style>
 			body {
 				background-image: url("../art2.jpg");
@@ -103,7 +104,7 @@
 		</nav>
 		<br /><br /><br />
 
-		<div class="bg-blur container xl text-monospace text-light">
+		<div class="bg-blur container xl text-monospace text-white">
 			<h2>La statistica tutti i giorni</h2>
 			<div>
 				Quando pensiamo alla statistica pensiamo ad una
@@ -134,35 +135,40 @@
 				tutti i valori hanno importanza uguale ma ci arriveremo più tardi)
 				<br /><br /><br />
 				<h4>Prova qui!</h4>
-				<div id="app">
-					<p>
-						La media è : {{ media }} ,il totale:{{ totale }}, e il numero di valori
-						aggiunti : {{ numer }}
-					</p>
-					<table>
-						<tr>
-							<th>
-								<input
-									type="number"
-									v-model.number="nuovovalore"
-									class="input-group-text"
-								/>
-							</th>
-							<th>
-								<button
-									v-on:click="newmedia"
-									onclick="return chart.render()"
-									class="btn btn-primary"
-								>
-									aggiungi
-								</button>
-							</th>
-						</tr>
-					</table>
-					<br />
-				</div>
-				<div id="chart">
-					<apexchart type="bar" :options="options" :series="series"></apexchart>
+				<div class="row">
+					<div class="col-sm-4" id="app">
+						<br /><br />
+						<p>
+							La media è : {{ media }} ,il totale:{{ totale }}, e il numero di valori
+							aggiunti : {{ numer }}
+						</p>
+						<table>
+							<tr>
+								<th>
+									<input
+										type="number"
+										v-model.number="nuovovalore"
+										class="input-group-text"
+									/>
+								</th>
+								<th>
+									<button
+										v-on:click="newmedia"
+										onclick=""
+										class="btn btn-primary"
+									>
+										aggiungi
+									</button>
+								</th>
+							</tr>
+						</table>
+						<br />
+						nel grafico abbiamo i valori rossi che sono i valori introdotti da noi, e la
+						linea blu che è la media che varia ad ogni nuova aggiunta
+					</div>
+					<div class="col-sm col-9" id="chart">
+						<canvas id="myChart"></canvas>
+					</div>
 				</div>
 				<br /><br /><br /><br />
 				<a href="basetest.html">
