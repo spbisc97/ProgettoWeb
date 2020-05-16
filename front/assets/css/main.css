@@ -332,6 +332,68 @@
 			border-radius: 100%;
 		}
 
+
+		/* Form */
+
+	form {
+		margin: 0 0 2em 0;
+	}
+
+		form .field {
+			margin-bottom: 1.5em;
+		}
+
+			form .field.half {
+				display: inline-block;
+				width: 48%;
+			}
+
+				form .field.half.first {
+					margin-right: 3%;
+				}
+
+		@media screen and (max-width: 980px) {
+
+			form .field.half {
+				display: block;
+				width: 100%;
+			}
+
+				form .field.half.first {
+					margin-right: 0;
+				}
+
+		}
+
+	label {
+		color: #555;
+		display: block;
+		font-size: 0.9em;
+		font-weight: 600;
+		margin: 0 0 1em 0;
+	}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"],
+	select,
+	textarea {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		background: #6cc091;
+		border-radius: 10px;
+		border: none;
+		border: solid 2px #8dcca9;
+		color: #fff;
+		display: block;
+		outline: 0;
+		padding: 0 1em;
+		text-decoration: none;
+		width: 100%;
+	}
 		
 
 /* Bottoni */
@@ -705,3 +767,103 @@
 				}
 
 		
+/* Footer */
+
+	#footer {
+		padding: 6em 0;
+		background: #6cc091;
+		color: #fff;
+		text-align: center;
+	}
+
+		#footer h3 {
+			color: #FFF;
+			margin-bottom: 2em !important;
+		}
+
+		#footer label {
+			text-align: left;
+			color: #FFF;
+		}
+
+		#footer .copyright {
+			color: rgba(255, 255, 255, 0.5);
+			font-size: 0.8em;
+			margin: 0 0 2em 0;
+			padding: 0;
+		}
+
+			#footer .copyright a {
+				color: rgba(255, 255, 255, 0.5);
+				text-decoration: none;
+			}
+
+				#footer .copyright a:hover {
+					color: #FFF;
+				}
+
+		@media screen and (max-width: 980px) {
+
+			#footer {
+				padding: 4em 0;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#footer {
+				padding: 3em 0;
+			}
+
+		}
+		* Footer */
+
+	#footer {
+		padding: 6em 0;
+		background: #6cc091;
+		color: #fff;
+		text-align: center;
+	}
+
+		#footer h3 {
+			color: #FFF;
+			margin-bottom: 2em !important;
+		}
+
+		#footer label {
+			text-align: left;
+			color: #FFF;
+		}
+
+		#footer .copyright {
+			color: rgba(255, 255, 255, 0.5);
+			font-size: 0.8em;
+			margin: 0 0 2em 0;
+			padding: 0;
+		}
+
+			#footer .copyright a {
+				color: rgba(255, 255, 255, 0.5);
+				text-decoration: none;
+			}
+
+				#footer .copyright a:hover {
+					color: #FFF;
+				}
+
+		@media screen and (max-width: 980px) {
+
+			#footer {
+				padding: 4em 0;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#footer {
+				padding: 3em 0;
+			}
+
+		}

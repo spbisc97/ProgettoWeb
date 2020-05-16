@@ -117,7 +117,37 @@
 				</div>
 			</div>
 		</section>
+		<!-- Footer -->
+		<footer id="footer">
+				<div class="inner">
 
+					<h3>Contatti</h3>
+
+					<form action="contatti.php" method="post">
+
+						<div class="field half first">
+							<label for="name">Nome</label>
+							<input name="nome" id="name" type="text" placeholder="Nome">
+						</div>
+						<div class="field half first">
+							<label for="name">Mail</label>
+							<input name="mail" id="mail" type="text" placeholder="Mail">
+						</div>
+						<div class="field half first">
+							<label for="name">Oggetto</label>
+							<input name="oggetto" id="oggetto" type="text" placeholder="Oggetto">
+						</div>
+						<div class="field">
+							<label for="message">Messaggio</label>
+							<textarea name="messaggio" id="message" rows="6" placeholder="Message"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input value="Send Message" class="button alt" type="submit"></li>
+						</ul>
+					</form>
+
+						</div>
+			</footer>
 		
 
 		<!-- Scripts -->

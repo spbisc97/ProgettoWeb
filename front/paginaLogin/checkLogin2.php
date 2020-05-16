@@ -42,7 +42,7 @@ alert("I am an alert box!"); // this is the message in ""
                 $_SESSION['nick'] = $row['nick'];
                 $nome = $line["nome"]; 
                  // echo "<a href=../index.html> Premi qui</a>";
-                header("Location: ../index.php?login=corretto,benvenuto$nicm");
+                header("Location: ../index.php?login=corretto,benvenuto$nicm"); //sposta automaticamente su index e cambia l'header
                 exit();
              }
             
