@@ -9,3 +9,16 @@
 .bg-blur-dark {
 	background-color: rgba(0, 0, 0, 0.4);
 }
+
+.radiobutton {
+	display: block;
+	background-color: rgba(84, 189, 238, 0.8);
+	text-align: end;
+	border-radius: 10px;
+}
+.radiobutton :checked {
+	background-color: rgba(197, 66, 209, 0.8);
+}
+.radiobutton :hover {
+	background-color: rgba(4, 226, 4, 0.8);
+}

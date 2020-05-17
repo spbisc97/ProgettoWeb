@@ -13,6 +13,15 @@ function verifica() {
 		$("#list-secondad").css("color", "red");
 		return false;
 	}
-	alarm("hello");
+	if (!$("input[name = 'istat']:checked").val()) {
+		$("#list-tab *").css("color", "initial");
+		$("#list-terzad").css("color", "red");
+		return false;
+	}
+	if ($("#anni").val() == "") {
+		$("#list-tab *").css("color", "initial");
+		$("#list-quartad").css("color", "red");
+		return false;
+	}
 	return true;
 }

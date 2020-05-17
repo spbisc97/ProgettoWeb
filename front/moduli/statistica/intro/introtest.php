@@ -40,13 +40,36 @@
                     </div>
                 </nav>
                 <br><br><br>
-                <div>
+                <div class="container  ">
                     <?php
-                    echo "complimenti!! <br>";
-                    if (true) {
-                    	echo "o forse no";
+                    $punteggio = 0;
+
+                    if ($_POST["intro1"] == "egizi") {
+                    	$punteggio += 1;
                     }
-                    ?>
+                    if (strstr(strtolower($_POST["libro"]), "numeri")) {
+                    	$punteggio += 1;
+                    }
+                    if ($_POST["istat"] == "3") {
+                    	$punteggio += 1;
+                    }
+                    if ($_POST["anni"] == "10") {
+                    	$punteggio += 1;
+                    }
+                    if ($punteggio > 2) {
+                    	echo '<div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(84, 200, 20, 0.6);"> il tuo punteggio è di ';
+                    } else {
+                    	echo '<div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> il tuo punteggio è di ';
+                    }
+                    echo $punteggio;
+                    echo " punti su 4";
+
+                    echo "</div>";
+
+                    echo "<br><br><br>";
+
+//print_r($_POST);
+?>
                 </div>
             </body>
 
