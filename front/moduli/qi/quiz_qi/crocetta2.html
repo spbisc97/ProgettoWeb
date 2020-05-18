@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>AJAX: esercizio 4</title>
+</head>
+<body>
+
+
+<div id="domanda1.2">
+    <div class="domanda2" style="padding-left: 60px;">&nbsp;</div>
+            <div class="domannda2" style="padding-left: 60px;">&nbsp;</div>
+            <div class="domanda2" style="padding-left: 60px;"><strong><span class="quiz_num">2.</span><span class="quiz ">Se riordini le lettere "LRGILO", ottieni il nome di un/una:</span></strong></div>
+            <div class="domanda2" style="padding-left: 60px;"><input id="domanda2_1" class="qmn_quiz_radio" name="domanda2" type="radio" value="Un oceano" /><label for="domanda2_1">Un oceano</label></div>
+            <div class="domanda2" style="padding-left: 60px;"><input id="domanda2_2" class="qmn_quiz_radio" name="domanda2" type="radio" value="Una nazione" /><label for="domanda2_2">Una nazione</label></div>
+            <div class="domanda2" style="padding-left: 60px;"><input id="domanda2_3" class="qmn_quiz_radio" name="domanda2" type="radio" value="Uno stato americano" /><label for="domanda2_3">Uno stato americano</label></div>
+            <div class="domanda2" style="padding-left: 60px;"><input id="domanda2_4" class="qmn_quiz_radio" name="domanda2" type="radio" value="Una citt&agrave;" /><label for="domanda2_4">Una citt&agrave;</label></div>
+            <div class="domanda2" style="padding-left: 60px;"><input id="domanda2_5" class="qmn_quiz_radio" name="domanda2" type="radio" value="Un animale" /><label for="domanda2_5">Un animale</label></div>
+
+
+</div>
+
+Resto del documento
+...
+<script>
+var documenti = document.querySelectorAll("input[type=radio]");
+for (var i = 0; i < documenti.length; i++)  {
+documenti[i].onclick = caricaDocumento;
+}
+function caricaDocumento(e) {
+var httpRequest = new XMLHttpRequest();
+httpRequest.prevTarget = e.target;
+httpRequest.onreadystatechange = gestisciResponse;
+httpRequest.open("GET", "crocetta3.html", true);
+httpRequest.send();
+}
+function gestisciResponse(e) {
+if (e.target.readyState == 4 && e.target.status == 200) {
+document.getElementById("domanda1.2").innerHTML = e.target.responseText;
+}
+
+
+}
+</script>
+</body>
+</html>

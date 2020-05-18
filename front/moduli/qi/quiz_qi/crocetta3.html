@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>AJAX: esercizio 4</title>
+</head>
+<body>
+
+
+<div id="domanda1.3">
+    <div class="domanda3" style="padding-left: 60px;">&nbsp;</div>
+            <div class="domanda3" style="padding-left: 60px;">&nbsp;</div>
+            <div class="domanda3" style="padding-left: 60px;"><strong><span class="quiz_num">3.</span></strong><span class="mlw_qmn_question "><strong>Quale dei cinque disegni genera il miglior confronto?</strong><br /><img class="alignnone size-full wp-image-22241" src="https://www.magnaromagna.it/wp-content/uploads/2015/04/qi3.jpg" alt="qi3" width="500" height="109" /></span></div>
+            <div class="domanda3" style="padding-left: 60px;"><span class="mlw_qmn_question "><input id="domanda3_1" class="qmn_quiz_radio" name="domanda3" type="radio" value="A" /><label for="domanda3_1">A</label></span></div>
+            <div class="domanda3" style="padding-left: 60px;"><input id="domanda3_2" class="qmn_quiz_radio" name="domanda3" type="radio" value="B" /><label for="domanda3_2">B</label></div>
+            <div class="domanda3" style="padding-left: 60px;"><input id="domanda3_3" class="qmn_quiz_radio" name="domanda3" type="radio" value="C" /><label for="domanda3_3">C</label></div>
+            <div class="domanda3" style="padding-left: 60px;"><input id="domanda3_4" class="qmn_quiz_radio" name="domanda3" type="radio" value="D" /><label for="domanda3_4">D</label></div>
+            <div class="domanda3" style="padding-left: 60px;"><input id="domanda3_5" class="qmn_quiz_radio" name="domanda3" type="radio" value="E" /><label for="domanda3_5">E</label></div>
+            
+
+</div>
+
+Resto del documento
+...
+<script>
+var documenti = document.querySelectorAll("input[type=radio]");
+for (var i = 0; i < documenti.length; i++)  {
+documenti[i].onclick = caricaDocumento;
+}
+function caricaDocumento(e) {
+var httpRequest = new XMLHttpRequest();
+httpRequest.prevTarget = e.target;
+httpRequest.onreadystatechange = gestisciResponse;
+httpRequest.open("GET", "crocetta2.html", true);
+httpRequest.send();
+}
+function gestisciResponse(e) {
+if (e.target.readyState == 4 && e.target.status == 200) {
+document.getElementById("domanda1.3").innerHTML = e.target.responseText;
+}
+
+}
+</script>
+</body>
+</html>

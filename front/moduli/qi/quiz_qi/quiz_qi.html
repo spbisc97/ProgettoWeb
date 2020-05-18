@@ -1,91 +1,70 @@
 <!-- @format -->
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>QI QUIZ</title>
-		<link rel="shortcut icon" href="../../../favicon.ico" />
-		<link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
-		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
-		<script src="../../../assets/js/jquery.min.js"></script>
-		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
-		<style>
-				
-			body {
-                background-image: url("");
-                background-repeat: no-repeat;
-				background-attachment: fixed;
-				background-size: cover;
-            }
-            
-		</style>
 
-		
-		<script type="text/javascript" src="introtest.js"></script>
-	</head>
-	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>QI QUIZ</title>
+	<link rel="shortcut icon" href="../../../favicon.ico" />
+	<link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
+	<link rel="stylesheet" href="../../../assets/css/home-made.css" />
+	<script src="../../../assets/js/jquery.min.js"></script>
+	<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
+	<style>
+		body {
+			background-image: url("");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+	</style>
+
+
+	<script type="text/javascript" src="introtest.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+		<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 			uso a invece che span per rendere il contenuto interattivo  -->
-			<a class="navbar-brand" href="#">Edu@home</a>
-			<!-- ancora come in questo caso -->
-			<button
-				class="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-			>
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+		<a class="navbar-brand" href="#">Edu@home</a>
+		<!-- ancora come in questo caso -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
                 mentre sotto abbiamo una parte collapsable ovvero 
                 che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a id="home" class="nav-link" href="../../../learnMap/learnMap.html"
-							>Home <span class="sr-only">(current)</span></a
-						>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							href="#"
-							id="navbarDropdown"
-							role="button"
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
-						>
-							Settaggi Vari
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a
-							id="abdis"
-							class="nav-link disabled"
-							href="http://www.google.it"
-							tabindex="-1"
-							aria-disabled="true"
-							>Abilitabile traguardo (test)</a
-						>
-					</li>
-				</ul>
-				<!-- //inutile il search per ora  
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a id="home" class="nav-link" href="../../../learnMap/learnMap.html">Home <span
+							class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Settaggi Vari
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a id="abdis" class="nav-link disabled" href="http://www.google.it" tabindex="-1"
+						aria-disabled="true">Abilitabile traguardo (test)</a>
+				</li>
+			</ul>
+			<!-- //inutile il search per ora  
 				<form class="form-inline my-2 my-lg-0">
 					<input
 						class="form-control mr-sm-2"
@@ -98,91 +77,194 @@
 					</button>
                 </form>
                 -->
-			</div>
-		</nav>
-		
-		<br /><br /><br />
-		
-        <div class="quiz_section  quiz_begin slide1">
-            <div class="mlw_qmn_message_before">
-            <p style="padding-left: 60px;"><em><strong>Rispondi alle domande seguenti cliccando sulla risposta che ritieni giusta, e alla fine clicca su Verifica Risultato.</strong></em></p>
-            </div>
-            </div>
-            <div class="domanda1" style="padding-left: 60px;"><strong><span class="quiz_num">1.</span><span class="quiz">Quale dei cinque animali &egrave; meno simile agli altri quattro?</span></strong></div>
-            <div class="domanda1" style="padding-left: 60px;"><input id="domanda_2" class="qmn_quiz_radio" name="domanda1" type="radio" value="Serpente" /><label for="domanda1_2">Serpente</label></div>
-            <div class="domanda1" style="padding-left: 60px;"><input id="domanda_1" class="qmn_quiz_radio" name="domanda1" type="radio" value="Orso" /><label for="domanda1_1">Orso</label></div>
-            <div class="domanda1" style="padding-left: 60px;"><input id="domanda_3" class="qmn_quiz_radio" name="domanda1" type="radio" value="Mucca" /><label for="domanda1_3">Mucca</label></div>
-            <div class="domanda1" style="padding-left: 60px;"><input id="domanda_4" class="qmn_quiz_radio" name="domanda1" type="radio" value="Cane" /><label for="domanda1_4">Cane</label></div>
-            <div class="domanda1" style="padding-left: 60px;"><input id="domanda_5" class="qmn_quiz_radio" name="domanda1" type="radio" value="Tigre" /><label for="domanda1_5">Tigre</label></div>
-            
-            <div class="domanda2" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domannda2" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domanda2" style="padding-left: 60px;"><strong><span class="quiz_num">2.</span><span class="quiz ">Se riordini le lettere "LRGILO", ottieni il nome di un/una:</span></strong></div>
-            <div class="domanda2" style="padding-left: 60px;"><input id="domanda2_1" class="qmn_quiz_radio" name="domanda2" type="radio" value="Un oceano" /><label for="domanda2_1">Un oceano</label></div>
-            <div class="domanda2" style="padding-left: 60px;"><input id="domanda2_2" class="qmn_quiz_radio" name="domanda2" type="radio" value="Una nazione" /><label for="domanda2_2">Una nazione</label></div>
-            <div class="domanda2" style="padding-left: 60px;"><input id="domanda2_3" class="qmn_quiz_radio" name="domanda2" type="radio" value="Uno stato americano" /><label for="domanda2_3">Uno stato americano</label></div>
-            <div class="domanda2" style="padding-left: 60px;"><input id="domanda2_4" class="qmn_quiz_radio" name="domanda2" type="radio" value="Una citt&agrave;" /><label for="domanda2_4">Una citt&agrave;</label></div>
-            <div class="domanda2" style="padding-left: 60px;"><input id="domanda2_5" class="qmn_quiz_radio" name="domanda2" type="radio" value="Un animale" /><label for="domanda2_5">Un animale</label></div>
-            
-            <div class="domanda3" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domanda3" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domanda3" style="padding-left: 60px;"><strong><span class="quiz_num">3.</span></strong><span class="mlw_qmn_question "><strong>Quale dei cinque disegni genera il miglior confronto?</strong><br /><img class="alignnone size-full wp-image-22241" src="https://www.magnaromagna.it/wp-content/uploads/2015/04/qi3.jpg" alt="qi3" width="500" height="109" /></span></div>
-            <div class="domanda3" style="padding-left: 60px;"><span class="mlw_qmn_question "><input id="domanda3_1" class="qmn_quiz_radio" name="domanda3" type="radio" value="A" /><label for="domanda3_1">A</label></span></div>
-            <div class="domanda3" style="padding-left: 60px;"><input id="domanda3_2" class="qmn_quiz_radio" name="domanda3" type="radio" value="B" /><label for="domanda3_2">B</label></div>
-            <div class="domanda3" style="padding-left: 60px;"><input id="domanda3_3" class="qmn_quiz_radio" name="domanda3" type="radio" value="C" /><label for="domanda3_3">C</label></div>
-            <div class="domanda3" style="padding-left: 60px;"><input id="domanda3_4" class="qmn_quiz_radio" name="domanda3" type="radio" value="D" /><label for="domanda3_4">D</label></div>
-            <div class="domanda3" style="padding-left: 60px;"><input id="domanda3_5" class="qmn_quiz_radio" name="domanda3" type="radio" value="E" /><label for="domanda3_5">E</label></div>
-            
-            <div class="domanda4" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domanda4" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domanda4" style="padding-left: 60px;"><strong><span class="quiz_num">4.</span><span class="mlw_qmn_question ">Quale dei cinque &egrave; meno simile agli altri quattro?</span></strong></div>
-            <div class="domanda4" style="padding-left: 60px;"><input id="domanda4_1" class="qmn_quiz_radio" name="domanda4" type="radio" value="Patata" /><label for="domanda4_1">Patata</label></div>
-            <div class="domanda4" style="padding-left: 60px;"><input id="domanda4_2" class="qmn_quiz_radio" name="domanda4" type="radio" value="Mais" /><label for="domanda4_2">Mais</label></div>
-            <div class="domanda4" style="padding-left: 60px;"><input id="domanda4_3" class="qmn_quiz_radio" name="domanda4" type="radio" value="Mela" /><label for="domanda4_3">Mela</label></div>
-            <div class="domanda4" style="padding-left: 60px;"><input id="domanda4_4" class="qmn_quiz_radio" name="domanda4" type="radio" value="Carota" /><label for="domanda4_4">Carota</label></div>
-            <div class="domanda4" style="padding-left: 60px;"><input id="domanda4_5" class="qmn_quiz_radio" name="domanda4" type="radio" value="Fagiolo" /><label for="domanda4_5">Fagiolo</label></div>
-            
-            <div class="domanda5" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domanda5" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domanda5" style="padding-left: 60px;"><strong><span class="quiz_num">5.</span></strong><span class="mlw_qmn_question "><strong>Qual &egrave; il collegamento giusto tra le figure?</strong><br /><img class="alignnone size-full wp-image-22242" src="https://www.magnaromagna.it/wp-content/uploads/2015/04/qi2-b.jpg" alt="qi2-b" width="500" height="99" /></span></div>
-            <div class="domanda5" style="padding-left: 60px;"><span class="mlw_qmn_question "><input id="domanda4_1" class="qmn_quiz_radio" name="domanda5" type="radio" value="A" /><label for="domanda5_1">A</label></span></div>
-            <div class="domanda5" style="padding-left: 60px;"><input id="domanda5_2" class="qmn_quiz_radio" name="domanda5" type="radio" value="B" /><label for="domanda5_2">B</label></div>
-            <div class="domanda5" style="padding-left: 60px;"><input id="domanda5_3" class="qmn_quiz_radio" name="domanda5" type="radio" value="C" /><label for="domanda5_3">C</label></div>
-            <div class="domanda5" style="padding-left: 60px;"><input id="domanda5_4" class="qmn_quiz_radio" name="domanda5" type="radio" value="D" /><label for="domanda5_4">D</label></div>
-            <div class="domanda5" style="padding-left: 60px;"><input id="domanda5_5" class="qmn_quiz_radio" name="domanda5" type="radio" value="E" /><label for="domanda5_5">E</label></div>
-            
-            <div class="domanda6" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domanda6" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domanda6" style="padding-left: 60px;"><strong><span class="quiz_num">6.</span></strong><span class="mlw_qmn_question "><strong>Giovanni, di dodici anni, &egrave; tre volte pi&ugrave; vecchio del fratello. Quanti anni avr&agrave; Giovanni quando sar&agrave; il doppio pi&ugrave; vecchio del fratello?</strong></span></div>
-            <div class="domanda6" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domanda6" style="padding-left: 60px;"><input id="domanda6_1" class="qmn_quiz_radio" name="domanda6" type="radio" value="15" /><label for="domanda6_1">15</label></div>
-            <div class="domanda6" style="padding-left: 60px;"><input id="domanda6_2" class="qmn_quiz_radio" name="domanda6" type="radio" value="16" /><label for="domanda6_2">16</label></div>
-            <div class="domanda6" style="padding-left: 60px;"><input id="domanda6_3" class="qmn_quiz_radio" name="domanda6" type="radio" value="18" /><label for="domanda6_3">18</label></div>
-            <div class="domanda6" style="padding-left: 60px;"><input id="domanda6_4" class="qmn_quiz_radio" name="domanda6" type="radio" value="20" /><label for="domanda6_4">20</label></div>
-            <div class="domanda6" style="padding-left: 60px;"><input id="domanda6_5" class="qmn_quiz_radio" name="domanda6" type="radio" value="22" /><label for="domanda6_5">22</label></div>
-            
-            <div class="domanda7" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domanda7" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domanda7" style="padding-left: 60px;"><strong><span class="quiz_num">7.</span><span class="mlw_qmn_question ">Fratello sta a sorella come nipotino sta a:</span></strong></div>
-            <div class="domanda7" style="padding-left: 60px;">&nbsp;</div>
-            <div class="domanda7" style="padding-left: 60px;"><input id="domanda7_1" class="qmn_quiz_radio" name="domanda7" type="radio" value="madre" /><label for="domanda7_1">madre</label></div>
-            <div class="domanda7" style="padding-left: 60px;"><input id="domanda7_2" class="qmn_quiz_radio" name="domanda7" type="radio" value="figlia" /><label for="domanda7_2">figlia</label></div>
-            <div class="domanda7" style="padding-left: 60px;"><input id="domanda7_3" class="qmn_quiz_radio" name="domanda7" type="radio" value="zia" /><label for="domanda7_3">zia</label></div>
-            <div class="domanda7" style="padding-left: 60px;"><input id="domanda7_4" class="qmn_quiz_radio" name="domanda7" type="radio" value="zio" /><label for="domanda7_4">zio</label></div>
-            <div class="domanda7" style="padding-left: 60px;"><input id="domanda7_5" class="qmn_quiz_radio" name="domanda7" type="radio" value="nipotina" /><label for="domanda7_5">nipotina</label></div>
-            
-            <div class="quiz_section  question-section-id-64 slide9" style="padding-left: 60px;">&nbsp;</div>
-            <div class="quiz_section  question-section-id-64 slide9" style="padding-left: 60px;">&nbsp;</div>
-                       <div class="qmn_radio_answers mlwRequiredRadio" style="padding-left: 60px;">
-            <div class="qmn_mc_answer_wrap" style="padding-left: 60px;">&nbsp;</div>
-            <div class="qmn_mc_answer_wrap" style="padding-left: 60px;">&nbsp;</div>
-            <div class="qmn_mc_answer_wrap" style="padding-left: 60px;">&nbsp;<input class="qsm-btn qsm-submit-btn qmn_btn" type="submit" value="Invia risposte" /></div>
-            <div class="qmn_mc_answer_wrap" style="padding-left: 60px;">
-            <div class="qsm-quiz-container qmn_quiz_container mlw_qmn_quiz" style="padding-left: 60px;"><form id="quizForm6" class="qsm-quiz-form qmn_quiz_form mlw_quiz_form" style="padding-left: 60px;" action="" enctype="multipart/form-data" method="POST" name="quizForm6" novalidate="">
-            <div id="mlw_error_message_bottom" class="qsm-error-message qmn_error_message_section">&nbsp;</div>
-            </form></div>
-            </div>
-            </div>
-			</div>
-	</body>
-	</html>
+		</div>
+	</nav>
+
+	<br /><br /><br />
+
+
+	<style>
+		/* The container */
+		.container {
+			display: block;
+			position: relative;
+			padding-left: 35px;
+			margin-bottom: 12px;
+			cursor: pointer;
+			font-size: 20px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		/* nasconde il pulsante */
+		.container input {
+			position: absolute;
+			opacity: 0;
+			cursor: pointer;
+		}
+
+		/* creazione bottone */
+		.checkmark {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 25px;
+			width: 25px;
+			background-color: #eee;
+			border-radius: 50%;
+		}
+
+		/* mouse sopra la scritta diventa grigia */
+		.container:hover input~.checkmark {
+			background-color: #ccc;
+		}
+
+		/* When the radio button is checked, add a blue background */
+		.container input:checked~.checkmark {
+			background-color: #2196F3;
+		}
+
+		/* Create the indicator (the dot/circle - hidden when not checked) */
+		.checkmark:after {
+			content: "";
+			position: absolute;
+			display: none;
+		}
+
+		/* mostra l'indicatore cerchiato */
+		.container input:checked~.checkmark:after {
+			display: block;
+		}
+
+		/* stile bottone */
+		.container .checkmark:after {
+			top: 9px;
+			left: 9px;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: white;
+		}
+	</style>
+	<div class=container-lg>
+		<h1>1.Quale dei cinque animali è meno simile agli altri quattro?</h1>
+		<label class="container">serpente
+			<input type="radio" checked="checked" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">orso
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">mucca
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">cane
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+
+
+		<h1>2.Se riordini le lettere "LRGILO", ottieni il nome di un/una:</h1>
+		<label class="container">oceano
+			<input type="radio" checked="checked" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">nazione
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">città
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">animale
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+
+		<h1>3.Quale dei cinque è meno simile agli altri quattro?</h1>
+		<label class="container">Patata
+			<input type="radio" checked="checked" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">Mais
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">Mela
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">Carota
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+
+
+		<h1>4.Fratello sta a sorella come nipotino sta a:</h1>
+		<label class="container">Figlia
+			<input type="radio" checked="checked" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">Madre
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">Zia
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">Nipotina
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+
+
+
+		<h1>5.Quale delle cinque scelte genera la miglior attinenza?
+			LIVE sta a EVIL come 5232 sta a:</h1>
+		<label class="container">5232
+			<input type="radio" checked="checked" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">2325
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">2532
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">5223
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+
+
+		<h1>6.Albero sta a terra come camino sta a:</h1>
+		<label class="container">Fumo
+			<input type="radio" checked="checked" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">Mattone
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">Cielo
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+		<label class="container">Casa
+			<input type="radio" name="radio">
+			<span class="checkmark"></span>
+		</label>
+	</div>
+
+
+</body>
+
+</html>

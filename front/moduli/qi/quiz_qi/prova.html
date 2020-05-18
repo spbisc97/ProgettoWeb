@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>AJAX: esercizio 4</title>
+</head>
+<body>
+
+    
+<div id="domanda1.1">
+    <div class="domanda1" style="padding-left: 60px;"><strong><span class="quiz_num">1.</span><span class="quiz">Quale dei cinque animali &egrave; meno simile agli altri quattro?</span></strong></div> <br></br>
+    <div class="domanda1" style="padding-left: 60px;"><input id="domanda_2" class="qmn_quiz_radio" name="domanda1" type="radio" value="Serpente" /><label for="domanda1_2">Serpente</label></div>
+    <div class="domanda1" style="padding-left: 60px;"><input id="domanda_1" class="qmn_quiz_radio" name="domanda1" type="radio" value="Orso" /><label for="domanda1_1">Orso</label></div>
+    <div class="domanda1" style="padding-left: 60px;"><input id="domanda_3" class="qmn_quiz_radio" name="domanda1" type="radio" value="Mucca" /><label for="domanda1_3">Mucca</label></div>
+    <div class="domanda1" style="padding-left: 60px;"><input id="domanda_4" class="qmn_quiz_radio" name="domanda1" type="radio" value="Cane" /><label for="domanda1_4">Cane</label></div>
+    <div class="domanda1" style="padding-left: 60px;"><input id="domanda_5" class="qmn_quiz_radio" name="domanda1" type="radio" value="Tigre" /><label for="domanda1_5">Tigre</label></div>
+
+</div>
+
+Resto del documento
+
+
+<script>
+var documenti = document.querySelectorAll("input[type=radio]");
+for (var i = 0; i < documenti.length; i++)  {
+documenti[i].onclick = caricaDocumento;
+}
+function caricaDocumento(e) {
+var httpRequest = new XMLHttpRequest();
+httpRequest.prevTarget = e.target;
+httpRequest.onreadystatechange = gestisciResponse;
+httpRequest.open("GET", "crocetta2.html", true);
+httpRequest.send();
+}
+function gestisciResponse(e) {
+if (e.target.readyState == 4 && e.target.status == 200) {
+document.getElementById("domanda1.1").innerHTML = e.target.responseText;
+}
+
+
+}
+</script>
+</body>
+</html>
