@@ -28,18 +28,23 @@ alert("I am an alert box!"); // this is the message in ""
             
              // $password = md5($_POST["password"]);
              $email = $_POST['email'];
-             $q1 = "select * from utente where email= $1";
              $password = $_POST['password']; // input password
-             $password_hash=pg_query_params($dbconn, $q1, [$password]); // prendo l'hash dal db
+             $q3=pg_query($dbconn,"select * from utente where email='$email'"); 
+             $arr = pg_fetch_array($q3, 0, PGSQL_NUM); 
+             
+             $password_hash=$arr[5]; // prendo l'hash dal db
              $passcheck =password_verify($password,$password_hash); // funzione verifica, verifica la password inserita con l'hash del db
-             if ($passcheck == false){
+            /* echo $password;
+             echo $arr[5];              debugging
+             echo $password_hash;
+             print_r ($password_hash);*/
+            if ($passcheck == false){
                  echo "<h1> La password è sbagliata</h1>
                    <a href=login.html> clicca qui per il login<h/a>";
                   
              }else {
                 session_start();
-                $_SESSION['id'] = "select * from utente where id= $1";
-                $_SESSION['nick'] = $row['nick'];
+                $_SESSION['id'] = $arr[0];
                 $nome = $line["nome"]; 
                  // echo "<a href=../index.html> Premi qui</a>";
                 header("Location: ../index.php?login=corretto,benvenuto$nicm"); //sposta automaticamente su index e cambia l'header
