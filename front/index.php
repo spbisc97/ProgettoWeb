@@ -24,7 +24,7 @@
 					<a href="snake/snake.html">divertiti</a>
 					<a href="profilo.php">profilo</a>
 					<form action="logout.php" metho="post">
-					<button type="submit name=login-submit">Logout</button>
+					<button class="logout" type="submit name=login-submit">Logout</button>
 				</nav>
 				<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 			</div>
@@ -142,7 +142,7 @@
 							<textarea name="messaggio" id="message" rows="6" placeholder="Message"></textarea>
 						</div>
 						<ul class="actions">
-							<li><input value="Send Message" class="button alt" type="submit"></li>
+							<li><input value="Send Message" class="button" type="submit" name="submitform"></li>
 						</ul>
 					</form>
 

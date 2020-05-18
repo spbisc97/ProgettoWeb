@@ -1,0 +1,9 @@
+body {
+  background-color: rgb(5, 0, 0);
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev{
+  display:block;
+}
