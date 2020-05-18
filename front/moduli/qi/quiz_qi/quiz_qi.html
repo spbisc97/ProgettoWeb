@@ -1,70 +1,89 @@
 <!-- @format -->
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>QI QUIZ</title>
+		<link rel="shortcut icon" href="../../../favicon.ico" />
+		<link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
+		<script src="../../../assets/js/jquery.min.js"></script>
+		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
+		<style>
+			body {
+				background-image: url("");
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+			}
+		</style>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>QI QUIZ</title>
-	<link rel="shortcut icon" href="../../../favicon.ico" />
-	<link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
-	<link rel="stylesheet" href="../../../assets/css/home-made.css" />
-	<script src="../../../assets/js/jquery.min.js"></script>
-	<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
-	<style>
-		body {
-			background-image: url("");
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-			background-size: cover;
-		}
-	</style>
+		<script type="text/javascript" src="introtest.js"></script>
+	</head>
 
-
-	<script type="text/javascript" src="introtest.js"></script>
-</head>
-
-<body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-		<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 			uso a invece che span per rendere il contenuto interattivo  -->
-		<a class="navbar-brand" href="#">Edu@home</a>
-		<!-- ancora come in questo caso -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+			<a class="navbar-brand" href="#">Edu@home</a>
+			<!-- ancora come in questo caso -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
                 mentre sotto abbiamo una parte collapsable ovvero 
                 che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a id="home" class="nav-link" href="../../../learnMap/learnMap.html">Home <span
-							class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Settaggi Vari
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Action</a>
-						<a class="dropdown-item" href="#">Another action</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Something else here</a>
-					</div>
-				</li>
-				<li class="nav-item">
-					<a id="abdis" class="nav-link disabled" href="http://www.google.it" tabindex="-1"
-						aria-disabled="true">Abilitabile traguardo (test)</a>
-				</li>
-			</ul>
-			<!-- //inutile il search per ora  
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a id="home" class="nav-link" href="../../../learnMap/learnMap.html"
+							>Home <span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbarDropdown"
+							role="button"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
+						>
+							Settaggi Vari
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a
+							id="abdis"
+							class="nav-link disabled"
+							href="http://www.google.it"
+							tabindex="-1"
+							aria-disabled="true"
+							>Abilitabile traguardo (test)</a
+						>
+					</li>
+				</ul>
+				<!-- //inutile il search per ora  
 				<form class="form-inline my-2 my-lg-0">
 					<input
 						class="form-control mr-sm-2"
@@ -77,194 +96,217 @@
 					</button>
                 </form>
                 -->
+			</div>
+		</nav>
+
+		<br /><br /><br />
+
+		<style>
+			/* The container */
+			.container {
+				display: block;
+				position: relative;
+				padding-left: 35px;
+				margin-bottom: 12px;
+				cursor: pointer;
+				font-size: 20px;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
+			/* nasconde il pulsante */
+			.container input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+			}
+
+			/* creazione bottone */
+			.checkmark {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 25px;
+				width: 25px;
+				background-color: #eee;
+				border-radius: 50%;
+			}
+
+			/* mouse sopra la scritta diventa grigia */
+			.container:hover input ~ .checkmark {
+				background-color: #ccc;
+			}
+
+			/* When the radio button is checked, add a blue background */
+			.container input:checked ~ .checkmark {
+				background-color: #2196f3;
+			}
+
+			/* Create the indicator (the dot/circle - hidden when not checked) */
+			.checkmark:after {
+				content: "";
+				position: absolute;
+				display: none;
+			}
+
+			/* mostra l'indicatore cerchiato */
+			.container input:checked ~ .checkmark:after {
+				display: block;
+			}
+
+			/* stile bottone */
+			.container .checkmark:after {
+				top: 9px;
+				left: 9px;
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background: white;
+			}
+		</style>
+		<div class="container-lg">
+			<h1>1.Quale dei cinque animali è meno simile agli altri quattro?</h1>
+			<label class="container"
+				>serpente
+				<input type="radio" checked="checked" name="radio1" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>orso
+				<input type="radio" name="radio1" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>mucca
+				<input type="radio" name="radio1" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>cane
+				<input type="radio" name="radio1" />
+				<span class="checkmark"></span>
+			</label>
+
+			<h1>2.Se riordini le lettere "LRGILO", ottieni il nome di un/una:</h1>
+			<label class="container"
+				>oceano
+				<input type="radio" checked="checked" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>nazione
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>città
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>animale
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+
+			<h1>3.Quale dei cinque è meno simile agli altri quattro?</h1>
+			<label class="container"
+				>Patata
+				<input type="radio" checked="checked" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>Mais
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>Mela
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>Carota
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+
+			<h1>4.Fratello sta a sorella come nipotino sta a:</h1>
+			<label class="container"
+				>Figlia
+				<input type="radio" checked="checked" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>Madre
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>Zia
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>Nipotina
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+
+			<h1>
+				5.Quale delle cinque scelte genera la miglior attinenza? LIVE sta a EVIL come 5232
+				sta a:
+			</h1>
+			<label class="container"
+				>5232
+				<input type="radio" checked="checked" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>2325
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>2532
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>5223
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+
+			<h1>6.Albero sta a terra come camino sta a:</h1>
+			<label class="container"
+				>Fumo
+				<input type="radio" checked="checked" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>Mattone
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>Cielo
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"
+				>Casa
+				<input type="radio" name="radio" />
+				<span class="checkmark"></span>
+			</label>
 		</div>
-	</nav>
-
-	<br /><br /><br />
-
-
-	<style>
-		/* The container */
-		.container {
-			display: block;
-			position: relative;
-			padding-left: 35px;
-			margin-bottom: 12px;
-			cursor: pointer;
-			font-size: 20px;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			user-select: none;
-		}
-
-		/* nasconde il pulsante */
-		.container input {
-			position: absolute;
-			opacity: 0;
-			cursor: pointer;
-		}
-
-		/* creazione bottone */
-		.checkmark {
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 25px;
-			width: 25px;
-			background-color: #eee;
-			border-radius: 50%;
-		}
-
-		/* mouse sopra la scritta diventa grigia */
-		.container:hover input~.checkmark {
-			background-color: #ccc;
-		}
-
-		/* When the radio button is checked, add a blue background */
-		.container input:checked~.checkmark {
-			background-color: #2196F3;
-		}
-
-		/* Create the indicator (the dot/circle - hidden when not checked) */
-		.checkmark:after {
-			content: "";
-			position: absolute;
-			display: none;
-		}
-
-		/* mostra l'indicatore cerchiato */
-		.container input:checked~.checkmark:after {
-			display: block;
-		}
-
-		/* stile bottone */
-		.container .checkmark:after {
-			top: 9px;
-			left: 9px;
-			width: 8px;
-			height: 8px;
-			border-radius: 50%;
-			background: white;
-		}
-	</style>
-	<div class=container-lg>
-		<h1>1.Quale dei cinque animali è meno simile agli altri quattro?</h1>
-		<label class="container">serpente
-			<input type="radio" checked="checked" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">orso
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">mucca
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">cane
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-
-
-		<h1>2.Se riordini le lettere "LRGILO", ottieni il nome di un/una:</h1>
-		<label class="container">oceano
-			<input type="radio" checked="checked" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">nazione
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">città
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">animale
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-
-		<h1>3.Quale dei cinque è meno simile agli altri quattro?</h1>
-		<label class="container">Patata
-			<input type="radio" checked="checked" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">Mais
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">Mela
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">Carota
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-
-
-		<h1>4.Fratello sta a sorella come nipotino sta a:</h1>
-		<label class="container">Figlia
-			<input type="radio" checked="checked" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">Madre
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">Zia
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">Nipotina
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-
-
-
-		<h1>5.Quale delle cinque scelte genera la miglior attinenza?
-			LIVE sta a EVIL come 5232 sta a:</h1>
-		<label class="container">5232
-			<input type="radio" checked="checked" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">2325
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">2532
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">5223
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-
-
-		<h1>6.Albero sta a terra come camino sta a:</h1>
-		<label class="container">Fumo
-			<input type="radio" checked="checked" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">Mattone
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">Cielo
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-		<label class="container">Casa
-			<input type="radio" name="radio">
-			<span class="checkmark"></span>
-		</label>
-	</div>
-
-
-</body>
-
+		<script>
+			arrayrisposte = [];
+			function invia() {
+				$();
+			}
+		</script>
+	</body>
 </html>
