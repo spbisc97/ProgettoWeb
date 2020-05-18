@@ -1,0 +1,53 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AJAX: esercizio 4</title>
+	</head>
+	<body>
+		<div class="container-md" id="ajaxSpace"></div>
+
+		Resto del documento
+
+		<script>
+			var documenti = document.querySelectorAll("input[name='domanda1']");
+			for (var i = 0; i < documenti.length; i++) {
+				documenti[i].onclick = caricaDocumento;
+			}
+			function caricaDocumento(e) {
+				var httpRequest = new XMLHttpRequest();
+				httpRequest.prevTarget = e.target;
+				httpRequest.onreadystatechange = gestisciResponse;
+				httpRequest.open("GET", "crocetta2.html", true);
+				httpRequest.send();
+			}
+			function gestisciResponse(e) {
+				if (e.target.readyState == 4 && e.target.status == 200) {
+					document.getElementById("ajaxSpace").innerHTML = e.target.responseText;
+				}
+				afterajax();
+			}
+		</script>
+		<script>
+			function afterajax() {
+				var documenti = document.querySelectorAll("input[name='domanda2']");
+				for (var i = 0; i < documenti.length; i++) {
+					documenti[i].onclick = caricaDocumentoAfteA;
+				}
+			}
+			function caricaDocumentoAfteA(e) {
+				var httpRequest = new XMLHttpRequest();
+				httpRequest.prevTarget = e.target;
+				httpRequest.onreadystatechange = gestisciResponseAA;
+				httpRequest.open("GET", "crocetta3.html", true);
+				httpRequest.send();
+			}
+			function gestisciResponseAA(e) {
+				if (e.target.readyState == 4 && e.target.status == 200) {
+					document.getElementById("ajaxSpace").innerHTML = e.target.responseText;
+				}
+			}
+		</script>
+	</body>
+</html>
