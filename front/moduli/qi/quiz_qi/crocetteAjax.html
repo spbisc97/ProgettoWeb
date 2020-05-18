@@ -4,22 +4,42 @@
 <html>
 	<head>
 		<title>AJAX: esercizio 4</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="../../../bootstrap-4.4.1-dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
+		<script src="../../../jQuery/jquery.min.js"></script>
+		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
+		<script src="../../../assets/js/vue.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 	</head>
 	<body>
-		<div class="container-md" id="ajaxSpace"></div>
-
-		Resto del documento
-
+		<div class="container-md" id="ajaxSpace">
+			<div>
+				<button class="btn btn-primary" id="next" name="domanda0">Iniziamo</button>
+			</div>
+		</div>
 		<script>
-			var documenti = document.querySelectorAll("input[name='domanda1']");
-			for (var i = 0; i < documenti.length; i++) {
-				documenti[i].onclick = caricaDocumento;
+			$(document).ready(function () {
+				$("#next").click(function () {
+					alert("ciao");
+					caricaDocumento(this);
+					test(this);
+				});
+			});
+
+			function afterajax() {
+				$("qmn_quiz_radio").click(function () {
+					caricaDocumento(this);
+				});
 			}
+
 			function caricaDocumento(e) {
 				var httpRequest = new XMLHttpRequest();
-				httpRequest.prevTarget = e.target;
 				httpRequest.onreadystatechange = gestisciResponse;
-				httpRequest.open("GET", "crocetta2.html", true);
+				httpRequest.open("GET", e.target.getAttribute("name") + ".html", true);
 				httpRequest.send();
 			}
 			function gestisciResponse(e) {
@@ -29,25 +49,6 @@
 				afterajax();
 			}
 		</script>
-		<script>
-			function afterajax() {
-				var documenti = document.querySelectorAll("input[name='domanda2']");
-				for (var i = 0; i < documenti.length; i++) {
-					documenti[i].onclick = caricaDocumentoAfteA;
-				}
-			}
-			function caricaDocumentoAfteA(e) {
-				var httpRequest = new XMLHttpRequest();
-				httpRequest.prevTarget = e.target;
-				httpRequest.onreadystatechange = gestisciResponseAA;
-				httpRequest.open("GET", "crocetta3.html", true);
-				httpRequest.send();
-			}
-			function gestisciResponseAA(e) {
-				if (e.target.readyState == 4 && e.target.status == 200) {
-					document.getElementById("ajaxSpace").innerHTML = e.target.responseText;
-				}
-			}
-		</script>
+		<script></script>
 	</body>
 </html>
