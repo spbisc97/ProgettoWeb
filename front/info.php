@@ -1,28 +1,34 @@
-<!DOCTYPE HTML> 
 
-<!--
-	Projection by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+
+<?php session_start();?>
+
+
 <html>
 	<head>
-		<title>Info </title>
+		<title>edu@home</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
-	<body class="subpage">
+	<body>
+		<!-- Header -->
+		<?php 
+		if (isset($_SESSION['id'])){  // and $_SESSION['loggedin'] = true
+			header("Location: ../index.php?login=corretto,benvenuto$nick"); //sposta automaticamente su index e cambia l'header
+		}
+		
+		else{
+			echo'
 
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
 					<a href="index.html" class="logo"><strong>edu@home</strong> by TEMPLATED</a>
 					<nav id="nav">
-						<a href="index.html">Home</a>
+						<a href="index.php">Home</a>
 						<a href="info.html">Info</a>
-						<a href="contatti.html">Contatti</a>
 						<a href="paginaLogin/login.html">Login</a>
+						<a href="paginaRegistrazione/registrazione.html">Registrazione</a>
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 				</div>
@@ -85,6 +91,6 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+';
+		}
+	?>

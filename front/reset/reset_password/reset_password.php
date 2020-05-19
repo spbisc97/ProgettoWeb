@@ -10,6 +10,7 @@ $id = $_SESSION['id'];/* userid of the user al momento */
 }else {*/
 $oldpass=$_POST['oldpass'];
 $newpass= $_POST['newpass'];
+$Password_crypt = password_hash($newpass,PASSWORD_BCRYPT);
 $q3=pg_query($dbconn,"select * from utente where id=$id"); 
 $arr = pg_fetch_array($q3, 0, PGSQL_NUM); 
 
@@ -18,7 +19,7 @@ $passcheck =password_verify($oldpass,$password_hash);  // funzione verifica, ver
      if ($passcheck == false){
         echo "<h1> La password è sbagliata</h1>";
     }else {
-        $q2="update utente SET password = '$newpass' where id=$id";
+        $q2="update utente SET password = '$Password_crypt' where id=$id";
         $result=pg_query($dbconn,$q2);
         if ($result){ echo "Password cambiata con successo";} else {echo "qualcosa è andato storto, riprova";}
 /*result = mysqli_query($con,"SELECT *from student WHERE name='" . $id . "'");

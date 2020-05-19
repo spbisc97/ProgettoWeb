@@ -1,11 +1,21 @@
+<?php session_start();?>
 
-<?php
-session_start();
-$id = $_SESSION['id'];/* userid of the user */
-/*$idd=$_SESSION['idd'];
-echo $_SESSION["id"];
-echo $id;*/
 
+<html>
+	<head>
+		<title>edu@home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+		<!-- Header -->
+		<?php 
+		if (!(isset($_SESSION['id']))){  // and $_SESSION['loggedin'] = true
+			header("Location: ../index.php?login=corretto,benvenuto$nick"); //sposta automaticamente su index e cambia l'header
+		}
+		
+		else{
 echo "per cambiare password clicca qua";
 echo "<a href=reset/reset_password/reset_password1.php> Premi qui </a>"; 
 echo "per cambiare nick clicca qua";
@@ -14,5 +24,5 @@ echo "per cambiare email clicca qua";
 echo "<a href=reset/reset_email/reset_emailform.php> > Premi qui </a>"; 
 
 
-
+        }
 ?>

@@ -17,9 +17,9 @@
 		echo '
 		<header id="header">
 		 <div class="inner">
-				<a href="index.html" class="logo"><strong>Edu@home</strong></a>
+				<a href="index.php" class="logo"><strong>Edu@home</strong></a>
 				<nav id="nav">
-					<a href="index.html">Home</a>
+					<a href="index.php">Home</a>
 					<a href="learnMap/learnMap.html">Allenati</a>
 					<a href="snake/snake.html">divertiti</a>
 					<a href="profilo.php">profilo</a>

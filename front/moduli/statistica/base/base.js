@@ -41,6 +41,9 @@ let mediaChart = new Chart(myChart, {
 		],
 	},
 	options: {
+		layout: {
+			padding: { left: 5, bottom: 5 },
+		},
 		title: {
 			display: true,
 			text: "La Media",
@@ -52,15 +55,19 @@ let mediaChart = new Chart(myChart, {
 			labels: {},
 		},
 		scales: {
-			yAxes: {
-				gridLines: {
-					zeroLineColor: "white",
-					zeroLineWidth: 5,
+			yAxes: [
+				{
+					gridLines: {
+						zeroLineColor: "white",
+						zeroLineWidth: 5,
+					},
+					ticks: {
+						display: true,
+						beginAtZero: true,
+						stepsize: 1,
+					},
 				},
-				ticks: {
-					min: 0,
-				},
-			},
+			],
 		},
 	},
 });

@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Elementi di statistica</title>
 		<link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
-		<link rel="stylesheet" href="../../../bootstrap-4.4.1-dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
 		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
 		<script src="../../../jQuery/jquery.min.js"></script>
 		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
@@ -22,6 +22,28 @@
 			}
 			.bg-blur {
 				background-color: rgba(0, 0, 0, 0.4);
+			}
+			.grafico {
+				border-radius: 1em;
+				padding: 1em;
+				column-gap: 10px;
+				row-gap: 10px;
+			}
+			.grafico:hover {
+				border-style: dashed;
+				border-color: chartreuse;
+			}
+			.primo {
+				background-color: red;
+			}
+			.secondo {
+				background-color: yellow;
+			}
+			.terzo {
+				background-color: aqua;
+			}
+			.quarto {
+				background-color: green;
 			}
 		</style>
 	</head>
@@ -86,24 +108,27 @@
 						>
 					</li>
 				</ul>
-				<!-- //inutile il search per ora  
-				<form class="form-inline my-2 my-lg-0">
-					<input
-						class="form-control mr-sm-2"
-						type="search"
-						placeholder="Matematica"
-						aria-label="Cerca"
-					/>
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-						Cerca
-					</button>
-                </form>
-                -->
 			</div>
 		</nav>
 		<br /><br /><br />
 
-		<div class="bg-blur container xl text-monospace text-white"></div>
+		<div class="bg-blur container-lg text-monospace">
+			<div>
+				In questo capitolo cercheremo di leggere e interpretare diversi grafici, i nomi
+				specifici di questi, come vanno letti e le informazioni che contengono, evdenzia con
+				il mouse il riquadro che ti interessa
+			</div>
+			<div class="row">
+				<div id="primo" class="col primo grafico">ciao</div>
+				<div id="secondo" class="col secondo grafico">ciao</div>
+			</div>
+			<div class="row">
+				<div id="terzo" class="col terzo grafico">ciao</div>
+				<div id="quarto" class="col quarto grafico">ciao</div>
+			</div>
+			<div></div>
+		</div>
+
 		<script src="base.js"></script>
 	</body>
 </html>
