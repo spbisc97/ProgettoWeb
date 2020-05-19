@@ -99,7 +99,7 @@
 				</div>
 			</div>
 			<div>
-				<p id="valutazione">prova</p>
+				<p id="valutazione"></p>
 			</div>
 		</div>
 		<script>
@@ -137,7 +137,7 @@
 			}
 
 			function invia() {
-				$.post("quiz.php", { arrayrisposte }, function (data, status) {
+				$.post("crocette.php", { arrayrisposte }, function (data, status) {
 					$("#valutazione").text("Hai risposto correttamente a " + data + " su x");
 				});
 			}

@@ -102,14 +102,14 @@
 		<br /><br /><br />
 
 		<style>
-			/* The container */
+			/* scritte */
 			.container {
 				display: block;
 				position: relative;
 				padding-left: 35px;
 				margin-bottom: 12px;
 				cursor: pointer;
-				font-size: 20px;
+				font-size: 17px;
 				-webkit-user-select: none;
 				-moz-user-select: none;
 				-ms-user-select: none;
@@ -166,52 +166,34 @@
 				background: white;
 			}
 		</style>
+		<br></br>
 		<div class="container-lg">
-			<h1>1.Quale dei cinque animali è meno simile agli altri quattro?</h1>
+			<h4>1.Qual è il numero intruso fra quelli della seguente serie? 
+				9 - 7 - 8 - 6 - 7 - 5 - 6 - 3
+			</h4>
 			<label class="container"
-				>serpente
+				>4
 				<input type="radio" checked="checked" name="radio1" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
-				>orso
+				>6
 				<input type="radio" name="radio1" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
-				>mucca
+				>3
 				<input type="radio" name="radio1" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
-				>cane
+				>7
 				<input type="radio" name="radio1" />
 				<span class="checkmark"></span>
 			</label>
 
-			<h1>2.Se riordini le lettere "LRGILO", ottieni il nome di un/una:</h1>
-			<label class="container"
-				>oceano
-				<input type="radio" checked="checked" name="radio" />
-				<span class="checkmark"></span>
-			</label>
-			<label class="container"
-				>nazione
-				<input type="radio" name="radio" />
-				<span class="checkmark"></span>
-			</label>
-			<label class="container"
-				>città
-				<input type="radio" name="radio" />
-				<span class="checkmark"></span>
-			</label>
-			<label class="container"
-				>animale
-				<input type="radio" name="radio" />
-				<span class="checkmark"></span>
-			</label>
-
-			<h1>3.Quale dei cinque è meno simile agli altri quattro?</h1>
+			<br></br>
+			<h4>2.Quale dei cinque è meno simile agli altri quattro?</h4>
 			<label class="container"
 				>Patata
 				<input type="radio" checked="checked" name="radio" />
@@ -232,8 +214,8 @@
 				<input type="radio" name="radio" />
 				<span class="checkmark"></span>
 			</label>
-
-			<h1>4.Fratello sta a sorella come nipotino sta a:</h1>
+			<br></br>
+			<h4>3.Fratello sta a sorella come nipotino sta a:</h4>
 			<label class="container"
 				>Figlia
 				<input type="radio" checked="checked" name="radio" />
@@ -254,11 +236,11 @@
 				<input type="radio" name="radio" />
 				<span class="checkmark"></span>
 			</label>
-
-			<h1>
-				5.Quale delle cinque scelte genera la miglior attinenza? LIVE sta a EVIL come 5232
+			<br></br>
+			<h4>
+				4.Quale delle cinque scelte genera la miglior attinenza? LIVE sta a EVIL come 5232
 				sta a:
-			</h1>
+			</h4>
 			<label class="container"
 				>5232
 				<input type="radio" checked="checked" name="radio" />
@@ -279,8 +261,8 @@
 				<input type="radio" name="radio" />
 				<span class="checkmark"></span>
 			</label>
-
-			<h1>6.Albero sta a terra come camino sta a:</h1>
+			<br></br>
+			<h4>5.Albero sta a terra come camino sta a:</h4>
 			<label class="container"
 				>Fumo
 				<input type="radio" checked="checked" name="radio" />
@@ -302,11 +284,16 @@
 				<span class="checkmark"></span>
 			</label>
 		</div>
+
+
 		<script>
 			arrayrisposte = [];
 			function invia() {
-				$();
+				$.post("quiz.php", { arrayrisposte }, function (data, status) {
+					$("#valutazione").text("Hai risposto correttamente a " + data + " su x");
+				});
 			}
 		</script>
+
 	</body>
 </html>
