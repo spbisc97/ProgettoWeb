@@ -4,13 +4,13 @@
  */
 $punteggio = 0;
 
-if ($_POST[arrayrisposte][0] == "domanda_1") {
+if ($_POST["arrayrisposte"][0] == 3 ) {
 	$punteggio += 1;
 }
-if ($_POST[arrayrisposte][1] == "domanda2_5") {
+if ($_POST["arrayrisposte"][1] == Mais) {
 	$punteggio += 1;
 }
-if ($_POST[arrayrisposte][2] == "domanda3_4") {
+if ($_POST["arrayrisposte"][2] == Nipotina) {
 	$punteggio += 1;
 }
 
