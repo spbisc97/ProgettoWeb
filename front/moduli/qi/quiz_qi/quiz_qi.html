@@ -166,6 +166,7 @@
 				background: white;
 			}
 		</style>
+
 		<br></br>
 		<div class="container-lg">
 			<h4>1.Qual è il numero intruso fra quelli della seguente serie? 
@@ -201,19 +202,20 @@
 			</label>
 			<label class="container"
 				>Mais
-				<input type="radio" name="radio" />
+				<input type="radio" name="radio2" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Mela
-				<input type="radio" name="radio" />
+				<input type="radio" name="radio2" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Carota
-				<input type="radio" name="radio" />
+				<input type="radio" name="radio2" />
 				<span class="checkmark"></span>
 			</label>
+
 			<br></br>
 			<h4>3.Fratello sta a sorella come nipotino sta a:</h4>
 			<label class="container"
@@ -223,17 +225,17 @@
 			</label>
 			<label class="container"
 				>Madre
-				<input type="radio" name="radio" />
+				<input type="radio" name="radio3" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Zia
-				<input type="radio" name="radio" />
+				<input type="radio" name="radio3" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Nipotina
-				<input type="radio" name="radio" />
+				<input type="radio" name="radio3" />
 				<span class="checkmark"></span>
 			</label>
 			<br></br>
@@ -248,21 +250,22 @@
 			</label>
 			<label class="container"
 				>2325
-				<input type="radio" name="radio" />
+				<input type="radio" name="radio4" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>2532
-				<input type="radio" name="radio" />
+				<input type="radio" name="radio4" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>5223
-				<input type="radio" name="radio" />
+				<input type="radio" name="radio4" />
 				<span class="checkmark"></span>
 			</label>
+			
 			<br></br>
-			<h4>5.Albero sta a terra come camino sta a:</h4>
+			<h4>.Albero sta a terra come camino sta a:</h4>
 			<label class="container"
 				>Fumo
 				<input type="radio" checked="checked" name="radio" />
@@ -270,30 +273,25 @@
 			</label>
 			<label class="container"
 				>Mattone
-				<input type="radio" name="radio" />
+				<input type="radio" name="radio4" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Cielo
-				<input type="radio" name="radio" />
+				<input type="radio" name="radio4" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Casa
-				<input type="radio" name="radio" />
+				<input type="radio" name="radio4" />
 				<span class="checkmark"></span>
 			</label>
 		</div>
-
-
 		<script>
 			arrayrisposte = [];
 			function invia() {
-				$.post("quiz.php", { arrayrisposte }, function (data, status) {
-					$("#valutazione").text("Hai risposto correttamente a " + data + " su x");
-				});
+				$();
 			}
 		</script>
-
 	</body>
 </html>
