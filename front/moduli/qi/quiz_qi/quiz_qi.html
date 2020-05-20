@@ -27,7 +27,7 @@
 			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 			uso a invece che span per rendere il contenuto interattivo  -->
-			<a class="navbar-brand" href="#">Edu@home</a>
+			<a class="navbar-brand" href="../../../index.php">Edu@home</a>
 			<!-- ancora come in questo caso -->
 			<button
 				class="navbar-toggler"
@@ -47,55 +47,29 @@
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
 						<a id="home" class="nav-link" href="../../../learnMap/learnMap.php"
-							>Home <span class="sr-only">(current)</span></a
-						>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							href="#"
-							id="navbarDropdown"
-							role="button"
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
-						>
-							Settaggi Vari
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a
-							id="abdis"
-							class="nav-link disabled"
-							href="http://www.google.it"
-							tabindex="-1"
-							aria-disabled="true"
-							>Abilitabile traguardo (test)</a
+							>LearnMap <span class="sr-only">(current)</span></a
 						>
 					</li>
 				</ul>
-				<!-- //inutile il search per ora  
-				<form class="form-inline my-2 my-lg-0">
-					<input
-						class="form-control mr-sm-2"
-						type="search"
-						placeholder="Matematica"
-						aria-label="Cerca"
-					/>
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-						Cerca
-					</button>
-                </form>
-                -->
+				<ul class="navbar-nav ml-auto dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						style="margin-right: 8em;"
+						href="#"
+						id="navbarDropdown"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						Profilo
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Impostazioni</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Globa</a>
+					</div>
+				</ul>
 			</div>
 		</nav>
 
@@ -168,28 +142,29 @@
 		</style>
 
 		<br></br>
-		<div class="container-lg">
+		<div id="ilquiz" class="container-lg">
+			<font face="Times New Roman" size="5" >
 			<h4>1.Qual è il numero intruso fra quelli della seguente serie? 
 				9 - 7 - 8 - 6 - 7 - 5 - 6 - 3
 			</h4>
 			<label class="container"
 				>4
-				<input type="radio" checked="checked" name="radio1" />
+				<input type="radio"  name="radio1" id="d1.1" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>6
-				<input type="radio" name="radio1" />
+				<input type="radio" name="radio1" id="d1.2" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>3
-				<input type="radio" name="radio1" />
+				<input type="radio" name="radio1" id="d1.3" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>7
-				<input type="radio" name="radio1" />
+				<input type="radio" name="radio1" id="d1.4"/>
 				<span class="checkmark"></span>
 			</label>
 
@@ -197,22 +172,22 @@
 			<h4>2.Quale dei cinque è meno simile agli altri quattro?</h4>
 			<label class="container"
 				>Patata
-				<input type="radio" checked="checked" name="radio" />
+				<input type="radio"  name="radio2" id="d2.1"/>
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Mais
-				<input type="radio" name="radio2" />
+				<input type="radio" name="radio2" id="d2.2" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Mela
-				<input type="radio" name="radio2" />
+				<input type="radio" name="radio2" id="d2.3" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Carota
-				<input type="radio" name="radio2" />
+				<input type="radio" name="radio2" id="d2.4" />
 				<span class="checkmark"></span>
 			</label>
 
@@ -220,22 +195,22 @@
 			<h4>3.Fratello sta a sorella come nipotino sta a:</h4>
 			<label class="container"
 				>Figlia
-				<input type="radio" checked="checked" name="radio" />
+				<input type="radio"  name="radio3" id="d3.1" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Madre
-				<input type="radio" name="radio3" />
+				<input type="radio" name="radio3" id="d3.2" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Zia
-				<input type="radio" name="radio3" />
+				<input type="radio" name="radio3" id="d3.3" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Nipotina
-				<input type="radio" name="radio3" />
+				<input type="radio" name="radio3" id="d3.4" />
 				<span class="checkmark"></span>
 			</label>
 			<br></br>
@@ -245,53 +220,125 @@
 			</h4>
 			<label class="container"
 				>5232
-				<input type="radio" checked="checked" name="radio" />
+				<input type="radio"  name="radio4" id="d4.1" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>2325
-				<input type="radio" name="radio4" />
+				<input type="radio" name="radio4" id="d4.2" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>2532
-				<input type="radio" name="radio4" />
+				<input type="radio" name="radio4" id="d4.3" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>5223
-				<input type="radio" name="radio4" />
+				<input type="radio" name="radio4" id="d4.4" />
 				<span class="checkmark"></span>
 			</label>
 			
 			<br></br>
-			<h4>.Albero sta a terra come camino sta a:</h4>
+			<h4>5.Albero sta a terra come camino sta a:</h4>
 			<label class="container"
 				>Fumo
-				<input type="radio" checked="checked" name="radio" />
+				<input type="radio"  name="radio5" id="d5.1" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Mattone
-				<input type="radio" name="radio4" />
+				<input type="radio" name="radio5" id="d5.2" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Cielo
-				<input type="radio" name="radio4" />
+				<input type="radio" name="radio5" id="d5.3" />
 				<span class="checkmark"></span>
 			</label>
 			<label class="container"
 				>Casa
-				<input type="radio" name="radio4" />
-				<span class="checkmark"></span>
+				<input type="radio" name="radio5" id="d5.4" />
+				<span class="checkmark"></span> 
 			</label>
 		</div>
-		<script>
-			arrayrisposte = [];
-			function invia() {
-				$();
-			}
-		</script>
+			
+		<br></br>
+		<div class="container-lg">
+		<a href="#" class="btn-toolset">
+			<strong>Invia risposte</strong>
+			</a>
+
+		   <style>
+		   .btn-toolset {
+			display: inline-block;
+			text-align: center;
+			white-space: nowrap;
+			color: #FFFFFF;
+			text-decoration: none;
+			line-height: 1.2;
+			font-weight: normal;
+			font-size: 18px;
+			background-color: #007BFF;
+			border-radius: 4px;
+			padding: 5px 14px;
+			border: 1px solid #006FE6;
+			cursor: pointer;
+		   }
+		   .btn-toolset:hover {
+			background-color: #0063CC;
+			border-color: #0056B3;
+		   }
+		   .btn-toolset > strong {
+			font-size: 20px;
+		   }
+			</style>
+			</div>
+		
+		
+			<script>
+				arrayrisposte1 = [];
+				$(document).ready(function () {
+					$("#next").click(function () {
+						caricaDocumento1(this);
+					});
+				});
+	
+				function afterajax1() {
+					$("checkmark").click(function () {
+						caricaDocumento1(this);
+					});
+				}
+	
+				function caricaDocumento1(e) {
+					if (e.id != "next") {
+						arrayrisposte.push(e.id);
+					}
+					if (e.getAttribute("name") == "radio5") {
+						invia();
+					return;
+					}
+					
+					var httpRequest = new XMLHttpRequest();
+					httpRequest.onreadystatechange = gestisciResponse;
+					httpRequest.open("GET", e.getAttribute("name") + ".html", true);
+					httpRequest.send();
+				}
+				function gestisciResponse(e) {
+					if (e.target.readyState == 4 && e.target.status == 200) {
+						document.getElementById("ilquiz").innerHTML = e.target.responseText;
+					}
+					afterajax1();
+				}
+	
+				function invia() {
+					$.post("quiz.php", { arrayrisposte1 }, function (data, status) {
+						$("#valutazione").text("Hai risposto correttamente a " + data + " su x");
+					});
+				}
+			</script>
+
+	</font>
+	<br></br><br></br>
 	</body>
 </html>

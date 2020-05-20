@@ -91,6 +91,7 @@
                 -->
 			</div>
 		</nav>
+		
 		<br /><br /><br />
 		<div class="container-md text-monospace">
 			<div id="ajaxSpace">
@@ -138,7 +139,7 @@
 
 			function invia() {
 				$.post("crocette.php", { arrayrisposte }, function (data, status) {
-					$("#valutazione").text("Hai risposto correttamente a " + data + " su x");
+					$("#valutazione").text("Hai risposto correttamente a " + data + " su 3 domande");
 				});
 			}
 		</script>

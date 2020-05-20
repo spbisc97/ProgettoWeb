@@ -28,7 +28,7 @@
 			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 			uso a invece che span per rendere il contenuto interattivo  -->
-			<a class="navbar-brand" href="#">Edu@home</a>
+			<a class="navbar-brand" href="../../../index.php">Edu@home</a>
 			<!-- ancora come in questo caso -->
 			<button
 				class="navbar-toggler"
@@ -48,99 +48,87 @@
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
 						<a id="home" class="nav-link" href="../../../learnMap/learnMap.php"
-							>Home <span class="sr-only">(current)</span></a
-						>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							href="#"
-							id="navbarDropdown"
-							role="button"
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
-						>
-							Settaggi Vari
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a
-							id="abdis"
-							class="nav-link disabled"
-							href="http://www.google.it"
-							tabindex="-1"
-							aria-disabled="true"
-							>Abilitabile traguardo (test)</a
+							>LearnMap <span class="sr-only">(current)</span></a
 						>
 					</li>
 				</ul>
-				<!-- //inutile il search per ora  
-				<form class="form-inline my-2 my-lg-0">
-					<input
-						class="form-control mr-sm-2"
-						type="search"
-						placeholder="Matematica"
-						aria-label="Cerca"
-					/>
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-						Cerca
-					</button>
-                </form>
-                -->
-                
+				<ul class="navbar-nav ml-auto dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						style="margin-right: 8em;"
+						href="#"
+						id="navbarDropdown"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						Profilo
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Impostazioni</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Globa</a>
+					</div>
+				</ul>
 			</div>
 		</nav>
         <br /><br /><br /><br /><br /> 
-       
+		
+		<font face="Times New Roman" size="4" >
         <div class="bg-blur container xl text-monospace"> <br /><br />
         <p style="text-align: center;"><em><strong>Cos'&egrave; il quoziente intellettivo?</strong></em></p>
         <p style="text-align: center;">Il&nbsp;<strong>quoziente intellettivo</strong>&nbsp;(o&nbsp;<strong><em>quoziente d&rsquo;intelligenza</em></strong>), spesso indicato con le sigle&nbsp;<strong>QI</strong>&nbsp;o&nbsp;<strong>IQ</strong>&nbsp;(acronimo dei termini inglesi&nbsp;<em>Intelligence Quotient</em>)
         <br> &egrave; un indicatore che viene sfruttato per definire il livello di intelligenza di un soggetto;</br>
-		<br> sostanzialmente si tratta di un punteggio che viene ottenuto attraverso dei test d&rsquo;intelligenza.</p> </br>
+		<br> Sostanzialmente si tratta di un punteggio che viene ottenuto attraverso dei test d&rsquo;intelligenza.</p> </br>
 		<p style="text-align: center;"><em><strong>Provalo subito!</strong></em></p>
         
-		
-        <p style="text-align: center;">&nbsp;
-        <a href="../quiz_qi/quiz_qi.html" class="btn-toolset">
-        <strong>VAI AL QUIZ</strong>
-        </a>
- 
-            <style>
-            .btn-toolset {
-            display: inline-block;
-            text-align: center;
-            white-space: nowrap;
-            color: #FFFFFF;
-            text-decoration: none;
-            line-height: 1.2;
-            font-weight: normal;
-            font-family: sans-serif;
-            font-size: 18px;
-            background-color: rgb(96, 10, 255);
-            border-radius: 15px;
-            padding: 10px 20px;
-            border: 4px solid #E6E6E4;
-            cursor: pointer;
-            }
-                .btn-toolset:hover {
-                 background-color: rgb(52, 10, 204);
-                 border-color: #9CB3A5;
-                }
-                    .btn-toolset > strong {
-                    font-size: 15px;
-                    }
-            </style> </p> <br /><br />
-			</div>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<title>Untitled Document</title>
+			<style type="text/css">
+			.wrapper {margin:2em; perspective: 100px}
+			.box {width:150px;height:60px;background:rgb(91, 191, 238);margin:0 auto;  border-radius: 26px; transition: 1.1s ease-in-out;}
+			.box {transform: rotateY(20deg);padding:15px;}
+			.box:hover { transform: scale(1.2); background:rgb(94, 136, 226);}
+			</style>
+			
+			
+			<body>
+			<div class="wrapper">
+			</body>
+			<div class="box">
+        	<p style="text-align: center;">&nbsp;
+        	<a href="../quiz_qi/quiz_qi.html" class="btn-toolset">
+        	<strong>VAI AL QUIZ</strong></div>
+			</a>
+			</div>	
+			
+			<style>
+				.btn-toolset {
+				
+				text-align: center;
+				white-space: nowrap;
+				text-decoration: none;
+				line-height: 1;
+				font-weight: normal;
+				font-family: "Times New Roman" ;
+				font-size: 15px;
+				cursor: pointer;
+				color: #0A0A02;
+				}
+					.btn-toolset:hover {
+					color: #0A0A02;
+					border-color: rgb(102, 155, 128);
+					}
+						.btn-toolset > strong {
+						font-size: 15px;
+						}
+				</style> </p> <br /><br />
 
+			</head>
+		</font>
+	
+		</div>
 	</body>
 </html>

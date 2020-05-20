@@ -28,7 +28,7 @@
 			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 			uso a invece che span per rendere il contenuto interattivo  -->
-			<a class="navbar-brand" href="#">Edu@home</a>
+			<a class="navbar-brand" href="../../../index.php">Edu@home</a>
 			<!-- ancora come in questo caso -->
 			<button
 				class="navbar-toggler"
@@ -48,61 +48,35 @@
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
 						<a id="home" class="nav-link" href="../../../learnMap/learnMap.php"
-							>Home <span class="sr-only">(current)</span></a
-						>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							href="#"
-							id="navbarDropdown"
-							role="button"
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
-						>
-							Settaggi Vari
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a
-							id="abdis"
-							class="nav-link disabled"
-							href="http://www.google.it"
-							tabindex="-1"
-							aria-disabled="true"
-							>Abilitabile traguardo (test)</a
+							>LearnMap <span class="sr-only">(current)</span></a
 						>
 					</li>
 				</ul>
-				<!-- //inutile il search per ora  
-				<form class="form-inline my-2 my-lg-0">
-					<input
-						class="form-control mr-sm-2"
-						type="search"
-						placeholder="Matematica"
-						aria-label="Cerca"
-					/>
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-						Cerca
-					</button>
-                </form>
-                -->
-                
+				<ul class="navbar-nav ml-auto dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						style="margin-right: 8em;"
+						href="#"
+						id="navbarDropdown"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						Profilo
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Impostazioni</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Globa</a>
+					</div>
+				</ul>
 			</div>
-        </nav>
+		</nav>
         
         <br><br></br></br>
         <div class="bg-blur container xl text-monospace text-white">
+			<font face="Times New Roman" size="4" >
 			<h2>Cos'è la logica</h2>
             <div>Un gioco di logica è un rompicapo, ovvero un problema o un
             
@@ -113,7 +87,7 @@
             enigma
              </a>
             <div class="bg-blur" style="display: none;" id="snumeri">
-            Formulazione di un concetto o un numero da indovinare &nbsp &nbsp
+			&nbsp Formulazione di un concetto o un numero da indovinare &nbsp &nbsp
             <img src="mc.jpg"  width="350" height="200" >   </div>
             
             a scopo di intrattenimento, con un fondamento matematico o logico. 
@@ -123,15 +97,18 @@
             e serve a distrarre chi deve risolvere il gioco, che in realtà richiede un tipo di intuizione completamente diverso
              (per esempio, la soluzione potrebbe essere in realtà basata su un gioco di parole).
 		    
-        </div>
+			
                
     </div>
-    <br /><br /><br /><br />
+    <br/><br/>
 
 				<a href="../quiz_qi/crocetteAjax.html">
 					<button class="btn btn-primary">Risolvi gli enigmi</button>
-                </a>
-                
+				</a>
+
+			</font> 
+				<br /><br />
+		</div>        
     <script src="Untitled-1.js"></script>
     </body>
 </html>
