@@ -11,23 +11,27 @@
 		<link rel="stylesheet" href="../assets/css/bootstrap.css" />
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/bootstrap.js" lang="--js"></script>
+		<link rel="stylesheet" href="../assets/css/home-made.css" />
 		<!--abbiamo bisogno di jquery per far funzionare ad esempio la navbar-->
 		<!-- notiamo che per far funzionare il tutto ha bisogno di caricare prima jquey e poi bootstrap 
         quindi le funzioni di bootstrap utilizzano in parte jquery-->
 		<script src="learnMap.js"></script>
+		<style>
+			body {
+				background-image: url("colored-pencils.jpg");
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+			}
+		</style>
 	</head>
 	<!-- style="background-image: url('The_Kiss.jpg'); background-size: cover;" -->
 	<body onload="assegnaEventHandlers();">
-		<a href="http://www.google.it"> </a>
-		<div class="contenuto"></div>
-		<a href="http://www.google.it"> </a>
-		<!-- posso usare la navbar di bootstrap ! (https://getbootstrap.com/docs/4.4/components/navbar/)-->
-		<!--js per il collapse della navbar caricato prima-->
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
 			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 			uso a invece che span per rendere il contenuto interattivo  -->
-			<a class="navbar-brand" href="#">Edu@home</a>
+			<a class="navbar-brand" href="../index.php">Edu@home</a>
 			<!-- ancora come in questo caso -->
 			<button
 				class="navbar-toggler"
@@ -47,68 +51,45 @@
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
 						<a id="home" class="nav-link" href="#"
-							>Home <span class="sr-only">(current)</span></a
+							>LearnMap <span class="sr-only">(current)</span></a
 						>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							href="#"
-							id="navbarDropdown"
-							role="button"
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
-						>
-							Settaggi Vari
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a
-							id="abdis"
-							class="nav-link disabled"
-							href="http://www.google.it"
-							tabindex="-1"
-							aria-disabled="true"
-							>Abilitabile traguardo (test)</a
-						>
-					</li>
-					<li>
-						
 					</li>
 				</ul>
-				<!-- //inutile il search per ora  
-				<form class="form-inline my-2 my-lg-0">
-					<input
-						class="form-control mr-sm-2"
-						type="search"
-						placeholder="Matematica"
-						aria-label="Cerca"
-					/>
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-						Cerca
-					</button>
-                </form>
-                -->
+				<ul class="navbar-nav ml-auto dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						style="margin-right: 6em;"
+						href="#"
+						id="navbarDropdown"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						Profilo
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Impostazioni</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Globa</a>
+					</div>
+				</ul>
 			</div>
 		</nav>
 		<!-- uso emmet per comletare e testare (consiglio l'uso per velocizzare la scrittura di codice)-->
-		<br /><br /><br />
+		<br /><br />
 
-		<div class="container-xl">
+		<div class="container-xl text-monospace">
 			<!-- uso il container per fare un resize ottimale del testo  https://getbootstrap.com/docs/4.4/layout/overview/ -->
-			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, incidunt fugiat,
-			libero nesciunt non repellat culpa iste unde corrupti vitae id cumque. Fugit voluptatem
-			debitis magni ex, ab autem totam?
+			<div class="bg-blur" style="border-radius: 5%;">
+				<div style="margin: 3em; border-style: none; border-radius: 3%;">
+					<br />
+					In questa sezione è possibile scegliere la materia che si è interessati ad
+					apprendere, noi chiaramente forniremo solo delle basi per approcciarsi!
+					<br />
+					<br />
+				</div>
+			</div>
 			<!-- testo di prova emmet-->
 			<div>
 				<button class="materie btn btn-primary">
@@ -121,8 +102,11 @@
 			</div>
 			<hr />
 			<div id="zonadinamica">
-				Seleziona la materia
+				<div style="border-style: dotted;">
+					Con i bottoni qui sopra puoi selezionare la materia che desideri apprendere!
+				</div>
 			</div>
+			<span id="carousel"></span>
 			<hr />
 			<!-- qui possiamo usare ajax -->
 		</div>

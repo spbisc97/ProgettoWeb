@@ -47,6 +47,7 @@
         			//        header("Location: ../index.php?login=corretto,benvenuto$nicm")
         			session_start();
         			$_SESSION['id'] = $arr[0];
+        			$_SESSION['db'] = $dbconn;
         			$nome = $line["nome"];
         			// echo "<a href=../index.html> Premi qui</a>";
         			header("Location: ../index.php?reg=corretta,benvenuto" . $Nick); //sposta automaticamente su index e cambia l'header
