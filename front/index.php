@@ -12,42 +12,125 @@ session_start(); ?>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/home-made.css">
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.js"></script>'
+        <style>
+        html {
+            scroll-behavior: smooth
+        }
+        </style>
+
+
     </head>
 
     <body>
         <!-- Header -->
         <?php if (isset($_SESSION['id'])) {
         	// and $_SESSION['loggedin'] = true
-        	echo '
-		<header id="header">
-		 <div class="inner">
-				<a href="index.php" class="logo"><strong>Edu@home</strong></a>
-				<nav id="nav">
-					<a href="index.php">Home</a>
-					<a href="learnMap/learnMap.php">Allenati</a>
-					<a href="snake/snake.html">divertiti</a>
-					<a href="profilo.php">profilo</a>
-					<form action="logout.php" metho="post">
-					<button class="logout" type="submit name=login-submit">Logout</button>
-				</nav>
-				<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-			</div>
-		</header>';
+        	// 	echo '
+        	// <header id="header">
+        	//  <div class="inner">
+        	// 		<nav id="navbar fixed-top bg-primary">
+        	//         <a href="index.php" class="logo"><strong>Edu@home</strong></a>
+        	// 			<a href="learnMap/learnMap.php">Allenati</a>
+        	// 			<a href="snake/snake.html">divertiti</a>
+        	// 			<a href="profilo.php">profilo</a>
+        	// 			<a id="logout" href="logout.php" >Logout</a>
+        	// 		</nav>
+        	// 		<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+        	// 	</div>
+        	// </header>';
+        	echo '<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+        le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
+        uso a invece che span per rendere il contenuto interattivo  -->
+        <a class="navbar-brand" href="../../../index.php">Edu@home</a>
+        <!-- ancora come in questo caso -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+            mentre sotto abbiamo una parte collapsable ovvero 
+            che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a id="home" class="nav-link" href="../../../learnMap/learnMap.php"
+                        >LearnMap <span class="sr-only">(current)</span></a
+                    >
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto dropdown">
+            <a class="navbar-brand nav-link"  href="#footer">Contatti</a>
+            <a class="navbar-brand nav-link" href="learnMap/learnMap.php">Allenati</a>
+        	<a class="navbar-brand nav-link" href="snake/snake.html">Divertiti</a>
+        	<a class="navbar-brand nav-link" href="profilo.php">Profilo</a>
+        	<a class="navbar-brand nav-link" id="logout" href="logout.php" >Logout</a>
+                
+            </ul>
+        </div>
+    </nav>';
         } else {
-        	echo '
-			<header id="header">
-		 	<div class="inner">
-				<a href="index.html" class="logo"><strong>Edu@home</strong></a>
-					<nav id="nav">
-					<a href="index.html">Home</a>
-					
-					<a href="contatti.html">Contatti</a>
-					<a href="paginaLogin/login.html">Login</a>
-					<a href="paginaRegistrazione/registrazione.html">Registrazione</a>
-				</nav>
-				<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-			</div>
-		</header>';
+        	echo '<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+        le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
+        uso a invece che span per rendere il contenuto interattivo  -->
+        <a class="navbar-brand" href="../../../index.php">Edu@home</a>
+        <!-- ancora come in questo caso -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+            mentre sotto abbiamo una parte collapsable ovvero 
+            che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a id="home" class="nav-link" href="../../../learnMap/learnMap.php"
+                        >LearnMap <span class="sr-only">(current)</span></a
+                    >
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto dropdown">
+            <a class="navbar-brand nav-link"  href="#footer">Contatti</a>
+            <a class="navbar-brand nav-link" href="paginaLogin/login.html">Login</a>
+            <a class="navbar-brand nav-link" href="paginaRegistrazione/registrazione.html">Registrazione</a>
+            
+        	
+                
+            </ul>
+        </div>
+    </nav>';
+        	// 	echo '
+        	// 	<header id="header">
+        	//  	<div class="inner">
+        	//         <nav id="navbar fixed-top bg-primary">
+        	//             <a href="index.html" class="logo"><strong>Edu@home</strong></a>
+        	// 			<a href="contatti.html">Contatti</a>
+        	// 			<a href="paginaLogin/login.html">Login</a>
+        	// 			<a href="paginaRegistrazione/registrazione.html">Registrazione</a>
+        	// 		</nav>
+        	// 		<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+        	// 	</div>
+        	// </header>';
         } ?>
 
         <!-- Banner -->
@@ -152,6 +235,13 @@ session_start(); ?>
 
 
         <!-- Scripts -->
+        <script>
+        $(document).ready(function() {
+            $("#logout").click(function() {
+                $.post("logout.php");
+            });
+        })
+        </script>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
