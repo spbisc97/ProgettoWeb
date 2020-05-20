@@ -1,0 +1,173 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>intronduzione a Python</title>
+		<link rel="shortcut icon" href="../../../favicon.ico" />
+		<link rel="stylesheet" href="../../../bootstrap-4.4.1-dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
+		<link rel="stylesheet" href="../slideshow.css" />
+		<script src="../../../jQuery/jquery.min.js"></script>
+		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
+		<style>
+		/*	body {
+				background-image: url("../img1.jpg");
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+			}
+			.bg-blur {
+				background-color: rgba(255, 255, 255, 0.4);
+			}*/
+			
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
+			uso a invece che span per rendere il contenuto interattivo  -->
+			<a class="navbar-brand" href="#">Edu@home</a>
+			<!-- ancora come in questo caso -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+                mentre sotto abbiamo una parte collapsable ovvero 
+                che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a id="home" class="nav-link" href="../../../learnMap/learnMap.html"
+							>Home <span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../IDLE.html">IDLE</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbarDropdown"
+							role="button"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
+						>
+							Settaggi Vari
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a
+							id="abdis"
+							class="nav-link disabled"
+							href="http://www.google.it"
+							tabindex="-1"
+							aria-disabled="true"
+							>Abilitabile traguardo (test)</a
+						>
+					</li>
+				</ul>
+				<!-- //inutile il search per ora  
+				<form class="form-inline my-2 my-lg-0">
+					<input
+						class="form-control mr-sm-2"
+						type="search"
+						placeholder="Matematica"
+						aria-label="Cerca"
+					/>
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+						Cerca
+					</button>
+                </form>
+                -->
+			</div>
+		</nav>
+		<br /><br /><br />
+		<div class="container">
+			<h1>un po' di teoria <small></small></h1>
+		</div>
+		<div class="bg-blur container xl text-monospace text-white">
+			<div id="carouselContent" class="carousel slide" data-ride="carousel" data-interval="false">
+				<div class="carousel-inner" role="listbox">
+					<div class="carousel-item active text-center p-4">
+                         <p>Un altro tipo in python è il Booleano, può avere due valori: True(vero) o False(falso).
+							possono essere creati comparando due valori, oppure usando l'operatore logico
+							 <a href=https://www.python.it/doc/Howtothink/Howtothink-html-it/chap04.htm>(==)</a>. Un'altra comparazione logica è  <a href=https://www.python.it/doc/Howtothink/Howtothink-html-it/chap04.htm>(!=)</a>.
+							 In python si possono fare anche le comparazioni matematiche di base (<),(>(<=)(>=),il loro valore di ritorno sarà un Booleano. 
+							 Per far eseguire il codice a certe condizioni si può usare l'istruzione <a href=https://www.programmareinpython.it/video-corso-python-base/controllo-di-flusso-if-elif-ed-else>"if"</a>
+							 se l'espressione che si controlla con if avrà valore "True" allora sarà <a href=../esempi/esempi_2/esempio_1.html>eseguita,</a> 
+							 altrimenti <a href=../esempi/esempi_2/esempio_3.html>no.</a> D'altro canto, come quasi sempre succede, si ha la necessita che il codice continui 
+							 anche se certe istruzioni non sono state rispettate. Per fare questo si usa l'istruzione <a href=https://www.programmareinpython.it/video-corso-python-base/controllo-di-flusso-if-elif-ed-else>"else".</a>
+							 È possibile concatenare le istruzioni if ed else, per fare più controlli, ma Python ci offre una terza istruzione per fare ciò <a href=https://www.programmareinpython.it/video-corso-python-base/controllo-di-flusso-if-elif-ed-else>"elif".</a>
+							 Per rendere più complicate le condizioni, è possibile usare gli operatori <a href=../esempi/esempi_2/esempio_3.html>logici.</a> 
+
+					</div>
+					<div class="carousel-item text-center p-4">
+						
+						<p>
+							Come già detto l'istruzione if viene eseguita una volta se la condizione verificata è True. il ciclo <a href="https://www.html.it/pag/40148/cicli-for-e-while/">"while"</a>
+							esegue un blocco di istruzioni finché la condizione esaminata dal while non diventa True. Il problema di questa condizione è che è facile ritrovarsi in un ciclo <a href=../esempi/esempi_2/esempio_4.html>infinito,</a>
+							per questo bisogna stare attenti che la condizione possa diventare true. in alternativa si può mettere un <a href=../esempi/esempi_2/esempio_5.html>contatore</a> all'interno del while per 
+							fare in modo che il ciclo si blocchi dopo un numero predefinito di tentativi. Un altro ciclo è il <a href="https://www.html.it/pag/40148/cicli-for-e-while/">"for"</a>
+							che esegue un blocco di codice un determinato numero di <a href=../esempi/esempi_2/esempio_3.html>volte</a>,questo è molto utile nelle liste che vedremo dopo.
+						</p>
+					</div>
+					<div class="carousel-item text-center p-4">
+						
+                        <p>Per prendere input da tastiera, in Python si può usare intuitivamente la funzione <a href=https://www.html.it/pag/39740/le-funzioni-print-e-input>input</a>
+                            la funziona da istruzzioni all'utente su cosa inserire come input, e prende l'input come stringa. Come gli interi ed i float in Python le stringhe 
+                            possono essere <a href=../esempi/esempio_5.html>sommate</a>  con (+). Ma non si possono aggiungere stringhe con i numeri. L
+                            e stringhe possono essere moltiplicate per interi, questo produce una ripetuta versione della stringa originale.
+                        </p>
+							<p>In python, è impossibile completare certe operazione dove sono coinvolti due tipi diversi. 
+                                Per esempio non si possono sommare le due stringhe che contengono i numeri "2" e "3", il risultato sarebbe "23",non 5.
+                                La soluzione a questo è la conversione di <a href=../esempi/esempio_6.html>tipo</a>
+                            </p>
+						</div>
+						<div class="carousel-item text-center p-4">
+						<p>in precedenza ho spiegato come si assegnano, ma cosa sono?Le variabili giocano un ruolo molto importante nei linguaggi di programmazione e Python non è un eccezzione.
+                            una variabile ti permette di immagazzinare un dato in un nome, al quale ci si potrà riferire in futuro nel programma. ci sono certe restrizioni sul nome,
+                            devono iniziare per una lettera e sono ammessi solo numeri, lettere e trattini bassi. Possiamo anche assegnare una variabile all'input dell'utente.
+                        </p>
+							
+                        </div>
+                        <div class="carousel-item text-center p-4">
+                            <p><a href=../esempi/esempio_5.html>Qui si può andare al primo modulo dell'esercitazione</a></p>
+                                
+                            </div>
+					
+				</div>
+				<a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev" data-interval="false">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next"data-interval="false">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+				
+			</div>
+		</div>
+		

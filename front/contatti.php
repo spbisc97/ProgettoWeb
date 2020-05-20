@@ -1,6 +1,7 @@
 <?php
 if (isset($_POST['submitform'])){
-	require_once('class.phpmailer.php');
+	require_once('phpmailer/class.phpmailer.php');
+	include_once('phpmailer/class.smtp.php');
 	$mail = new PHPMailer(); // create a new object
 	$mail->IsSMTP(); // enable SMTP
 	$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
@@ -11,11 +12,21 @@ if (isset($_POST['submitform'])){
 	$mail->IsHTML(true);
 	$mail->Username = "prova.ltw1@gmail.com";
 	$mail->Password = "pippopluto";
-	$mail->SetFrom("example@gmail.com");
-	$mail->Subject = "Test";
+	$mail->SetFrom=$_POST['mail'];
+	$mail->Subject = "Edu@home";
 	$mail->Body = "hello";
-	$mail->AddAddress("prova.ltw@gmail.com");
+	$mail->AddAddress("prova.ltw1@gmail.com");
+	include_once('phpmailer/class.phpmailer.php');
+	include_once('phpmailer/class.smtp.php');
+	if($mail->Send()) {
+		echo "messaggio mandato";
 
+		exit;
+	 }
+	 else
+	 echo "C'è stato qualche problema";
+	 }
+	 
 
 
 	/*$name=$_post['nome'];
@@ -33,4 +44,3 @@ if (isset($_POST['submitform'])){
 
 	
 
-}

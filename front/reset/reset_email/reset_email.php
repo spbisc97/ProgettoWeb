@@ -1,13 +1,12 @@
 <?php
-/**
- * @format
- */
+
 
 session_start();
 $id = $_SESSION['id']; /* userid of the user al momento */
 
 ($dbconn = pg_connect(
-	"host=localhost port=5433 dbname=Edu@homedb user=putfahxs password=yj6L-sA-nVPEpp4PJPpjvHLb6KbZJXsL"
+	"host=dumbo.db.elephantsql.com
+port=5432 dbname=putfahxs user=putfahxs password=yj6L-sA-nVPEpp4PJPpjvHLb6KbZJXsL"
 )) or die("Could not connect: " . preg_last_error());
 /*if (!isset($_POST['submit'])) {
     header("Location: ../index.php");

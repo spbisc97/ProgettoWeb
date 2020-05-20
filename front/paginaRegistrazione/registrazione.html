@@ -7,6 +7,11 @@
 		<link rel="shortcut icon" href="../favicon.ico" />
 
 		<link rel="stylesheet" href="styl1.css" />
+		<link rel="stylesheet" href="../assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="../assets/css/home-made.css" />
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/bootstrap.js"></script>
+
 		<link
 			href="https://fonts.googleapis.com/css?family=Nunito:400,300"
 			rel="stylesheet"
@@ -14,49 +19,76 @@
 		/>
 		<style>
 			.mycheckbox {
-				background: whitesmoke;
+				background-color: whitesmoke;
 				border-radius: 15px;
+			}
+			.bg-pres {
+				background-color: rgba(255, 255, 255, 0.5);
+				border-radius: 2em;
+				margin: 3em;
+				padding: 1em;
 			}
 		</style>
 		<script type="text/javascript" lang="javascript" src="reg.js"></script>
 	</head>
 	<body>
-		<div>
-			<fieldset>
-				<form
-					action="validateRegistrazione.php"
-					class="form-signin"
-					method="POST"
-					onsubmit="return CHECK();"
-				>
-					<label class="" for="nick">Nickname:</label>
-					<input type="text" name="nick" value="" id="nick" />
-
-					<label class="" for="nome">Nome:</label>
-					<input type="text" name="nome" value="" id="name" />
-
-					<label class="" for="cognome">cognome:</label>
-					<input type="text" name="cognome" value="" id="surname" />
-
-					<label class="" for="email">Email:</label>
-					<input type="email" name="email" value="" id="email" />
-
-					<label>password</label>
-					<input type="password" name="password" value="" id="password" />
-					<br />
+		<div class="container text-monospace text-dark">
+			<form
+				action="validateRegistrazione.php"
+				class="form-signin"
+				method="POST"
+				onsubmit="return CHECK();"
+			>
+				<div class="container bg-pres">
 					<table>
 						<tr>
-							<td>Mostra password</td>
-							<td><input class="mycheckbox" type="button" onclick="show()" /></td>
+							<label class="" for="nick">Nickname:</label>
+							<input type="text" name="nick" placeholder="il mio nick" id="nick" />
 						</tr>
-					</table border=2>
 
-					<br />
-					<label>conferma password</label>
-					<input type="password" name="bassword" value="" id="bassword" />
-					<input type="submit" name="Submit" />
-				</form>
-			</fieldset>
+						<tr>
+							<label class="" for="nome">Nome:</label>
+							<input type="text" name="nome" placeholder="nome" id="name" />
+						</tr>
+
+						<tr>
+							<label class="" for="cognome">Cognome:</label>
+							<input type="text" name="cognome" placeholder="cognome" id="surname" />
+						</tr>
+
+						<tr>
+							<label class="" for="email">Email:</label>
+							<input
+								type="email"
+								name="email"
+								placeholder="inserisci la email"
+								id="email"
+							/>
+						</tr>
+
+						<tr>
+							<label for="password">Password :</label>
+							<button class="mycheckbox" type="button" name="ckbox" onclick="show()">
+								show
+							</button>
+
+							<input type="password" name="password" value="" id="password" />
+						</tr>
+
+						<tr>
+							<label for="bassword">Conferma </label>
+							<input type="password" name="bassword" value="" id="bassword" />
+						</tr>
+
+						<tr>
+							<div class="align-content-between">
+								<input class="btn btn-primary" type="submit" name="Submit" />
+								<input class="btn btn-primary" type="reset" name="Reset" />
+							</div>
+						</tr>
+					</table>
+				</div>
+			</form>
 		</div>
 	</body>
 </html>
