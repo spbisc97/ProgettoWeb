@@ -43,7 +43,7 @@
     			$_SESSION['id'] = $arr[0];
     			$nome = $line["nome"];
     			// echo "<a href=../index.html> Premi qui</a>";
-    			header("Location: ../index.php?login=corretto,benvenuto$nicm"); //sposta automaticamente su index e cambia l'header
+    			header("Location: ../index.php?login=corretto,benvenuto$nome"); //sposta automaticamente su index e cambia l'header
     			exit();
     		}
     	}

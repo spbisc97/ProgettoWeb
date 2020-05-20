@@ -2,9 +2,7 @@
 session_start();
 $id = $_SESSION['id'];/* userid of the user al momento */
 
-($dbconn = pg_connect(
-    "host=localhost port=5433 dbname=Edu@homedb user=postgres password=pippopluto"
-)) or die("Could not connect: " . preg_last_error());
+
 /*if (!isset($_POST['submit'])) {
     header("Location: ../index.php");
 }else {*/

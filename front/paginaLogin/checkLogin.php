@@ -27,7 +27,7 @@
     		} else {
     			session_start();
     			$_SESSION['id'] = "select * from utente where id= $1";
-    			$_SESSION['nick'] = $row['nick'];
+				$_SESSION['nick'] = $row['nick'];
     			$nome = $line["nome"];
     			// echo "<a href=../index.html> Premi qui</a>";
     			header("Location: ../index.php?login=corretto,benvenuto$nicm");
