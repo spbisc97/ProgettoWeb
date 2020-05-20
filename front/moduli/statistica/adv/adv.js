@@ -5,8 +5,7 @@ let boxgraph = Vue.component("box", {
 
 <div class="row justify-content-between">
 	<dedx ></dedx>
-	<testo></testo>
-
+	
 	<sinsx></sinsx>
 </div>
 `,
@@ -18,7 +17,7 @@ let boxgraph = Vue.component("box", {
 
 let sx = Vue.component("sinsx", {
 	template: `<!-- @format -->
-<div v-if="show" id="sinistra" class="col-5"   >
+<div v-if="show" id="sinistra" class="col-6"   >
 	<div id="primo"  class="primo grafico">
 		<canvas id="chart1" v-on:mouseover=""></canvas>
 	</div>
@@ -35,7 +34,7 @@ let sx = Vue.component("sinsx", {
 let dx = Vue.component("dedx", {
 	template: `<!-- @format -->
 
-<div id="destra" class="col-5" >
+<div id="destra" class="col-6" >
 	<div id="secondo" class="secondo grafico">
 		<canvas id="chart2" v-on:cick=""></canvas>
 	</div>
@@ -91,39 +90,14 @@ let chart3 = $("#chart3");
 let chart4 = $("#chart4");
 var options;
 
-let media1 = new Chart(chart1, {
-	type: "bar",
+let sport = new Chart(chart1, {
+	type: "pie",
 	data: {
-		labels: [],
+		labels: ["tennis", "Atletica", "pallavvolo", "Nuoto", "Arti marziali", "Basket", "Calcio"],
 		datasets: [
 			{
 				//label: "Media",
-				data: [],
-				backgroundColor: "rgba(200, 100, 100, 0.9)",
-				borderWidth: 1,
-				borderColor: "rgb(200,200,200)",
-				hoverBorderWidth: 1,
-			},
-			{
-				type: "line",
-				data: [],
-				backgroundColor: "rgba(100, 200, 200, 0.7)",
-				borderWidth: 3,
-				borderColor: "rgb(0,0,0)",
-				hoverBorderWidth: 3,
-			},
-		],
-	},
-});
-
-let matrimoni = new Chart(chart2, {
-	type: "line",
-	data: {
-		labels: [1960, 1970, 1980, 1990, 2000, 2009],
-		datasets: [
-			{
-				//label: "Media",
-				data: [397000, 385000, 305000, 310000, 277000, 230000],
+				data: [15, 7, 20, 21, 10, 25, 30],
 				backgroundColor: "rgba(200, 100, 100, 0.9)",
 				borderWidth: 1,
 				borderColor: "rgb(200,200,200)",
@@ -134,7 +108,39 @@ let matrimoni = new Chart(chart2, {
 	options: {
 		title: {
 			display: true,
-			title: "matrimoni",
+			title: "Sport",
+		},
+	},
+});
+
+let spider = new Chart(chart2, {
+	type: "radar",
+	data: {
+		labels: ["velocità", "sicurezza", "prezzo", "supporto", "facilità", "interfaccia"],
+		datasets: [
+			{
+				data: [10, 30, 40, 20, 43, 23],
+				backgroundColor: "rgba(20, 150, 10, 0.0)",
+				borderWidth: 1,
+				borderColor: "rgb(200,70,30)",
+				hoverBorderWidth: 1,
+				label: "Primo venditore",
+			},
+			{
+				data: [31, 34, 12, 43, 23, 20],
+				backgroundColor: "rgba(200, 10, 100, 0.0)",
+				borderWidth: 1,
+				borderColor: "rgb(50,20,200)",
+				hoverBorderWidth: 1,
+				label: "Secondo venditore",
+				display: false,
+			},
+		],
+	},
+	options: {
+		title: {
+			display: false,
+			title: "prodotto",
 		},
 	},
 });

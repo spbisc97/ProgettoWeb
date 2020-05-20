@@ -20,7 +20,6 @@ function assegnaEventHandlers() {
 }
 
 function caricaDocumento(e) {
-	window.location.href = "#carousel";
 	var httpRequest = new XMLHttpRequest();
 	httpRequest.onreadystatechange = gestisciResponse;
 	httpRequest.open("GET", "materie/" + e.target.innerHTML + ".html", true);

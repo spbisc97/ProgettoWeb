@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <!-- uso di bootstrap self hosted-->
-        <link rel="shortcut icon" href="../../../favicon.ico" />
+        <link rel="shortcut icon" href="../favicon.ico" />
         <link rel="stylesheet" href="../assets/css/bootstrap.css" />
         <script src="../assets/js/jquery.min.js"></script>
         <script src="../assets/js/bootstrap.js" lang="--js"></script>
@@ -84,9 +84,9 @@
             </div>
             <!-- testo di prova emmet-->
             <div>
-                <button class="materie btn btn-primary">logica</button>
-                <button class="materie btn btn-primary">python</button>
-                <button class="materie btn btn-primary">statistica</button>
+                <a href="#carousel"><button class="materie btn btn-primary">logica</button></a>
+                <a href="#carousel"><button class="materie btn btn-primary">python</button></a>
+                <a href="#carousel"><button class="materie btn btn-primary">statistica</button></a>
             </div>
             <hr />
             <div id="zonadinamica">
