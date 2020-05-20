@@ -24,7 +24,7 @@ session_start(); ?>
 				<a href="index.php" class="logo"><strong>Edu@home</strong></a>
 				<nav id="nav">
 					<a href="index.php">Home</a>
-					<a href="learnMap/learnMap.html">Allenati</a>
+					<a href="learnMap/learnMap.php">Allenati</a>
 					<a href="snake/snake.html">divertiti</a>
 					<a href="profilo.php">profilo</a>
 					<form action="logout.php" metho="post">
