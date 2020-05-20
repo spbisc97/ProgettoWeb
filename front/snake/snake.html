@@ -1,166 +1,242 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html>
-<head>
-  <title></title>
-  <style>
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
+	<head>
+		<title>Snake</title>
+		<link rel="shortcut icon" href="../../../favicon.ico" />
+		<link rel="stylesheet" href="../assets/css/bootstrap.css" />
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/bootstrap.js" lang="--js"></script>
+		<link rel="stylesheet" href="../assets/css/home-made.css" />
+		<style>
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+			}
 
-  body {
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  canvas {
-    border: 1px solid white;
-  }
-  </style>
-</head>
-<body>
-<canvas width="400" height="400" id="game"></canvas>
-<script>
-var canvas = document.getElementById('game');
-var context = canvas.getContext('2d');
+			body {
+				background: black;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			canvas {
+				border: 1px solid white;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
+uso a invece che span per rendere il contenuto interattivo  -->
+			<a class="navbar-brand" href="../index.php">Edu@home</a>
+			<!-- ancora come in questo caso -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+        mentre sotto abbiamo una parte collapsable ovvero 
+        che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a id="home" class="nav-link" href="../learnMap/learnMap.php"
+							>LearnMap <span class="sr-only">(current)</span></a
+						>
+					</li>
+				</ul>
+				<ul class="navbar-nav ml-auto dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						style="margin-right: 6em;"
+						href="#"
+						id="navbarDropdown"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						Profilo
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Impostazioni</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Globa</a>
+					</div>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col" style="margin: 1em;">
+					<canvas width="400" height="400" id="game"></canvas>
+				</div>
+				<div
+					class="col-md text-light text-center text-monospace row align-items-center"
+					style="
+						margin: 1em;
+						border-style: solid;
+						border-color: rgba(245, 245, 245, 0.623);
+						border-radius: 1em;
+					"
+				>
+					<div class="col">
+						Snake è un videogioco presente in molti telefonini, in particolare quelli
+						prodotti dalla Nokia. <br />
+						sue origini risalgono agli anni settanta, con il videogioco arcade Blockade;
+						da allora è stato prodotto in numerose piattaforme e varianti, fino a
+						ritrovare nuova fama negli anni novanta grazie ai cellulari.
+						<br />
+						lo scopo è quello di mangiare più frutti rossi ovvero mele possibili, fino a
+						riempire l'intero schermo
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var canvas = document.getElementById("game");
+			var context = canvas.getContext("2d");
 
-var grid = 16;
-var count = 0;
-  
-var snake = {
-  x: 160,
-  y: 160,
-  
- 
-  //velocità, movimento
-  dx: grid,
-  dy: 0,
-  
-  // tiene traccia delle griglie occupate sta snake
-  cells: [],
-  
-  // lunghezza+crescita
-  maxCells: 4
-};
-var apple = {
-  x: 320,
-  y: 320
-};
+			var grid = 16;
+			var count = 0;
 
-// https://stackoverflow.com/a/1527820/2124254
+			var snake = {
+				x: 160,
+				y: 160,
+				//velocità, movimento
+				dx: grid,
+				dy: 0,
+				// tiene traccia delle griglie occupate sta snake
+				cells: [],
+				// lunghezza+crescita
+				maxCells: 4,
+			};
+			var apple = {
+				x: 320,
+				y: 320,
+			};
 
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+			// https://stackoverflow.com/a/1527820/2124254
 
-// loop
-function loop() {
-  requestAnimationFrame(loop);
+			function getRandomInt(min, max) {
+				return Math.floor(Math.random() * (max - min)) + min;
+			}
 
-  // diminuisci fps a 15 60 (60/15 = 4)
-  if (++count < 4) {
-    return;
-  }
+			// loop
+			function loop() {
+				requestAnimationFrame(loop);
 
-  count = 0;
-  context.clearRect(0,0,canvas.width,canvas.height);
+				// diminuisci fps a 15 60 (60/15 = 4)
+				if (++count < 5) {
+					return;
+				}
 
-  // +movimento
-  snake.x += snake.dx;
-  snake.y += snake.dy;
+				count = 0;
+				context.clearRect(0, 0, canvas.width, canvas.height);
 
-  // wrap snake position horizontally on edge of screen
-  if (snake.x < 0) {
-    snake.x = canvas.width - grid;
-  }
-  else if (snake.x >= canvas.width) {
-    snake.x = 0;
-  }
-  
-  // wrap snake position vertically on edge of screen
-  if (snake.y < 0) {
-    snake.y = canvas.height - grid;
-  }
-  else if (snake.y >= canvas.height) {
-    snake.y = 0;
-  }
+				// +movimento
+				snake.x += snake.dx;
+				snake.y += snake.dy;
 
-  // traccia snake
-  snake.cells.unshift({x: snake.x, y: snake.y});
+				// wrap snake position horizontally on edge of screen
+				if (snake.x < 0) {
+					snake.x = canvas.width - grid;
+				} else if (snake.x >= canvas.width) {
+					snake.x = 0;
+				}
 
-  // pulisci celle dopo essersi spostati
-  if (snake.cells.length > snake.maxCells) {
-    snake.cells.pop();
-  }
+				// wrap snake position vertically on edge of screen
+				if (snake.y < 0) {
+					snake.y = canvas.height - grid;
+				} else if (snake.y >= canvas.height) {
+					snake.y = 0;
+				}
 
-  // disegno frutto
-  context.fillStyle = 'red';
-  context.fillRect(apple.x, apple.y, grid-1, grid-1);
+				// traccia snake
+				snake.cells.unshift({ x: snake.x, y: snake.y });
 
-  // disegno snake
-  context.fillStyle = 'green';
-  snake.cells.forEach(function(cell, index) {
-    
-    // 
-    context.fillRect(cell.x, cell.y, grid-1, grid-1);  
+				// pulisci celle dopo essersi spostati
+				if (snake.cells.length > snake.maxCells) {
+					snake.cells.pop();
+				}
 
-    // mangia la mela >>
-    if (cell.x === apple.x && cell.y === apple.y) {
-      snake.maxCells++;
+				// disegno frutto
+				context.fillStyle = "red";
+				context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
 
-      // 25x25 in canvas è 400x400
-      apple.x = getRandomInt(0, 25) * grid;
-      apple.y = getRandomInt(0, 25) * grid;
-    }
+				// disegno snake
+				context.fillStyle = "green";
+				snake.cells.forEach(function (cell, index) {
+					//
+					context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
 
-   
-    for (var i = index + 1; i < snake.cells.length; i++) {
-      
-      // reset in caso morte
-      if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-        snake.x = 160;
-        snake.y = 160;
-        snake.cells = [];
-        snake.maxCells = 4;
-        snake.dx = grid;
-        snake.dy = 0;
+					// mangia la mela >>
+					if (cell.x === apple.x && cell.y === apple.y) {
+						snake.maxCells++;
 
-        apple.x = getRandomInt(0, 25) * grid;
-        apple.y = getRandomInt(0, 25) * grid;
-      }
-    }
-  });
-}
+						// 25x25 in canvas è 400x400
+						apple.x = getRandomInt(0, 25) * grid;
+						apple.y = getRandomInt(0, 25) * grid;
+					}
 
-// listen to keyboard events to move the snake
-document.addEventListener('keydown', function(e) {
+					for (var i = index + 1; i < snake.cells.length; i++) {
+						// reset in caso morte
+						if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+							//record(snake.maxcells);
+							snake.x = 160;
+							snake.y = 160;
+							snake.cells = [];
+							snake.maxCells = 4;
+							snake.dx = grid;
+							snake.dy = 0;
 
-  
-  // sinistra
-  if (e.which === 37 && snake.dx === 0) {
-    snake.dx = -grid;
-    snake.dy = 0;
-  }
-  // si
-  else if (e.which === 38 && snake.dy === 0) {
-    snake.dy = -grid;
-    snake.dx = 0;
-  }
-  // destra
-  else if (e.which === 39 && snake.dx === 0) {
-    snake.dx = grid;
-    snake.dy = 0;
-  }
-  // giù
-  else if (e.which === 40 && snake.dy === 0) {
-    snake.dy = grid;
-    snake.dx = 0;
-  }
-});
+							apple.x = getRandomInt(0, 25) * grid;
+							apple.y = getRandomInt(0, 25) * grid;
+						}
+					}
+				});
+			}
 
-// inizio
-requestAnimationFrame(loop);
-</script>
-</body>
+			// listen to keyboard events to move the snake
+			document.addEventListener("keydown", function (e) {
+				// sinistra
+				if (e.which === 37 && snake.dx === 0) {
+					snake.dx = -grid;
+					snake.dy = 0;
+				}
+				// si
+				else if (e.which === 38 && snake.dy === 0) {
+					snake.dy = -grid;
+					snake.dx = 0;
+				}
+				// destra
+				else if (e.which === 39 && snake.dx === 0) {
+					snake.dx = grid;
+					snake.dy = 0;
+				}
+				// giù
+				else if (e.which === 40 && snake.dy === 0) {
+					snake.dy = grid;
+					snake.dx = 0;
+				}
+			});
+			function record(numero) {
+				$.get("snake.php", { mele: numero }).done(function (data) {});
+			}
+
+			// inizio
+			requestAnimationFrame(loop);
+		</script>
+	</body>
 </html>
