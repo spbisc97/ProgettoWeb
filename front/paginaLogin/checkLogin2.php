@@ -42,7 +42,7 @@
         			session_start();
         			$_SESSION['id'] = $arr[0];
         			$nome = $line["nome"];
-        			$_SESSION['db'] = $dbconn;
+        			$_SESSION['nome'] = $line["nome"];
         			// echo "<a href=../index.html> Premi qui</a>";
         			header("Location: ../index.php?login=corretto,benvenuto$nicm"); //sposta automaticamente su index e cambia l'header
         			exit();

@@ -1,5 +1,5 @@
 <!-- @format -->
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,28 +66,31 @@
 
         <div class="container-xl text-monospace">
             <!-- uso il container per fare un resize ottimale del testo  https://getbootstrap.com/docs/4.4/layout/overview/ -->
-            <div class="bg-blur" style="border-radius: 5%;">
-                <div style="margin: 3em; border-style: none; border-radius: 3%;">
+            <div class="bg-blur" style="border-radius: 10px;">
+                <div style="margin: 3em; border-style: none; padding:2em ;border-radius: 10px;">
+
+                    <?php if (!isset($_SESSION["id"])) {
+                    	echo " <div class='text-danger'> ti consigliamo di registrarti per avere accesso alle funzioni avanzate del sito </div>";
+                    } else {
+                    	echo "<div class='text-primary'> Benvenuto ";
+                    	echo $_SESSION["nome"];
+                    	echo "</div>";
+                    } ?>
                     <br />
                     In questa sezione è possibile scegliere la materia che si è interessati ad
                     apprendere, noi chiaramente forniremo solo delle basi per approcciarsi!
-                    <br />
-                    <br />
+
                 </div>
             </div>
             <!-- testo di prova emmet-->
             <div>
-                <button class="materie btn btn-primary">
-                    logica
-                </button>
+                <button class="materie btn btn-primary">logica</button>
                 <button class="materie btn btn-primary">python</button>
-                <button class="materie btn btn-primary">
-                    statistica
-                </button>
+                <button class="materie btn btn-primary">statistica</button>
             </div>
             <hr />
             <div id="zonadinamica">
-                <div style="border-style: dotted;">
+                <div class="bg-blur-dark text-light" style="border-style: dotted; padding: 4em;">
                     Con i bottoni qui sopra puoi selezionare la materia che desideri apprendere!
                 </div>
             </div>
