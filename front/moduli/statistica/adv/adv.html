@@ -9,7 +9,7 @@
 		<link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
 		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
-		<script src="../../../jQuery/jquery.min.js"></script>
+		<script src="../../../assets/js/jquery.min.js"></script>
 		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
 		<script src="../../../assets/js/vue.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
@@ -28,22 +28,27 @@
 				padding: 1em;
 				column-gap: 10px;
 				row-gap: 10px;
+				margin: 1em;
 			}
 			.grafico:hover {
 				border-style: dashed;
 				border-color: chartreuse;
+				background-color: rgba(225, 255, 89, 0.616);
 			}
 			.primo {
-				background-color: red;
+				background-color: rgba(186, 240, 233, 0.767);
 			}
 			.secondo {
-				background-color: yellow;
+				background-color: rgba(225, 233, 206, 0.767);
 			}
 			.terzo {
-				background-color: aqua;
+				background-color: rgba(225, 233, 206, 0.767);
 			}
 			.quarto {
-				background-color: green;
+				background-color: rgba(177, 236, 223, 0.767);
+			}
+			.testo {
+				align-self: center;
 			}
 		</style>
 	</head>
@@ -52,7 +57,7 @@
 			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 			uso a invece che span per rendere il contenuto interattivo  -->
-			<a class="navbar-brand" href="#">Edu@home</a>
+			<a class="navbar-brand" href="../../../index.php">Edu@home</a>
 			<!-- ancora come in questo caso -->
 			<button
 				class="navbar-toggler"
@@ -71,64 +76,42 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<a id="home" class="nav-link" href="../../../learnMap/learnMap.html"
-							>Home <span class="sr-only">(current)</span></a
-						>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							href="#"
-							id="navbarDropdown"
-							role="button"
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
-						>
-							Settaggi Vari
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a
-							id="abdis"
-							class="nav-link disabled"
-							href="http://www.google.it"
-							tabindex="-1"
-							aria-disabled="true"
-							>Abilitabile traguardo (test)</a
+						<a id="home" class="nav-link" href="../../../learnMap/learnMap.php"
+							>LearnMap <span class="sr-only">(current)</span></a
 						>
 					</li>
 				</ul>
+				<ul class="navbar-nav ml-auto dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						style="margin-right: 8em;"
+						href="#"
+						id="navbarDropdown"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						Profilo
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Impostazioni</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Globa</a>
+					</div>
+				</ul>
 			</div>
 		</nav>
-		<br /><br /><br />
 
-		<div class="bg-blur container-lg text-monospace">
-			<div>
+		<div class="bg-blur container-lg text-monospace text">
+			<br /><br /><br />
+			<div class="text-light">
 				In questo capitolo cercheremo di leggere e interpretare diversi grafici, i nomi
-				specifici di questi, come vanno letti e le informazioni che contengono, evdenzia con
+				specifici di questi, come vanno letti e le informazioni che contengono, clicca con
 				il mouse il riquadro che ti interessa
 			</div>
-			<div class="row">
-				<div id="primo" class="col primo grafico">ciao</div>
-				<div id="secondo" class="col secondo grafico">ciao</div>
-			</div>
-			<div class="row">
-				<div id="terzo" class="col terzo grafico">ciao</div>
-				<div id="quarto" class="col quarto grafico">ciao</div>
-			</div>
-			<div></div>
+			<div id="app"></div>
 		</div>
-
-		<script src="base.js"></script>
+		<script src="adv.js"></script>
 	</body>
 </html>

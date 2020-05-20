@@ -5,7 +5,7 @@
 }
 html,
 body {
-	background-image: url("http://getwallpapers.com/wallpaper/full/2/6/3/326444.jpg");
+	background-image: url("photography-of-fall-trees-1591447.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 100%;
@@ -28,20 +28,23 @@ h1 {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="checkbox"],
 textarea,
 select {
 	background: rgba(255, 255, 255, 0.3);
 	border-radius: 10px;
 	border: none;
-	font-size: 16px;
+	font-size: 12px;
 	height: auto;
 	margin: 0;
 	outline: 0;
 	padding: 15px;
 	width: 100%;
-	background-color: #e8eebf;
-	color: #8a97a0;
+	background-color: #bfeeec;
+	color: #000000;
 	box-shadow: 0 1px 0 rgb(0, 0, 0, 0.3) inset;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
+}
+input[type="checkbox"] {
+	border-radius: 5px;
+	background-color: #e8eebf;
 }

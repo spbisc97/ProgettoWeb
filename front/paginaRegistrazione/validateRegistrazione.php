@@ -5,8 +5,8 @@
     <body>
         <?php
         ($dbconn = pg_connect(
-        	"host=edu-database-instance-1.cuooizc71ger.eu-south-1.rds.amazonaws.com
-        port=5432 dbname=edu-home user=postgres password=pippopluto"
+        	"host=dumbo.db.elephantsql.com
+        port=5432 dbname=putfahxs user=putfahxs password=yj6L-sA-nVPEpp4PJPpjvHLb6KbZJXsL"
         )) or die("Could not connect: " . preg_last_error());
         if (!isset($_POST['Submit'])) {
         	header("Location: ../index.php");
@@ -47,6 +47,7 @@
         			//        header("Location: ../index.php?login=corretto,benvenuto$nicm")
         			session_start();
         			$_SESSION['id'] = $arr[0];
+        			$_SESSION['nome'] = $line["nome"];
         			$nome = $line["nome"];
         			// echo "<a href=../index.html> Premi qui</a>";
         			header("Location: ../index.php?reg=corretta,benvenuto" . $Nick); //sposta automaticamente su index e cambia l'header
