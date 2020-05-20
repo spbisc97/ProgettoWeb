@@ -10,8 +10,8 @@
         </script>
         <?php
         ($dbconn = pg_connect(
-        	"host=edu-database-instance-1.cuooizc71ger.eu-south-1.rds.amazonaws.com
-        port=5432 dbname=edu-home user=postgres password=pippopluto"
+        	"host=dumbo.db.elephantsql.com
+        port=5432 dbname=putfahxs user=putfahxs password=yj6L-sA-nVPEpp4PJPpjvHLb6KbZJXsL"
         )) or die("Could not connect: " . preg_last_error());
         if (!isset($_POST['Login'])) {
         	header("Location: ../index.php");
@@ -49,3 +49,4 @@
         		}
         	}
         }
+
