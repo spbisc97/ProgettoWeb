@@ -1,5 +1,6 @@
 /** @format */
 var risposte = [];
+var varie = [];
 var quiz = {
 	questions: [
 		{
@@ -40,15 +41,6 @@ var quiz = {
 		},
 	],
 };
-let res = Vue.component("resoconto", {
-	template: `<div>
-        <button v-for="(index,persona) in persone" > </button>
-        
-    </div>`,
-	data: function () {
-		return {};
-	},
-});
 
 var vue = new Vue({
 	el: "#app",
@@ -69,8 +61,8 @@ var vue = new Vue({
 			</button>
 		</div>
 	</div>
-	<div v-if="!rendercomponent">
-		<resoconto></resoconto>
+	<div >
+		<resoconto v-if="!rendercomponent"></resoconto>
 	</div>
 </div>
 `,
@@ -100,6 +92,16 @@ var vue = new Vue({
 		controlla: function () {
 			vue.rendercomponent = false;
 		},
+	},
+});
+
+let res = Vue.component("resoconto", {
+	template: `<div>
+        <button class="center btn btn-outline-primary"  v-for="(persona,index) in persone" >{{ persona.nick }} al posto {{index+1}} </button>
+        
+    </div>`,
+	data: function () {
+		return { persone: varie[1] };
 	},
 });
 vue.generator();
@@ -263,15 +265,32 @@ function cambiadomande() {
 
 	vue.cambiadomanda();
 }
+
 function controlla() {
 	$.post("advtest.php", { risposte: risposte }, function (data, status) {
 		grafico.destroy();
 
 		vue.rendercomponent = false;
 		alert("Data: " + data + "\nStatus: " + status);
-		if ((data = -1)) {
+		if (data == -1) {
+			// varie = null;
 		} else {
-			res.punteggio = data;
+			varie = JSON.parse(data);
+			punteggio = varie[0];
+			res.persone = varie[1];
+			$("#lateralgraph").html(
+				`<!-- @format -->
+
+<div style="border-radius: 1em; padding: 1em; margin: 1em; background: rgba(24, 209, 34, 0.438);">
+	<h4 class="center text-monospace">Hai ottenuto un punteggio di ` +
+					punteggio +
+					` su 4</h4>
+	<h5 style="border-radius: 1em; padding: 1em; margin: 1em; background-color: aquamarine;">
+		A destra puoi vedere la classifica di chi ha giocato prima di te
+	</h5>
+</div>
+`
+			);
 		}
 	});
 }

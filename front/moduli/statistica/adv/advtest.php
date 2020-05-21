@@ -28,6 +28,16 @@ port=5432 dbname=putfahxs user=putfahxs password=yj6L-sA-nVPEpp4PJPpjvHLb6KbZJXs
 	)) or die("Could not connect: " . preg_last_error());
 	$q1 = "UPDATE statistica SET esercizio3=$1 WHERE id = $2";
 	$res = pg_query_params($dbconn, $q1, [$valori, $_SESSION["id"]]);
+	$q2 = 'select * from (SELECT
+    utente.nick, statistica.esercizio1, statistica.esercizio2, statistica.esercizio3,
+    statistica.esercizio1+ statistica.esercizio2+ statistica.esercizio3  AS "total"
+    FROM statistica,utente where utente.id=statistica.id) as foo
+    ORDER BY Total ASC
+    ';
 
-	print_r($valori);
+	$res2 = pg_query($dbconn, $q2);
+	$arr = pg_fetch_all($res2);
+	$valori[1] = $arr;
+	$restituisco = json_encode($valori);
+	echo $restituisco;
 }
