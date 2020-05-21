@@ -108,42 +108,48 @@
 		<div class="container">
 			<h1>un po' di teoria <small></small></h1>
 		</div>
-		<div class="bg-blur container xl text-monospace text-white">
+		<div class="bg-blur container  text-monospace text-white">
 			<div id="carouselContent" class="carousel slide" data-ride="carousel" data-interval="false">
 				<div class="carousel-inner" role="listbox">
 					<div class="carousel-item active text-center p-4">
                          <p>Un altro tipo in python è il Booleano, può avere due valori: True(vero) o False(falso).
 							possono essere creati comparando due valori, oppure usando l'operatore logico
-							 <a href=https://www.python.it/doc/Howtothink/Howtothink-html-it/chap04.htm>(==)</a>. Un'altra comparazione logica è  <a href=https://www.python.it/doc/Howtothink/Howtothink-html-it/chap04.htm>(!=)</a>.
+							 <a href=https://www.python.it/doc/Howtothink/Howtothink-html-it/chap04.htm target="_blank">(==)</a>. Un'altra comparazione logica è  <a href=https://www.python.it/doc/Howtothink/Howtothink-html-it/chap04.htm target="_blank">(!=)</a>.
 							 In python si possono fare anche le comparazioni matematiche di base (<),(>(<=)(>=),il loro valore di ritorno sarà un Booleano. 
-							 Per far eseguire il codice a certe condizioni si può usare l'istruzione <a href=https://www.programmareinpython.it/video-corso-python-base/controllo-di-flusso-if-elif-ed-else>"if"</a>
+							 Per far eseguire il codice a certe condizioni si può usare l'istruzione <a href=https://www.programmareinpython.it/video-corso-python-base/controllo-di-flusso-if-elif-ed-else target="_blank">"if"</a>
 							 se l'espressione che si controlla con if avrà valore "True" allora sarà <a href=../esempi/esempi_2/esempio_1.html>eseguita,</a> 
-							 altrimenti <a href=../esempi/esempi_2/esempio_3.html>no.</a> D'altro canto, come quasi sempre succede, si ha la necessita che il codice continui 
-							 anche se certe istruzioni non sono state rispettate. Per fare questo si usa l'istruzione <a href=https://www.programmareinpython.it/video-corso-python-base/controllo-di-flusso-if-elif-ed-else>"else".</a>
-							 È possibile concatenare le istruzioni if ed else, per fare più controlli, ma Python ci offre una terza istruzione per fare ciò <a href=https://www.programmareinpython.it/video-corso-python-base/controllo-di-flusso-if-elif-ed-else>"elif".</a>
-							 Per rendere più complicate le condizioni, è possibile usare gli operatori <a href=../esempi/esempi_2/esempio_3.html>logici.</a> 
+							 altrimenti <a href=../esempi/esempi_2/esempio_3.html target="_blank">no.</a> D'altro canto, come quasi sempre succede, si ha la necessita che il codice continui 
+							 anche se certe istruzioni non sono state rispettate. Per fare questo si usa l'istruzione <a href=https://www.programmareinpython.it/video-corso-python-base/controllo-di-flusso-if-elif-ed-else target="_blank">"else".</a>
+							 È possibile concatenare le istruzioni if ed else, per fare più controlli, ma Python ci offre una terza istruzione per fare ciò <a href=https://www.programmareinpython.it/video-corso-python-base/controllo-di-flusso-if-elif-ed-else target="_blank">"elif".</a>
+							 Per rendere più complicate le condizioni, è possibile usare gli operatori <a href=../esempi/esempi_2/esempio_3.html target="_blank">logici.</a> 
 
 					</div>
 					<div class="carousel-item text-center p-4">
 						
 						<p>
-							Come già detto l'istruzione if viene eseguita una volta se la condizione verificata è True. il ciclo <a href="https://www.html.it/pag/40148/cicli-for-e-while/">"while"</a>
-							esegue un blocco di istruzioni finché la condizione esaminata dal while non diventa True. Il problema di questa condizione è che è facile ritrovarsi in un ciclo <a href=../esempi/esempi_2/esempio_4.html>infinito,</a>
-							per questo bisogna stare attenti che la condizione possa diventare true. in alternativa si può mettere un <a href=../esempi/esempi_2/esempio_5.html>contatore</a> all'interno del while per 
+							Come già detto l'istruzione if viene eseguita una volta se la condizione verificata è True. il ciclo <a href="https://www.html.it/pag/40148/cicli-for-e-while/" target="_blank">"while"</a>
+							esegue un blocco di istruzioni finché la condizione esaminata dal while non diventa True. Il problema di questa condizione è che è facile ritrovarsi in un ciclo <a href=../esempi/esempi_2/esempio_4.html target="_blank">infinito</a>,
+							per questo bisogna stare attenti che la condizione possa diventare true. in alternativa si può mettere un contatore ed usare l'istruzione  <a href=../esempi/esempi_2/esempio_5.html target="_blank">break</a> all'interno del while per 
 							fare in modo che il ciclo si blocchi dopo un numero predefinito di tentativi. Un altro ciclo è il <a href="https://www.html.it/pag/40148/cicli-for-e-while/">"for"</a>
-							che esegue un blocco di codice un determinato numero di <a href=../esempi/esempi_2/esempio_3.html>volte</a>,questo è molto utile nelle liste che vedremo dopo.
+							che esegue un blocco di codice un determinato numero di <a href=../esempi/esempi_2/esempio_6.html target="_blank">volte</a>, questo lo si può fare grazie all'istruzione 
+							<a href=https://www.programmareinpython.it/video-corso-python-base/il-ciclo-e-funzione-range target="_blank">in range</a>.
 						</p>
 					</div>
 					<div class="carousel-item text-center p-4">
 						
-                        <p>Per prendere input da tastiera, in Python si può usare intuitivamente la funzione <a href=https://www.html.it/pag/39740/le-funzioni-print-e-input>input</a>
-                            la funziona da istruzzioni all'utente su cosa inserire come input, e prende l'input come stringa. Come gli interi ed i float in Python le stringhe 
-                            possono essere <a href=../esempi/esempio_5.html>sommate</a>  con (+). Ma non si possono aggiungere stringhe con i numeri. L
-                            e stringhe possono essere moltiplicate per interi, questo produce una ripetuta versione della stringa originale.
+                        <p>Le<a href=https://www.html.it/pag/15613/liste>liste</a>  sono un tipo di oggetto in Python, sono usate per memorizzare una lista di elementi indicizzata,una lista si crea con le parentesi quadre([]),
+							lasciandole vuote avremo una lista vuola, per riempirle basta inserire, numeri o stringhe dentro la lista, e dividerle con delle
+								<a href=../esempi/esempi_2/esempio_7.html target="_blank">virgole</a>.
+								Tipicamente la lista contiene un solo tipo tra i due, ma può contenerli entrambi. Per sapere quanto è lunga una lista c'è la funzione <a href=../esempi/esempi_2/esempio_8.html target="_blank">len</a>. 
+								Gli elementi in una lista possono essere riassegnati. Una lista può essere molticata o divisa nello stesso modo delle liste. È possibile fare controlli nelle liste,
+								controllare se un elemeno è o non è presente. Si utilizzano gli operatori <a href>in</a> per controllare se è presente <a href=>not</a> il contrario.
+								per aggiungere elementi ad una lista già creata si può usare append o insert, per rimuoverle remove. di seguito aggrego una tabella con le funzioni più usate 
+								sulle liste in <a href=https://docs.python.it/html/tut/node7.html target="_blank">Python</a>. ed un <a href=../esempi/esempi_2/esempio_9.html target="_blank">esempio</a>.
+
                         </p>
-							<p>In python, è impossibile completare certe operazione dove sono coinvolti due tipi diversi. 
+							<p>Per sapere quanto è lunga una lista c'è la funzione <a href=../esempi/esempi_2/esempio_8.html target="_blank">len</a>.
                                 Per esempio non si possono sommare le due stringhe che contengono i numeri "2" e "3", il risultato sarebbe "23",non 5.
-                                La soluzione a questo è la conversione di <a href=../esempi/esempio_6.html>tipo</a>
+                                La soluzione a questo è la conversione di <a href=../esempi/esempio_6.html target="_blank">tipo</a>
                             </p>
 						</div>
 						<div class="carousel-item text-center p-4">
@@ -154,11 +160,11 @@
 							
                         </div>
                         <div class="carousel-item text-center p-4">
-                            <p><a href=../esempi/esempio_5.html>Qui si può andare al primo modulo dell'esercitazione</a></p>
+                            <p><a href=../esempi/esempio_5.html >Qui si può andare al primo modulo dell'esercitazione</a></p>
                                 
                             </div>
 					
-				</div>
+				</div> 
 				<a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev" data-interval="false">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="sr-only">Previous</span>

@@ -1,0 +1,197 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>intronduzione a Python</title>
+		<link rel="shortcut icon" href="../../../favicon.ico" />
+		<link rel="stylesheet" href="../../../bootstrap-4.4.1-dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
+		<link rel="stylesheet" href="../slideshow.css" />
+		<script src="../../../jQuery/jquery.min.js"></script>
+		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
+		<style>
+            
+            body {
+    color: blue;
+    }
+
+    h1 {
+      text-align: center;
+      color: green;
+    }
+</style>
+		   
+			
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
+			uso a invece che span per rendere il contenuto interattivo  -->
+			<a class="navbar-brand" href="#">Edu@home</a>
+			<!-- ancora come in questo caso -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+                mentre sotto abbiamo una parte collapsable ovvero 
+                che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a id="home" class="nav-link" href="../../../learnMap/learnMap.html"
+							>Home <span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../IDLE.html">IDLE</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbarDropdown"
+							role="button"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
+						>
+							Settaggi Vari
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a
+							id="abdis"
+							class="nav-link disabled"
+							href="http://www.google.it"
+							tabindex="-1"
+							aria-disabled="true"
+							>Abilitabile traguardo (test)</a
+						>
+					</li>
+				</ul>
+				<!-- //inutile il search per ora  
+				<form class="form-inline my-2 my-lg-0">
+					<input
+						class="form-control mr-sm-2"
+						type="search"
+						placeholder="Matematica"
+						aria-label="Cerca"
+					/>
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+						Cerca
+					</button>
+                </form>
+                -->
+			</div>
+		</nav>
+        <br /><br /><br />
+        
+		
+			
+            <div class="container">
+                <h1 >Cos'è la programmazione? </h1>
+            </div>
+        <div class="bg-blur container-xl text-monospace text-white">
+        <div id="carouselContent" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active text-center p-4">
+                     <p>La programmazione informatica, si basa sulla capacità del computer a svolgere compiti diversi da quelli per cui è stato progettato.
+                         Infatti Un computer è una macchina programmabile. Non si limita a eseguire quello che il progettista ha scritto nei circuiti elettrici.
+                          L'utente può "istruire" ( programmare ) il computer a svolgere qualsiasi calcolo. Programmare significa scrivere un programma informatico da far eseguire al computer.
+                        </p>
+						
+					</div>
+					<div class="carousel-item text-center p-4">
+						
+						<p>Un programma informatico è una serie di istruzioni scritte in un linguaggio di programmazione, organizzate secondo delle strutture di controllo. 
+                            Non si tratta di una semplice procedura sequenziale, perché l'ordine di esecuzione delle istruzioni in un programma 
+                            può essere condizionato al presentarsi o meno di uno o più eventi.
+                            Un programma informatico è scritto secondo le regole di sintassi del linguaggio di programmazione. Ne esistono diversi 
+                            ( es. <code>Python</code>,<code>C</code>,<code>Java</code>,<a href=https://it.wikipedia.org/wiki/Linguaggio_di_programmazione>ecc</a>... ).
+                        </p>
+					</div>
+                        <div class="carousel-item text-center p-4">
+						
+                            <p>Per essere eseguito dal computer, il programma deve essere trasformato in linguaggio macchina. 
+                                La trasformazione può avvenire in due modi:
+                                <ul>
+                                 <li>Interpretazione. Un software interprete legge le istruzioni del linguaggio di programmazione durante l'esecuzione</li>
+                                 <li>Compilazione. Un software compilatore legge le istruzioni nel programma, le converte in una serie di comandi macchina 
+                                     e li salva in un altro file oggetto detto eseguibile ( es. nel dos sono i file con estensione .exe ).</li>
+                                    </ul>
+                            </p>
+                        </div>
+                        <div class="carousel-item text-center p-4">
+						
+                            <p>I linguaggi di programmazione svolgono tutti lo stesso compito,
+                                 permettono di istruire il computer a svolgere determinate operazioni e condizionarle a seconda del presentarsi o meno di alcuni eventi.
+                                 Ogni linguaggio di programmazione ha pro e contro, non esiste il linguaggio migliore in assoluto. La scelta del linguaggio è collegata alla piattaforma ( sistema operativo ) dove viene eseguito e all'obiettivo che si vuole raggiungere.
+
+                            </p>
+                        </div>
+
+                        <div class="carousel-item text-center p-4">
+						
+                            <p>I linguaggi di programmazione sono classificati in due grandi categorie, i linguaggi interpretati e quelli compilati.
+                                <ul>
+                                 <li>I linguaggi interpretati. Nei linguaggi interpretati il processore legge il codice sorgente delle istruzioni, lo interpreta e lo esegue.
+                                      Per eseguire il programma è necessario installare sul computer un apposito software interprete, in grado di leggere e</li>
+                                 <li>I linguaggi compilati. Nei linguaggi compilati è necessario trasformare il codice sorgente in un oggetto in linguaggio macchina, 
+                                     tramite l'operazione di compilazione. Il processore non esegue il codice sorgente, quello scritto dal programmatore ( developeer)</li>
+                                    </ul>
+                            </p>
+                        </div>
+                        <div class="carousel-item text-center p-4">
+						
+                            <p>Esistono principalmente cinque metodi di programmazion.
+                                <ul>
+                                 <li>La programmazione procedurale consiste nella stesura di un elenco sequenziale di operazioni.
+                                      Il computer esegue le istruzioni dalla prima all'ultima. Per ogni operazione va scritta un'istruzione.</li>
+                                 <li>La programmazione strutturata introduce le strutture condizionali ( <code>if</code> ) e le strutture cicliche di controllo 
+                                    ( <code>for</code>, <code>while</code>, <code>until</code> ). 
+                                     Inoltre, senza eliminarli, critica l'utilizzo dei salti incondizionati <br/>   ( <code>goto</code> ) nei programmi.</li>
+                                    
+                                  <li>  La programmazione modulare suddivide il codice sorgente di un programma in più
+                                     moduli che sono eseguiti in sequenza usando gli stessi indirizzi di memoria.</li>
+                                     <li>La programmazione a oggetti consiste nella creazione delle classi ( oggetti ). Quando si associa un'istanza alla classe, l'istanza eredita automaticamente tutte le proprietà della classe. 
+                                        A differenza della programmazione procedurale, la programmazione a oggetti riduce il numero delle istruzioni a parità di operazioni. Questa tecnica è anche conosciuta con la sigla OO ( Object Oriented ).
+                                        </li>
+                                    <li>La programmazione funzionale si basa prevalentemente sul concetto di espressione e funzione logico matematica. 
+                                        Il flusso del programma consiste nel calcolo e nella valutazione delle funzioni senza produrre effetti collaterali (side effect).</li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev" data-interval="false">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next"data-interval="false">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        
+                    </div>
+                </div>
