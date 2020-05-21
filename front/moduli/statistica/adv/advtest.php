@@ -34,7 +34,7 @@ port=5432 dbname=putfahxs user=putfahxs password=yj6L-sA-nVPEpp4PJPpjvHLb6KbZJXs
     statistica.esercizio1+ statistica.esercizio2+ statistica.esercizio3  AS "total"
     FROM statistica,utente where utente.id=statistica.id) as foo
 	ORDER BY Total DESC
-	FETCH FIRST 3 ROWS ONLY
+	FETCH FIRST 7 ROWS ONLY
     ';
 
 	$res2 = pg_query($dbconn, $q2);
