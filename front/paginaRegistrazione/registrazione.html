@@ -12,11 +12,6 @@
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/bootstrap.js"></script>
 
-		<link
-			href="https://fonts.googleapis.com/css?family=Nunito:400,300"
-			rel="stylesheet"
-			type="text/css"
-		/>
 		<style>
 			.mycheckbox {
 				background-color: whitesmoke;
@@ -32,6 +27,27 @@
 		<script type="text/javascript" lang="javascript" src="reg.js"></script>
 	</head>
 	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
+			uso a invece che span per rendere il contenuto interattivo  -->
+			<a class="navbar-brand" href="../index.php">Edu@home</a>
+			<!-- ancora come in questo caso -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+                mentre sotto abbiamo una parte collapsable ovvero 
+                che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
+		</nav>
 		<div class="container text-monospace text-dark">
 			<form
 				action="validateRegistrazione.php"

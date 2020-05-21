@@ -1,7 +1,9 @@
+<!-- @format -->
+
 <link
-    href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-    rel="stylesheet"
-    id="bootstrap-css"
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet"
+	id="bootstrap-css"
 />
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -9,81 +11,106 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Pagina Login</title>
+	<head>
+		<title>Pagina Login</title>
 
-        <!--Bootsrap 4 -->
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        />
+		<!--Bootsrap 4 -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		/>
 
-        <!--Fontawesome -->
-        <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-            
-        />
+		<!--Fontawesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
 
-        <!--stile-->
-        <link rel="stylesheet" type="text/css" href="loginTemplate.css" />
-    </head>
-    <body>
-        <div class="container">
-            <div class="d-flex justify-content-center h-100">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Log in</h3>
-                    </div>
-                    <div class="card-body">
-                        <form
-                        action="checkLogin2.php"
-				        class="form-signin"
-				        method="POST">
-                            <div class="input-group form-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"
-                                        ><i class="fas fa-user"></i
-                                    ></span>
-                                </div>
-                                <input type="email" class="form-control" placeholder="email"  name="email" required/>
-                            </div>
-                            <div class="input-group form-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
-                                </div>
-                                <input
-                                    type="password" class="form-control" placeholder="password" name="password" required
-                                                                        
-                                />
-                            </div>
-                            <div class="row align-items-center remember">
-                                <input
-                                    type="checkbox"
-                                    id="id_check"
-                                    onclick="remember()"
-                                />ricordami
-                            </div>
-                            <div class="form-group">
-                                <input
-                                    type="submit"
-                                    value="Login"
-                                    class="btn float-right login_btn"
-                                    name="Login"
-                                />
-                            </div>
-                        </form>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-flex justify-content-center links">
-                            non hai un account??<a href="../paginaRegistrazione/registrazione.html">Registrati</a>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <a href="#">Dimenticato la password?</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
+		<!--stile-->
+		<link rel="stylesheet" type="text/css" href="loginTemplate.css" />
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
+			uso a invece che span per rendere il contenuto interattivo  -->
+			<a class="navbar-brand" href="../index.php">Edu@home</a>
+			<!-- ancora come in questo caso -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+                mentre sotto abbiamo una parte collapsable ovvero 
+                che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
+		</nav>
+		<div class="container">
+			<div class="d-flex justify-content-center h-100">
+				<div class="card">
+					<div class="card-header">
+						<h3>Log in</h3>
+					</div>
+					<div class="card-body">
+						<form action="checkLogin2.php" class="form-signin" method="POST">
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"
+										><i class="fas fa-user"></i
+									></span>
+								</div>
+								<input
+									type="email"
+									class="form-control"
+									placeholder="email"
+									name="email"
+									required
+								/>
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-key"></i></span>
+								</div>
+								<input
+									type="password"
+									class="form-control"
+									placeholder="password"
+									name="password"
+									required
+								/>
+							</div>
+							<div class="row align-items-center remember">
+								<input
+									type="checkbox"
+									id="id_check"
+									onclick="remember()"
+								/>ricordami
+							</div>
+							<div class="form-group">
+								<input
+									type="submit"
+									value="Login"
+									class="btn float-right login_btn"
+									name="Login"
+								/>
+							</div>
+						</form>
+					</div>
+					<div class="card-footer">
+						<div class="d-flex justify-content-center links">
+							non hai un account??<a href="../paginaRegistrazione/registrazione.html"
+								>Registrati</a
+							>
+						</div>
+						<div class="d-flex justify-content-center">
+							<a href="#">Dimenticato la password?</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
