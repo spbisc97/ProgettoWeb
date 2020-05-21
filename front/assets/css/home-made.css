@@ -10,6 +10,11 @@
 	background-color: rgba(0, 0, 0, 0.4);
 }
 
+.center {
+	margin: auto;
+	width: 98%;
+}
+
 .radiobutton {
 	display: block;
 	background-color: rgba(84, 189, 238, 0.8);

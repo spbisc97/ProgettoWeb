@@ -98,7 +98,7 @@ let sport = new Chart(chart1, {
 			{
 				//label: "Media",
 				data: [15, 7, 20, 21, 10, 25, 30],
-				backgroundColor: "rgba(200, 100, 100, 0.9)",
+				backgroundColor: colors,
 				borderWidth: 1,
 				borderColor: "rgb(200,200,200)",
 				hoverBorderWidth: 1,
