@@ -1,5 +1,5 @@
 /** @format */
-
+var risposte = [];
 var quiz = {
 	questions: [
 		{
@@ -21,53 +21,84 @@ var quiz = {
 			],
 		},
 		{
-			text: "che informazioni ha sulla barra delle x?",
+			text: "che informazioni ha sull'asse delle y?",
 			risposte: [
-				{ text: "popolazione" },
+				{ text: "valore della popolazione " },
 				{ text: "sport preferito" },
-				{ text: "anni" },
-				{ text: "non ha la barra delle x" },
+				{ text: "anni trascorsi" },
+				{ text: "non ha l'asse delle y" },
+			],
+		},
+		{
+			text: "quando c'è stato un picco di nascite?",
+			risposte: [
+				{ text: "non c'è stato" },
+				{ text: "il grafico parla di cinghiali" },
+				{ text: "nel passato" },
+				{ text: "tra il 1970 e il 1980" },
 			],
 		},
 	],
 };
-Vue.component("next", {
-	template: `
-    <button class="center btn btn-primary" style="display: list-item; margin: 0.3em">{{ prossima }}</button>`,
+let res = Vue.component("resoconto", {
+	template: `<div>
+        <button v-for="(index,persona) in persone" > </button>
+        
+    </div>`,
 	data: function () {
-		return {
-			prossima: "prossima",
-		};
+		return {};
 	},
 });
 
 var vue = new Vue({
 	el: "#app",
 	template: `<!-- @format -->
-    <div>
-        <h4 class="center" style="padding: 2em;">{{ domanda.text }}</h4>
+<div>
+	<div v-if="rendercomponent">
+		<h4 class="center" style="padding: 2em;">{{ domanda.text }}</h4>
 		<div class="center" style="position: relative;">
-			<button v-for="domande in domanda.risposte" class="center btn btn-primary" style="display: list-item; margin: 0.3em;">
+			<button
+				:value="index"
+				v-on:click="segna();isActive[index]=true;"
+				v-for="(domande,index) in domanda.risposte"
+				:class="{ 'btn-danger' : isActive[index] }"
+				class="center btn btn-primary"
+				style="display: list-item; margin: 0.3em;"
+			>
 				{{ domande.text }}
 			</button>
-			
 		</div>
-    </div>
+	</div>
+	<div v-if="!rendercomponent">
+		<resoconto></resoconto>
+	</div>
+</div>
 `,
 	data: {
-		index: 0,
+		indice: 0,
 		colors: [],
 		domanda: quiz.questions[0],
+		rendercomponent: true,
+		isActive: [false, false, false, false],
 	},
 	methods: {
+		segna: function (message) {
+			this.isActive = [false, false, false, false];
+			risposte[this.indice] = event.target.value;
+			event.target.className += " btn-danger";
+		},
 		generator: function () {
 			for (let index = 0; index < 15; index++) {
 				this.colors.push("#" + ((Math.random() * 0xffffff) << 0).toString(16));
 			}
 		},
 		cambiadomanda: function () {
-			this.index++;
-			this.domanda = quiz.questions[this.index];
+			this.isActive = [false, false, false, false];
+			this.indice++;
+			this.domanda = quiz.questions[this.indice];
+		},
+		controlla: function () {
+			vue.rendercomponent = false;
 		},
 	},
 });
@@ -115,7 +146,7 @@ var nascite = {
 		{
 			//label: "Media",
 			data: [, 908622, 910192, 901472, 640401, 569255, 543039, 561944, 435000],
-			backgroundColor: vue.colors,
+			backgroundColor: "rgb(78, 156, 45,0.3)",
 			borderWidth: 1,
 			borderColor: "rgb(200,200,200)",
 			hoverBorderWidth: 1,
@@ -223,14 +254,24 @@ function cambiadomande() {
 		popolazionechart();
 		$("#prossima").text("Quarta Domanda");
 	} else if ($.trim($("#prossima").text()) == "Quarta Domanda") {
-		popolazionechart();
+		nascitechart();
 		$("#prossima").text("Controlla");
 	} else if ($.trim($("#prossima").text()) == "Controlla") {
 		controlla();
+		return;
 	}
 
 	vue.cambiadomanda();
 }
 function controlla() {
-	alert("finito");
+	$.post("advtest.php", { risposte: risposte }, function (data, status) {
+		grafico.destroy();
+
+		vue.rendercomponent = false;
+		alert("Data: " + data + "\nStatus: " + status);
+		if ((data = -1)) {
+		} else {
+			res.punteggio = data;
+		}
+	});
 }
