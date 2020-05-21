@@ -97,7 +97,8 @@ var vue = new Vue({
 
 let res = Vue.component("resoconto", {
 	template: `<div>
-        <button class="center btn btn-outline-primary"  v-for="(persona,index) in persone" >{{ persona.nick }} al posto {{index+1}} </button>
+		<p class="center text-danger" > La classifica</p>
+        <button class="center btn btn-outline-primary"  v-for="(persona,index) in persone" >{{ persona.nick }} con {{persona.total}} punti </button>
         
     </div>`,
 	data: function () {
@@ -285,9 +286,6 @@ function controlla() {
 	<h4 class="center text-monospace">Hai ottenuto un punteggio di ` +
 					punteggio +
 					` su 4</h4>
-	<h5 style="border-radius: 1em; padding: 1em; margin: 1em; background-color: aquamarine;">
-		A destra puoi vedere la classifica di chi ha giocato prima di te
-	</h5>
 </div>
 `
 			);

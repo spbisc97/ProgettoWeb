@@ -27,12 +27,14 @@ if (!isset($_SESSION["id"])) {
 port=5432 dbname=putfahxs user=putfahxs password=yj6L-sA-nVPEpp4PJPpjvHLb6KbZJXsL"
 	)) or die("Could not connect: " . preg_last_error());
 	$q1 = "UPDATE statistica SET esercizio3=$1 WHERE id = $2";
-	$res = pg_query_params($dbconn, $q1, [$valori, $_SESSION["id"]]);
+	$res = pg_query_params($dbconn, $q1, [$valori[0], $_SESSION["id"]]);
+	isset($res);
 	$q2 = 'select * from (SELECT
     utente.nick, statistica.esercizio1, statistica.esercizio2, statistica.esercizio3,
     statistica.esercizio1+ statistica.esercizio2+ statistica.esercizio3  AS "total"
     FROM statistica,utente where utente.id=statistica.id) as foo
-    ORDER BY Total ASC
+	ORDER BY Total DESC
+	FETCH FIRST 3 ROWS ONLY
     ';
 
 	$res2 = pg_query($dbconn, $q2);
