@@ -3,7 +3,7 @@
  * @format
  */
 session_start();
-$corrette = ["0", "2", "0", "0"];
+$corrette = ["0", "2", "0", "3"];
 $valori = [0, ["hello world"]];
 if (!isset($_SESSION["id"])) {
 	echo -1;

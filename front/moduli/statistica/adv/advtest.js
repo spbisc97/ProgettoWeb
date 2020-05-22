@@ -272,7 +272,6 @@ function controlla() {
 		grafico.destroy();
 
 		vue.rendercomponent = false;
-		alert("Data: " + data + "\nStatus: " + status);
 		if (data == -1) {
 			$("#lateralgraph").html(`<!-- @format -->
 
