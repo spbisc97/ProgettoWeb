@@ -43,9 +43,9 @@
                                 Profilo
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Impostazioni</a>
+                                <a class="dropdown-item" href="/front/profilo.php">Impostazioni</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/front/profilo.php">Profilo</a>
+                                <a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
                             </div>
                         </ul>
                     </div>
@@ -55,7 +55,9 @@
                     <?php
                     session_start();
                     if (!isset($_SESSION["id"])) {
-                    	echo ' <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> Ci dispiace ma non risulti loggato </div>   </div>
+                    	echo ' <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> Ci dispiace ma non risulti loggato </div>  
+                        echo <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> <a class="center" href="../../../index.php"> premi qui per registrarti <a> </div>
+                        </div>
                         </body>
             
                         <html>';
@@ -81,7 +83,7 @@
                     port=5432 dbname=putfahxs user=putfahxs password=yj6L-sA-nVPEpp4PJPpjvHLb6KbZJXsL"
                     )) or die("Could not connect: " . preg_last_error());
 
-                    $q1 = "UPDATE statistica SET esericizio1=$1 WHERE id = $2";
+                    $q1 = "UPDATE statistica SET esercizio1=$1 WHERE id = $2";
 
                     $res = pg_query_params($dbconn, $q1, [$punteggio, $_SESSION["id"]]);
 
@@ -95,7 +97,9 @@
 
                     echo "</div>";
 
-                    echo "<br><br><br>";
+                    echo "<br><br>";
+
+                    echo '<div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(20, 50, 100, 0.4);"> <a class="center" href="../../../learnMap/learnMap.php"> Premi qui per tornare alla learnMap <a> </div>';
 
 //print_r($_POST);
 ?>

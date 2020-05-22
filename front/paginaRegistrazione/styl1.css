@@ -1,28 +1,27 @@
 /** @format */
 
-* {
-	box-sizing: border-box;
-}
-html,
 body {
+	height: 100%;
+	width: 100%;
 	background-image: url("photography-of-fall-trees-1591447.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 100%;
-	font-family: "Numans", sans-serif;
 }
 
 form {
-	max-width: 300px;
+	max-width: 25em;
 	margin: 10px auto;
 	padding: 10px 20px;
-	background: none;
-	border-radius: 8 px;
-}
 
-h1 {
-	margin: 0 0 30 px 0;
-	text-align: center;
+	border-radius: 8px;
+}
+@media screen and (max-width: 800px) {
+	form {
+		max-width: 100%;
+		margin: 10px auto;
+		padding: 10px 20px;
+		border-radius: 8px;
+	}
 }
 
 input[type="text"],
@@ -37,12 +36,12 @@ select {
 	height: auto;
 	margin: 0;
 	outline: 0;
-	padding: 15px;
+	padding: 1em;
 	width: 100%;
 	background-color: #bfeeec;
 	color: #000000;
 	box-shadow: 0 1px 0 rgb(0, 0, 0, 0.3) inset;
-	margin-bottom: 10px;
+	margin-bottom: 1em;
 }
 input[type="checkbox"] {
 	border-radius: 5px;

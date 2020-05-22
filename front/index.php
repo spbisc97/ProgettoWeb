@@ -11,6 +11,7 @@ session_start(); ?>
         <title>edu@home</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/home-made.css">
@@ -46,7 +47,7 @@ session_start(); ?>
         <!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
         le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
         uso a invece che span per rendere il contenuto interattivo  -->
-        <a class="navbar-brand" href="../../../index.php">Edu@home</a>
+        <a class="navbar-brand" href=".#">Edu@home</a>
         <!-- ancora come in questo caso -->
         <button
             class="navbar-toggler"
@@ -65,7 +66,7 @@ session_start(); ?>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a id="home" class="nav-link" href="../../../learnMap/learnMap.php"
+                    <a id="home" class="nav-link" href="learnMap/learnMap.php"
                         >LearnMap <span class="sr-only">(current)</span></a
                     >
                 </li>
@@ -85,7 +86,7 @@ session_start(); ?>
         <!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
         le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
         uso a invece che span per rendere il contenuto interattivo  -->
-        <a class="navbar-brand" href="../../../index.php">Edu@home</a>
+        <a class="navbar-brand" href="#">Edu@home</a>
         <!-- ancora come in questo caso -->
         <button
             class="navbar-toggler"
@@ -104,7 +105,7 @@ session_start(); ?>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a id="home" class="nav-link" href="../../../learnMap/learnMap.php"
+                    <a id="home" class="nav-link" href="learnMap/learnMap.php"
                         >LearnMap <span class="sr-only">(current)</span></a
                     >
                 </li>
@@ -171,20 +172,18 @@ session_start(); ?>
         <section id="three" class="wrapper align-center">
             <div class="inner">
                 <div class="flex flex-2">
+                    <article></article>
                     <article>
                         <div class="image round">
                             <img src="images/imm2.jpg" alt="imm 01" />
                         </div>
                         <header>
-                            <h3>Programma!<br />HTML,C,Python e molti altri!</h3>
+                            <h3>Programma!</h3>
                         </header>
                         <p>
-                            Con l'avvento dei tempi moderni la programmazione è una parte
-                            essenziale<br />È usata in qualsiasi cosa <br />Scopri come fare!.
+                            Divertente e utile<br />È usata in qualsiasi cosa <br />Scopri come fare!.
                         </p>
-                        <footer>
-                            <a href="#" class="button">Learn More</a>
-                        </footer>
+
                     </article>
                     <article>
                         <div class="image round">
@@ -194,10 +193,9 @@ session_start(); ?>
                             <h3>Ma non solo</h3>
                         </header>
                         <p>Logica, matematica,Fisica<br />di tutto e di più</p>
-                        <footer>
-                            <a href="#" class="button">Learn More</a>
-                        </footer>
+
                     </article>
+                    <article></article>
                 </div>
             </div>
         </section>
