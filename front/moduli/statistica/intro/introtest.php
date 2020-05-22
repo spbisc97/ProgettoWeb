@@ -55,7 +55,9 @@
                     <?php
                     session_start();
                     if (!isset($_SESSION["id"])) {
-                    	echo ' <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> Ci dispiace ma non risulti loggato </div>   </div>
+                    	echo ' <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> Ci dispiace ma non risulti loggato </div>  
+                        echo <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> <a class="center" href="../../../index.php"> premi qui per registrarti <a> </div>
+                        </div>
                         </body>
             
                         <html>';
@@ -95,7 +97,9 @@
 
                     echo "</div>";
 
-                    echo "<br><br><br>";
+                    echo "<br><br>";
+
+                    echo '<div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(20, 50, 100, 0.4);"> <a class="center" href="../../../learnMap/learnMap.php"> Premi qui per tornare alla learnMap <a> </div>';
 
 //print_r($_POST);
 ?>

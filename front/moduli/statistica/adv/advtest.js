@@ -274,7 +274,16 @@ function controlla() {
 		vue.rendercomponent = false;
 		alert("Data: " + data + "\nStatus: " + status);
 		if (data == -1) {
-			// varie = null;
+			$("#lateralgraph").html(`<!-- @format -->
+
+<div>
+	<a href="../../../index.php">
+		<p>
+			Ti consigliamo di registrarti per avere accesso alla classifica e ad altre informazioni!
+		</p>
+	</a>
+</div>
+`);
 		} else {
 			varie = JSON.parse(data);
 			punteggio = varie[0];
@@ -286,6 +295,7 @@ function controlla() {
 	<h4 class="center text-monospace">Hai ottenuto un punteggio di ` +
 					punteggio +
 					` su 4</h4>
+<a class="center text-monospace" href="../../../learnMap/learnMap.php"><p>Premi qui per tornare alla LearnMap</p>	</a>			
 </div>
 `
 			);

@@ -100,6 +100,13 @@ uso a invece che span per rendere il contenuto interattivo  -->
 						<br />
 						lo scopo è quello di mangiare più frutti rossi ovvero mele possibili, fino a
 						riempire l'intero schermo
+
+						<p
+							class="row text-primary center"
+							style="padding: 1em;"
+							id="ultimopunteggio"
+							class="text-primary"
+						></p>
 					</div>
 				</div>
 			</div>
@@ -184,6 +191,7 @@ uso a invece che span per rendere il contenuto interattivo  -->
 					// mangia la mela >>
 					if (cell.x === apple.x && cell.y === apple.y) {
 						snake.maxCells++;
+						lungezzasnake++;
 
 						// 25x25 in canvas è 400x400
 						apple.x = getRandomInt(0, 25) * grid;
@@ -193,11 +201,12 @@ uso a invece che span per rendere il contenuto interattivo  -->
 					for (var i = index + 1; i < snake.cells.length; i++) {
 						// reset in caso morte
 						if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-							//record(snake.maxcells);
 							snake.x = 160;
 							snake.y = 160;
 							snake.cells = [];
 							snake.maxCells = 4;
+							record();
+							lungezzasnake = 4;
 							snake.dx = grid;
 							snake.dy = 0;
 
@@ -231,8 +240,11 @@ uso a invece che span per rendere il contenuto interattivo  -->
 					snake.dx = 0;
 				}
 			});
-			function record(numero) {
-				$.get("snake.php", { mele: numero }).done(function (data) {});
+			lungezzasnake = 4;
+			function record() {
+				$("#ultimopunteggio").text("hai conseguito un  punteggio di " + lungezzasnake);
+
+				//$.get("snake.php", { mele: lungezzasnake }).done(function (data) {});
 			}
 
 			// inizio

@@ -66,8 +66,8 @@ var vue = new Vue({
 		colors: [],
 		showdx: true,
 		showsx: true,
-		dxclass: "col-6",
-		sxclass: "col-6",
+		dxclass: "col-5",
+		sxclass: "col-5",
 		testo: "",
 	},
 	template: `<!-- @format -->
@@ -126,8 +126,8 @@ var vue = new Vue({
 		unhide: function () {
 			this.showsx = true;
 			this.showdx = true;
-			this.sxclass = "col-6";
-			this.dxclass = "col-6";
+			this.sxclass = "col-5";
+			this.dxclass = "col-5";
 		},
 	},
 });
