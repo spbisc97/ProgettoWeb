@@ -9,12 +9,15 @@
         }
         </script>
         <?php
+        print_r($_POST);
+
         ($dbconn = pg_connect(
         	"host=dumbo.db.elephantsql.com
         port=5432 dbname=putfahxs user=putfahxs password=yj6L-sA-nVPEpp4PJPpjvHLb6KbZJXsL"
         )) or die("Could not connect: " . preg_last_error());
         if (!isset($_POST['Login'])) {
         	header("Location: ../index.php");
+        	return;
         } else {
         	$email = $_POST['email'];
         	$q1 = "select * from utente where email= $1";
@@ -49,4 +52,3 @@
         		}
         	}
         }
-

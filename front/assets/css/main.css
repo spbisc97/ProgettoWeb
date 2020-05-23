@@ -493,7 +493,7 @@ textarea {
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
-	background: #56c1f3c9;
+	background: #485257c9;
 	border-radius: 10px;
 	border: none;
 	border: solid 2px #239cff;
@@ -507,7 +507,7 @@ textarea {
 
 /* Bottoni */
 
-button,
+/* button, */
 .button {
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -778,7 +778,7 @@ button,
 /* Banner */
 
 #banner {
-	padding: 14em 0 9em 0;
+	padding: 8em 0 9em 0;
 	background: rgba(75, 75, 93, 0.85);
 	text-align: center;
 	position: relative;

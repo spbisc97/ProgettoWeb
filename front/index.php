@@ -152,11 +152,55 @@ session_start(); ?>
 
                 <footer>
                     <?php if (!isset($_SESSION['id'])) {
-                    	echo '<a href="paginaLogin/login.html" class="button">Inizia</a>';
+                    	echo '<a data-toggle="modal" data-target="#overlayLogin" class="button">Inizia</a>';
                     } else {
                     	echo '<a href="learnMap/learnMap.php" class="button">Inizia</a>';
                     } ?>
                 </footer>
+            </div>
+        </section>
+        <section id=testing-poup>
+            <!-- <div class="text-center">
+                <a href="" class="button" data-toggle="modal" data-target="#overlayLogin">Apri LogIn/Register
+                    (testing)</a>
+            </div> -->
+            <div class="modal fade" id="overlayLogin">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background: whitesmoke">
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                            <button type="btn btn-primary" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form action="paginaLogin/checkLogin2.php" class="form-group" method="POST">
+                            <div class=" mb-5">
+
+                                <label data-error="wrong" data-success="right" for="email">Your
+                                    email</label>
+                                <input type="email" name="email" id="email" class="form-control ">
+
+                            </div>
+
+                            <div class=" mb-4">
+
+                                <label data-error="wrong" data-success="right" for="password">Your
+                                    password</label>
+                                <input type="password" name="password" id="password" class="form-control ">
+
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center">
+                                <input type="submit" value="Login" class="btn btn-primary" name="Login"></input>
+                            </div>
+
+                        </form>
+
+                        <div class="modal-footer text-center justify-content-center">E se non lo hai già fatto
+                            <a class="btn btn-primary" href="paginaRegistrazione/registrazione.html">registrati!</a>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </section>
 
