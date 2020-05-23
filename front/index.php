@@ -64,13 +64,7 @@ session_start(); ?>
             mentre sotto abbiamo una parte collapsable ovvero 
             che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a id="home" class="nav-link" href="learnMap/learnMap.php"
-                        >LearnMap <span class="sr-only">(current)</span></a
-                    >
-                </li>
-            </ul>
+            
             <ul class="navbar-nav ml-auto dropdown">
             <a class="navbar-brand nav-link"  href="#footer">Contatti</a>
             <a class="navbar-brand nav-link" href="learnMap/learnMap.php">Allenati</a>
@@ -103,13 +97,7 @@ session_start(); ?>
             mentre sotto abbiamo una parte collapsable ovvero 
             che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a id="home" class="nav-link" href="learnMap/learnMap.php"
-                        >LearnMap <span class="sr-only">(current)</span></a
-                    >
-                </li>
-            </ul>
+            
             <ul class="navbar-nav ml-auto dropdown">
             <a class="navbar-brand nav-link"  href="#footer">Contatti</a>
             <a class="navbar-brand nav-link" href="paginaLogin/login.html">Login</a>
@@ -163,7 +151,11 @@ session_start(); ?>
                 </div>
 
                 <footer>
-                    <a href="paginaLogin/login.html" class="button">Inizia</a>
+                    <?php if (!isset($_SESSION['id'])) {
+                    	echo '<a href="paginaLogin/login.html" class="button">Inizia</a>';
+                    } else {
+                    	echo '<a href="learnMap/learnMap.php" class="button">Inizia</a>';
+                    } ?>
                 </footer>
             </div>
         </section>
