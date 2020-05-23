@@ -47,7 +47,8 @@
         			$nome = $line["nome"];
         			$_SESSION['nome'] = $line["nome"];
         			// echo "<a href=../index.html> Premi qui</a>";
-        			header("Location: ../index.php?login=corretto,benvenuto$nicm"); //sposta automaticamente su index e cambia l'header
+        			$nick = $line['nick'];
+        			header("Location: ../index.php?login=corretto,benvenuto$nick"); //sposta automaticamente su index e cambia l'header
         			exit();
         		}
         	}

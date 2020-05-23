@@ -100,7 +100,6 @@ session_start(); ?>
             
             <ul class="navbar-nav ml-auto dropdown">
             <a class="navbar-brand nav-link"  href="#footer">Contatti</a>
-            <a class="navbar-brand nav-link" href="paginaLogin/login.html">Login</a>
             <a class="navbar-brand nav-link" href="paginaRegistrazione/registrazione.html">Registrazione</a>
             
         	
