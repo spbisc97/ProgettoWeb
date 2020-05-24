@@ -23,6 +23,7 @@ let mediaChart = new Chart(myChart, {
         labels: [],
         datasets: [
             {
+                //label: "Media",
                 data: [],
                 backgroundColor: "rgba(200, 100, 100, 0.9)",
                 borderWidth: 1,
@@ -42,7 +43,7 @@ let mediaChart = new Chart(myChart, {
     options: {
         title: {
             display: true,
-            text: "enigma",
+            text: "PROBLEM SOLVING",
             fontSize: 25,
         },
         legend: {
