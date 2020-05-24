@@ -1,5 +1,18 @@
 <!-- @format -->
 
+<!-- <?php
+/**
+ * @format
+ */
+
+session_start();
+if (!isset($_SESSION["id"])) {
+	header("Location: index.php");
+}
+?> -->
+
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -18,11 +31,13 @@
 				background-attachment: fixed;
 				background-size: cover;
 			}
+
 			.bg-blur {
 				background-color: rgba(255, 255, 255, 0.4);
 			}
 		</style>
 	</head>
+
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
 			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
@@ -74,64 +89,14 @@
 			</div>
 		</nav>
 
-		<div class="bg-blur container xl text-monospace">
-			<br /><br /><br />
-			<h2>Cosa è la statistica?</h2>
-			<div>
-				La statistica è una disciplina che ha come fine lo studio quantitativo e qualitativo
-				di un particolare fenomeno collettivo in condizioni di incertezza o non
-				<span class="bg-light more-info" id="fen">determinismo,</span>
-				<div class="bg-light" style="display: none;" id="sfen">
-					<hr />
-					Il determinismo, in filosofia e filosofia della scienza, indica quella
-					concezione per cui in natura nulla avviene per caso, invece tutto accade secondo
-					rapporti di causa effetto
-					<hr />
-				</div>
-				cioè di non completa conoscenza di esso o parte di esso.
-				<br />
-				La storia della statistica parte da tempi antichi, già i le prime dinastie egizie
-				censivano il popolo!
-				<br />Inizirono addirittura a rilevare i beni ,tenevano liste delle famiglie dei
-				soldati,dei dipendenti statali e delle merci <br />
-				Nel popolo di istraele i censimenti iniziarono dopo la loro fuga dall'egitto
-				<a
-					class="bg-light more-info"
-					id="numeri"
-					href="https://it.wikipedia.org/wiki/Numeri_(Bibbia)"
-				>
-					nel deserto del sinai
-				</a>
-				<div class="bg-light" style="display: none;" id="snumeri">
-					da qui "libro dei numeri" che racconta nella prima parte di esso i censimenti
-					degli ebrei
-				</div>
-				ma la maggior parte delle popolazioni nel passato censivano i propri cittadini ,
-				proprio come avviene adesso!
-				<br />
-				Il censimento in italia avviene ogni 10 anni ed è gestito
-				<a
-					class="bg-light more-info"
-					id="istat"
-					href="https://it.wikipedia.org/wiki/Istituto_nazionale_di_statistica"
-				>
-					dall'istat
-				</a>
-				<div class="bg-light" style="display: none;" id="sistat">
-					L'Istituto nazionale di statistica (Istat o ISTAT) è un ente pubblico di ricerca
-					italiano che si occupa dei censimenti generali della popolazione, dei servizi e
-					dell'industria, e dell'agricoltura, di indagini campionarie sulle famiglie e di
-					indagini economiche generali a livello nazionale.
-				</div>
-				<br /><br />
-				<h2></h2>
-				<br /><br /><br /><br />
-				<a href="introtest.html">
-					<button class="btn btn-primary">Portami al test!!!</button>
-				</a>
-				<!--del quale non abbiamo completa conoscenza-->
+		<div class="container">
+			<div class="row">
+				<div class="col"></div>
+				<div
+					class="col"
+					style="border-style: solid; border-radius: 3em; border-color: blue;"
+				></div>
 			</div>
 		</div>
-		<script src="intro.js"></script>
 	</body>
 </html>
