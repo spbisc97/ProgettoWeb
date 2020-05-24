@@ -78,7 +78,10 @@
                     } ?>
                     <br />
                     In questa sezione è possibile scegliere la materia che si è interessati ad
-                    apprendere, noi chiaramente forniremo solo delle basi per approcciarsi!
+                    apprendere, noi chiaramente forniremo solo delle basi per approcciarsi
+                    <br>
+                    Clicca sulla materia che ti interessa, ogni materia avrà più sezioni che potrai affrontare, clicca
+                    sulla sezione che ti interessa!
 
                 </div>
             </div>
