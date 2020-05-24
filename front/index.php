@@ -268,13 +268,14 @@ session_start(); ?>
 
 
         <!-- Scripts -->
-        <script>
-        $(document).ready(function() {
-            $("#logout").click(function() {
-                $.post("logout.php");
+        <?php if (isset($_GET["messaggio"])) {
+        	$mes = $_GET["messaggio"];
+        	echo '<script>$(document).ready(function(){alert("' .
+        		$mes .
+        		'");
             });
-        })
-        </script>
+            </script>';
+        } ?>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
