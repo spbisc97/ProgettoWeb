@@ -54,8 +54,8 @@ let destra = Vue.component("destra", {
 
 <div class="">
 	
-	<table class="table table-info table-bordered" >
-		<tr class="" v-for="(info,value) in persona"> <td>  {{ value }}  </td> <td>  {{ info }} </td> <hr> </tr>
+	<table class="table table-dark table-bordered" style="border-style: solid;border-color: aliceblue;border-width: 2px;" >
+		<tr class="d-table-row" v-for="(info,value) in persona"> <td>  {{ value }}  </td> <td>  {{ info }} </td> <hr> </tr>
 	</table>
 </div>
 `,
@@ -68,7 +68,8 @@ let sinistra = Vue.component("sinistra", {
 	template: `<!-- @format -->
 
 <div class="center" style="padding: 2em;">
-	<table class="table table-dark table-bordered" style="">
+	<p class="text-light center"> Valutazione per esercizio</p>
+	<table class="table table-dark table-bordered" style="border-style: solid;border-color: aliceblue;border-width: 2px;">
 		<tr></tr>
 			<th></th>
 			<th style="padding: 0.4em;" v-for="(valore,esercizio) in nesercizi">{{ esercizio }}</th>
@@ -95,6 +96,7 @@ let bot = Vue.component("bottoni", {
 		data-target="#overscreen"
 		v-on:click="overlay"
 		class="btn btn-outline-primary d-lg-inline-block"
+		style="margin: 2em;"
 		:id="elem.text"
 	>
 		{{ elem.text }}
@@ -114,22 +116,18 @@ let bot = Vue.component("bottoni", {
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form :action="over.link" class="form-group" method="POST"  :name=over.text >
+				<form :action="over.link" class="form-group" method="POST" :name="over.text">
 					<div v-for="elem in over.todisplay" class="mb-4">
-						<label class="label" :for="elem.text">
-							{{ elem.text }}</label
-						>
+						<label class="label" :for="elem.text"> {{ elem.text }}</label>
 						<input
 							:type="elem.type"
 							:name="elem.name"
 							:id="elem.name"
 							class="form-control"
-							
-
 						/>
 					</div>
 					<div class="modal-footer d-flex justify-content-center">
-						<button type="submit" value="Invia" class="btn btn-primary" />
+						<input type="submit" value="Invia" class="btn btn-primary" />
 					</div>
 				</form>
 			</div>
@@ -154,20 +152,22 @@ var vue = new Vue({
 	el: "#app",
 	template: `<!-- @format -->
 <div>
-	<div class="row align-items-center center">
-		<div style="margin: 3em;">
-			In questa sezione puoi avere un riassunto del tuo profilo, i punteggi ai test e se ne
-			hai necessità cambiare alcune impostazioni del tuo profilo
-		</div>
+	<div class="text-light" style="margin: 0 4em 0 4em;">
+		In questa sezione puoi avere un riassunto del tuo profilo, i punteggi ai test e se ne hai
+		necessità cambiare alcune impostazioni del tuo profilo
+	</div>
+	<div class="align-center">
+		<bottoni></bottoni>
+	</div>
+	
+	<div class="row align-items-center center bg-dark" style="border-style: solid;border-color: aqua; border-radius: 2em;">
 		<div class="col info">
+			
 			<sinistra></sinistra>
 		</div>
 		<div class="col info center">
 			<destra></destra>
 		</div>
-	</div>
-	<div class="">
-		<bottoni></bottoni>
 	</div>
 </div>
 `,

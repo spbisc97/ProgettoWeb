@@ -103,20 +103,13 @@ $infoUtente = json_encode($valori);
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto dropdown">
-                    <a class="nav-link dropdown-toggle" style="margin-right: 8em;" href="#" id="navbarDropdown"
-                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Profilo
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
-                    </div>
+                    <a class="nav-link " href="/front/index.php#footer" style="margin-right: 8em;">Suggerimenti</a>
+
                 </ul>
             </div>
         </nav>
 
-        <div class="container-lg bg-more-blur text-monospace" style="padding-top: 6em;padding-bottom: 4em;">
+        <div class="container-lg bg-blur-dark text-monospace" style="padding-top: 6em;padding-bottom: 4em;">
 
             <div id=app></div>
             <!-- <br><br><br> -->
