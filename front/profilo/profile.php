@@ -20,6 +20,7 @@ $q1 = 'select nick, email, nome ,cognome  from  utente where id = $1';
 $id = $_SESSION["id"];
 $res1 = pg_query_params($dbconn, $q1, [$id]);
 $arr = pg_fetch_all($res1);
+$arr[0] = array_change_key_case($arr[0], CASE_UPPER);
 $valori[1] = $arr;
 
 $materie = [0 => "Statistica", 1 => "Python", 2 => "Logica"];
@@ -121,7 +122,19 @@ $infoUtente = json_encode($valori);
             <!-- <br><br><br> -->
         </div>
 
+        </section>
+
         <script src="profile.js"></script>
+        <?php if ($_GET["operazione"]) {
+        	$operazione = $_GET["operazione"];
+        	echo '<script>
+        $(document).ready(function() {
+                    alert("' .
+        		$operazione .
+        		'");
+                    });
+        </script>';
+        } ?>
     </body>
 
 </html>
