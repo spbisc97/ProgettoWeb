@@ -46,8 +46,8 @@ $infoUtente = json_encode($valori);
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Introduzione alla statistica</title>
-        <link rel="shortcut icon" href="favicon.ico" />
+        <title>Profilo</title>
+        <link rel="shortcut icon" href="../favicon.ico" />
         <link rel="stylesheet" href="../assets/css/bootstrap.css" />
         <link rel="stylesheet" href="../assets/css/home-made.css" />
         <script src="../assets/js/jquery.min.js"></script>

@@ -4,11 +4,12 @@
 <html>
 	<head>
 		<title>Snake</title>
-		<link rel="shortcut icon" href="../../../favicon.ico" />
+		<link rel="shortcut icon" href="../favicon.ico" />
 		<link rel="stylesheet" href="../assets/css/bootstrap.css" />
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/bootstrap.js" lang="--js"></script>
 		<link rel="stylesheet" href="../assets/css/home-made.css" />
+		<script src="../assets/js/vue.js"></script>
 		<style>
 			html,
 			body {
@@ -79,13 +80,10 @@ uso a invece che span per rendere il contenuto interattivo  -->
 		</nav>
 		<div class="container">
 			<div class="row">
-				<div class="col" style="margin: 1em;">
-					<canvas width="400" height="400" id="game"></canvas>
-				</div>
 				<div
 					class="col-md text-light text-center text-monospace row align-items-center"
 					style="
-						margin: 1em;
+						margin: 0.5em;
 						border-style: solid;
 						border-color: rgba(245, 245, 245, 0.623);
 						border-radius: 1em;
@@ -108,6 +106,21 @@ uso a invece che span per rendere il contenuto interattivo  -->
 							class="text-primary"
 						></p>
 					</div>
+				</div>
+				<div class="col" style="margin: 1em;">
+					<canvas width="400" height="400" id="game"></canvas>
+				</div>
+
+				<div
+					class="col-md text-light text-monospace row align-items-center"
+					style="
+						margin: 0.5em;
+						border-style: solid;
+						border-color: rgba(245, 245, 245, 0.623);
+						border-radius: 1em;
+					"
+				>
+					<div class="col" id="app"></div>
 				</div>
 			</div>
 		</div>
@@ -243,12 +256,65 @@ uso a invece che span per rendere il contenuto interattivo  -->
 			lungezzasnake = 4;
 			function record() {
 				$("#ultimopunteggio").text("hai conseguito un  punteggio di " + lungezzasnake);
-
-				//$.get("snake.php", { mele: lungezzasnake }).done(function (data) {});
+				$.post("snake.php", {
+					richiesta: "update",
+					punteggio: lungezzasnake,
+				}).done(function () {
+					classifica();
+				});
 			}
 
 			// inizio
 			requestAnimationFrame(loop);
+		</script>
+		<script>
+			varie = [];
+			// function classifica() {
+			// 	$.post("snake.php", { richiesta: "nomi" }, function (data, status) {
+			// 		alert(data);
+			// 		varie = JSON.parse(data);
+			// 	});
+			// }
+
+			$(document).ready(function () {
+				classifica();
+			});
+			function classifica() {
+				$.post("snake.php", { richiesta: "nomi" }, function (data, status) {
+					varie = JSON.parse(data);
+					varie = varie;
+					//alert(varie);
+					vue.nomi = varie;
+				});
+			}
+			var vue = new Vue({
+				el: "#app",
+				template: `<!-- @format -->
+
+<table style="height: inherit; width: inherit;" class="table table-borderless text-light">
+	<tr>
+		<th style="border-width: 0px 1px 1px 0px; border-style: solid; border-color: white;">
+			Nick
+		</th>
+		<th style="border-width: 0px 0px 1px 0px; border-style: solid; border-color: white;">
+			Punteggio
+		</th>
+	</tr>
+	<tr v-for="name in nomi">
+		<th style="border-width: 1px 1px 0px 0px; border-style: solid; border-color: white;">
+			{{ name.nick }}
+		</th>
+		<th style="border-width: 1px 0px 0px 0px; border-style: solid; border-color: white;">
+			{{ name.punteggio }}
+		</th>
+	</tr>
+</table>
+`,
+				data: {
+					nomi: varie,
+				},
+				methods: {},
+			});
 		</script>
 	</body>
 </html>
