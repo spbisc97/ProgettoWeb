@@ -69,7 +69,7 @@ session_start(); ?>
             <a class="navbar-brand nav-link"  href="#footer">Contatti</a>
             <a class="navbar-brand nav-link" href="learnMap/learnMap.php">Allenati</a>
         	<a class="navbar-brand nav-link" href="snake/snake.html">Divertiti</a>
-        	<a class="navbar-brand nav-link" href="profilo.php">Profilo</a>
+        	<a class="navbar-brand nav-link" href="profilo/profile.php">Profilo</a>
         	<a class="navbar-brand nav-link" id="logout" href="logout.php" >Logout</a>
                 
             </ul>

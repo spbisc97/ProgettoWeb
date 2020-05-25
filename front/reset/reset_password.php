@@ -1,7 +1,12 @@
 <?php
-
+/**
+ * @format
+ */
 
 session_start();
+if (!isset($_SESSION['id'])) {
+	header("Location: ../index.php");
+}
 $id = $_SESSION['id']; /* userid of the user al momento */
 
 ($dbconn = pg_connect(
@@ -9,23 +14,24 @@ $id = $_SESSION['id']; /* userid of the user al momento */
 port=5432 dbname=putfahxs user=putfahxs password=yj6L-sA-nVPEpp4PJPpjvHLb6KbZJXsL"
 )) or die("Could not connect: " . preg_last_error());
 
-$oldpass = $_POST['oldpass'];
+$pass = $_POST['pass'];
 $newpass = $_POST['newpass'];
 $Password_crypt = password_hash($newpass, PASSWORD_BCRYPT);
 $q3 = pg_query($dbconn, "select * from utente where id=$id");
 $arr = pg_fetch_array($q3, 0, PGSQL_NUM);
 
 $password_hash = $arr[5]; // prendo l'hash dal db
-$passcheck = password_verify($oldpass, $password_hash); // funzione verifica, verifica la password inserita con l'hash del db
+$passcheck = password_verify($pass, $password_hash); // funzione verifica, verifica la password inserita con l'hash del db
 if ($passcheck == false) {
-	echo "<h1> La password è sbagliata</h1>";
+	header("Location: ../profilo/profile.php?operazione=password errata");
+	exit();
 } else {
 	$q2 = "update utente SET password = '$Password_crypt' where id=$id";
 	$result = pg_query($dbconn, $q2);
 	if ($result) {
-		echo "Password cambiata con successo";
+		header("Location: ../profilo/profile.php?operazione=successo");
 	} else {
-		echo "qualcosa è andato storto, riprova";
+		header("Location: ../profilo/profile.php?operazione=errore");
 	}
 	/*result = mysqli_query($con,"SELECT *from student WHERE name='" . $id . "'");
 $row=mysqli_fetch_array($result);

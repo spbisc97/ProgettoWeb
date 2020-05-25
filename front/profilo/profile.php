@@ -7,7 +7,7 @@
 
 session_start();
 if (!isset($_SESSION["id"])) {
-	header("Location: index.php");
+	header("Location: ../index.php");
 	exit();
 }
 
@@ -18,10 +18,24 @@ port=5432 dbname=putfahxs user=putfahxs password=yj6L-sA-nVPEpp4PJPpjvHLb6KbZJXs
 
 $q1 = 'select nick, email, nome ,cognome  from  utente where id = $1';
 $id = $_SESSION["id"];
-$res2 = pg_query_params($dbconn, $q1, [$id]);
-$arr = pg_fetch_all($res2);
+$res1 = pg_query_params($dbconn, $q1, [$id]);
+$arr = pg_fetch_all($res1);
+$arr[0] = array_change_key_case($arr[0], CASE_UPPER);
 $valori[1] = $arr;
-$restituisco = json_encode($valori);
+
+$materie = [0 => "Statistica", 1 => "Python", 2 => "Logica"];
+
+$mat = [];
+foreach ($materie as $key => $value) {
+	$q2 = "select esercizio1, esercizio2, esercizio3 from " . $value . " where id = $1";
+	$res2 = pg_query_params($dbconn, $q2, [$id]);
+	if ($res2) {
+		$mat[$value] = pg_fetch_all($res2);
+	}
+}
+$valori[0] = $mat;
+
+$infoUtente = json_encode($valori);
 ?> -->
 
 <!-- @format -->
@@ -34,14 +48,14 @@ $restituisco = json_encode($valori);
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Introduzione alla statistica</title>
         <link rel="shortcut icon" href="favicon.ico" />
-        <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="assets/css/home-made.css" />
-        <script src="jQuery/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.js" lang="--js"></script>
-
+        <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+        <link rel="stylesheet" href="../assets/css/home-made.css" />
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/bootstrap.js" lang="--js"></script>
+        <script src="../assets/js/vue.js"></script>
         <style>
         body {
-            background-image: url("../art.jpg");
+            background-image: url("backProfile.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -52,6 +66,8 @@ $restituisco = json_encode($valori);
             border-width: 2px;
             border-radius: 3em;
             border-color: blue;
+            margin: 0.2em;
+
         }
         </style>
 
@@ -59,7 +75,7 @@ $restituisco = json_encode($valori);
         <?php
         echo "<script>
 		var db = []; ";
-        echo "db= " . $restituisco . ";";
+        echo "db= " . $infoUtente . ";";
         echo "</script>";
         ?>
 
@@ -70,7 +86,7 @@ $restituisco = json_encode($valori);
             <!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 			uso a invece che span per rendere il contenuto interattivo  -->
-            <a class="navbar-brand" href="../../../index.php">Edu@home</a>
+            <a class="navbar-brand" href="../index.php">Edu@home</a>
             <!-- ancora come in questo caso -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,7 +98,7 @@ $restituisco = json_encode($valori);
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a id="home" class="nav-link" href="../../../learnMap/learnMap.php">LearnMap <span
+                        <a id="home" class="nav-link" href="../learnMap/learnMap.php">LearnMap <span
                                 class="sr-only">(current)</span></a>
                     </li>
                 </ul>
@@ -92,7 +108,7 @@ $restituisco = json_encode($valori);
                         Profilo
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/front/profilo.php">Impostazioni</a>
+                        <a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
                     </div>
@@ -100,12 +116,25 @@ $restituisco = json_encode($valori);
             </div>
         </nav>
 
-        <div class="container">
-            <br /><br /><br />
+        <div class="container-lg bg-more-blur text-monospace" style="padding-top: 6em;padding-bottom: 4em;">
+
             <div id=app></div>
+            <!-- <br><br><br> -->
         </div>
-        <script src="assets/js/vue.js"></script>
+
+        </section>
+
         <script src="profile.js"></script>
+        <?php if ($_GET["operazione"]) {
+        	$operazione = $_GET["operazione"];
+        	echo '<script>
+        $(document).ready(function() {
+                    alert("' .
+        		$operazione .
+        		'");
+                    });
+        </script>';
+        } ?>
     </body>
 
 </html>

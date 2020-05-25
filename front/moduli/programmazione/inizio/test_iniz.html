@@ -1,27 +1,32 @@
 <!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>QI QUIZ</title>
+		<title>Test Advanced</title>
 		<link rel="shortcut icon" href="../../../favicon.ico" />
 		<link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
 		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
 		<script src="../../../assets/js/jquery.min.js"></script>
 		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
+		<script src="../../../assets/js/vue.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
+
 		<style>
 			body {
-                background-image: url(".jpg");
-                background-repeat: no-repeat;
+				background-image: url(../art2.jpg);
+				background-repeat: no-repeat;
 				background-attachment: fixed;
 				background-size: cover;
-            }
-            .bg-blur {
-				background-color: rgba(2, 17, 29, 0.664);
-			} 
+			}
+			#punteggio {
+				text-align: center;
+				font-size: larger;
+			}
 		</style>
-		<script type="text/javascript" src="introtest.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
@@ -68,47 +73,47 @@
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Globa</a>
+						<a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
 					</div>
 				</ul>
 			</div>
 		</nav>
-        
-        <br><br></br></br>
-        <div class="bg-blur container xl text-monospace text-white">
-			
-			<h2>Cos'è la logica</h2>
-            <div>Un gioco di logica è un rompicapo, ovvero un problema o un
-            
-            <a
-            class="bg-blur more-info"
-            id="numeri"
-            >
-            enigma
-             </a>
-            <div class="bg-blur" style="display: none;" id="snumeri">
-			&nbsp Formulazione di un concetto o un numero da indovinare &nbsp &nbsp
-            <img src="mc.jpg"  width="350" height="200" >   </div>
-            
-            a scopo di intrattenimento, con un fondamento matematico o logico. 
-             In molti casi, e soprattutto per quei giochi che vengono diffusi per passaparola, 
-             un gioco di logica ha la forma di un indovinello;
-            Un caso particolare sono quei giochi in cui la necessità di ragionamento logico è solo apparente
-            e serve a distrarre chi deve risolvere il gioco, che in realtà richiede un tipo di intuizione completamente diverso
-             (per esempio, la soluzione potrebbe essere in realtà basata su un gioco di parole).
-		    
-			
-               
-    </div>
-    <br/><br/>
 
-				<a href="../quiz_qi/crocetteAjax.html">
-					<button class="btn btn-primary">Risolvi le domande</button>
-				</a>
+		<div
+			class="container text-monospace"
+			style="
+				background-color: rgba(255, 255, 255, 0.815);
+				padding-top: 2em;
+				padding-bottom: 2em;
+			"
+		>
+			<br />
+			<br />
+			<br />
+			<div>
+				Dovrai rispondere a delle domande sulla programmazione.
+			</div>
+			<div>
+				<br />
 
-		
-				<br /><br />
-		</div>        
-    <script src="intro2.js"></script>
-    </body>
+				<div class="row align-items-center">
+					<div id="lateralgraph" class="col-8">
+						<canvas style="height: 25em; width: 100%;" id="chart"></canvas>
+					</div>
+					<div class="col-4"><div id="app"></div></div>
+				</div>
+				<div style="margin: 2em;">
+					<button
+						value="0"
+						class="btn btn-primary center"
+						style="padding: 1em;"
+						id="prossima"
+					>
+						Inizia il test!
+					</button>
+				</div>
+			</div>
+		</div>
+		<script src="progtest1.js"></script>
+	</body>
 </html>
