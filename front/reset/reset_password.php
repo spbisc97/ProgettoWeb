@@ -19,11 +19,10 @@ $newpass = $_POST['newpass'];
 $Password_crypt = password_hash($newpass, PASSWORD_BCRYPT);
 $q3 = pg_query($dbconn, "select * from utente where id=$id");
 $arr = pg_fetch_array($q3, 0, PGSQL_NUM);
-
 $password_hash = $arr[5]; // prendo l'hash dal db
 $passcheck = password_verify($pass, $password_hash); // funzione verifica, verifica la password inserita con l'hash del db
 if ($passcheck == false) {
-	header("Location: ../profilo/profile.php?operazione=password errata");
+	header("Location: ../profilo/profile.php?operazione=password errata" . $passcheck);
 	exit();
 } else {
 	$q2 = "update utente SET password = '$Password_crypt' where id=$id";

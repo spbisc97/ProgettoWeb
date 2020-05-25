@@ -6,18 +6,34 @@ var info = {
 		link: "../reset/reset_password.php",
 		todisplay: [
 			{ text: "Nuova password", type: "text", name: "newpass" },
-			{ text: "Check password", type: "text", name: "newpass2" },
+			//{ text: "Check password", type: "text", name: "newpass2" },
 			{ text: "Vecchia password", type: "text", name: "pass" },
 		],
+		// methods: {
+		// 	controlla: function () {
+		// 		if ($("#newpass").val() == $("#newpass2").val()) {
+		// 			return true;
+		// 		}
+		// 		return false;
+		// 	},
+		// },
 	},
 	Email: {
 		text: "Email",
 		link: "../reset/reset_email.php",
 		todisplay: [
 			{ text: "Nuova email", type: "email", name: "newmail" },
-			{ text: "Check email", type: "email", name: "newmail2" },
+			//{ text: "Check email", type: "email", name: "newmail2" },
 			{ text: "Password", type: "text", name: "pass" },
 		],
+		// methods: {
+		// 	controlla: function () {
+		// 		if ($("#newmail").val() == $("#newmail2").val()) {
+		// 			return true;
+		// 		}
+		// 		return false;
+		// 	},
+		// },
 	},
 	Nick: {
 		text: "Nick",
@@ -26,6 +42,11 @@ var info = {
 			{ text: "Nuovo nick", type: "text", name: "newnick" },
 			{ text: "Password", type: "text", name: "pass" },
 		],
+		// methods: {
+		// 	controlla: function () {
+		// 		return false;
+		// 	},
+		// },
 	},
 };
 let destra = Vue.component("destra", {
@@ -93,20 +114,22 @@ let bot = Vue.component("bottoni", {
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form :action="over.link" class="form-group" method="POST">
+				<form :action="over.link" class="form-group" method="POST"  :name=over.text >
 					<div v-for="elem in over.todisplay" class="mb-4">
-						<label data-error="wrong" data-success="right" for="elem.text">
+						<label class="label" :for="elem.text">
 							{{ elem.text }}</label
 						>
 						<input
 							:type="elem.type"
-							:name="elem.text"
-							:id="elem.text"
+							:name="elem.name"
+							:id="elem.name"
 							class="form-control"
+							
+
 						/>
 					</div>
 					<div class="modal-footer d-flex justify-content-center">
-						<input type="submit" value="Invia" class="btn btn-primary" name="Change" />
+						<button type="submit" value="Invia" class="btn btn-primary" />
 					</div>
 				</form>
 			</div>
@@ -115,7 +138,7 @@ let bot = Vue.component("bottoni", {
 </div>
 `,
 	data: function () {
-		return { change: info, over: false };
+		return { change: info, over: info["Nick"] };
 	},
 	options: {
 		reactive: true,

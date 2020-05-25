@@ -17,7 +17,7 @@ port=5432 dbname=putfahxs user=putfahxs password=yj6L-sA-nVPEpp4PJPpjvHLb6KbZJXs
 /*if (!isset($_POST['submit'])) {
     header("Location: ../index.php");
 }else {*/
-
+$pass = $_POST["pass"];
 $newmail = $_POST['newmail'];
 $q1 = pg_query($dbconn, "select * from utente where id=$id");
 $arr = pg_fetch_array($q1, 0, PGSQL_NUM);
