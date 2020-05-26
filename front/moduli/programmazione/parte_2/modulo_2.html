@@ -13,24 +13,26 @@
 		<script src="../../../jQuery/jquery.min.js"></script>
 		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
 		<style>
-		/*	body {
-				background-image: url("../img1.jpg");
+            
+			body {
+                background-image: url(../immagini/prog3.jpeg);
 				background-repeat: no-repeat;
 				background-attachment: fixed;
 				background-size: cover;
 			}
-			.bg-blur {
-				background-color: rgba(255, 255, 255, 0.4);
-			}*/
-			
-		</style>
+
+    h1 {
+      text-align: center;
+      color: green;
+    }
+</style>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
 			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 			uso a invece che span per rendere il contenuto interattivo  -->
-			<a class="navbar-brand" href="#">Edu@home</a>
+			<a class="navbar-brand" href="../../../index.php">Edu@home</a>
 			<!-- ancora come in questo caso -->
 			<button
 				class="navbar-toggler"
@@ -49,46 +51,35 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<a id="home" class="nav-link" href="../../../learnMap/learnMap.html"
-							>Home <span class="sr-only">(current)</span></a
+						<a id="home" class="nav-link" href="../../../learnMap/learnMap.php"
+							>LearnMap <span class="sr-only">(current)</span></a
 						>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../IDLE.html">IDLE</a>
 					</li>
-					<li class="nav-item dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							href="#"
-							id="navbarDropdown"
-							role="button"
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
-						>
-							Settaggi Vari
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a
-							id="abdis"
-							class="nav-link disabled"
-							href="http://www.google.it"
-							tabindex="-1"
-							aria-disabled="true"
-							>Abilitabile traguardo (test)</a
-						>
-					</li>
 				</ul>
+				<ul class="navbar-nav ml-auto dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						style="margin-right: 8em;"
+						href="#"
+						id="navbarDropdown"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						Profilo
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
+					</div>
+				</ul>
+			</div>
+		</nav>
 				<!-- //inutile il search per ora  
 				<form class="form-inline my-2 my-lg-0">
 					<input
@@ -102,15 +93,18 @@
 					</button>
                 </form>
                 -->
-			</div>
+			
 		</nav>
-		<br /><br /><br />
-		<div class="container">
-			<h1>un po' di teoria <small></small></h1>
-		</div>
-		<div class="bg-blur container  text-monospace text-white">
-			<div id="carouselContent" class="carousel slide" data-ride="carousel" data-interval="false">
-				<div class="carousel-inner" role="listbox">
+        <br /><br /><br />
+        
+		
+			
+            <div class="container">
+                <h1 >Cos'è la programmazione? </h1>
+            </div>
+        <div class="container-xl text-monospace text-white">
+        <div id="carouselContent" class="carousel slide" style="background-color: rgba(0,0,0,0.6);" data-ride="carousel" data-interval="false">
+			<div class="carousel-inner" style="padding-left: 4em; padding-right: 4em; " role="listbox">
 					<div class="carousel-item active text-center p-4">
                          <p>Un altro tipo in python è il Booleano, può avere due valori: True(vero) o False(falso).
 							possono essere creati comparando due valori, oppure usando l'operatore logico
@@ -147,9 +141,7 @@
 								sulle liste in <a href=https://docs.python.it/html/tut/node7.html target="_blank">Python</a>. ed un <a href=../esempi/esempi_2/esempio_9.html target="_blank">esempio</a>.
 
                         </p>
-							<p>Per sapere quanto è lunga una lista c'è la funzione <a href=../esempi/esempi_2/esempio_8.html target="_blank">len</a>.
-                                Per esempio non si possono sommare le due stringhe che contengono i numeri "2" e "3", il risultato sarebbe "23",non 5.
-                                La soluzione a questo è la conversione di <a href=../esempi/esempio_6.html target="_blank">tipo</a>
+							<p>Per riferci ad un determinato elemento 
                             </p>
 						</div>
 						<div class="carousel-item text-center p-4">

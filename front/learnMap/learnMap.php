@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>LearnMap</title>
         <!-- uso di bootstrap self hosted-->
         <link rel="shortcut icon" href="../favicon.ico" />
         <link rel="stylesheet" href="../assets/css/bootstrap.css" />
@@ -54,7 +54,7 @@
                         Profilo
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/front/profilo.php">Impostazioni</a>
+                        <a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
                     </div>
@@ -62,9 +62,10 @@
             </div>
         </nav>
         <!-- uso emmet per comletare e testare (consiglio l'uso per velocizzare la scrittura di codice)-->
-        <br /><br />
+
 
         <div class="container-xl text-monospace">
+            <br /><br />
             <!-- uso il container per fare un resize ottimale del testo  https://getbootstrap.com/docs/4.4/layout/overview/ -->
             <div class="bg-blur" style="border-radius: 10px;">
                 <div style="margin: 3em; border-style: none; padding:2em ;border-radius: 10px;">
@@ -82,6 +83,9 @@
                     <br>
                     Clicca sulla materia che ti interessa, ogni materia avrà più sezioni che potrai affrontare, clicca
                     sulla sezione che ti interessa!
+                    <br>
+                    Ps. se vuoi prendere una pausa vai alla sezione <a class="btn btn-outline-primary"
+                        href="../snake/snake.html">divertiti</a> !
 
                 </div>
             </div>

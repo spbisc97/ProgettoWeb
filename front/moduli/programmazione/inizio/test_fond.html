@@ -1,24 +1,31 @@
 <!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Intro Test</title>
+		<title>intronduzione a Python</title>
 		<link rel="shortcut icon" href="../../../favicon.ico" />
-		<link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="../../../bootstrap-4.4.1-dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
-		<script src="../../../assets/js/jquery.min.js"></script>
+		<link rel="stylesheet" href="../slideshow.css" />
+		<script src="../../../jQuery/jquery.min.js"></script>
 		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
 		<style>
+            
 			body {
-				background-image: url(../art.jpg);
+				background-image: url(../immagini/progtest.jpg);
 				background-repeat: no-repeat;
 				background-attachment: fixed;
 				background-size: cover;
 			}
-		</style>
-		<script type="text/javascript" src="introtest.js"></script>
+
+    h1 {
+      text-align: center;
+      color: red;
+    }
+</style>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
@@ -48,6 +55,9 @@
 							>LearnMap <span class="sr-only">(current)</span></a
 						>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../IDLE.html">IDLE</a>
+					</li>
 				</ul>
 				<ul class="navbar-nav ml-auto dropdown">
 					<a
@@ -63,17 +73,32 @@
 						Profilo
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
+						<a class="dropdown-item" href="/front/profilo.php">Impostazioni</a>
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
 					</div>
 				</ul>
 			</div>
 		</nav>
-		<br /><br /><br />
-		<div class="container-xl text-monospace bg-blur">
+				<!-- //inutile il search per ora  
+				<form class="form-inline my-2 my-lg-0">
+					<input
+						class="form-control mr-sm-2"
+						type="search"
+						placeholder="Matematica"
+						aria-label="Cerca"
+					/>
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+						Cerca
+					</button>
+                </form>
+                -->
+			
+		</nav>
+        <br /><br /><br />
+        <div class="container-xl text-monospace bg-blur">
 			<h1>Concentrati!</h1>
-			Questo è il primo test di statistica, non preoccuparti se ora va male!
+			Iniziamo
 			<br /><br />
 			<!--cambiare poi in post-->
 			<form action="introtest.php" method="POST" onsubmit="return verifica();">
@@ -86,14 +111,16 @@
 								data-toggle="list"
 								href="#primad"
 								role="tab"
+								aria-controls="home"
 								>Prima</a
 							>
 							<a
 								class="list-group-item list-group-item-action"
-								id="list-secd"
+								id="list-secondad"
 								data-toggle="list"
-								href="#secd"
+								href="#secondad"
 								role="tab"
+								aria-controls="profile"
 								>Seconda</a
 							>
 							<a
@@ -102,6 +129,7 @@
 								data-toggle="list"
 								href="#terzad"
 								role="tab"
+								aria-controls="messages"
 								>Terza</a
 							>
 							<a
@@ -118,89 +146,33 @@
 						<div class="tab-content" id="nav-tabContent">
 							<div class="tab-pane fade show active" id="primad" role="tabpanel">
 								<div style="padding: 1em;">
-									Quale popolazione ha per prima iniziato a censire i beni?
+									Un programma, in quanti modi può essere trasformato in linguaggio macchina?
 									<br />
 									<input
 										type="radio"
 										class="col-1"
 										name="intro1"
-										value="ebrei"
-									/>Ebrei
+										value="nessuno"
+                                    />Nessuno.
+                                
 									<input
 										type="radio"
 										class="col-1"
 										name="intro1"
 										value="egizi"
-									/>Egizi
+                                    />Tre:Interpretazione,Compilazione,Traduzione.
+                                
 									<input
 										type="radio"
 										class="col-1"
 										name="intro1"
 										value="romani"
-									/>Romani<input
+                                    />Due:Interpretazione,Compilazione.
+                                    <input
 										type="radio"
 										class="col-1"
 										name="intro1"
 										value="babilonesi"
-									/>babilonesi
+									/>Due:Interpretazione,Traduzione.
 								</div>
 							</div>
-							<div class="tab-pane fade" id="secd" role="tabpanel">
-								<div class="" style="padding: 2em;">
-									<div>
-										Come si chiama il libro che racconta il censimento degli
-										ebrei?
-									</div>
-									<div>
-										<input type="text" name="libro" id="libro" size="30"></input>
-									</div>
-								</div>
-							</div>
-							<div class="tab-pane fade" id="terzad" role="tabpanel">
-								<div class="text-xl-center" style="padding: 1em;">
-									Cosa è l'istat?
-									<br />
-									<label class="radiobutton"
-										>Organizza le lotterie
-										<input type="radio" class="" name="istat" value="1" />
-									</label>
-									<label class="radiobutton"
-										>publico italiano per l'economia e la finanza
-										<input type="radio" class="" name="istat" value="2" />
-									</label>
-									<label class="radiobutton"
-										>Istituto nazionale di statistica
-										<input type="radio" class="" name="istat" value="3" />
-									</label>
-
-									<label class="radiobutton"
-										>Servizi Segreti
-										<input type="radio" class="" name="istat" value="4" />
-									</label>
-								</div>
-							</div>
-							<div class="tab-pane fade" id="quartad" role="tabpanel">
-								<div class="" style="padding: 2em;">
-									<div>
-										ogni quanti anni viene censita la popolazione italiana?
-									</div>
-									<div>
-										<input type="number" name="anni" id="anni" />
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<p align="center" class="col-10">
-					<br />
-					<button type="submit" class="btn btn-primary">
-						Controlla!
-					</button>
-					<br />
-					<br />
-				</p>
-			</form>
-		</div>
-	</body>
-</html>

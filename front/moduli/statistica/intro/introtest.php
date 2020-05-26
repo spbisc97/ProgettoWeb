@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Intro Test</title>
         <link rel="shortcut icon" href="../../../favicon.ico" />
         <link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
         <link rel="stylesheet" href="../../../assets/css/home-made.css" />
@@ -43,7 +43,7 @@
                                 Profilo
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/front/profilo.php">Impostazioni</a>
+                                <a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
                             </div>
@@ -56,7 +56,7 @@
                     session_start();
                     if (!isset($_SESSION["id"])) {
                     	echo ' <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> Ci dispiace ma non risulti loggato </div>  
-                        echo <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> <a class="center" href="../../../index.php"> premi qui per registrarti <a> </div>
+                         <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> <a class="center" href="../../../index.php"> premi qui per il login <a> </div>
                         </div>
                         </body>
             

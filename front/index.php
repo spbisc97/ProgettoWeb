@@ -12,6 +12,7 @@ session_start(); ?>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/home-made.css">
@@ -69,7 +70,7 @@ session_start(); ?>
             <a class="navbar-brand nav-link"  href="#footer">Contatti</a>
             <a class="navbar-brand nav-link" href="learnMap/learnMap.php">Allenati</a>
         	<a class="navbar-brand nav-link" href="snake/snake.html">Divertiti</a>
-        	<a class="navbar-brand nav-link" href="profilo.php">Profilo</a>
+        	<a class="navbar-brand nav-link" href="profilo/profile.php">Profilo</a>
         	<a class="navbar-brand nav-link" id="logout" href="logout.php" >Logout</a>
                 
             </ul>
@@ -126,6 +127,8 @@ session_start(); ?>
             <div class="inner">
                 <header>
                     <h1>Benvenuti in Edu@home</h1>
+                    <h6 class="text-light m-0  d-sm-none">Consigliamo la fruizione da PC</h6>
+                    <h6 class="text-light m-4 d-sm-none">Se sei su un tablet o telefono ti basterà ruotarlo</h6>
                 </header>
 
                 <div class="flex">

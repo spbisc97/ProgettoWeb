@@ -10,7 +10,7 @@ function verifica() {
 	}
 	if ($("#libro").val() == "") {
 		$("#list-tab *").css("color", "initial");
-		$("#list-secondad").css("color", "red");
+		$("#list-secd").css("color", "red");
 		return false;
 	}
 	if (!$("input[name = 'istat']:checked").val()) {
