@@ -12,14 +12,11 @@
 		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
 		<style>
 			body {
-                background-image: url(".jpg");
-                background-repeat: no-repeat;
+				background-image: url(".jpg");
+				background-repeat: no-repeat;
 				background-attachment: fixed;
 				background-size: cover;
-            }
-            .bg-blur {
-				background-color: rgba(2, 17, 29, 0.664);
-			} 
+			}
 		</style>
 		<script type="text/javascript" src="introtest.js"></script>
 	</head>
@@ -72,138 +69,151 @@
 					</div>
 				</ul>
 			</div>
-        </nav>
-        
-		<br></br><br></br>
-		
-        <div
-			class="container text-monospace"
-			style="
-				background-color: rgba(153, 139, 139, 0.788);
-				padding-top: 2em;
-				padding-bottom: 2em;
-			"
+		</nav>
+		<br /><br /><br /><br />
+		<div
+			class="container text-monospace bg-blur-dark"
+			style="padding-top: 2em; padding-bottom: 2em;"
 		>
-		
-		<body>
 			<div id="app">
-			  <h1>{{ quiz.title }}</h1>
-			  <!-- L'indice viene utilizzato per verificare con l'indice della domanda corrente -->
-				  <div v-for="(question, index) in quiz.questions">
-				<!--Nascondi tutte le domande, mostra solo quella con indice === all'indice delle domande corrente -->
-		<div v-show="index === questionIndex">
-		  <h2>{{ question.text }}</h2>
-		  <div v-show="index === questionIndex">
-			  <br>
-		  <img v-bind:src= 'question.img' width="370px" height="210px"></div>
-			<br>
-		  <ol>
-			<li v-for="response in question.responses">
-			  <label>
-			   
-				<input type="radio" 
-					   v-bind:value="response.correct" 
-					   v-bind:name="index" 
-					   v-model="userResponses[index]"> {{response.text}}
-			  </label>
-			</li>
-		  </ol>
-		  
-		  <button v-if="questionIndex > 0" v-on:click="prev">
-			Indietro
-		  </button>
-		  <button v-on:click="next">
-			Prossima
-		  </button>
+				<div>
+					<h1>{{ quiz.title }}</h1>
+					<!-- L'indice viene utilizzato per verificare con l'indice della domanda corrente -->
+					<div v-for="(question, index) in quiz.questions">
+						<!--Nascondi tutte le domande, mostra solo quella con indice === all'indice delle domande corrente -->
+
+						<div class="row align-center" v-show="index === questionIndex">
+							<h2>{{ question.text }}</h2>
+							<div
+								class="col-6"
+								v-show="index === questionIndex"
+								style="border-style: solid; border-color: aqua;"
+							>
+								<br />
+								<img
+									class="align-center"
+									v-bind:src="question.img"
+									width="370px"
+									height="210px"
+								/>
+							</div>
+							<div class="col-3" style="border-style: solid; border-color: aqua;">
+								<br />
+								<ol>
+									<li v-for="response in question.responses">
+										<label>
+											<input
+												type="radio"
+												v-bind:value="response.correct"
+												v-bind:name="index"
+												v-model="userResponses[index]"
+											/>
+											{{response.text}}
+										</label>
+									</li>
+								</ol>
+
+								<button v-if="questionIndex > 0" v-on:click="prev">
+									Indietro
+								</button>
+								<button v-on:click="next">
+									Prossima
+								</button>
+							</div>
+							<div class="col-3"></div>
+						</div>
+					</div>
+					<div v-show="questionIndex === quiz.questions.length">
+						<h2>
+							Quiz completato
+						</h2>
+						<br />
+						<strong>
+							Hai totalizzato: {{ score() }} / {{ quiz.questions.length }}
+						</strong>
+					</div>
+				</div>
+			</div>
+
+			<script src="https://vuejs.org/js/vue.js"></script>
+
+			<script>
+				window.onload = function () {
+					var quiz = {
+						title: "Risolvi i seguenti enigmi",
+						questions: [
+							{
+								text: "In che numero è posizionata la macchina?",
+								img: "macchina.jpg",
+								responses: [
+									{ text: "78" },
+									{ text: "87", correct: true },
+									{ text: "88" },
+									{ text: "77" },
+								],
+							},
+							{
+								text: "Quale figura completa la combinazione",
+								img: "figure.jpg",
+								responses: [
+									{ text: "A" },
+									{ text: "B" },
+									{ text: "C" },
+									{ text: "D", correct: true },
+								],
+							},
+							{
+								text: "Risolvi il seguente indovinello?",
+								img: "frutta.jpg",
+								responses: [
+									{ text: "11" },
+									{ text: "13", correct: true },
+									{ text: "16" },
+									{ text: "12" },
+								],
+							},
+							{
+								text: "Chi ha i superpoteri??",
+								img: "libri.jpg",
+								responses: [
+									{ text: "maglia celeste" },
+									{ text: "maglia verde", correct: true },
+									{ text: "maglia rosa" },
+									{ text: "nessuno dei tre" },
+								],
+							},
+						],
+					};
+
+					new Vue({
+						el: "#app",
+						data: {
+							quiz: quiz,
+							// Memorizza l'indice delle domande correnti
+							questionIndex: 0,
+							// Un array inizializzato con valori "false" per ogni domanda
+							userResponses: Array(quiz.questions.length).fill(false),
+						},
+
+						methods: {
+							// va alla domanda successiva
+							next: function () {
+								this.questionIndex++;
+							},
+							// va alla domanda precedente
+							prev: function () {
+								this.questionIndex--;
+							},
+							// ritorna true in userResponse
+							score: function () {
+								return this.userResponses.filter(function (val) {
+									return val;
+								}).length;
+							},
+						},
+					});
+				};
+			</script>
 		</div>
-		</div>
-		<div v-show="questionIndex === quiz.questions.length">
-		<h2>
-		Quiz completato
-		</h2>
-		<br>
-		<strong>
-		  Hai totalizzato: {{ score() }} / {{ quiz.questions.length }}
-		</strong>
-		</div>
-		</div>
-		
-		
-		<script src="https://vuejs.org/js/vue.js"></script>
-		
-		<script>
-		window.onload=function(){
-		
-		var quiz = {
-		  title: 'Risolvi i seguenti enigmi',
-		  questions: [ 
-			{
-			  text: "In che numero è posizionata la macchina?",
-			  img: 'macchina.jpg',
-			  responses: [ 
-				{text: '78'}, 
-				{text: '87', correct: true},
-				{text: '88'},
-				{text: '77'},
-			  ]
-			}, {
-			  text: "Quale figura completa la combinazione",
-			  img: 'figure.jpg',
-			  responses: [
-				{text: 'A'}, 
-				{text: 'B'},
-				{text: 'C'},
-				{text: 'D', correct: true}, 
-			  ]
-			},  {
-			  text: "Risolvi il seguente indovinello?",
-			  img: "frutta.jpg",
-			  responses: [ 
-				{text: '11'}, 
-				{text: '13', correct: true},
-				{text: '16'},
-				{text: '12'} 
-			  ]
-			 },  {
-			  text: "Chi ha i superpoteri??",
-			  img: "libri.jpg",
-			  responses: [ 
-				{text: 'maglia celeste'}, 
-				{text: 'maglia verde', correct: true},
-				{text: 'maglia rosa'},
-				{text: 'nessuno dei tre'} 
-			  ]
-			} 
-		  ]
-		};
-			  
-		new Vue({
-		  el: '#app',
-		  data: {
-			quiz: quiz,
-			// Memorizza l'indice delle domande correnti
-			questionIndex: 0,
-			// Un array inizializzato con valori "false" per ogni domanda
-			userResponses: Array(quiz.questions.length).fill(false)
-		  },
-		  
-		  methods: {
-			// va alla domanda successiva
-			next: function() {
-			  this.questionIndex++;
-			},
-			// va alla domanda precedente
-			prev: function() {
-			  this.questionIndex--;
-			},
-			// ritorna true in userResponse
-			score: function() {
-			  return this.userResponses.filter(function(val) { return val }).length;
-			}
-		  }
-		});
-		}
-		</script>
-		<br></div>
-		</div>
-		</body>
+	</body>
+</html>

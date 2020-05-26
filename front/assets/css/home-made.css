@@ -21,9 +21,9 @@
 	text-align: end;
 	border-radius: 10px;
 }
-.radiobutton :checked {
+/* .radiobutton {
 	background-color: rgba(197, 66, 209, 0.8);
-}
-.radiobutton :hover {
+} */
+/* .radiobutton {
 	background-color: rgba(4, 226, 4, 0.8);
-}
+} */
