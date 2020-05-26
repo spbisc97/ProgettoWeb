@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>LearnMap</title>
         <!-- uso di bootstrap self hosted-->
         <link rel="shortcut icon" href="../favicon.ico" />
         <link rel="stylesheet" href="../assets/css/bootstrap.css" />
@@ -82,6 +82,9 @@
                     <br>
                     Clicca sulla materia che ti interessa, ogni materia avrà più sezioni che potrai affrontare, clicca
                     sulla sezione che ti interessa!
+                    <br>
+                    Ps. se vuoi prendere una pausa vai alla sezione <a class="btn btn-outline-primary"
+                        href="../snake/snake.html">divertiti</a> !
 
                 </div>
             </div>

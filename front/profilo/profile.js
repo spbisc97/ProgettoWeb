@@ -104,9 +104,9 @@ let bot = Vue.component("bottoni", {
 
 	<div v-if="over" class="modal fade" id="overscreen">
 		<div class="modal-dialog">
-			<div class="modal-content" style="background: whitesmoke;">
+			<div class="modal-content" style="background: whitesmoke; padding: 1em;">
 				<div class="modal-header text-center">
-					<h4 class="modal-title w-100 font-weight-bold">{{ over.text }}</h4>
+					<h4  class="modal-title w-100 font-weight-bold">{{ over.text }}</h4>
 					<button
 						type="btn btn-primary"
 						class="close"
@@ -116,7 +116,7 @@ let bot = Vue.component("bottoni", {
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form :action="over.link" class="form-group" method="POST" :name="over.text">
+				<form :action="over.link" class="form-group" method="POST" :name="over.text" style="padding: 1em;">
 					<div v-for="elem in over.todisplay" class="mb-4">
 						<label class="label" :for="elem.text"> {{ elem.text }}</label>
 						<input
