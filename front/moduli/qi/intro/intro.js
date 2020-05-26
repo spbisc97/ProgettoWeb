@@ -23,7 +23,7 @@ let mediaChart = new Chart(myChart, {
         labels: [],
         datasets: [
             {
-                //label: "Media",
+                
                 data: [],
                 backgroundColor: "rgba(200, 100, 100, 0.9)",
                 borderWidth: 1,

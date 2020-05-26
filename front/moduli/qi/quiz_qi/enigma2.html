@@ -1,0 +1,209 @@
+<!-- @format -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>QI QUIZ</title>
+		<link rel="shortcut icon" href="../../../favicon.ico" />
+		<link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
+		<script src="../../../assets/js/jquery.min.js"></script>
+		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
+		<style>
+			body {
+                background-image: url(".jpg");
+                background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+            }
+            .bg-blur {
+				background-color: rgba(2, 17, 29, 0.664);
+			} 
+		</style>
+		<script type="text/javascript" src="introtest.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
+			uso a invece che span per rendere il contenuto interattivo  -->
+			<a class="navbar-brand" href="../../../index.php">Edu@home</a>
+			<!-- ancora come in questo caso -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+                mentre sotto abbiamo una parte collapsable ovvero 
+                che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a id="home" class="nav-link" href="../../../learnMap/learnMap.php"
+							>LearnMap <span class="sr-only">(current)</span></a
+						>
+					</li>
+				</ul>
+				<ul class="navbar-nav ml-auto dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						style="margin-right: 8em;"
+						href="#"
+						id="navbarDropdown"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						Profilo
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/front/profilo.php">Impostazioni</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Globa</a>
+					</div>
+				</ul>
+			</div>
+        </nav>
+        
+		<br></br><br></br>
+		
+        <div
+			class="container text-monospace"
+			style="
+				background-color: rgba(153, 139, 139, 0.788);
+				padding-top: 2em;
+				padding-bottom: 2em;
+			"
+		>
+		
+		<body>
+			<div id="app">
+			  <h1>{{ quiz.title }}</h1>
+			  <!-- L'indice viene utilizzato per verificare con l'indice della domanda corrente -->
+				  <div v-for="(question, index) in quiz.questions">
+				<!--Nascondi tutte le domande, mostra solo quella con indice === all'indice delle domande corrente -->
+		<div v-show="index === questionIndex">
+		  <h2>{{ question.text }}</h2>
+		  <div v-show="index === questionIndex">
+			  <br>
+		  <img v-bind:src= 'question.img' width="370px" height="210px"></div>
+			<br>
+		  <ol>
+			<li v-for="response in question.responses">
+			  <label>
+			   
+				<input type="radio" 
+					   v-bind:value="response.correct" 
+					   v-bind:name="index" 
+					   v-model="userResponses[index]"> {{response.text}}
+			  </label>
+			</li>
+		  </ol>
+		  
+		  <button v-if="questionIndex > 0" v-on:click="prev">
+			Indietro
+		  </button>
+		  <button v-on:click="next">
+			Prossima
+		  </button>
+		</div>
+		</div>
+		<div v-show="questionIndex === quiz.questions.length">
+		<h2>
+		Quiz completato
+		</h2>
+		<br>
+		<strong>
+		  Hai totalizzato: {{ score() }} / {{ quiz.questions.length }}
+		</strong>
+		</div>
+		</div>
+		
+		
+		<script src="https://vuejs.org/js/vue.js"></script>
+		
+		<script>
+		window.onload=function(){
+		
+		var quiz = {
+		  title: 'Risolvi i seguenti enigmi',
+		  questions: [ 
+			{
+			  text: "In che numero è posizionata la macchina?",
+			  img: 'macchina.jpg',
+			  responses: [ 
+				{text: '78'}, 
+				{text: '87', correct: true},
+				{text: '88'},
+				{text: '77'},
+			  ]
+			}, {
+			  text: "Quale figura completa la combinazione",
+			  img: 'figure.jpg',
+			  responses: [
+				{text: 'A'}, 
+				{text: 'B'},
+				{text: 'C'},
+				{text: 'D', correct: true}, 
+			  ]
+			},  {
+			  text: "Risolvi il seguente indovinello?",
+			  img: "frutta.jpg",
+			  responses: [ 
+				{text: '11'}, 
+				{text: '13', correct: true},
+				{text: '16'},
+				{text: '12'} 
+			  ]
+			 },  {
+			  text: "Chi ha i superpoteri??",
+			  img: "libri.jpg",
+			  responses: [ 
+				{text: 'maglia celeste'}, 
+				{text: 'maglia verde', correct: true},
+				{text: 'maglia rosa'},
+				{text: 'nessuno dei tre'} 
+			  ]
+			} 
+		  ]
+		};
+			  
+		new Vue({
+		  el: '#app',
+		  data: {
+			quiz: quiz,
+			// Memorizza l'indice delle domande correnti
+			questionIndex: 0,
+			// Un array inizializzato con valori "false" per ogni domanda
+			userResponses: Array(quiz.questions.length).fill(false)
+		  },
+		  
+		  methods: {
+			// va alla domanda successiva
+			next: function() {
+			  this.questionIndex++;
+			},
+			// va alla domanda precedente
+			prev: function() {
+			  this.questionIndex--;
+			},
+			// ritorna true in userResponse
+			score: function() {
+			  return this.userResponses.filter(function(val) { return val }).length;
+			}
+		  }
+		});
+		}
+		</script>
+		<br></div>
+		</div>
+		</body>

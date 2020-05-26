@@ -26,12 +26,12 @@ function invia() {
 			$("#punteggio").text(
 				"Mi dispiace ma non risulti loggato e non potrai partecipare alle classifiche globali"
 			);
-		} else if (data <= 1) {
+		} else if (data <= 2) {
 			$("#punteggio").css("background-color", "rgba(240, 20, 30, 0.5)");
-			$("#punteggio").text("hai risposto in modo corretto a " + data + " domande su 5");
+			$("#punteggio").text("Hai risposto in modo corretto a " + data + " domande su 5");
 		} else {
 			$("#punteggio").css("background-color", "rgba(20, 230, 30, 0.5)");
-			$("#punteggio").text("hai risposto in modo corretto a " + data + " domande su 5");
+			$("#punteggio").text("Hai risposto in modo corretto a " + data + " domande su 5");
 		}
 	});
 }

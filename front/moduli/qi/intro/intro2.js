@@ -42,7 +42,7 @@ let mediaChart = new Chart(myChart, {
     options: {
         title: {
             display: true,
-            text: "enigma",
+            text: "PROBLEM SOLVING",
             fontSize: 25,
         },
         legend: {
