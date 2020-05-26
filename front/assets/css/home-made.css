@@ -15,15 +15,12 @@
 	width: 98%;
 }
 
-.radiobutton {
+label.radiobutton {
 	display: block;
 	background-color: rgba(84, 189, 238, 0.8);
 	text-align: end;
 	border-radius: 10px;
 }
-/* .radiobutton {
+label.radiobutton:hover {
 	background-color: rgba(197, 66, 209, 0.8);
-} */
-/* .radiobutton {
-	background-color: rgba(4, 226, 4, 0.8);
-} */
+}

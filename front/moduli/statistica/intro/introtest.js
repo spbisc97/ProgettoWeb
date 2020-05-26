@@ -1,7 +1,5 @@
 /** @format */
 
-$(document).ready();
-
 function verifica() {
 	if (!$("input[name = 'intro1']:checked").val()) {
 		$("#list-tab *").css("color", "initial");
