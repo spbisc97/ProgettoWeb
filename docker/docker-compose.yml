@@ -1,5 +1,14 @@
 ###############################################################################
 #                          Generated on phpdocker.io                          #
+
+
+
+# per lanciare il docker è sufficente installare 
+# docker.io e docker-compose 
+# su sistemi debian-ubuntu $ sudo apt install docker.io docker-compose
+# logout, login e lanciare docker compose nella stessa cartella di questo file 
+
+# informazioni più dettagliate nella cartella php-docker nel file readme (il markdown e l'html sono equivalenti)
 ###############################################################################
 version: "3.1"
 services:
