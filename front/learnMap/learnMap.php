@@ -62,9 +62,10 @@
             </div>
         </nav>
         <!-- uso emmet per comletare e testare (consiglio l'uso per velocizzare la scrittura di codice)-->
-        <br /><br />
+
 
         <div class="container-xl text-monospace">
+            <br /><br />
             <!-- uso il container per fare un resize ottimale del testo  https://getbootstrap.com/docs/4.4/layout/overview/ -->
             <div class="bg-blur" style="border-radius: 10px;">
                 <div style="margin: 3em; border-style: none; padding:2em ;border-radius: 10px;">
