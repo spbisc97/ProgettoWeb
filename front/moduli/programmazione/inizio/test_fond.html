@@ -12,6 +12,17 @@
         <link rel="stylesheet" href="../slideshow.css" />
         <script src="../../../jQuery/jquery.min.js"></script>
         <script src="../../../assets/js/bootstrap.js" lang="--js"></script>
+        <script>
+            var valore = 0;
+            tb = document.getElementbyId("tb");
+            progress = document.getElementbyID("progress");
+            function aumenta() {
+                value = value + 34;
+                if (value >= 100) value = 100;
+                tb.value = value;
+                progressbar.style.width = value + "%";
+            }
+        </script>
 
         <style>
             body {
@@ -103,7 +114,7 @@
                     aria-valuenow="0"
                     aria-valuemin="0"
                     aria-valuemax="100"
-                    style="width: 75%;"
+                    style="width: 0%;"
                 ></div>
             </div>
         </div>
@@ -198,7 +209,7 @@
                                             class="col-1"
                                             name="prog2"
                                             value="nessuno"
-                                            onclick="increase()"
+                                            onclick="aumenta()"
                                         />Nessuno.
                                     </div>
                                     <div>
