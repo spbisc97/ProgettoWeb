@@ -24,5 +24,4 @@ if (!isset($_SESSION["id"])) {
     $punteggio = -1;
 }
 
-//if($_POST[arrayrisposte])
 echo $punteggio;

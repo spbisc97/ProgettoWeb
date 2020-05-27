@@ -12,7 +12,7 @@
 		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
 		<style>
 			body {
-				background-image: url(".jpg");
+				background-image: url("puzzle.gif");
 				background-repeat: no-repeat;
 				background-attachment: fixed;
 				background-size: cover;
@@ -85,19 +85,19 @@
 						<div class="row align-center" v-show="index === questionIndex">
 							<h2>{{ question.text }}</h2>
 							<div
-								class="col-6"
+								class="col-8"
 								v-show="index === questionIndex"
-								style="border-style: solid; border-color: aqua;"
+								
 							>
 								<br />
 								<img
-									class="align-center"
+									class="align-content-center"
 									v-bind:src="question.img"
 									width="370px"
 									height="210px"
 								/>
 							</div>
-							<div class="col-3" style="border-style: solid; border-color: aqua;">
+							<div class="col-3">
 								<br />
 								<ol>
 									<li v-for="response in question.responses">

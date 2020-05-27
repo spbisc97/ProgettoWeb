@@ -22,7 +22,7 @@
 	<script type="text/javascript" src="quiz.js"></script>
 
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+		<nav class="navbar navbar-expand-lg navbar bg-primary fixed-top">
 			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 			uso a invece che span per rendere il contenuto interattivo  -->
@@ -71,17 +71,44 @@
 				</ul>
 			</div>
 		</nav>
-
-        
-        
-
+		
         <br /><br /><br />
-        <div class="container-md text-monospace">
+        <div class="container-md text-monospace bg-blur">
             <div id="ajaxSpace">
+				<div class="bg-blur container xl text-monospace"> <br />
+					<h2>Ragionamento verbale</h2>
+		
+						<div>
+						Nelle domande di <a
+						class="bg-blur more-info"
+						id="numeri"
+						>
+						<strong>ragionamento verbale</strong>
+						</a>
+						<div class="bg-blur-dark" style="display: none;" id="snumeri">
+							Il ragionamento verbale è un modello di studio per intuire quale 
+							sia la parola giusta nel posto giusto tramite deduzioni logiche-matematiche. 
+							Fu proprio Einstein ad affermare che la conoscenza della parola e di tutte le sue radici
+							ebbero un' importanza rilevante nella sua vita. Infatti egli allenava ogni giorno la sua mentre
+							prorpio con indovinelli verbali 
+
+							<img src="albert.gif"  width="200" height="200" >
+							<br />
+							<div class="bg-blur container xl text-monospace">
+							
+							</div> 
+						</div>
+							la risposta si ricava attraverso una serie di deduzioni,
+							cioè di analisi delle relazioni logiche, da un punto di vista verbale degli elementi che costituiscono il testo.
+							Le modalità di quesiti che seguono fedelmente la logica deduttiva sono molteplici e
+							le strategie risolutive si incentrano su un’attenta analisi linguistica. 
+							Questa tipologia di domande prevede diverse modalità risolutive e talvolta le regole logico-matematiche aiutano notevolmente la risoluzione
+						</div>
+						<br /><br /> 
                 <div>
                     <button class="btn btn-primary" id="next" name="domanda0">Iniziamo</button>
                 </div>
-            </div>
+            </div> </div>
             <div>
                 <p id="valutazione"></p>
             </div>
@@ -128,5 +155,6 @@
 				});
 			}
 		</script>
+		<script src="crocetteAjax.js"></script>
 	</body>
 </html>
