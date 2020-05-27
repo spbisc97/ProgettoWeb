@@ -30,21 +30,21 @@ session_start(); ?>
     <body>
         <!-- Header -->
         <?php if (isset($_SESSION['id'])) {
-        	// and $_SESSION['loggedin'] = true
-        	// 	echo '
-        	// <header id="header">
-        	//  <div class="inner">
-        	// 		<nav id="navbar fixed-top bg-primary">
-        	//         <a href="index.php" class="logo"><strong>Edu@home</strong></a>
-        	// 			<a href="learnMap/learnMap.php">Allenati</a>
-        	// 			<a href="snake/snake.html">divertiti</a>
-        	// 			<a href="profilo.php">profilo</a>
-        	// 			<a id="logout" href="logout.php" >Logout</a>
-        	// 		</nav>
-        	// 		<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-        	// 	</div>
-        	// </header>';
-        	echo '<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    	// and $_SESSION['loggedin'] = true
+    	// 	echo '
+    	// <header id="header">
+    	//  <div class="inner">
+    	// 		<nav id="navbar fixed-top bg-primary">
+    	//         <a href="index.php" class="logo"><strong>Edu@home</strong></a>
+    	// 			<a href="learnMap/learnMap.php">Allenati</a>
+    	// 			<a href="snake/snake.html">divertiti</a>
+    	// 			<a href="profilo.php">profilo</a>
+    	// 			<a id="logout" href="logout.php" >Logout</a>
+    	// 		</nav>
+    	// 		<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+    	// 	</div>
+    	// </header>';
+    	echo '<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
         le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
         uso a invece che span per rendere il contenuto interattivo  -->
@@ -76,8 +76,8 @@ session_start(); ?>
             </ul>
         </div>
     </nav>';
-        } else {
-        	echo '<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    } else {
+    	echo '<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
         le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
         uso a invece che span per rendere il contenuto interattivo  -->
@@ -108,19 +108,19 @@ session_start(); ?>
             </ul>
         </div>
     </nav>';
-        	// 	echo '
-        	// 	<header id="header">
-        	//  	<div class="inner">
-        	//         <nav id="navbar fixed-top bg-primary">
-        	//             <a href="index.html" class="logo"><strong>Edu@home</strong></a>
-        	// 			<a href="contatti.html">Contatti</a>
-        	// 			<a href="paginaLogin/login.html">Login</a>
-        	// 			<a href="paginaRegistrazione/registrazione.html">Registrazione</a>
-        	// 		</nav>
-        	// 		<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-        	// 	</div>
-        	// </header>';
-        } ?>
+    	// 	echo '
+    	// 	<header id="header">
+    	//  	<div class="inner">
+    	//         <nav id="navbar fixed-top bg-primary">
+    	//             <a href="index.html" class="logo"><strong>Edu@home</strong></a>
+    	// 			<a href="contatti.html">Contatti</a>
+    	// 			<a href="paginaLogin/login.html">Login</a>
+    	// 			<a href="paginaRegistrazione/registrazione.html">Registrazione</a>
+    	// 		</nav>
+    	// 		<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+    	// 	</div>
+    	// </header>';
+    } ?>
 
         <!-- Banner -->
         <section id="banner">
@@ -154,10 +154,10 @@ session_start(); ?>
 
                 <footer>
                     <?php if (!isset($_SESSION['id'])) {
-                    	echo '<a data-toggle="modal" data-target="#overlayLogin" class="button">Inizia</a>';
-                    } else {
-                    	echo '<a href="learnMap/learnMap.php" class="button">Inizia</a>';
-                    } ?>
+                	echo '<a data-toggle="modal" data-target="#overlayLogin" class="button">Inizia</a>';
+                } else {
+                	echo '<a href="learnMap/learnMap.php" class="button">Inizia</a>';
+                } ?>
                 </footer>
             </div>
         </section>
@@ -225,7 +225,7 @@ session_start(); ?>
                     </article>
                     <article>
                         <div class="image round">
-                            <img src="images/pic02.jpg" alt="Pic 02" />
+                            <img src="images/cervello.jpg" alt="Pic 02" />
                         </div>
                         <header>
                             <h3>Ma non solo</h3>
@@ -272,13 +272,13 @@ session_start(); ?>
 
         <!-- Scripts -->
         <?php if (isset($_GET["messaggio"])) {
-        	$mes = $_GET["messaggio"];
-        	echo '<script>$(document).ready(function(){alert("' .
-        		$mes .
-        		'");
+    	$mes = $_GET["messaggio"];
+    	echo '<script>$(document).ready(function(){alert("' .
+    		$mes .
+    		'");
             });
             </script>';
-        } ?>
+    } ?>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>

@@ -2,294 +2,301 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Snake</title>
-        <link rel="shortcut icon" href="../favicon.ico" />
-        <link rel="stylesheet" href="../assets/css/bootstrap.css" />
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/bootstrap.js" lang="--js"></script>
-        <link rel="stylesheet" href="../assets/css/home-made.css" />
-        <script src="../assets/js/vue.js"></script>
-        <style>
-            html,
-            body {
-                height: 100%;
-                margin: 0;
-            }
+	<head>
+		<title>Snake</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="../favicon.ico" />
+		<link rel="stylesheet" href="../assets/css/bootstrap.css" />
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/bootstrap.js" lang="--js"></script>
+		<link rel="stylesheet" href="../assets/css/home-made.css" />
+		<script src="../assets/js/vue.js"></script>
+		<style>
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+			}
 
-            body {
-                background: black;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            canvas {
-                border: 1px solid white;
-            }
-        </style>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-            <!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+			body {
+				background: black;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			canvas {
+				border: 1px solid white;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 uso a invece che span per rendere il contenuto interattivo  -->
-            <a class="navbar-brand" href="../index.php">Edu@home</a>
-            <!-- ancora come in questo caso -->
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+			<a class="navbar-brand" href="../index.php">Edu@home</a>
+			<!-- ancora come in questo caso -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
         mentre sotto abbiamo una parte collapsable ovvero 
         che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a id="home" class="nav-link" href="../learnMap/learnMap.php"
-                            >LearnMap <span class="sr-only">(current)</span></a
-                        >
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto dropdown">
-                    <a
-                        class="nav-link dropdown-toggle"
-                        style="margin-right: 6em;"
-                        href="#"
-                        id="navbarDropdown"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                    >
-                        Profilo
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
-                    </div>
-                </ul>
-            </div>
-        </nav>
-        <div class="container">
-            <div class="row">
-                <div
-                    class="col-md text-light text-center text-monospace row align-items-center"
-                    style="
-                        margin: 0.5em;
-                        border-style: solid;
-                        border-color: rgba(245, 245, 245, 0.623);
-                        border-radius: 1em;
-                    "
-                >
-                    <div class="col">
-                        Snake è un videogioco presente in molti telefonini, in particolare quelli
-                        prodotti dalla Nokia. <br />
-                        sue origini risalgono agli anni settanta, con il videogioco arcade Blockade;
-                        da allora è stato prodotto in numerose piattaforme e varianti, fino a
-                        ritrovare nuova fama negli anni novanta grazie ai cellulari.
-                        <br />
-                        lo scopo è quello di mangiare più frutti rossi ovvero mele possibili, fino a
-                        riempire l'intero schermo
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a id="home" class="nav-link" href="../learnMap/learnMap.php"
+							>LearnMap <span class="sr-only">(current)</span></a
+						>
+					</li>
+				</ul>
+				<ul class="navbar-nav ml-auto dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						style="margin-right: 6em;"
+						href="#"
+						id="navbarDropdown"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						Profilo
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
+					</div>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div
+					class="col-md text-light text-center text-monospace row align-items-center"
+					style="
+						margin: 0.5em;
+						border-style: solid;
+						border-color: rgba(245, 245, 245, 0.623);
+						border-radius: 1em;
+					"
+				>
+					<div class="col">
+						<div style="padding: 0.5em;">
+							Snake è un videogioco presente in molti telefonini, in particolare
+							quelli prodotti dalla Nokia. <br />
+							Le origini risalgono agli anni settanta, con il videogioco arcade
+							Blockade; da allora è stato prodotto in numerose piattaforme e varianti,
+							fino a ritrovare nuova fama negli anni novanta grazie ai cellulari.
+							<br />
+							lo scopo è quello di mangiare più frutti rossi ovvero mele possibili,
+							fino a riempire l'intero schermo
+						</div>
+						<p
+							class="row text-primary center"
+							style="padding: 1em;"
+							id="ultimopunteggio"
+							class="text-primary"
+						></p>
+					</div>
+				</div>
+				<div class="col" style="margin: 1em;">
+					<canvas width="400" height="400" id="game"></canvas>
+				</div>
 
-                        <p
-                            class="row text-primary center"
-                            style="padding: 1em;"
-                            id="ultimopunteggio"
-                            class="text-primary"
-                        ></p>
-                    </div>
-                </div>
-                <div class="col" style="margin: 1em;">
-                    <canvas width="400" height="400" id="game"></canvas>
-                </div>
+				<div
+					class="col-md text-light text-monospace row align-items-center"
+					style="
+						margin: 0.5em;
+						border-style: solid;
+						border-color: rgba(245, 245, 245, 0.623);
+						border-radius: 1em;
+					"
+				>
+					<div class="col" id="app"></div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var canvas = document.getElementById("game");
+			var context = canvas.getContext("2d");
 
-                <div
-                    class="col-md text-light text-monospace row align-items-center"
-                    style="
-                        margin: 0.5em;
-                        border-style: solid;
-                        border-color: rgba(245, 245, 245, 0.623);
-                        border-radius: 1em;
-                    "
-                >
-                    <div class="col" id="app"></div>
-                </div>
-            </div>
-        </div>
-        <script>
-            var canvas = document.getElementById("game");
-            var context = canvas.getContext("2d");
+			var grid = 16;
+			var count = 0;
 
-            var grid = 16;
-            var count = 0;
+			var snake = {
+				x: 160,
+				y: 160,
+				//velocità, movimento
+				dx: grid,
+				dy: 0,
+				// tiene traccia delle griglie occupate sta snake
+				cells: [],
+				// lunghezza+crescita
+				maxCells: 4,
+			};
+			var apple = {
+				x: 320,
+				y: 320,
+			};
 
-            var snake = {
-                x: 160,
-                y: 160,
-                //velocità, movimento
-                dx: grid,
-                dy: 0,
-                // tiene traccia delle griglie occupate sta snake
-                cells: [],
-                // lunghezza+crescita
-                maxCells: 4,
-            };
-            var apple = {
-                x: 320,
-                y: 320,
-            };
+			// https://stackoverflow.com/a/1527820/2124254
 
-            // https://stackoverflow.com/a/1527820/2124254
+			function getRandomInt(min, max) {
+				return Math.floor(Math.random() * (max - min)) + min;
+			}
 
-            function getRandomInt(min, max) {
-                return Math.floor(Math.random() * (max - min)) + min;
-            }
+			// loop
+			function loop() {
+				requestAnimationFrame(loop);
 
-            // loop
-            function loop() {
-                requestAnimationFrame(loop);
+				// diminuisci fps a 15 60 (60/15 = 4)
+				if (++count < 5) {
+					return;
+				}
 
-                // diminuisci fps a 15 60 (60/15 = 4)
-                if (++count < 5) {
-                    return;
-                }
+				count = 0;
+				context.clearRect(0, 0, canvas.width, canvas.height);
 
-                count = 0;
-                context.clearRect(0, 0, canvas.width, canvas.height);
+				// +movimento
+				snake.x += snake.dx;
+				snake.y += snake.dy;
 
-                // +movimento
-                snake.x += snake.dx;
-                snake.y += snake.dy;
+				// Posizione orizzontale
+				if (snake.x < 0) {
+					snake.x = canvas.width - grid;
+				} else if (snake.x >= canvas.width) {
+					snake.x = 0;
+				}
 
-                // wrap snake position horizontally on edge of screen
-                if (snake.x < 0) {
-                    snake.x = canvas.width - grid;
-                } else if (snake.x >= canvas.width) {
-                    snake.x = 0;
-                }
+				// Posizione verticale
+				if (snake.y < 0) {
+					snake.y = canvas.height - grid;
+				} else if (snake.y >= canvas.height) {
+					snake.y = 0;
+				}
 
-                // wrap snake position vertically on edge of screen
-                if (snake.y < 0) {
-                    snake.y = canvas.height - grid;
-                } else if (snake.y >= canvas.height) {
-                    snake.y = 0;
-                }
+				// traccia snake
+				snake.cells.unshift({ x: snake.x, y: snake.y });
 
-                // traccia snake
-                snake.cells.unshift({ x: snake.x, y: snake.y });
+				// pulisci celle dopo essersi spostati
+				if (snake.cells.length > snake.maxCells) {
+					snake.cells.pop();
+				}
 
-                // pulisci celle dopo essersi spostati
-                if (snake.cells.length > snake.maxCells) {
-                    snake.cells.pop();
-                }
+				// disegno frutto
+				context.fillStyle = "red";
+				context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
 
-                // disegno frutto
-                context.fillStyle = "red";
-                context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
+				// disegno snake
+				context.fillStyle = "green";
+				snake.cells.forEach(function (cell, index) {
+					//
+					context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
 
-                // disegno snake
-                context.fillStyle = "green";
-                snake.cells.forEach(function (cell, index) {
-                    //
-                    context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
+					// mangia la mela >>
+					if (cell.x === apple.x && cell.y === apple.y) {
+						snake.maxCells++;
+						lungezzasnake++;
 
-                    // mangia la mela >>
-                    if (cell.x === apple.x && cell.y === apple.y) {
-                        snake.maxCells++;
-                        lungezzasnake++;
+						// 25x25 in canvas è 400x400
+						apple.x = getRandomInt(0, 25) * grid;
+						apple.y = getRandomInt(0, 25) * grid;
+					}
 
-                        // 25x25 in canvas è 400x400
-                        apple.x = getRandomInt(0, 25) * grid;
-                        apple.y = getRandomInt(0, 25) * grid;
-                    }
+					for (var i = index + 1; i < snake.cells.length; i++) {
+						// reset in caso morte
+						if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+							snake.x = 160;
+							snake.y = 160;
+							snake.cells = [];
+							snake.maxCells = 4;
+							record();
+							lungezzasnake = 4;
+							snake.dx = grid;
+							snake.dy = 0;
 
-                    for (var i = index + 1; i < snake.cells.length; i++) {
-                        // reset in caso morte
-                        if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-                            snake.x = 160;
-                            snake.y = 160;
-                            snake.cells = [];
-                            snake.maxCells = 4;
-                            record();
-                            lungezzasnake = 4;
-                            snake.dx = grid;
-                            snake.dy = 0;
+							apple.x = getRandomInt(0, 25) * grid;
+							apple.y = getRandomInt(0, 25) * grid;
+						}
+					}
+				});
+			}
 
-                            apple.x = getRandomInt(0, 25) * grid;
-                            apple.y = getRandomInt(0, 25) * grid;
-                        }
-                    }
-                });
-            }
+			// eventi da tastiera
+			document.addEventListener("keydown", function (e) {
+				// sinistra
+				if (e.which === 37 && snake.dx === 0) {
+					snake.dx = -grid;
+					snake.dy = 0;
+				}
+				// su
+				else if (e.which === 38 && snake.dy === 0) {
+					snake.dy = -grid;
+					snake.dx = 0;
+				}
+				// destra
+				else if (e.which === 39 && snake.dx === 0) {
+					snake.dx = grid;
+					snake.dy = 0;
+				}
+				// giù
+				else if (e.which === 40 && snake.dy === 0) {
+					snake.dy = grid;
+					snake.dx = 0;
+				}
+			});
+			lungezzasnake = 4;
+			function record() {
+				$("#ultimopunteggio").text("hai conseguito un  punteggio di " + lungezzasnake);
+				$.post("snake.php", {
+					richiesta: "update",
+					punteggio: lungezzasnake,
+				}).done(function () {
+					classifica();
+				});
+			}
 
-            // eventi da tastiera
-            document.addEventListener("keydown", function (e) {
-                // sinistra
-                if (e.which === 37 && snake.dx === 0) {
-                    snake.dx = -grid;
-                    snake.dy = 0;
-                }
-                // si
-                else if (e.which === 38 && snake.dy === 0) {
-                    snake.dy = -grid;
-                    snake.dx = 0;
-                }
-                // destra
-                else if (e.which === 39 && snake.dx === 0) {
-                    snake.dx = grid;
-                    snake.dy = 0;
-                }
-                // giù
-                else if (e.which === 40 && snake.dy === 0) {
-                    snake.dy = grid;
-                    snake.dx = 0;
-                }
-            });
-            lungezzasnake = 4;
-            function record() {
-                $("#ultimopunteggio").text("hai conseguito un  punteggio di " + lungezzasnake);
-                $.post("snake.php", {
-                    richiesta: "update",
-                    punteggio: lungezzasnake,
-                }).done(function () {
-                    classifica();
-                });
-            }
+			// inizio
+			requestAnimationFrame(loop);
+		</script>
+		<script>
+			varie = [];
+			// function classifica() {
+			// 	$.post("snake.php", { richiesta: "nomi" }, function (data, status) {
+			// 		alert(data);
+			// 		varie = JSON.parse(data);
+			// 	});
+			// }
 
-            // inizio
-            requestAnimationFrame(loop);
-        </script>
-        <script>
-            varie = [];
-            // function classifica() {
-            // 	$.post("snake.php", { richiesta: "nomi" }, function (data, status) {
-            // 		alert(data);
-            // 		varie = JSON.parse(data);
-            // 	});
-            // }
+			$(document).ready(function () {
+				classifica();
+			});
+			function classifica() {
+				$.post("snake.php", { richiesta: "nomi" }, function (data, status) {
+					if (data == "-1") {
+						vue.nomi = [{ nick: "Devi", punteggio: "Loggarti" }];
+					} else {
+						varie = JSON.parse(data);
+						varie = varie;
 
-            $(document).ready(function () {
-                classifica();
-            });
-            function classifica() {
-                $.post("snake.php", { richiesta: "nomi" }, function (data, status) {
-                    varie = JSON.parse(data);
-                    varie = varie;
-                    //alert(varie);
-                    vue.nomi = varie;
-                });
-            }
-            var vue = new Vue({
-                el: "#app",
-                template: `<!-- @format -->
+						vue.nomi = varie;
+					}
+				});
+			}
+			var vue = new Vue({
+				el: "#app",
+				template: `<!-- @format -->
 
 <table style="height: inherit; width: inherit;" class="table table-borderless text-light">
 	<tr>
@@ -310,11 +317,11 @@ uso a invece che span per rendere il contenuto interattivo  -->
 	</tr>
 </table>
 `,
-                data: {
-                    nomi: varie,
-                },
-                methods: {},
-            });
-        </script>
-    </body>
+				data: {
+					nomi: varie,
+				},
+				methods: {},
+			});
+		</script>
+	</body>
 </html>
