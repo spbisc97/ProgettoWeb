@@ -110,7 +110,7 @@
                 </div>
             </div> </div>
             <div>
-                <p id="punteggio"></p>
+                <p id="valutazione"></p>
             </div>
         </div>
         <script>
@@ -149,16 +149,17 @@
 
 			function invia() {
 				$.post("crocette.php", { arrayrisposte }, function (data, status) {
+					alert(data);
 					if (data == -1) {
-			$("#punteggio").text(
+			$("#valutazione").text(
 				"Mi dispiace ma non risulti loggato e non potrai partecipare al quiz"
 			);
 		} else if (data <= 1) {
-			$("#punteggio").css("background-color", "rgba(240, 20, 30, 0.5)");
-			$("#punteggio").text("Hai risposto in modo corretto a " + data + " domande su 3");
+			$("#valutazione").css("background-color", "rgba(240, 20, 30, 0.5)");
+			$("#valutazione").text("Hai risposto in modo corretto a " + data + " domande su 3");
 		} else {
-			$("#punteggio").css("background-color", "rgba(20, 230, 30, 0.5)");
-			$("#punteggio").text("Hai risposto in modo corretto a " + data + " domande su 3");
+			$("#valutazione").css("background-color", "rgba(20, 230, 30, 0.5)");
+			$("#valutazione").text("Hai risposto in modo corretto a " + data + " domande su 3");
 		}
 	});
 			}
