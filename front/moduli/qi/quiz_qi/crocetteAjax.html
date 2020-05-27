@@ -22,7 +22,7 @@
 	<script type="text/javascript" src="quiz.js"></script>
 
 	<body>
-		<nav class="navbar navbar-expand-lg navbar bg-primary fixed-top">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
 			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 			uso a invece che span per rendere il contenuto interattivo  -->
@@ -66,11 +66,12 @@
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Globa</a>
+						<a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
 					</div>
 				</ul>
 			</div>
 		</nav>
+
 		
         <br /><br /><br />
         <div class="container-md text-monospace bg-blur">
@@ -110,7 +111,7 @@
                 </div>
             </div> </div>
             <div>
-                <p id="punteggio"></p>
+                <p id="valutazione"></p>
             </div>
         </div>
         <script>
@@ -149,16 +150,17 @@
 
 			function invia() {
 				$.post("crocette.php", { arrayrisposte }, function (data, status) {
+					alert(data);
 					if (data == -1) {
-			$("#punteggio").text(
+			$("#valutazione").text(
 				"Mi dispiace ma non risulti loggato e non potrai partecipare al quiz"
 			);
 		} else if (data <= 1) {
-			$("#punteggio").css("background-color", "rgba(240, 20, 30, 0.5)");
-			$("#punteggio").text("Hai risposto in modo corretto a " + data + " domande su 3");
+			$("#valutazione").css("background-color", "rgba(240, 20, 30, 0.5)");
+			$("#valutazione").text("Hai risposto in modo corretto a " + data + " domande su 3");
 		} else {
-			$("#punteggio").css("background-color", "rgba(20, 230, 30, 0.5)");
-			$("#punteggio").text("Hai risposto in modo corretto a " + data + " domande su 3");
+			$("#valutazione").css("background-color", "rgba(20, 230, 30, 0.5)");
+			$("#valutazione").text("Hai risposto in modo corretto a " + data + " domande su 3");
 		}
 	});
 			}

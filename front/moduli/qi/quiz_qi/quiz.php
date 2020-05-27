@@ -22,6 +22,8 @@ if ($_POST["quinta"] == "5.4") {
 }
 if (!isset($_SESSION["id"])) {
     $punteggio = -1;
+    echo $punteggio;
+    exit;
 }
 
 

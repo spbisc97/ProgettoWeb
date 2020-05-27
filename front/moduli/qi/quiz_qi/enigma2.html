@@ -63,35 +63,37 @@
 						Profilo
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="/front/profilo.php">Impostazioni</a>
+						<a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Globa</a>
+						<a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
 					</div>
 				</ul>
 			</div>
 		</nav>
+
 		<br /><br /><br /><br />
 		<div
-			class="container text-monospace bg-blur-dark"
+			class="container text-monospace text-white bg-blur-dark"
 			style="padding-top: 2em; padding-bottom: 2em;"
 		>
-			<div id="app">
+			<div id="app" class="d-flex justify-content-center">
 				<div>
 					<h1>{{ quiz.title }}</h1>
 					<!-- L'indice viene utilizzato per verificare con l'indice della domanda corrente -->
 					<div v-for="(question, index) in quiz.questions">
 						<!--Nascondi tutte le domande, mostra solo quella con indice === all'indice delle domande corrente -->
 
-						<div class="row align-center" v-show="index === questionIndex">
+						<div class="row align-center" v-show="index === questionIndex" >
 							<h2>{{ question.text }}</h2>
 							<div
-								class="col-8"
+								class="col-8 d-flex justify-content-center"
+								
 								v-show="index === questionIndex"
 								
 							>
 								<br />
 								<img
-									class="align-content-center"
+									
 									v-bind:src="question.img"
 									width="370px"
 									height="210px"
@@ -206,13 +208,22 @@
 							},
 							// ritorna true in userResponse
 							score: function () {
-								return this.userResponses.filter(function (val) {
+								punti= this.userResponses.filter(function (val) {
 									return val;
 								}).length;
+								if(this.questionIndex == quiz.questions.length){
+									sincdb(punti);}
+								return punti;
 							},
 						},
 					});
 				};
+				function sincdb(punteggio){
+					$.post("enigma2.php", { score:punteggio }, function (data, status) {
+							
+						})
+				}
+				
 			</script>
 		</div>
 	</body>
