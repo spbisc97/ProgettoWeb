@@ -66,13 +66,13 @@
 
                 $punteggio = 0;
 
-                if ($_POST["prog1"] == "cinque") {
+                if ($_POST["prog21"] == "si") {
                     $punteggio += 1;
                 }
-                if ($_POST["prog2"] == "two") {
+                if ($_POST["prog22"] == "sette") {
                     $punteggio += 1;
                 }
-                if ($_POST["istat"] == "developer") {
+                if ($_POST["prog23"] == "più") {
                     $punteggio += 1;
                 }
 
@@ -81,7 +81,7 @@
                     port=5432 dbname=putfahxs user=putfahxs password=yj6L-sA-nVPEpp4PJPpjvHLb6KbZJXsL"
                 )) or die("Could not connect: " . preg_last_error());
 
-                $q1 = "UPDATE python SET esercizio1=$1 WHERE id = $2";
+                $q1 = "UPDATE python SET esercizio2=$1 WHERE id = $2";
 
                 $res = pg_query_params($dbconn, $q1, [$punteggio, $_SESSION["id"]]);
 

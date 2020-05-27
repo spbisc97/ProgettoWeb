@@ -7,44 +7,44 @@ session_start(); ?>
 
 <html>
 
-    <head>
-        <title>edu@home</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="assets/css/bootstrap.css">
-        <link rel="stylesheet" href="assets/css/home-made.css">
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.js"></script>'
-        <style>
-        html {
-            scroll-behavior: smooth
-        }
-        </style>
+<head>
+    <title>edu@home</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/home-made.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>'
+    <style>
+    html {
+        scroll-behavior: smooth
+    }
+    </style>
 
 
-    </head>
+</head>
 
-    <body>
-        <!-- Header -->
-        <?php if (isset($_SESSION['id'])) {
-        	// and $_SESSION['loggedin'] = true
-        	// 	echo '
-        	// <header id="header">
-        	//  <div class="inner">
-        	// 		<nav id="navbar fixed-top bg-primary">
-        	//         <a href="index.php" class="logo"><strong>Edu@home</strong></a>
-        	// 			<a href="learnMap/learnMap.php">Allenati</a>
-        	// 			<a href="snake/snake.html">divertiti</a>
-        	// 			<a href="profilo.php">profilo</a>
-        	// 			<a id="logout" href="logout.php" >Logout</a>
-        	// 		</nav>
-        	// 		<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-        	// 	</div>
-        	// </header>';
-        	echo '<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+<body>
+    <!-- Header -->
+    <?php if (isset($_SESSION['id'])) {
+        // and $_SESSION['loggedin'] = true
+        // 	echo '
+        // <header id="header">
+        //  <div class="inner">
+        // 		<nav id="navbar fixed-top bg-primary">
+        //         <a href="index.php" class="logo"><strong>Edu@home</strong></a>
+        // 			<a href="learnMap/learnMap.php">Allenati</a>
+        // 			<a href="snake/snake.html">divertiti</a>
+        // 			<a href="profilo.php">profilo</a>
+        // 			<a id="logout" href="logout.php" >Logout</a>
+        // 		</nav>
+        // 		<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+        // 	</div>
+        // </header>';
+        echo '<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
         le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
         uso a invece che span per rendere il contenuto interattivo  -->
@@ -76,8 +76,8 @@ session_start(); ?>
             </ul>
         </div>
     </nav>';
-        } else {
-        	echo '<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    } else {
+        echo '<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
         le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
         uso a invece che span per rendere il contenuto interattivo  -->
@@ -108,181 +108,181 @@ session_start(); ?>
             </ul>
         </div>
     </nav>';
-        	// 	echo '
-        	// 	<header id="header">
-        	//  	<div class="inner">
-        	//         <nav id="navbar fixed-top bg-primary">
-        	//             <a href="index.html" class="logo"><strong>Edu@home</strong></a>
-        	// 			<a href="contatti.html">Contatti</a>
-        	// 			<a href="paginaLogin/login.html">Login</a>
-        	// 			<a href="paginaRegistrazione/registrazione.html">Registrazione</a>
-        	// 		</nav>
-        	// 		<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-        	// 	</div>
-        	// </header>';
-        } ?>
+        // 	echo '
+        // 	<header id="header">
+        //  	<div class="inner">
+        //         <nav id="navbar fixed-top bg-primary">
+        //             <a href="index.html" class="logo"><strong>Edu@home</strong></a>
+        // 			<a href="contatti.html">Contatti</a>
+        // 			<a href="paginaLogin/login.html">Login</a>
+        // 			<a href="paginaRegistrazione/registrazione.html">Registrazione</a>
+        // 		</nav>
+        // 		<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+        // 	</div>
+        // </header>';
+    } ?>
 
-        <!-- Banner -->
-        <section id="banner">
-            <div class="inner">
-                <header>
-                    <h1>Benvenuti in Edu@home</h1>
-                    <h6 class="text-light m-0  d-sm-none">Consigliamo la fruizione da PC</h6>
-                    <h6 class="text-light m-4 d-sm-none">Se sei su un tablet o telefono ti basterà ruotarlo</h6>
-                </header>
+    <!-- Banner -->
+    <section id="banner">
+        <div class="inner">
+            <header>
+                <h1>Benvenuti in Edu@home</h1>
+                <h6 class="text-light m-0  d-sm-none">Consigliamo la fruizione da PC</h6>
+                <h6 class="text-light m-4 d-sm-none">Se sei su un tablet o telefono ti basterà ruotarlo</h6>
+            </header>
 
-                <div class="flex">
-                    <div>
-                        <span class="icon fa-book"></span>
-                        <h3>Studia</h3>
-                        <p>Impara la teoria</p>
-                    </div>
-
-                    <div>
-                        <span class="icon fa-gamepad"></span>
-                        <h3>Gioca</h3>
-                        <p>Metti in pratica</p>
-                        <p>quello che hai imparato</p>
-                    </div>
-
-                    <div>
-                        <span class="icon fa-bug"></span>
-                        <h3>Aiutaci!</h3>
-                        <p>Segnalaci i bug</p>
-                    </div>
+            <div class="flex">
+                <div>
+                    <span class="icon fa-book"></span>
+                    <h3>Studia</h3>
+                    <p>Impara la teoria</p>
                 </div>
 
-                <footer>
-                    <?php if (!isset($_SESSION['id'])) {
-                    	echo '<a data-toggle="modal" data-target="#overlayLogin" class="button">Inizia</a>';
-                    } else {
-                    	echo '<a href="learnMap/learnMap.php" class="button">Inizia</a>';
-                    } ?>
-                </footer>
+                <div>
+                    <span class="icon fa-gamepad"></span>
+                    <h3>Gioca</h3>
+                    <p>Metti in pratica</p>
+                    <p>quello che hai imparato</p>
+                </div>
+
+                <div>
+                    <span class="icon fa-bug"></span>
+                    <h3>Aiutaci!</h3>
+                    <p>Segnalaci i bug</p>
+                </div>
             </div>
-        </section>
-        <section id=testing-poup>
-            <!-- <div class="text-center">
+
+            <footer>
+                <?php if (!isset($_SESSION['id'])) {
+                    echo '<a data-toggle="modal" data-target="#overlayLogin" class="button">Inizia</a>';
+                } else {
+                    echo '<a href="learnMap/learnMap.php" class="button">Inizia</a>';
+                } ?>
+            </footer>
+        </div>
+    </section>
+    <section id=testing-poup>
+        <!-- <div class="text-center">
                 <a href="" class="button" data-toggle="modal" data-target="#overlayLogin">Apri LogIn/Register
                     (testing)</a>
             </div> -->
-            <div class="modal fade" id="overlayLogin">
-                <div class="modal-dialog">
-                    <div class="modal-content" style="background: whitesmoke">
-                        <div class="modal-header text-center">
-                            <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
-                            <button type="btn btn-primary" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <form action="paginaLogin/checkLogin2.php" class="form-group" method="POST">
-                            <div class=" mb-5">
-
-                                <label data-error="wrong" data-success="right" for="email">Your
-                                    email</label>
-                                <input type="email" name="email" id="email" class="form-control ">
-
-                            </div>
-
-                            <div class=" mb-4">
-
-                                <label data-error="wrong" data-success="right" for="password">Your
-                                    password</label>
-                                <input type="password" name="password" id="password" class="form-control ">
-
-                            </div>
-                            <div class="modal-footer d-flex justify-content-center">
-                                <input type="submit" value="Login" class="btn btn-primary" name="Login"></input>
-                            </div>
-
-                        </form>
-
-                        <div class="modal-footer text-center justify-content-center">E se non lo hai già fatto
-                            <a class="btn btn-primary" href="paginaRegistrazione/registrazione.html">registrati!</a>
-                        </div>
-
+        <div class="modal fade" id="overlayLogin">
+            <div class="modal-dialog">
+                <div class="modal-content" style="background: whitesmoke">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                        <button type="btn btn-primary" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
+                    <form action="paginaLogin/checkLogin2.php" class="form-group" method="POST">
+                        <div class=" mb-5">
+
+                            <label data-error="wrong" data-success="right" for="email">Your
+                                email</label>
+                            <input type="email" name="email" id="email" class="form-control ">
+
+                        </div>
+
+                        <div class=" mb-4">
+
+                            <label data-error="wrong" data-success="right" for="password">Your
+                                password</label>
+                            <input type="password" name="password" id="password" class="form-control ">
+
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <input type="submit" value="Login" class="btn btn-primary" name="Login"></input>
+                        </div>
+
+                    </form>
+
+                    <div class="modal-footer text-center justify-content-center">E se non lo hai già fatto
+                        <a class="btn btn-primary" href="paginaRegistrazione/registrazione.html">registrati!</a>
+                    </div>
+
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Three -->
-        <section id="three" class="wrapper align-center">
-            <div class="inner">
-                <div class="flex flex-2">
-                    <article></article>
-                    <article>
-                        <div class="image round">
-                            <img src="images/imm2.jpg" alt="imm 01" />
-                        </div>
-                        <header>
-                            <h3>Programma!</h3>
-                        </header>
-                        <p>
-                            Divertente e utile<br />È usata in qualsiasi cosa <br />Scopri come fare!.
-                        </p>
+    <!-- Three -->
+    <section id="three" class="wrapper align-center">
+        <div class="inner">
+            <div class="flex flex-2">
+                <article></article>
+                <article>
+                    <div class="image round">
+                        <img src="images/imm2.jpg" alt="imm 01" />
+                    </div>
+                    <header>
+                        <h3>Programma!</h3>
+                    </header>
+                    <p>
+                        Divertente e utile<br />È usata in qualsiasi cosa <br />Scopri come fare!.
+                    </p>
 
-                    </article>
-                    <article>
-                        <div class="image round">
-                            <img src="images/pic02.jpg" alt="Pic 02" />
-                        </div>
-                        <header>
-                            <h3>Ma non solo</h3>
-                        </header>
-                        <p>Logica, matematica,Fisica<br />di tutto e di più</p>
+                </article>
+                <article>
+                    <div class="image round">
+                        <img src="images/cervello.webp" width="160" alt="Pic 02" />
+                    </div>
+                    <header>
+                        <h3>Ma non solo</h3>
+                    </header>
+                    <p>Logica, matematica,Fisica<br />di tutto e di più</p>
 
-                    </article>
-                    <article></article>
+                </article>
+                <article></article>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+
+            <h3>Contatti</h3>
+
+            <form action="contatti.php" method="post">
+
+                <div class="field half first">
+                    <label for="name">Nome</label>
+                    <input name="nome" id="name" type="text" placeholder="Nome">
                 </div>
-            </div>
-        </section>
-        <!-- Footer -->
-        <footer id="footer">
-            <div class="inner">
+                <div class="field half first">
+                    <label for="name">Mail</label>
+                    <input name="mail" id="mail" type="text" placeholder="Mail">
+                </div>
+                <div class="field half first">
+                    <label for="name">Oggetto</label>
+                    <input name="oggetto" id="oggetto" type="text" placeholder="Oggetto">
+                </div>
+                <div class="field">
+                    <label for="message">Messaggio</label>
+                    <textarea name="messaggio" id="message" rows="6" placeholder="Message"></textarea>
+                </div>
+                <ul class="actions">
+                    <li><input value="Send Message" class="button" type="submit" name="submitform"></li>
+                </ul>
+            </form>
 
-                <h3>Contatti</h3>
-
-                <form action="contatti.php" method="post">
-
-                    <div class="field half first">
-                        <label for="name">Nome</label>
-                        <input name="nome" id="name" type="text" placeholder="Nome">
-                    </div>
-                    <div class="field half first">
-                        <label for="name">Mail</label>
-                        <input name="mail" id="mail" type="text" placeholder="Mail">
-                    </div>
-                    <div class="field half first">
-                        <label for="name">Oggetto</label>
-                        <input name="oggetto" id="oggetto" type="text" placeholder="Oggetto">
-                    </div>
-                    <div class="field">
-                        <label for="message">Messaggio</label>
-                        <textarea name="messaggio" id="message" rows="6" placeholder="Message"></textarea>
-                    </div>
-                    <ul class="actions">
-                        <li><input value="Send Message" class="button" type="submit" name="submitform"></li>
-                    </ul>
-                </form>
-
-            </div>
-        </footer>
+        </div>
+    </footer>
 
 
-        <!-- Scripts -->
-        <?php if (isset($_GET["messaggio"])) {
-        	$mes = $_GET["messaggio"];
-        	echo '<script>$(document).ready(function(){alert("' .
-        		$mes .
-        		'");
+    <!-- Scripts -->
+    <?php if (isset($_GET["messaggio"])) {
+        $mes = $_GET["messaggio"];
+        echo '<script>$(document).ready(function(){alert("' .
+            $mes .
+            '");
             });
             </script>';
-        } ?>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/skel.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
-    </body>
+    } ?>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
 
 </html>

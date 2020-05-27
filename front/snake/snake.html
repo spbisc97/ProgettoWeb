@@ -90,15 +90,16 @@ uso a invece che span per rendere il contenuto interattivo  -->
                     "
                 >
                     <div class="col">
-                        Snake è un videogioco presente in molti telefonini, in particolare quelli
-                        prodotti dalla Nokia. <br />
-                        sue origini risalgono agli anni settanta, con il videogioco arcade Blockade;
-                        da allora è stato prodotto in numerose piattaforme e varianti, fino a
-                        ritrovare nuova fama negli anni novanta grazie ai cellulari.
-                        <br />
-                        lo scopo è quello di mangiare più frutti rossi ovvero mele possibili, fino a
-                        riempire l'intero schermo
-
+                        <div style="padding: 0.5em;">
+                            Snake è un videogioco presente in molti telefonini, in particolare
+                            quelli prodotti dalla Nokia. <br />
+                            sue origini risalgono agli anni settanta, con il videogioco arcade
+                            Blockade; da allora è stato prodotto in numerose piattaforme e varianti,
+                            fino a ritrovare nuova fama negli anni novanta grazie ai cellulari.
+                            <br />
+                            lo scopo è quello di mangiare più frutti rossi ovvero mele possibili,
+                            fino a riempire l'intero schermo
+                        </div>
                         <p
                             class="row text-primary center"
                             style="padding: 1em;"
@@ -169,14 +170,14 @@ uso a invece che span per rendere il contenuto interattivo  -->
                 snake.x += snake.dx;
                 snake.y += snake.dy;
 
-                // wrap snake position horizontally on edge of screen
+                // Posizione orizzontale
                 if (snake.x < 0) {
                     snake.x = canvas.width - grid;
                 } else if (snake.x >= canvas.width) {
                     snake.x = 0;
                 }
 
-                // wrap snake position vertically on edge of screen
+                // Posizione verticale
                 if (snake.y < 0) {
                     snake.y = canvas.height - grid;
                 } else if (snake.y >= canvas.height) {
@@ -237,7 +238,7 @@ uso a invece che span per rendere il contenuto interattivo  -->
                     snake.dx = -grid;
                     snake.dy = 0;
                 }
-                // si
+                // su
                 else if (e.which === 38 && snake.dy === 0) {
                     snake.dy = -grid;
                     snake.dx = 0;
@@ -281,10 +282,14 @@ uso a invece che span per rendere il contenuto interattivo  -->
             });
             function classifica() {
                 $.post("snake.php", { richiesta: "nomi" }, function (data, status) {
-                    varie = JSON.parse(data);
-                    varie = varie;
-                    //alert(varie);
-                    vue.nomi = varie;
+                    if (data == "-1") {
+                        vue.nomi = [{ nick: "Devi", punteggio: "Loggarti" }];
+                    } else {
+                        varie = JSON.parse(data);
+                        varie = varie;
+
+                        vue.nomi = varie;
+                    }
                 });
             }
             var vue = new Vue({
