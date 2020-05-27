@@ -24,7 +24,7 @@ function invia() {
 		//alert("Data: " + data + "\nStatus: " + status);
 		if (data == -1) {
 			$("#punteggio").text(
-				"Mi dispiace ma non risulti loggato e non potrai partecipare alle classifiche globali"
+				"Mi dispiace ma non risulti loggato e non potrai partecipare al quiz"
 			);
 		} else if (data <= 2) {
 			$("#punteggio").css("background-color", "rgba(240, 20, 30, 0.5)");

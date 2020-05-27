@@ -4,7 +4,11 @@
  */
 $punteggio = 0;
 
-if ($_POST["arrayrisposte"][0] == "domanda_1") {
+if (!isset($_SESSION["id"])) {
+    $punteggio = -1;
+}
+
+if ($_POST["arrayrisposte"][0] == "domanda1_1") {
     $punteggio += 1;
 }
 if ($_POST["arrayrisposte"][1] == "domanda2_5") {
