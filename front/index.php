@@ -70,6 +70,7 @@ session_start(); ?>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             
             <ul class="navbar-nav ml-auto dropdown">
+            <a class="navbar-brand nav-link" href="info/info.html">Chi Siamo</a>
             <a class="navbar-brand nav-link"  href="#footer">Contatti</a>
             <a class="navbar-brand nav-link" href="learnMap/learnMap.php">Allenati</a>
         	<a class="navbar-brand nav-link" href="snake/snake.html">Divertiti</a>
@@ -103,6 +104,7 @@ session_start(); ?>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             
             <ul class="navbar-nav ml-auto dropdown">
+            <a class="navbar-brand nav-link" href="info/info.html">Chi Siamo</a>
             <a class="navbar-brand nav-link"  href="#footer">Contatti</a>
             <a class="navbar-brand nav-link" href="paginaRegistrazione/registrazione.html">Registrazione</a>
             
@@ -142,9 +144,10 @@ session_start(); ?>
                 <br><br>
                 <div class="align-center">
                     <p class="center text-dark text-monospace" style="font-size:large">
-                        Questa sezione è una sorpresa per te, hai visitato la nostra pagina info e noi siamo quindi
-                        contenti di permetterti di accedere ai corsi e ai giochi senza registrarti, ti consigliamo
-                        comunque di registrarti per avere accesso a funzioni avanzate! </p>
+                        Questa sezione è una sorpresa per te,siamo felici tu abbia visitato la nostra pagina info e e ti
+                        permettiamo di accedere ai corsi e ai giochi senza registrarti.<br><span class="text-danger">
+                            ti consigliamo
+                            comunque di farlo per avere accesso a funzioni avanzate! </span></p>
                 </div>
                 <div class="flex align-items-center" style="padding:1em">
                     <div></div>

@@ -1,78 +1,104 @@
+<!-- @format -->
+
 <html>
-    <head>
-        <title>edu@home</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="../assets/css/main.css" />
-        <link rel="stylesheet" href="../assets/css/bootstrap.css" />
-        <link rel="stylesheet" href="../assets/css/home-made.css" />
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/bootstrap.js"></script>
-        '
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
-        </style>
-    </head>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+	<head>
+		<title>edu@home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="../assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../assets/css/home-made.css" />
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/bootstrap.js"></script>
+		'
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+			body {
+				background-image: url("../images/banner.jpg");
+			}
+		</style>
+		<script>
+			$(function () {
+				localStorage.info = "visitato";
+			});
+		</script>
+	</head>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+		<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
     le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
     uso a invece che span per rendere il contenuto interattivo  -->
-        <a class="navbar-brand" href="#">Edu@home</a>
-        <!-- ancora come in questo caso -->
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+		<a class="navbar-brand" href="../index.php">Edu@home</a>
+		<!-- ancora come in questo caso -->
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+		>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
         mentre sotto abbiamo una parte collapsable ovvero 
         che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto dropdown">
-                <a class="navbar-brand nav-link" href="#footer">Contatti</a>
-                <a class="navbar-brand nav-link" href="paginaRegistrazione/registrazione.html"
-                    >Registrazione</a
-                >
-            </ul>
-        </div>
-    </nav>
-    <br /><br /><br /><br /><br /><br />
-
-    <div class="card-deck">
-        <div class="card">
-          <img class="card-img-top" src="../images/cervello.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Simone Rotondi</h5>
-            <p class="card-text">Studente di ingegneria automatica al terzo anno.</p>
-            
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Francesco Riccioni</h5>
-            <p class="card-text">Studente di ingegneria automatica al terzo anno.</p>
-            
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Giovannino Orlando</h5>
-            <p class="card-text">Studente di ingegneria informatica al terzo anno</p>
-            
-          </div>
-        </div>
-      </div>
-    </div>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto dropdown">
+				<a class="navbar-brand nav-link" href="../index.php#footer">Contatti</a>
+			</ul>
+		</div>
+	</nav>
+	<section class="d-flex justify-content-center" style="padding: 5em;">
+		<div class="card-deck">
+			<div class="card border-primary" style="width: 18rem; margin: 3rem;">
+				<img class="card-img-top" src="media/SimoneRotondi.jpg" alt="Card image cap" />
+				<div class="card-body">
+					<h5 class="card-title">Simone Rotondi</h5>
+					<hr />
+					<p class="card-text">Studente di ingegneria automatica al terzo anno.</p>
+				</div>
+				<audio
+					class="card-footer"
+					style="border-radius: 0%; width: 18rem;"
+					src="media/elettronica.ogg"
+					type="audio/ogg"
+					controls="controls"
+				></audio>
+			</div>
+			<div class="card border-primary" style="width: 18rem; margin: 3rem;">
+				<img class="card-img-top" src="media/SimoneRotondi.jpg" alt="Card image cap" />
+				<div class="card-body">
+					<h5 class="card-title">Francesco Riccioni</h5>
+					<hr />
+					<p class="card-text">Studente di ingegneria automatica al terzo anno.</p>
+				</div>
+				<audio
+					class="card-footer"
+					controls="controls"
+					style="border-radius: 0%; width: 18rem;"
+					src="media/elettronica.ogg"
+					type="audio/ogg"
+				></audio>
+			</div>
+			<div class="card border-primary" style="width: 18rem; margin: 3rem;">
+				<img class="card-img-top" src="media/SimoneRotondi.jpg" alt="Card image cap" />
+				<div class="card-body">
+					<h5 class="card-title">Giovannino Orlando</h5>
+					<hr />
+					<p class="card-text">Studente di ingegneria informatica al terzo anno</p>
+				</div>
+				<audio
+					class="card-footer"
+					style="border-radius: 0%; width: 18rem;"
+					src="media/elettronica.ogg"
+					type="audio/ogg"
+					controls="controls"
+				></audio>
+			</div>
+		</div>
+	</section>
 </html>

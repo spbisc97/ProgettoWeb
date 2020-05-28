@@ -43,7 +43,7 @@
                             Profilo
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/front/profilo.php">Impostazioni</a>
+                            <a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
                         </div>
@@ -56,7 +56,8 @@
                 session_start();
                 if (!isset($_SESSION["id"])) {
                     echo ' <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> Ci dispiace ma non risulti loggato </div>  
-                        echo <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> <a class="center" href="../../../index.php"> premi qui per registrarti <a> </div>
+                        <br>
+                         <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> <a class="center" href="../../../index.php"> premi qui per registrarti <a> </div>
                         </div>
                         </body>
             
@@ -69,10 +70,10 @@
                 if ($_POST["prog1"] == "cinque") {
                     $punteggio += 1;
                 }
-                if ($_POST["prog2"] == "two") {
+                if ($_POST["prog2"] == "due") {
                     $punteggio += 1;
                 }
-                if ($_POST["istat"] == "developer") {
+                if ($_POST["prog3"] == "developer") {
                     $punteggio += 1;
                 }
 
@@ -85,13 +86,13 @@
 
                 $res = pg_query_params($dbconn, $q1, [$punteggio, $_SESSION["id"]]);
 
-                if ($punteggio > 2) {
+                if ($punteggio > 1) {
                     echo '<div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(84, 200, 20, 0.6);"> il tuo punteggio è di ';
                 } else {
                     echo '<div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> il tuo punteggio è di ';
                 }
                 echo $punteggio;
-                echo " punti su 4";
+                echo " punti su 3";
 
                 echo "</div>";
 
