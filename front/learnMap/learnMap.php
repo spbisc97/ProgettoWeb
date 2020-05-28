@@ -71,12 +71,12 @@
             <div style="margin: 3em; border-style: none; padding:2em ;border-radius: 10px;">
 
                 <?php if (!isset($_SESSION["id"])) {
-                        echo " <div class='text-danger'> ti consigliamo di registrarti per avere accesso alle funzioni avanzate del sito </div>";
-                    } else {
-                        echo "<div class='text-primary'> Benvenuto ";
-                        echo $_SESSION["nome"];
-                        echo "</div>";
-                    } ?>
+                	echo " <div class='text-danger'> ti consigliamo di registrarti per avere accesso alle funzioni avanzate del sito </div>";
+                } else {
+                	echo "<div class='text-primary'> Benvenuto ";
+                	echo $_SESSION["nick"];
+                	echo "</div>";
+                } ?>
                 <br />
                 In questa sezione è possibile scegliere la materia che si è interessati ad
                 apprendere, noi chiaramente forniremo solo delle basi per approcciarsi

@@ -12,7 +12,7 @@
 		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
 		<style>
 			body {
-				background-image: url("");
+				background-image: url("pbsol.gif");
 				background-repeat: no-repeat;
 				background-attachment: fixed;
 				background-size: cover;
@@ -72,29 +72,32 @@
 			</div>
 		</nav>
 
-		
-        <br /><br /><br />
-        <div class="container-md text-monospace bg-blur">
+        <br><br><br>
+        <div class="container-md text-monospace bg-blur-dark text-white">
             <div id="ajaxSpace">
-				<div class="bg-blur container xl text-monospace"> <br />
+				<div class=" container xl text-monospace"> <br />
 					<h2>Ragionamento verbale</h2>
 		
 						<div>
-						Nelle domande di <a
+						Nelle domande di 
+						<a
 						class="bg-blur more-info"
-						id="numeri"
+						id="ragionamento"
 						>
 						<strong>ragionamento verbale</strong>
 						</a>
-						<div class="bg-blur-dark" style="display: none;" id="snumeri">
+						<div class="bg-blur row" style="display: none;" id="sragionamento">
+							<div class="col"> <br>
 							Il ragionamento verbale è un modello di studio per intuire quale 
 							sia la parola giusta nel posto giusto tramite deduzioni logiche-matematiche. 
 							Fu proprio Einstein ad affermare che la conoscenza della parola e di tutte le sue radici
 							ebbero un' importanza rilevante nella sua vita. Infatti egli allenava ogni giorno la sua mentre
 							prorpio con indovinelli verbali 
-
-							<img src="albert.gif"  width="200" height="200" >
-							<br />
+							</div>
+							<div class="col"> <br>
+							<img src="albert.gif"  width="250" height="250"> <br><br>
+							</div> 
+							<br>
 							<div class="bg-blur container xl text-monospace">
 							
 							</div> 
@@ -105,11 +108,12 @@
 							le strategie risolutive si incentrano su un’attenta analisi linguistica. 
 							Questa tipologia di domande prevede diverse modalità risolutive e talvolta le regole logico-matematiche aiutano notevolmente la risoluzione
 						</div>
+            </div>
 						<br /><br /> 
                 <div>
                     <button class="btn btn-primary" id="next" name="domanda0">Iniziamo</button>
                 </div>
-            </div> </div>
+            </div> 
             <div>
                 <p id="valutazione"></p>
             </div>
@@ -150,7 +154,6 @@
 
 			function invia() {
 				$.post("crocette.php", { arrayrisposte }, function (data, status) {
-					alert(data);
 					if (data == -1) {
 			$("#valutazione").text(
 				"Mi dispiace ma non risulti loggato e non potrai partecipare al quiz"
@@ -162,9 +165,11 @@
 			$("#valutazione").css("background-color", "rgba(20, 230, 30, 0.5)");
 			$("#valutazione").text("Hai risposto in modo corretto a " + data + " domande su 3");
 		}
-	});
+	}); 
 			}
+			
 		</script>
 		<script src="crocetteAjax.js"></script>
+		
 	</body>
 </html>

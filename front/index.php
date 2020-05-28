@@ -22,8 +22,11 @@ session_start(); ?>
         html {
             scroll-behavior: smooth
         }
-        </style>
 
+        .hidden {
+            display: none;
+        }
+        </style>
 
     </head>
 
@@ -107,7 +110,18 @@ session_start(); ?>
                 
             </ul>
         </div>
-    </nav>';
+    </nav>
+    
+    <script>
+    $(document).ready(function() {
+        if (localStorage.info == "visitato") {
+            $("#extra").removeClass("hidden");
+        }
+    })
+    </script>
+    
+    
+    ';
         	// 	echo '
         	// 	<header id="header">
         	//  	<div class="inner">
@@ -121,6 +135,29 @@ session_start(); ?>
         	// 	</div>
         	// </header>';
         } ?>
+
+
+        <section id="extra" class="bg-more-blur hidden" style="padding: 2em ">
+            <div class="inner">
+                <br><br>
+                <div class="align-center">
+                    <p class="center text-dark text-monospace" style="font-size:large">
+                        Questa sezione è una sorpresa per te, hai visitato la nostra pagina info e noi siamo quindi
+                        contenti di permetterti di accedere ai corsi e ai giochi senza registrarti, ti consigliamo
+                        comunque di registrarti per avere accesso a funzioni avanzate! </p>
+                </div>
+                <div class="flex align-items-center" style="padding:1em">
+                    <div></div>
+                    <div>
+                        <a class="button " style="background-color: black" href="snake/snake.html"> Snake </a>
+                    </div>
+                    <div>
+                        <a class="button" style="background-color: black" href="learnMap/learnMap.php"> LearnMap </a>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </section>
 
         <!-- Banner -->
         <section id="banner">
@@ -208,7 +245,7 @@ session_start(); ?>
         </section>
 
         <!-- Three -->
-        <section id="three" class="wrapper align-center">
+        <section id="three" class="wrapper align-center" style="padding :1em">
             <div class="inner">
                 <div class="flex flex-2">
                     <article></article>
