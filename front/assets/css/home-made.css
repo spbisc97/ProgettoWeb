@@ -24,3 +24,9 @@ label.radiobutton {
 label.radiobutton:hover {
 	background-color: rgba(197, 66, 209, 0.8);
 }
+gradual-shadow-left {
+	box-shadow: 3em -0px 10px grey inset;
+}
+gradual-shadow-right {
+	box-shadow: -3em -0px 10px grey inset;
+}

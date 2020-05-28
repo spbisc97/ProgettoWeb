@@ -81,9 +81,9 @@ uso a invece che span per rendere il contenuto interattivo  -->
 			</div>
 		</nav>
 		<div class="container">
-			<div class="row">
+			<div class="row align-content-around align-bottom">
 				<div
-					class="col-md text-light text-center text-monospace row align-items-center"
+					class="col text-light text-center text-monospace row align-items-center"
 					style="
 						margin: 0.5em;
 						border-style: solid;
@@ -91,31 +91,34 @@ uso a invece che span per rendere il contenuto interattivo  -->
 						border-radius: 1em;
 					"
 				>
-					<div class="col">
-						<div style="padding: 0.5em;">
-							Snake è un videogioco presente in molti telefonini, in particolare
-							quelli prodotti dalla Nokia. <br />
-							Le origini risalgono agli anni settanta, con il videogioco arcade
-							Blockade; da allora è stato prodotto in numerose piattaforme e varianti,
-							fino a ritrovare nuova fama negli anni novanta grazie ai cellulari.
-							<br />
-							lo scopo è quello di mangiare più frutti rossi ovvero mele possibili,
-							fino a riempire l'intero schermo
-						</div>
-						<p
-							class="row text-primary center"
-							style="padding: 1em;"
-							id="ultimopunteggio"
-							class="text-primary"
-						></p>
-					</div>
+					<p style="padding: 0.5em;">
+						Snake è un videogioco presente in molti telefonini, in particolare quelli
+						prodotti dalla Nokia. <br />
+						Le origini risalgono agli anni settanta, con il videogioco arcade Blockade;
+						da allora è stato prodotto in numerose piattaforme e varianti, fino a
+						ritrovare nuova fama negli anni novanta grazie ai cellulari.
+						<br />
+						lo scopo è quello di mangiare più frutti rossi ovvero mele possibili, fino a
+						riempire l'intero schermo
+					</p>
+					<p
+						class="text-primary center"
+						style="padding: 0.5em;"
+						id="ultimopunteggio"
+						class="text-primary"
+					></p>
 				</div>
-				<div class="col" style="margin: 1em;">
-					<canvas width="400" height="400" id="game"></canvas>
+				<div class="col d-flex align-items-center" style="margin: 1em;">
+					<canvas
+						class=""
+						width="400"
+						height="400"
+						id="game"
+						style="border: 1px solid whitesmoke;"
+					></canvas>
 				</div>
-
 				<div
-					class="col-md text-light text-monospace row align-items-center"
+					class="col text-light text-monospace row align-items-center"
 					style="
 						margin: 0.5em;
 						border-style: solid;
@@ -123,7 +126,7 @@ uso a invece che span per rendere il contenuto interattivo  -->
 						border-radius: 1em;
 					"
 				>
-					<div class="col" id="app"></div>
+					<div class="" id="app"></div>
 				</div>
 			</div>
 		</div>

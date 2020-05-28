@@ -5,13 +5,13 @@ showSX = true;
 
 var spiegazioni = {
 	primo:
-		"questo grafico è chiamato grafico a torta, e nel particolare caso rappresenta gli sport preferiti dagli italiani, ogni spicchio è uno sport e in relazione agli altri spicchi esprime la percentuale.",
+		"Questo grafico è chiamato grafico a torta, e nel particolare caso rappresenta gli sport preferiti dagli italiani, ogni spicchio è uno sport e in relazione agli altri spicchi esprime la percentuale.",
 	secondo:
-		"questo grafico è chiamato grafico radar, per la somiglianza delle rappresentazioni, viene usato per rappresentare le proprietà di più elementi, nel particolare qui abbiamo due aziende che vengono confrontate nelle loro proprietà",
+		"Questo grafico è chiamato grafico radar, per la somiglianza delle rappresentazioni, viene usato per rappresentare le proprietà di più elementi, nel particolare qui abbiamo due aziende che vengono confrontate nelle loro proprietà",
 	terzo:
-		"questo grafico rappresenta la la variazione della popolazione italiana negli ultimi 10 anni, in particolare ha l'asse y troncata per evidenziare le variazioni, che altrimenenti sarebbaro poco percepibili",
+		"Questo grafico rappresenta la la variazione della popolazione italiana negli ultimi 10 anni, in particolare ha l'asse y troncata per evidenziare le variazioni, che altrimenenti sarebbaro poco percepibili",
 	quarto:
-		"questo grafico è chiamato grafico a barre, questo ha l'asse y non troncato :parte da zero e rapprensenta le nascite a partire dal 1950",
+		"Questo grafico è chiamato grafico a barre, questo ha l'asse y non troncato :parte da zero e rapprensenta le nascite a partire dal 1950",
 };
 
 let sx = Vue.component("sinsx", {
@@ -79,7 +79,7 @@ var vue = new Vue({
 		:class="sxclass"
 		:style="{visibility: showsx ? 'visible' : 'hidden'}"
 	></sinsx>
-	<div v-if="!showdx || !showsx" class="center col-4 text-light">
+	<div v-if="!showdx || !showsx" class="center col-4 text-light bg-blur " style="font-size: large; border-radius: 1em;padding: 0.5em; ">
 		{{ testo }}
 	</div> 
 	<dedx

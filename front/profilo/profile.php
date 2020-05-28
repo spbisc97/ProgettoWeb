@@ -118,7 +118,7 @@ $infoUtente = json_encode($valori);
         </section>
 
         <script src="profile.js"></script>
-        <?php if ($_GET["operazione"]) {
+        <?php if (isset($_GET["operazione"])) {
         	$operazione = $_GET["operazione"];
         	echo '<script>
         $(document).ready(function() {

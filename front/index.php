@@ -208,7 +208,7 @@ session_start(); ?>
         </section>
 
         <!-- Three -->
-        <section id="three" class="wrapper align-center">
+        <section id="three" class="wrapper align-center" style="padding :1em">
             <div class="inner">
                 <div class="flex flex-2">
                     <article></article>
