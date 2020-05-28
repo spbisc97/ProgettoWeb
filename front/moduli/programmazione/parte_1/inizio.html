@@ -16,7 +16,7 @@
 			$(function () {
 				$("span[name='exe']").click(function () {
 					val = $(this).attr("value");
-					$(this).removeClass("hidden");
+					$("div#risposta").removeClass("hidden");
 					$.ajax({
 						type: "GET",
 						url: val,
