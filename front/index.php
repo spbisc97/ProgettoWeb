@@ -142,9 +142,9 @@ session_start(); ?>
                 <br><br>
                 <div class="align-center">
                     <p class="center text-dark text-monospace" style="font-size:large">
-                        Questa sezione è una sorpresa per te, siccome hai visitato la nostra pagina info noi siamo
+                        Questa sezione è una sorpresa per te, hai visitato la nostra pagina info e noi siamo quindi
                         contenti di permetterti di accedere ai corsi e ai giochi senza registrarti, ti consigliamo
-                        comunque di registrarti per avere accesso a funzioni avanzate</p>
+                        comunque di registrarti per avere accesso a funzioni avanzate! </p>
                 </div>
                 <div class="flex align-items-center" style="padding:1em">
                     <div></div>
