@@ -112,7 +112,8 @@
 						<br /><br /> 
                 <div>
                     <button class="btn btn-primary" id="next" name="domanda0">Iniziamo</button>
-                </div>
+				</div>
+				<br>
             </div> 
             <div>
                 <p id="valutazione"></p>
@@ -156,20 +157,19 @@
 				$.post("crocette.php", { arrayrisposte }, function (data, status) {
 					if (data == -1) {
 			$("#valutazione").text(
-				"Mi dispiace ma non risulti loggato e non potrai partecipare al quiz"
-			);
+				'Mi dispiace ma non risulti loggato e non potrai partecipare al quiz <a class="center text-white" href="../../index.php"><strong> Premi qui per tornare al login </strong> <a>');
 		} else if (data <= 1) {
 			$("#valutazione").css("background-color", "rgba(240, 20, 30, 0.5)");
-			$("#valutazione").text("Hai risposto in modo corretto a " + data + " domande su 3");
+			$("#valutazione").html('Hai risposto in modo corretto a ' + data + ' domande su 3 <a class="center text-white" href="../../../learnMap/learnMap.php"><strong> Premi qui per tornare alla learnMap </strong> <a>');
 		} else {
 			$("#valutazione").css("background-color", "rgba(20, 230, 30, 0.5)");
-			$("#valutazione").text("Hai risposto in modo corretto a " + data + " domande su 3");
+			$("#valutazione").html('Hai risposto in modo corretto a ' + data + ' domande su 3 <a class="center text-white" href="../../../learnMap/learnMap.php"><strong> Premi qui per tornare alla learnMap </strong> <a>');
 		}
 	}); 
 			}
 			
 		</script>
+		<br> 
 		<script src="crocetteAjax.js"></script>
-		
 	</body>
 </html>
