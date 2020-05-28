@@ -14,11 +14,14 @@
 		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
 		<script>
 			$(function(){
-				$("a[name='exe']").click(function(){
-					alert($(this).val()+"ciao");
+				$("span[name='exe']").click(function(){
+					val=$(this).attr("value");
+					$.ajax({type: "GET", url: val, dataType: "html", success: function(risposta){ 
+						$("div#risposta").html(risposta);}
+					},)
+
+					alert(val);
 				});
-
-
 						});
 		</script>
 		
@@ -117,12 +120,12 @@
 			<div class="carousel-inner" style="padding-left: 4em; padding-right: 4em; " role="listbox">
 					<div class="carousel-item active text-center p-4">
                          <p>Iniziamo con il creare un breve programma che stampa "Hello world!". in Python usiamo <a href="https://www.html.it/pag/39740/le-funzioni-print-e-input/" target="_blank">print</a> 
-                            per stampare su schermo, può essere usato <a name="exe" class="text-primary" value="../esempi/esempio_1.html" target="_blank">singolarmete</a>
-                            o può essere usato per stampare  <a name="exe" class="text-primary" value=../esempi/esempio_2.html target="_blank">multiple</a> linee di testo.</p>
+                            per stampare su schermo, può essere usato <span name="exe" class="text-primary" value="../esempi/esempio_1.html" target="_blank">singolarmete</span>
+                            o può essere usato per stampare  <span name="exe" class="text-primary" value=../esempi/esempio_2.html target="_blank">multiple</span> linee di testo.</p>
                             <p>Per definire variabili in Python, è sufficiente utilizzare l’operatore di assegnamento (=), a differenza di altri linguaggi di programmazione,
                                 non va specificato il tipo di variabile,
                             </p>
-                            <p> come nell'<a name="exe" class="text-primary" value=../esempi/esempio_3.html target="_blank">esempio</a> .Consiglio di dare un'occhiata ai tipi di 
+                            <p> come nell'<span name="exe" class="text-primary" value=../esempi/esempio_3.html target="_blank">esempio</span> .Consiglio di dare un'occhiata ai tipi di 
                                 <a href=https://www.html.it/pag/65934/tipi-built-in-riepilogo target="_blank">dato</a> in Python</p>
 						
 					</div>
@@ -133,18 +136,18 @@
                             per elevare a potenza si usa il doppio asterisco(**), le operazioni artimetiche possono essere eseguita sia su numeri positivi che negativi. 
                             Per le operazioni più complesse, come ad esempio la radice quadrata si può importare una libreria,
                             che ne facilita l'utilizzo, ma questo lo vedremo in futuro. Si ha un esempio delll'utilizzo delle operazioni 
-                            <a name="exe" class="text-primary" value=../esempi/esempio_4.html target="_blank">aritmetiche</a> in Python</p>
+                            <span name="exe" class="text-primary" value=../esempi/esempio_4.html target="_blank">aritmetiche</=> in Python</p>
 					</div>
 					<div class="carousel-item text-center p-4">
 						
                         <p>Per prendere input da tastiera, in Python si può usare intuitivamente la funzione <a href=https://www.html.it/pag/39740/le-funzioni-print-e-input target="_blank">input</a>
                             la funziona da istruzzioni all'utente su cosa inserire come input, e prende l'input come stringa. Come gli interi ed i float in Python le stringhe 
-                            possono essere <a name="exe" class="text-primary" value=../esempi/esempio_5.html target="_blank">sommate</a>  con (+). Ma non si possono aggiungere stringhe con i numeri. L
+                            possono essere <span name="exe" class="text-primary" value=../esempi/esempio_5.html target="_blank">sommate</span>  con (+). Ma non si possono aggiungere stringhe con i numeri. L
                             e stringhe possono essere moltiplicate per interi, questo produce una ripetuta versione della stringa originale.
                         </p>
 							<p>In python, è impossibile completare certe operazione dove sono coinvolti due tipi diversi. 
                                 Per esempio non si possono sommare le due stringhe che contengono i numeri "2" e "3", il risultato sarebbe "23",non 5.
-                                La soluzione a questo è la conversione di <a name="exe" class="text-primary" value=../esempi/esempio_6.html target="_blank">tipo</a>
+                                La soluzione a questo è la conversione di <span name="exe" class="text-primary" value=../esempi/esempio_6.html target="_blank">tipo</span>
                             </p>
 						</div>
 						<div class="carousel-item text-center p-4">
@@ -171,6 +174,7 @@
 				
 			</div>
 		</div>
+		<div id="risposta"></div>
 		
 	</body>
 </html>
