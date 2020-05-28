@@ -73,7 +73,7 @@
                 if ($_POST["prog2"] == "due") {
                     $punteggio += 1;
                 }
-                if ($_POST["istat"] == "developer") {
+                if ($_POST["prog3"] == "developer") {
                     $punteggio += 1;
                 }
 
