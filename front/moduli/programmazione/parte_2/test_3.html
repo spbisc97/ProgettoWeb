@@ -2,90 +2,90 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>intronduzione a Python</title>
-        <link rel="shortcut icon" href="../../../favicon.ico" />
-        <link rel="stylesheet" href="../../../bootstrap-4.4.1-dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="../../../assets/css/home-made.css" />
-        <link rel="stylesheet" href="../slideshow.css" />
-        <script src="../../../jQuery/jquery.min.js"></script>
-        <script src="../../../assets/js/bootstrap.js" lang="--js"></script>
-        <script>
-            function aumenta() {
-                $("#barra").css("width", event.target.getAttribute("name") + "%");
-            }
-        </script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>intronduzione a Python</title>
+		<link rel="shortcut icon" href="../../../favicon.ico" />
+		<link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
+		<link rel="stylesheet" href="../slideshow.css" />
+		<script src="../../../assets/js/jquery.min.js"></script>
+		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
+		<script>
+			function aumenta() {
+				$("#barra").css("width", event.target.getAttribute("name") + "%");
+			}
+		</script>
 
-        <style>
-            body {
-                background-image: url(../immagini/progtest.jpg);
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-size: cover;
-            }
+		<style>
+			body {
+				background-image: url(../immagini/progtest.jpg);
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+			}
 
-            h1 {
-                text-align: center;
-                color: red;
-            }
-        </style>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-            <!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
+			h1 {
+				text-align: center;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+			<!-- href="#" è un ancora in realtà a nulla ma ci permettere di usare il js
 			le classi navbar-light/dark e bg-light/dark sono per il tema il primo per
 			uso a invece che span per rendere il contenuto interattivo  -->
-            <a class="navbar-brand" href="../../../index.php">Edu@home</a>
-            <!-- ancora come in questo caso -->
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
+			<a class="navbar-brand" href="../../../index.php">Edu@home</a>
+			<!-- ancora come in questo caso -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- sopra questo abbiamo una parte che resterà comunque è formattata la pagina, 
                 mentre sotto abbiamo una parte collapsable ovvero 
                 che formerà un menù ad hamburger (grazie alle magie js)nel caso la pagina fosse troppo stretta per mostrare tuto -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a id="home" class="nav-link" href="../../../learnMap/learnMap.php"
-                            >LearnMap <span class="sr-only">(current)</span></a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../IDLE.html">IDLE</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto dropdown">
-                    <a
-                        class="nav-link dropdown-toggle"
-                        style="margin-right: 8em;"
-                        href="#"
-                        id="navbarDropdown"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                    >
-                        Profilo
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
-                    </div>
-                </ul>
-            </div>
-        </nav>
-        <!-- //inutile il search per ora  
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a id="home" class="nav-link" href="../../../learnMap/learnMap.php"
+							>LearnMap <span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../IDLE.html">IDLE</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav ml-auto dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						style="margin-right: 8em;"
+						href="#"
+						id="navbarDropdown"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						Profilo
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
+					</div>
+				</ul>
+			</div>
+		</nav>
+		<!-- //inutile il search per ora  
 				<form class="form-inline my-2 my-lg-0">
 					<input
 						class="form-control mr-sm-2"
@@ -99,189 +99,189 @@
                 </form>
                 -->
 
-        <br /><br /><br />
-        <div class="container">
-            <div class="progress vertical">
-                <div
-                    class="progress-bar progress-bar-striped progress-bar-animated"
-                    role="progressbar"
-                    id="barra"
-                    aria-valuenow="0"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style="width: 33%;"
-                ></div>
-            </div>
-        </div>
+		<br /><br /><br />
+		<div class="container">
+			<div class="progress vertical">
+				<div
+					class="progress-bar progress-bar-striped progress-bar-animated"
+					role="progressbar"
+					id="barra"
+					aria-valuenow="0"
+					aria-valuemin="0"
+					aria-valuemax="100"
+					style="width: 33%;"
+				></div>
+			</div>
+		</div>
 
-        <div class="container-xl text-monospace bg-blur">
-            <h1>Concentrati!</h1>
-            Iniziamo
-            <br /><br />
-            <!--cambiare poi in post-->
-            <form action="finaltest.php" method="POST">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="list-group" id="list-tab" role="tablist">
-                            <a
-                                class="list-group-item list-group-item-action active"
-                                id="list-primad"
-                                data-toggle="list"
-                                name="33"
-                                href="#primad"
-                                role="tab"
-                                aria-controls="home"
-                                onclick="aumenta()"
-                                >Prima</a
-                            >
-                            <a
-                                class="list-group-item list-group-item-action"
-                                id="list-secondad"
-                                data-toggle="list"
-                                name="66"
-                                href="#vad"
-                                role="tab"
-                                aria-controls="profile"
-                                onclick="aumenta()"
-                                >Seconda</a
-                            >
-                            <a
-                                class="list-group-item list-group-item-action"
-                                id="list-terzad"
-                                data-toggle="list"
-                                name="100"
-                                href="#terzad"
-                                role="tab"
-                                aria-controls="messages"
-                                onclick="aumenta()"
-                                >Terza</a
-                            >
-                        </div>
-                    </div>
+		<div class="container-xl text-monospace bg-blur">
+			<h1>Concentrati!</h1>
+			Iniziamo
+			<br /><br />
+			<!--cambiare poi in post-->
+			<form action="finaltest.php" method="POST">
+				<div class="row">
+					<div class="col-3">
+						<div class="list-group" id="list-tab" role="tablist">
+							<a
+								class="list-group-item list-group-item-action active"
+								id="list-primad"
+								data-toggle="list"
+								name="33"
+								href="#primad"
+								role="tab"
+								aria-controls="home"
+								onclick="aumenta()"
+								>Prima</a
+							>
+							<a
+								class="list-group-item list-group-item-action"
+								id="list-secondad"
+								data-toggle="list"
+								name="66"
+								href="#vad"
+								role="tab"
+								aria-controls="profile"
+								onclick="aumenta()"
+								>Seconda</a
+							>
+							<a
+								class="list-group-item list-group-item-action"
+								id="list-terzad"
+								data-toggle="list"
+								name="100"
+								href="#terzad"
+								role="tab"
+								aria-controls="messages"
+								onclick="aumenta()"
+								>Terza</a
+							>
+						</div>
+					</div>
 
-                    <div class="col-8 bg-more-blur rounded-lg">
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="primad" role="tabpanel">
-                                <div style="padding: 1em;">
-                                    Quanti e quali sono i cicli più importanti?
-                                    <br />
-                                    <div>
-                                        <input
-                                            type="radio"
-                                            class="col-1"
-                                            name="prog31"
-                                            value="ifelse"
-                                        />Due: If ed else.
-                                    </div>
-                                    <div>
-                                        <input
-                                            type="radio"
-                                            class="col-1"
-                                            name="prog31"
-                                            value="iffor"
-                                        />Due:If e for.
-                                    </div>
-                                    <div>
-                                        <input
-                                            type="radio"
-                                            class="col-1"
-                                            name="prog31"
-                                            value="whilefor"
-                                        />Due: while e for.
-                                    </div>
-                                    <div>
-                                        <input
-                                            type="radio"
-                                            class="col-1"
-                                            name="prog31"
-                                            value="all"
-                                        />Quattro: while,for,if,else.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="vad" role="tabpanel">
-                                <div style="padding: 1em;">
-                                    Qual'è l'outpunt del seguente codice?
-                                </div>
-                                <div>
-                                    >>>list=[1,1,3,4,5,8,13]
-                                </div>
-                                <div>
-                                    >>>print(list[4])
-                                </div>
-                                <br />
-                                <div>
-                                    <input type="text" name="cod" id="cod" size="1" />
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="terzad" role="tabpanel">
-                                <div style="padding: 1em;">
-                                    Quanti numeri stamperà questo codice?
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div>
-                                            >>>i=6
-                                        </div>
-                                        <div>
-                                            >>>while i>6
-                                        </div>
-                                        <div>
-                                            >>>print(i)
-                                        </div>
-                                        <div>
-                                            >>>i+=1
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div>
-                                            <input
-                                                type="radio"
-                                                class="col-1"
-                                                name="prog33"
-                                                value="one"
-                                            />1.
-                                        </div>
+					<div class="col-8 bg-more-blur rounded-lg">
+						<div class="tab-content" id="nav-tabContent">
+							<div class="tab-pane fade show active" id="primad" role="tabpanel">
+								<div style="padding: 1em;">
+									Quanti e quali sono i cicli più importanti?
+									<br />
+									<div>
+										<input
+											type="radio"
+											class="col-1"
+											name="prog31"
+											value="ifelse"
+										/>Due: If ed else.
+									</div>
+									<div>
+										<input
+											type="radio"
+											class="col-1"
+											name="prog31"
+											value="iffor"
+										/>Due:If e for.
+									</div>
+									<div>
+										<input
+											type="radio"
+											class="col-1"
+											name="prog31"
+											value="whilefor"
+										/>Due: while e for.
+									</div>
+									<div>
+										<input
+											type="radio"
+											class="col-1"
+											name="prog31"
+											value="all"
+										/>Quattro: while,for,if,else.
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="vad" role="tabpanel">
+								<div style="padding: 1em;">
+									Qual'è l'outpunt del seguente codice?
+								</div>
+								<div>
+									>>>list=[1,1,3,4,5,8,13]
+								</div>
+								<div>
+									>>>print(list[4])
+								</div>
+								<br />
+								<div>
+									<input type="text" name="cod" id="cod" size="1" />
+								</div>
+							</div>
+							<div class="tab-pane fade" id="terzad" role="tabpanel">
+								<div style="padding: 1em;">
+									Quanti numeri stamperà questo codice?
+								</div>
+								<div class="row">
+									<div class="col">
+										<div>
+											>>>i=6
+										</div>
+										<div>
+											>>>while i>6
+										</div>
+										<div>
+											>>>print(i)
+										</div>
+										<div>
+											>>>i+=1
+										</div>
+									</div>
+									<div class="col">
+										<div>
+											<input
+												type="radio"
+												class="col-1"
+												name="prog33"
+												value="one"
+											/>1.
+										</div>
 
-                                        <div>
-                                            <input
-                                                type="radio"
-                                                class="col-1"
-                                                name="prog33"
-                                                value="noone"
-                                            />Nessuno.
-                                        </div>
-                                        <div>
-                                            <input
-                                                type="radio"
-                                                class="col-1"
-                                                name="prog33"
-                                                value="infinity"
-                                            />Infiniti.
-                                        </div>
-                                        <div>
-                                            <input
-                                                type="radio"
-                                                class="col-1"
-                                                name="prog33"
-                                                value="twelve"
-                                            />12.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p align="center" class="col-10">
-                    <br />
-                    <button type="submit" class="btn btn-primary">
-                        Controlla!
-                    </button>
-                    <br />
-                    <br />
-                </p>
-            </form>
-        </div>
-    </body>
+										<div>
+											<input
+												type="radio"
+												class="col-1"
+												name="prog33"
+												value="noone"
+											/>Nessuno.
+										</div>
+										<div>
+											<input
+												type="radio"
+												class="col-1"
+												name="prog33"
+												value="infinity"
+											/>Infiniti.
+										</div>
+										<div>
+											<input
+												type="radio"
+												class="col-1"
+												name="prog33"
+												value="twelve"
+											/>12.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p align="center" class="col-10">
+					<br />
+					<button type="submit" class="btn btn-primary">
+						Controlla!
+					</button>
+					<br />
+					<br />
+				</p>
+			</form>
+		</div>
+	</body>
 </html>
