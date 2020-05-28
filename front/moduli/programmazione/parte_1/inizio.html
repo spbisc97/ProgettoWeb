@@ -16,6 +16,9 @@
 			$(function(){
 				$("span[name='exe']").click(function(){
 					val=$(this).attr("value");
+					$.ajax({type: "GET", url: val, dataType: "html", success: function(risposta){ 
+						$("div#risposta").html(risposta);}
+					},)
 
 					alert(val);
 				});
@@ -171,6 +174,7 @@
 				
 			</div>
 		</div>
+		<div id="risposta"></div>
 		
 	</body>
 </html>
