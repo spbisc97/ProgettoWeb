@@ -12,6 +12,11 @@
         <link rel="stylesheet" href="../slideshow.css" />
         <script src="../../../jQuery/jquery.min.js"></script>
         <script src="../../../assets/js/bootstrap.js" lang="--js"></script>
+        <script>
+            function aumenta() {
+                $("#barra").css("width", event.target.getAttribute("name") + "%");
+            }
+        </script>
 
         <style>
             body {
@@ -100,10 +105,11 @@
                 <div
                     class="progress-bar progress-bar-striped progress-bar-animated"
                     role="progressbar"
+                    id="barra"
                     aria-valuenow="0"
                     aria-valuemin="0"
                     aria-valuemax="100"
-                    style="width: 75%;"
+                    style="width: 33%;"
                 ></div>
             </div>
         </div>
@@ -121,27 +127,33 @@
                                 class="list-group-item list-group-item-action active"
                                 id="list-primad"
                                 data-toggle="list"
+                                name="33"
                                 href="#primad"
                                 role="tab"
                                 aria-controls="home"
+                                onclick="aumenta()"
                                 >Prima</a
                             >
                             <a
                                 class="list-group-item list-group-item-action"
                                 id="list-secondad"
                                 data-toggle="list"
+                                name="66"
                                 href="#vad"
                                 role="tab"
                                 aria-controls="profile"
+                                onclick="aumenta()"
                                 >Seconda</a
                             >
                             <a
                                 class="list-group-item list-group-item-action"
                                 id="list-terzad"
                                 data-toggle="list"
+                                name="100"
                                 href="#terzad"
                                 role="tab"
                                 aria-controls="messages"
+                                onclick="aumenta()"
                                 >Terza</a
                             >
                         </div>
@@ -206,43 +218,56 @@
                                 <div style="padding: 1em;">
                                     Quanti numeri stamperà questo codice?
                                 </div>
-                                <div>
-                                    >>>i=6
-                                </div>
-                                <div>
-                                    >>>while i>6
-                                </div>
-                                <div>
-                                    >>>print(i)
-                                </div>
-                                <div>
-                                    >>>i+=1
-                                </div>
-                                <div>
-                                    <input type="radio" class="col-1" name="prog33" value="one" />1.
-                                </div>
-                                <div>
-                                    <input
-                                        type="radio"
-                                        class="col-1"
-                                        name="prog33"
-                                        value="noone"
-                                    />Nessuno.
-                                </div>
-                                <div>
-                                    <input
-                                        type="radio"
-                                        class="col-1"
-                                        name="prog33"
-                                        value="infinity"
-                                    />Infiniti.
-                                    <div></div>
-                                    <input
-                                        type="radio"
-                                        class="col-1"
-                                        name="prog33"
-                                        value="twelve"
-                                    />12.
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            >>>i=6
+                                        </div>
+                                        <div>
+                                            >>>while i>6
+                                        </div>
+                                        <div>
+                                            >>>print(i)
+                                        </div>
+                                        <div>
+                                            >>>i+=1
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div>
+                                            <input
+                                                type="radio"
+                                                class="col-1"
+                                                name="prog33"
+                                                value="one"
+                                            />1.
+                                        </div>
+
+                                        <div>
+                                            <input
+                                                type="radio"
+                                                class="col-1"
+                                                name="prog33"
+                                                value="noone"
+                                            />Nessuno.
+                                        </div>
+                                        <div>
+                                            <input
+                                                type="radio"
+                                                class="col-1"
+                                                name="prog33"
+                                                value="infinity"
+                                            />Infiniti.
+                                        </div>
+                                        <div>
+                                            <input
+                                                type="radio"
+                                                class="col-1"
+                                                name="prog33"
+                                                value="twelve"
+                                            />12.
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
