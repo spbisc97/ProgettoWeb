@@ -97,7 +97,7 @@ var vue = new Vue({
 
 let res = Vue.component("resoconto", {
 	template: `<div>
-		<p class="center text-danger" > La classifica</p>
+		<p class="center text-danger" > La classifica generale di statistica</p>
         <button class="center btn btn-outline-primary"  v-for="(persona,index) in persone" >{{ persona.nick }} con {{persona.total}} punti </button>
         
     </div>`,
