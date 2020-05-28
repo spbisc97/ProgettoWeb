@@ -56,7 +56,8 @@
                 session_start();
                 if (!isset($_SESSION["id"])) {
                     echo ' <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> Ci dispiace ma non risulti loggato </div>  
-                        echo <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> <a class="center" href="../../../index.php"> premi qui per registrarti <a> </div>
+                     <br>
+                    <div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> <a class="center" href="../../../index.php"> premi qui per registrarti <a> </div>
                         </div>
                         </body>
             
