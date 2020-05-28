@@ -43,7 +43,7 @@
                             Profilo
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/front/profilo.php">Impostazioni</a>
+                            <a class="dropdown-item" href="/front/profilo/profile.php">Impostazioni</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/front/index.php#footer">Suggerimenti</a>
                         </div>
@@ -69,7 +69,7 @@
                 if ($_POST["prog31"] == "whilefor") {
                     $punteggio += 1;
                 }
-                if (strstr(strtolower($_POST["cod"]), "3")) {
+                if (strstr(strtolower($_POST["cod"]), "5")) {
                     $punteggio += 1;
                 }
                 if ($_POST["prog33"] == "noone") {
@@ -85,13 +85,13 @@
 
                 $res = pg_query_params($dbconn, $q1, [$punteggio, $_SESSION["id"]]);
 
-                if ($punteggio > 2) {
+                if ($punteggio > 1) {
                     echo '<div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(84, 200, 20, 0.6);"> il tuo punteggio è di ';
                 } else {
                     echo '<div class="accordion" style="padding:20px;border-radius: 10px; background-color:rgba(200, 20, 20, 0.6);"> il tuo punteggio è di ';
                 }
                 echo $punteggio;
-                echo " punti su 4";
+                echo " punti su 3";
 
                 echo "</div>";
 
