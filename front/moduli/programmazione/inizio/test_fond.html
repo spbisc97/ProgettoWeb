@@ -7,26 +7,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>intronduzione a Python</title>
         <link rel="shortcut icon" href="../../../favicon.ico" />
-        <link rel="stylesheet" href="../../../bootstrap-4.4.1-dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
         <link rel="stylesheet" href="../../../assets/css/home-made.css" />
         <link rel="stylesheet" href="../slideshow.css" />
-        <script src="../../../jQuery/jquery.min.js"></script>
+        <script src="../../../assets/js/jquery.min.js"></script>
         <script src="../../../assets/js/bootstrap.js" lang="--js"></script>
         <script>
-            var valore = 0;
-            tb = document.getElementbyId("tb");
-            progress = document.getElementbyID("progress");
             function aumenta() {
-                value = value + 34;
-                if (value >= 100) value = 100;
-                tb.value = value;
-                progressbar.style.width = value + "%";
+                $("#barra").css("width", event.target.getAttribute("name") + "%");
             }
         </script>
 
         <style>
             body {
-                background-image: url(../immagini/prova12.jpeg);
+                background-image: url(../immagini/progtest.jpg);
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
@@ -114,7 +108,8 @@
                     aria-valuenow="0"
                     aria-valuemin="0"
                     aria-valuemax="100"
-                    style="width: 0%;"
+                    id="barra"
+                    style="width: 33%;"
                 ></div>
             </div>
         </div>
@@ -132,27 +127,33 @@
                                 class="list-group-item list-group-item-action active"
                                 id="list-primad"
                                 data-toggle="list"
+                                name="33"
                                 href="#primad"
                                 role="tab"
                                 aria-controls="home"
+                                onclick="aumenta()"
                                 >Prima</a
                             >
                             <a
                                 class="list-group-item list-group-item-action"
                                 id="list-secondad"
                                 data-toggle="list"
+                                name="66"
                                 href="#vad"
                                 role="tab"
                                 aria-controls="profile"
+                                onclick="aumenta()"
                                 >Seconda</a
                             >
                             <a
                                 class="list-group-item list-group-item-action"
                                 id="list-terzad"
                                 data-toggle="list"
+                                name="100"
                                 href="#terzad"
                                 role="tab"
                                 aria-controls="messages"
+                                onclick="aumenta()"
                                 >Terza</a
                             >
                         </div>
