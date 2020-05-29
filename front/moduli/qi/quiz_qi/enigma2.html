@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="../../../assets/css/home-made.css" />
 		<script src="../../../assets/js/jquery.min.js"></script>
 		<script src="../../../assets/js/bootstrap.js" lang="--js"></script>
+		<script src="../../../assets/js/vue.js"></script>
 		<style>
 			body {
 				background-image: url("puzzle.gif");
@@ -106,10 +107,7 @@
 									<div class="col-4">
 										<br />
 										<ol>
-											<li
-												class="list-group"
-												v-for="(response,indiceres) in question.responses"
-											>
+											<li class="" v-for="response in question.responses">
 												<label>
 													<input
 														type="radio"
@@ -165,7 +163,6 @@
 					</div>
 				</div>
 			</div>
-			<script src="https://vuejs.org/js/vue.js"></script>
 
 			<script>
 				window.onload = function () {
@@ -176,19 +173,19 @@
 								text: "In che numero è posizionata la macchina?",
 								img: "macchina.jpg",
 								responses: [
-									{ text: "78", correct: false },
+									{ text: "78" },
 									{ text: "87", correct: true },
-									{ text: "88", correct: false },
-									{ text: "77", correct: false },
+									{ text: "88" },
+									{ text: "77" },
 								],
 							},
 							{
 								text: "Quale figura completa la combinazione",
 								img: "figure.jpg",
 								responses: [
-									{ text: "A", correct: false },
-									{ text: "B", correct: false },
-									{ text: "C", correct: false },
+									{ text: "A" },
+									{ text: "B" },
+									{ text: "C" },
 									{ text: "D", correct: true },
 								],
 							},
@@ -196,20 +193,20 @@
 								text: "Risolvi il seguente indovinello?",
 								img: "frutta.jpg",
 								responses: [
-									{ text: "11", correct: false },
+									{ text: "11" },
 									{ text: "13", correct: true },
-									{ text: "16", correct: false },
-									{ text: "12", correct: false },
+									{ text: "16" },
+									{ text: "12" },
 								],
 							},
 							{
 								text: "Chi ha i superpoteri??",
 								img: "libri.jpg",
 								responses: [
-									{ text: "maglia celeste", correct: false },
+									{ text: "maglia celeste" },
 									{ text: "maglia verde", correct: true },
-									{ text: "maglia rosa", correct: false },
-									{ text: "nessuno dei tre", correct: false },
+									{ text: "maglia rosa" },
+									{ text: "nessuno dei tre" },
 								],
 							},
 						],
