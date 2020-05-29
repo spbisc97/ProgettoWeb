@@ -47,6 +47,7 @@
         			session_start();
         			$_SESSION['id'] = $arr[0];
         			$_SESSION["nick"] = $arr[1];
+        			$nick = $arr[1];
         			// echo "<a href=../index.html> Premi qui</a>";
 
         			header("Location: ../index.php?login=corretto,benvenuto$nick"); //sposta automaticamente su index e cambia l'header
