@@ -18,7 +18,6 @@
 				background-size: cover;
 			}
 		</style>
-		<script type="text/javascript" src="introtest.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
@@ -74,71 +73,98 @@
 		<br /><br /><br /><br />
 		<div
 			class="container text-monospace text-white bg-blur-dark"
-			style="padding-top: 2em; padding-bottom: 2em;"
+			style="padding-top: 2em; padding-bottom: 2em; border-radius: 1em;"
 		>
-			<div id="app" class="d-flex justify-content-center">
-				<div>
-					<h1>{{ quiz.title }}</h1>
-					<!-- L'indice viene utilizzato per verificare con l'indice della domanda corrente -->
-					<div v-for="(question, index) in quiz.questions">
-						<!--Nascondi tutte le domande, mostra solo quella con indice === all'indice delle domande corrente -->
+			<div>
+				<div id="app">
+					<div class="">
+						<h1 style="text-align: center;">{{ quiz.title }}</h1>
+						<!-- L'indice viene utilizzato per verificare con l'indice della domanda corrente -->
+						<div v-for="(question, index) in quiz.questions">
+							<!--Nascondi tutte le domande, mostra solo quella con indice === all'indice delle domande corrente -->
 
-						<div class="row align-center" v-show="index === questionIndex" >
-							<h2>{{ question.text }}</h2>
-							<div
-								class="col-8 d-flex justify-content-center"
-								
-								v-show="index === questionIndex"
-								
-							>
-								<br />
-								<img
-									
-									v-bind:src="question.img"
-									width="370px"
-									height="210px"
-								/>
-							</div>
-							<div class="col-3">
-								<br />
-								<ol>
-									<li v-for="response in question.responses">
-										<label>
-											<input
-												type="radio"
-												v-bind:value="response.correct"
-												v-bind:name="index"
-												v-model="userResponses[index]"
-											/>
-											{{response.text}}
-										</label>
-									</li>
-								</ol>
+							<div class="" v-show="index === questionIndex">
+								<h2 style="text-align: center;">{{ question.text }}</h2>
+								<div class="row">
+									<div class="col-2"></div>
 
-								<button v-if="questionIndex > 0" v-on:click="prev">
-									Indietro
-								</button>
-								<button v-on:click="next">
-									Prossima
-								</button>
+									<div
+										class="col-5 d-flex justify-content-center"
+										style="
+											background-color: whitesmoke;
+											padding: 0.8em;
+											border-radius: 0.6em;
+										"
+									>
+										<br />
+										<img
+											v-bind:src="question.img"
+											width="370px"
+											height="210px"
+										/>
+									</div>
+									<div class="col-4">
+										<br />
+										<ol>
+											<li
+												class="list-group"
+												v-for="(response,indiceres) in question.responses"
+											>
+												<label>
+													<input
+														type="radio"
+														v-bind:value="response.correct"
+														v-bind:name="index"
+														v-model="userResponses[index]"
+													/>
+													{{response.text}}
+												</label>
+											</li>
+										</ol>
+
+										<button
+											class="btn btn-primary d-inline-block"
+											v-if="questionIndex > 0"
+											v-on:click="prev"
+										>
+											Indietro
+										</button>
+										<button
+											class="btn btn-primary d-inline-block"
+											v-on:click="next"
+										>
+											Prossima
+										</button>
+									</div>
+									<div class="col-1"></div>
+								</div>
 							</div>
-							<div class="col-3"></div>
 						</div>
-					</div>
-					<div v-show="questionIndex === quiz.questions.length">
-						<h2>
-							Quiz completato
-						</h2>
-						<br />
-						<strong>
-							Hai totalizzato: {{ score() }} / {{ quiz.questions.length }}
-						</strong>
-						<br> <br>
-						<div  style="padding:10px;border-radius: 7px; background-color:rgba(80, 107, 155, 0.836);"> <a class="center text-white" href="../../../learnMap/learnMap.php"><strong> Premi qui per tornare alla learnMap </strong> <a> </div>
+						<div v-show="questionIndex === quiz.questions.length">
+							<h2>
+								Quiz completato
+							</h2>
+							<br />
+							<strong>
+								Hai totalizzato: {{ score() }} / {{ quiz.questions.length }}
+							</strong>
+							<br />
+							<br />
+							<div
+								style="
+									padding: 10px;
+									border-radius: 7px;
+									background-color: rgba(80, 107, 155, 0.836);
+								"
+							>
+								<a class="center text-white" href="../../../learnMap/learnMap.php"
+									><strong> Premi qui per tornare alla learnMap </strong>
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-
 			<script src="https://vuejs.org/js/vue.js"></script>
 
 			<script>
@@ -150,19 +176,19 @@
 								text: "In che numero è posizionata la macchina?",
 								img: "macchina.jpg",
 								responses: [
-									{ text: "78" },
+									{ text: "78", correct: false },
 									{ text: "87", correct: true },
-									{ text: "88" },
-									{ text: "77" },
+									{ text: "88", correct: false },
+									{ text: "77", correct: false },
 								],
 							},
 							{
 								text: "Quale figura completa la combinazione",
 								img: "figure.jpg",
 								responses: [
-									{ text: "A" },
-									{ text: "B" },
-									{ text: "C" },
+									{ text: "A", correct: false },
+									{ text: "B", correct: false },
+									{ text: "C", correct: false },
 									{ text: "D", correct: true },
 								],
 							},
@@ -170,20 +196,20 @@
 								text: "Risolvi il seguente indovinello?",
 								img: "frutta.jpg",
 								responses: [
-									{ text: "11" },
+									{ text: "11", correct: false },
 									{ text: "13", correct: true },
-									{ text: "16" },
-									{ text: "12" },
+									{ text: "16", correct: false },
+									{ text: "12", correct: false },
 								],
 							},
 							{
 								text: "Chi ha i superpoteri??",
 								img: "libri.jpg",
 								responses: [
-									{ text: "maglia celeste" },
+									{ text: "maglia celeste", correct: false },
 									{ text: "maglia verde", correct: true },
-									{ text: "maglia rosa" },
-									{ text: "nessuno dei tre" },
+									{ text: "maglia rosa", correct: false },
+									{ text: "nessuno dei tre", correct: false },
 								],
 							},
 						],
@@ -210,24 +236,21 @@
 							},
 							// ritorna true in userResponse
 							score: function () {
-								punti= this.userResponses.filter(function (val) {
+								punti = this.userResponses.filter(function (val) {
 									return val;
 								}).length;
-								if(this.questionIndex == quiz.questions.length){
-									sincdb(punti);}
+								if (this.questionIndex == quiz.questions.length) {
+									sincdb(punti);
+								}
 								return punti;
 							},
 						},
 					});
 				};
-				function sincdb(punteggio){
-					$.post("enigma2.php", { score:punteggio }, function (data, status) {
-							
-						}) 
+				function sincdb(punteggio) {
+					$.post("enigma2.php", { score: punteggio }, function (data, status) {});
 				}
-				
 			</script>
-			
 		</div>
 	</body>
 </html>
