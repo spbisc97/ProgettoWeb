@@ -17,6 +17,9 @@
 				background-attachment: fixed;
 				background-size: cover;
 			}
+			input[type="radio"]:checked + label {
+				color: blue;
+			}
 		</style>
 		<script type="text/javascript" src="introtest.js"></script>
 	</head>
@@ -126,27 +129,33 @@
 									<br />
 									<input
 										type="radio"
-										class="col-1"
+										id="1-1"
+										class="col-1 d-inline-block"
 										name="intro1"
 										value="ebrei"
-									/>Ebrei
+									/><label for="1-1">Ebrei</label>
+
 									<input
 										type="radio"
-										class="col-1"
+										id="1-2"
+										class="col-1 d-inline-block"
 										name="intro1"
 										value="egizi"
-									/>Egizi
+									/><label for="1-2">Egizi</label>
 									<input
 										type="radio"
-										class="col-1"
+										id="1-3"
+										class="col-1 d-inline-block"
 										name="intro1"
 										value="romani"
-									/>Romani<input
+									/><label for="1-3">Romani</label
+									><input
 										type="radio"
-										class="col-1"
+										id="1-4"
+										class="col-1 d-inline-block"
 										name="intro1"
 										value="babilonesi"
-									/>babilonesi
+									/><label for="1-4">Babilonesi</label>
 								</div>
 							</div>
 							<div class="tab-pane fade" id="secd" role="tabpanel">
@@ -164,7 +173,7 @@
 								<div class="text-xl-center" style="padding: 1em;">
 									Cosa è l'istat?
 									<br />
-									<label class="radiobutton d-inline-block" for="p1p"
+									<label class="radiobutton" for="p1p"
 										>Organizza le lotterie
 										<input
 											class="radio"
@@ -174,7 +183,7 @@
 											value="1"
 										/>
 									</label>
-									<label class="radiobutton d-inline-block" for="p2p"
+									<label class="radiobutton" for="p2p"
 										>publico italiano per l'economia e la finanza
 										<input
 											class="radio"
@@ -184,7 +193,7 @@
 											value="2"
 										/>
 									</label>
-									<label class="radiobutton d-inline-block" for="p3p"
+									<label class="radiobutton" for="p3p"
 										>Istituto nazionale di statistica
 										<input
 											class="radio"
@@ -196,7 +205,7 @@
 										/>
 									</label>
 
-									<label class="radiobutton d-inline-block" for="p4p"
+									<label class="radiobutton" for="p4p"
 										>Servizi Segreti
 										<input
 											class="radio"
