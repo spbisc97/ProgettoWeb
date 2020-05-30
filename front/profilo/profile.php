@@ -71,14 +71,14 @@ $infoUtente = json_encode($valori);
         }
         </style>
 
-
+        <!-- sadfasd -->
         <?php
         echo "<script>
 		var db = []; ";
         echo "db= " . $infoUtente . ";";
         echo "</script>";
         ?>
-
+        <!-- asdasDA -->
     </head>
 
     <body>
