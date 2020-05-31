@@ -21,7 +21,6 @@
 				color: blue;
 			}
 		</style>
-		<script type="text/javascript" src="introtest.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
@@ -165,7 +164,14 @@
 										ebrei?
 									</div>
 									<div>
-										<input type="text" name="libro" id="libro" size="30" />
+										<input name="libro" id="libro" size="30" list="books" />
+										<datalist id="books">
+											<option value="Libro dei numeri"> </option>
+											<option value="Libro dei coriandoli"> </option>
+											<option value="Analisi 2"> </option>
+											<option value="Libro del censimento"> </option>
+											<option value="Libro dei calcoli"> </option>
+										</datalist>
 									</div>
 								</div>
 							</div>
@@ -241,5 +247,6 @@
 				</p>
 			</form>
 		</div>
+		<script type="text/javascript" src="introtest.js"></script>
 	</body>
 </html>
