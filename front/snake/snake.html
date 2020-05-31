@@ -108,7 +108,22 @@ uso a invece che span per rendere il contenuto interattivo  -->
 						class="text-primary"
 					></p>
 				</div>
-				<div class="col d-flex align-items-center" style="margin: 1em;">
+				<div class="col" style="margin: 1em; text-align: center;">
+					<label class="label text-light" for="Snake_color" style="padding: 0.5rem;">
+						Scegli il tuo colore</label
+					>
+					<select
+						onchange="snake_color=this.value"
+						class="custom-select"
+						name="colori"
+						id="Snake_color"
+						style="margin: 0.5rem; width: 100px;"
+					>
+						<option value="red">Rosso</option>
+						<option value="blue">Blu</option>
+						<option value="yellow">Giallo</option>
+						<option selected value="green">Verde</option>
+					</select>
 					<canvas
 						class=""
 						width="400"
@@ -158,6 +173,7 @@ uso a invece che span per rendere il contenuto interattivo  -->
 			function getRandomInt(min, max) {
 				return Math.floor(Math.random() * (max - min)) + min;
 			}
+			snake_color = "green";
 
 			// loop
 			function loop() {
@@ -202,7 +218,8 @@ uso a invece che span per rendere il contenuto interattivo  -->
 				context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
 
 				// disegno snake
-				context.fillStyle = "green";
+				function snakecolor() {}
+				context.fillStyle = snake_color;
 				snake.cells.forEach(function (cell, index) {
 					//
 					context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
