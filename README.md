@@ -12,3 +12,5 @@ editato in vscode, workspace inlcuso:
 [Edu@Home](Edu@Home.code-workspace)
 
 Hostato Temporaneamente su : [Tondihost-Edu@Home](http://tondihost.ns0.it/front/index.php)
+
+Credits to [PHPMailer](https://github.com/PHPMailer/PHPMailer)
