@@ -33,8 +33,6 @@ Credits to [PHPMailer](https://github.com/PHPMailer/PHPMailer)
 
 L'index.php nella cartella principale è solo per ridirezionarsi poi all'index nella cartella front, alcuni link che abbiamo usato sono assoluti e richiedono per funzionare di partire dalla cartella principale del git
 
-./front :35 directories, 184 files
-
 ```bash
 
 ├── assets
@@ -65,7 +63,7 @@ L'index.php nella cartella principale è solo per ridirezionarsi poi all'index n
 │       └── cartelle e file per i contenuti e quiz
 │
 ├── paginaLogin
-│       └── Php per il login richiamato dall\'overlay in index
+│       └── Php per il login richiamato dall\'overlay \in index
 │
 ├── paginaRegistrazione
 │       └── contenuti per la registrazione html,js,php
@@ -79,7 +77,7 @@ L'index.php nella cartella principale è solo per ridirezionarsi poi all'index n
 │       └── il piccolo gioco snake con js, php : raggiunto dalla sezione divertiti
 │  
 ├── contatti.php : modulo di configurazione per php mailer ,
-│ fa da tramite tra il form in index e phpmailer
+│                   fa da tramite tra il form \in index e phpmailer
 │
 ├── index.php: pagina principale, login contatti etc
 │
