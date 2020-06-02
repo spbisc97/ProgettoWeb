@@ -1,0 +1,177 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Progetto per l'esonero di LTW</title>
+		<style></style>
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css"
+		/>
+
+		<style>
+			.task-list-item {
+				list-style-type: none;
+			}
+			.task-list-item-checkbox {
+				margin-left: -20px;
+				vertical-align: middle;
+			}
+		</style>
+		<style>
+			body {
+				font-family: "ubuntu";
+				font-size: 16px;
+				line-height: 1.2;
+			}
+			.folder {
+				color: green;
+			}
+		</style>
+	</head>
+	<body class="vscode-light">
+		<!-- @format -->
+		<h1 id="progetto-per-lesonero-di-ltw">Progetto per l'esonero di LTW</h1>
+		<h2 id="piattaforma-simil-educativa">Piattaforma simil-Educativa</h2>
+		<ol>
+			<li>Idee.</li>
+		</ol>
+		<ul>
+			<li>Mappa per accedere alle attività:</li>
+		</ul>
+		<ul>
+			<li>Internamente i minigiochi e minicorsi( <em>attività</em> )</li>
+		</ul>
+		<p>Editato in vscode, workspace inlcuso: <a href="Edu@Home.code-workspace">Edu@Home</a></p>
+		<p>
+			Hostato Temporaneamente su :
+			<a href="http://tondihost.ns0.it/front/index.php">Tondihost-Edu@Home</a> in orario 9-22
+		</p>
+		<p>Credits to <a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a></p>
+		<hr />
+		<h3 id="contenuti-delle-cartelle">Contenuti delle cartelle:</h3>
+		<ul>
+			<li>
+				<p>Front : Il front-end dell'applicazione</p>
+			</li>
+			<li>
+				<p>Back : un dump del database</p>
+			</li>
+			<li>
+				<p>Docker : un docker-compose con nginx e php per un hosting veloce del sito</p>
+			</li>
+			<li>
+				<p>
+					node_modules : non hanno a che fare con il sito ma necessari per velocizzare lo
+					sviluppo in <strong>VSCODE</strong>
+				</p>
+			</li>
+		</ul>
+		<p>
+			L'index.php nella cartella principale è solo per ridirezionarsi poi all'index nella
+			cartella front, alcuni link che abbiamo usato sono assoluti e richiedono per funzionare
+			di partire dalla cartella principale del git
+		</p>
+		<p>./front :35 directories, 184 files</p>
+		<pre><code class="language-bash"><div>
+├──<span class="folder">assets</span>
+│   ├── css: costruiti all evenienza + bootstrap
+│   │  
+│   ├── fonts
+│   │  
+│   └── js : vue, jquery, boostrap, e costruiti all'evenienza
+│  
+├── <span class="folder">images</span> : autoesplicativa
+│  
+├── <span class="folder">info</span> : la pagina chi siamo
+│   ├── info.html
+│   └── media
+│      └── Audio e foto per la pagina chi siamo
+│  
+├── <span class="folder">learnMap</span>
+│   ├── php,js,css, etc per la lernmap
+│   └── materie
+│   └── Immagini e file html per la richiesta asincrona della learnmap
+│
+├── <span class="folder">moduli</span> : le varie materie alle quali si viene ridiretti dalla learnmap
+│   ├── programmazione
+│   │   └── cartelle e file per i contenuti di python + idle e quiz  
+│   ├── qi
+│   │   └── cartelle e file per i contenuti e quiz
+│   └── statistica
+│       └── cartelle e file per i contenuti e quiz
+│
+├── <span class="folder">paginaLogin</span>
+│       └── Php per il login richiamato dall'overlay in index
+│
+├── <span class="folder">paginaRegistrazione</span>
+│       └── contenuti per la registrazione html,js,php
+├──  <a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> : abbiamo usato questa repository git
+│                           per rendere anche la sezione contatti dell\'index funzionante
+├── <span class="folder">profilo</span>
+│       └── js, php per la visualizzazione delle info del profilo
+├── <span class="folder">reset</span>
+│       └── i vari moduli di reset password, email, nick richiamati dalla sezione profilo
+├── <span class="folder">snake</span>
+│       └── il piccolo gioco snake con js, php : raggiunto dalla sezione divertiti
+│  
+├── <span class="folder">contatti.php</span> : modulo di configurazione per php mailer ,
+│ fa da tramite tra il form in index e phpmailer
+│
+├── <span class="folder">index.php</span>: pagina principale, login contatti etc
+│
+├── <span class="folder">logout.php</span>: autoesplicativo
+│
+└── <span class="folder">favicon.ico</span> : icona per il browser
+</div></code></pre>
+		<p>
+			la la visualizzazione ad albero non piace: nella cartella front sono poi disposti così
+		</p>
+		<ul>
+			<li>
+				<p>
+					assets: contiene risorse css, js, fonts usate globalmente, sia scaricate(jquery,
+					vue,bootstrap) che scritte a mano per necessità grafiche del sito
+				</p>
+			</li>
+			<li>
+				<p>images: autoesplicativo</p>
+			</li>
+			<li>
+				<p>info: la pagina del <em>chi siamo</em> con media nella cartella sottostante</p>
+			</li>
+			<li>
+				<p>
+					LearnMap: mappa interna del sito per ridirigersi ai moduli con le pagine
+					caricate in ajax nella cartella materie
+				</p>
+			</li>
+			<li>
+				<p>moduli: all'interno le 3 materie affrontate sul sito</p>
+			</li>
+			<li>
+				<ul>
+					<li>
+						<p>Logica : parte di logica con descrizioni ed esercizi</p>
+					</li>
+					<li>
+						<p>Python: disposta su più cartelle con descrizioni ed esericizi</p>
+					</li>
+					<li>
+						<p>
+							Statistica: divisa in 3 cartelle, una per ogni livello: intro, base ,
+							advanced
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>
