@@ -25,8 +25,7 @@ if (isset($_POST['submitform'])) {
 	$mail->Body =
 		"<div> Hai inviato un messaggio a edu@home <br>Da questa utenza: " .
 		$reci .
-		"<br>
-		 oggetto: " .
+		"<br>oggetto: " .
 		$_POST["oggetto"] .
 		"<br> test0:" .
 		$_POST["messaggio"] .
