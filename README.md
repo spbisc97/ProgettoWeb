@@ -30,7 +30,8 @@ Credits to [PHPMailer](https://github.com/PHPMailer/PHPMailer)
 L'index.php nella cartella principale è solo per ridirezionarsi poi all'index nella cartella front, alcuni link che abbiamo usato sono assoluti e richiedono per funzionare di partire dalla cartella principale del git 
 
 ./front :35 directories, 184 files
-│  
+``` bash
+
 ├── <mark>assets</mark>
 │   ├── css: costruiti all evenienza + bootstrap
 │   │  
@@ -80,6 +81,7 @@ L'index.php nella cartella principale è solo per ridirezionarsi poi all'index n
 ├── *logout*.php: autoesplicativo
 │
 └── favicon.ico : icona per il browser
+```
 
 la la visualizzazione ad albero non piace: nella cartella front sono poi disposti così
 
