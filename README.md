@@ -32,7 +32,7 @@ L'index.php nella cartella principale è solo per ridirezionarsi poi all'index n
 ./front :35 directories, 184 files
 ``` bash
 
-├── <mark>assets</mark>
+├── assets
 │   ├── css: costruiti all evenienza + bootstrap
 │   │  
 │   ├── fonts
