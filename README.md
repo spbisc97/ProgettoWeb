@@ -42,21 +42,21 @@ L'index.php nella cartella principale è solo per ridirezionarsi poi all'index n
 │   │  
 │   ├── fonts
 │   │  
-│   └── js : vue, jquery, boostrap, e costruiti all'evenienza
+│   └── js : vue, jquery, boostrap, e costruiti all\'evenienza
 │  
-├── <mark>images</mark> : autoesplicativa
+├── images : autoesplicativa
 │  
-├──<mark> info</mark> : la pagina chi siamo
+├── info : la pagina chi siamo
 │   ├── info.html
 │   └── media
 │      └── Audio e foto per la pagina chi siamo
 │  
-├── <mark>learnMap</mark>
+├── learnMap
 │   ├── php,js,css, etc per la lernmap
 │   └── materie
 │   └── Immagini e file html per la richiesta asincrona della learnmap
 │
-├── <mark>moduli</mark> : le varie materie alle quali si viene ridiretti dalla learnmap
+├── moduli : le varie materie alle quali si viene ridiretti dalla learnmap
 │   ├── programmazione
 │   │   └── cartelle e file per i contenuti di python + idle e quiz  
 │   ├── qi
@@ -64,26 +64,26 @@ L'index.php nella cartella principale è solo per ridirezionarsi poi all'index n
 │   └── statistica
 │       └── cartelle e file per i contenuti e quiz
 │
-├── <mark>paginaLogin</mark>
-│       └── Php per il login richiamato dall'overlay in index
+├── paginaLogin
+│       └── Php per il login richiamato dall\'overlay in index
 │
-├── <mark>paginaRegistrazione</mark>
+├── paginaRegistrazione
 │       └── contenuti per la registrazione html,js,php
-├── <mark>[phpmailer](https://github.com/PHPMailer/PHPMailer)</mark> : abbiamo usato questa repository git
+├── [phpmailer] : abbiamo usato questa repository git
 │                           per rendere anche la sezione contatti dell\'index funzionante
-├── <mark>profilo</mark>
+├── profilo
 │       └── js, php per la visualizzazione delle info del profilo
-├── <mark>reset</mark>
+├── reset
 │       └── i vari moduli di reset password, email, nick richiamati dalla sezione profilo
-├── <mark>snake</mark>
+├── snake
 │       └── il piccolo gioco snake con js, php : raggiunto dalla sezione divertiti
 │  
-├── *contatti*.php : modulo di configurazione per php mailer ,
+├── contatti.php : modulo di configurazione per php mailer ,
 │ fa da tramite tra il form in index e phpmailer
 │
-├── *index*.php: pagina principale, login contatti etc
+├── index.php: pagina principale, login contatti etc
 │
-├── *logout*.php: autoesplicativo
+├── logout.php: autoesplicativo
 │
 └── favicon.ico : icona per il browser
 ```
