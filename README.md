@@ -7,8 +7,6 @@
 1. Idee.
 - Mappa per accedere alle attività:
 * Internamente i minigiochi e minicorsi( _attività_ )
-  
-  
 
 Editato in vscode, workspace inlcuso:
 [Edu@Home](Edu@Home.code-workspace)
@@ -28,37 +26,31 @@ Credits to [PHPMailer](https://github.com/PHPMailer/PHPMailer)
 - Docker : un docker-compose con nginx e php per un hosting veloce del sito 
 
 - node_modules : non hanno a che fare con il sito ma necessari per velocizzare lo sviluppo in __VSCODE__
-  
-  
 
 L'index.php nella cartella principale è solo per ridirezionarsi poi all'index nella cartella front, alcuni link che abbiamo usato sono assoluti e richiedono per funzionare di partire dalla cartella principale del git 
 
-
-
-
-
 ./front :35 directories, 184 files
 │  
-├── assets
+├── <mark>assets</mark>
 │   ├── css: costruiti all evenienza + bootstrap
 │   │  
 │   ├── fonts
 │   │  
 │   └── js : vue, jquery, boostrap, e costruiti all'evenienza
 │  
-├── images : autoesplicativa
+├── <mark>images</mark> : autoesplicativa
 │  
-├── info : la pagina chi siamo
+├──<mark> info</mark> : la pagina chi siamo
 │   ├── info.html
 │   └── media
 │      └── Audio e foto per la pagina chi siamo
 │  
-├── learnMap
+├── <mark>learnMap</mark>
 │   ├── php,js,css, etc per la lernmap
 │   └── materie
 │   └── Immagini e file html per la richiesta asincrona della learnmap
 │
-├── moduli : le varie materie alle quali si viene ridiretti dalla learnmap
+├── <mark>moduli</mark> : le varie materie alle quali si viene ridiretti dalla learnmap
 │   ├── programmazione
 │   │   └── cartelle e file per i contenuti di python + idle e quiz  
 │   ├── qi
@@ -66,35 +58,28 @@ L'index.php nella cartella principale è solo per ridirezionarsi poi all'index n
 │   └── statistica
 │       └── cartelle e file per i contenuti e quiz
 │
-├── paginaLogin
+├── <mark>paginaLogin</mark>
 │       └── Php per il login richiamato dall'overlay in index
 │
-├── paginaRegistrazione
+├── <mark>paginaRegistrazione</mark>
 │       └── contenuti per la registrazione html,js,php
-├── phpmailer : abbiamo usato questa repository git
+├── <mark>[phpmailer](https://github.com/PHPMailer/PHPMailer)</mark> : abbiamo usato questa repository git
 │                           per rendere anche la sezione contatti dell'index funzionante
-├── profilo
+├── <mark>profilo</mark>
 │       └── js, php per la visualizzazione delle info del profilo
-├── reset
+├── <mark>reset</mark>
 │       └── i vari moduli di reset password, email, nick richiamati dalla sezione profilo
-├── snake
+├── <mark>snake</mark>
 │       └── il piccolo gioco snake con js, php : raggiunto dalla sezione divertiti
 │  
-├── contatti.php : modulo di configurazione per php mailer ,
+├── *contatti*.php : modulo di configurazione per php mailer ,
 │ fa da tramite tra il form in index e phpmailer
 │
-├── index.php: pagina principale, login contatti etc
+├── *index*.php: pagina principale, login contatti etc
 │
-├── logout.php: autoesplicativo
+├── *logout*.php: autoesplicativo
 │
 └── favicon.ico : icona per il browser
-
-
-
-
-
-
-
 
 la la visualizzazione ad albero non piace: nella cartella front sono poi disposti così
 
