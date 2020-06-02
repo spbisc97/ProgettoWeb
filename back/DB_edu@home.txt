@@ -1,0 +1,763 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.6.13
+-- Dumped by pg_dump version 12.3 (Ubuntu 12.3-1.pgdg20.04+1)
+
+-- Started on 2020-06-02 11:05:14 CEST
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 1 (class 3079 OID 18125)
+-- Name: plv8; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS plv8 WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 3501 (class 0 OID 0)
+-- Dependencies: 1
+-- Name: EXTENSION plv8; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plv8 IS 'PL/JavaScript (v8) trusted procedural language';
+
+
+--
+-- TOC entry 10 (class 3079 OID 17103)
+-- Name: btree_gin; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS btree_gin WITH SCHEMA public;
+
+
+--
+-- TOC entry 3502 (class 0 OID 0)
+-- Dependencies: 10
+-- Name: EXTENSION btree_gin; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION btree_gin IS 'support for indexing common datatypes in GIN';
+
+
+--
+-- TOC entry 6 (class 3079 OID 17552)
+-- Name: btree_gist; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS btree_gist WITH SCHEMA public;
+
+
+--
+-- TOC entry 3503 (class 0 OID 0)
+-- Dependencies: 6
+-- Name: EXTENSION btree_gist; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION btree_gist IS 'support for indexing common datatypes in GiST';
+
+
+--
+-- TOC entry 17 (class 3079 OID 16660)
+-- Name: citext; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;
+
+
+--
+-- TOC entry 3504 (class 0 OID 0)
+-- Dependencies: 17
+-- Name: EXTENSION citext; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION citext IS 'data type for case-insensitive character strings';
+
+
+--
+-- TOC entry 8 (class 3079 OID 17450)
+-- Name: cube; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS cube WITH SCHEMA public;
+
+
+--
+-- TOC entry 3505 (class 0 OID 0)
+-- Dependencies: 8
+-- Name: EXTENSION cube; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION cube IS 'data type for multidimensional cubes';
+
+
+--
+-- TOC entry 23 (class 3079 OID 16384)
+-- Name: dblink; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS dblink WITH SCHEMA public;
+
+
+--
+-- TOC entry 3506 (class 0 OID 0)
+-- Dependencies: 23
+-- Name: EXTENSION dblink; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION dblink IS 'connect to other PostgreSQL databases from within a database';
+
+
+--
+-- TOC entry 11 (class 3079 OID 17098)
+-- Name: dict_int; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS dict_int WITH SCHEMA public;
+
+
+--
+-- TOC entry 3507 (class 0 OID 0)
+-- Dependencies: 11
+-- Name: EXTENSION dict_int; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION dict_int IS 'text search dictionary template for integers';
+
+
+--
+-- TOC entry 5 (class 3079 OID 18106)
+-- Name: dict_xsyn; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS dict_xsyn WITH SCHEMA public;
+
+
+--
+-- TOC entry 3508 (class 0 OID 0)
+-- Dependencies: 5
+-- Name: EXTENSION dict_xsyn; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION dict_xsyn IS 'text search dictionary template for extended synonym processing';
+
+
+--
+-- TOC entry 7 (class 3079 OID 17537)
+-- Name: earthdistance; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS earthdistance WITH SCHEMA public;
+
+
+--
+-- TOC entry 3509 (class 0 OID 0)
+-- Dependencies: 7
+-- Name: EXTENSION earthdistance; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION earthdistance IS 'calculate great-circle distances on the surface of the Earth';
+
+
+--
+-- TOC entry 18 (class 3079 OID 16649)
+-- Name: fuzzystrmatch; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS fuzzystrmatch WITH SCHEMA public;
+
+
+--
+-- TOC entry 3510 (class 0 OID 0)
+-- Dependencies: 18
+-- Name: EXTENSION fuzzystrmatch; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION fuzzystrmatch IS 'determine similarities and distance between strings';
+
+
+--
+-- TOC entry 12 (class 3079 OID 16975)
+-- Name: hstore; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS hstore WITH SCHEMA public;
+
+
+--
+-- TOC entry 3511 (class 0 OID 0)
+-- Dependencies: 12
+-- Name: EXTENSION hstore; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION hstore IS 'data type for storing sets of (key, value) pairs';
+
+
+--
+-- TOC entry 13 (class 3079 OID 16857)
+-- Name: intarray; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS intarray WITH SCHEMA public;
+
+
+--
+-- TOC entry 3512 (class 0 OID 0)
+-- Dependencies: 13
+-- Name: EXTENSION intarray; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION intarray IS 'functions, operators, and index support for 1-D arrays of integers';
+
+
+--
+-- TOC entry 21 (class 3079 OID 16444)
+-- Name: ltree; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS ltree WITH SCHEMA public;
+
+
+--
+-- TOC entry 3513 (class 0 OID 0)
+-- Dependencies: 21
+-- Name: EXTENSION ltree; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION ltree IS 'data type for hierarchical tree-like structures';
+
+
+--
+-- TOC entry 3 (class 3079 OID 18118)
+-- Name: pg_stat_statements; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS pg_stat_statements WITH SCHEMA public;
+
+
+--
+-- TOC entry 3514 (class 0 OID 0)
+-- Dependencies: 3
+-- Name: EXTENSION pg_stat_statements; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION pg_stat_statements IS 'track execution statistics of all SQL statements executed';
+
+
+--
+-- TOC entry 14 (class 3079 OID 16792)
+-- Name: pg_trgm; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS pg_trgm WITH SCHEMA public;
+
+
+--
+-- TOC entry 3515 (class 0 OID 0)
+-- Dependencies: 14
+-- Name: EXTENSION pg_trgm; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION pg_trgm IS 'text similarity measurement and index searching based on trigrams';
+
+
+--
+-- TOC entry 15 (class 3079 OID 16755)
+-- Name: pgcrypto; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
+
+
+--
+-- TOC entry 3516 (class 0 OID 0)
+-- Dependencies: 15
+-- Name: EXTENSION pgcrypto; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION pgcrypto IS 'cryptographic functions';
+
+
+--
+-- TOC entry 9 (class 3079 OID 17448)
+-- Name: pgrowlocks; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS pgrowlocks WITH SCHEMA public;
+
+
+--
+-- TOC entry 3517 (class 0 OID 0)
+-- Dependencies: 9
+-- Name: EXTENSION pgrowlocks; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION pgrowlocks IS 'show row-level locking information';
+
+
+--
+-- TOC entry 20 (class 3079 OID 16619)
+-- Name: pgstattuple; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS pgstattuple WITH SCHEMA public;
+
+
+--
+-- TOC entry 3518 (class 0 OID 0)
+-- Dependencies: 20
+-- Name: EXTENSION pgstattuple; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION pgstattuple IS 'show tuple-level statistics';
+
+
+--
+-- TOC entry 19 (class 3079 OID 16628)
+-- Name: tablefunc; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS tablefunc WITH SCHEMA public;
+
+
+--
+-- TOC entry 3519 (class 0 OID 0)
+-- Dependencies: 19
+-- Name: EXTENSION tablefunc; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION tablefunc IS 'functions that manipulate whole tables, including crosstab';
+
+
+--
+-- TOC entry 4 (class 3079 OID 18111)
+-- Name: unaccent; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS unaccent WITH SCHEMA public;
+
+
+--
+-- TOC entry 3520 (class 0 OID 0)
+-- Dependencies: 4
+-- Name: EXTENSION unaccent; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION unaccent IS 'text search dictionary that removes accents';
+
+
+--
+-- TOC entry 16 (class 3079 OID 16744)
+-- Name: uuid-ossp; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA public;
+
+
+--
+-- TOC entry 3521 (class 0 OID 0)
+-- Dependencies: 16
+-- Name: EXTENSION "uuid-ossp"; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION "uuid-ossp" IS 'generate universally unique identifiers (UUIDs)';
+
+
+--
+-- TOC entry 22 (class 3079 OID 16430)
+-- Name: xml2; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS xml2 WITH SCHEMA public;
+
+
+--
+-- TOC entry 3522 (class 0 OID 0)
+-- Dependencies: 22
+-- Name: EXTENSION xml2; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION xml2 IS 'XPath querying and XSLT';
+
+
+SET default_tablespace = '';
+
+--
+-- TOC entry 213 (class 1259 OID 8334568)
+-- Name: logica; Type: TABLE; Schema: public; Owner: putfahxs
+--
+
+CREATE TABLE public.logica (
+    id numeric(20,0) NOT NULL,
+    esercizio1 numeric(20,0) DEFAULT 0,
+    esercizio2 numeric(20,0) DEFAULT 0,
+    esercizio3 numeric(20,0) DEFAULT 0
+);
+
+
+ALTER TABLE public.logica OWNER TO putfahxs;
+
+--
+-- TOC entry 214 (class 1259 OID 8334574)
+-- Name: python; Type: TABLE; Schema: public; Owner: putfahxs
+--
+
+CREATE TABLE public.python (
+    id numeric(20,0) NOT NULL,
+    esercizio1 numeric(20,0) DEFAULT 0,
+    esercizio2 numeric(20,0) DEFAULT 0,
+    esercizio3 numeric(20,0) DEFAULT 0
+);
+
+
+ALTER TABLE public.python OWNER TO putfahxs;
+
+--
+-- TOC entry 217 (class 1259 OID 8365587)
+-- Name: snake; Type: TABLE; Schema: public; Owner: putfahxs
+--
+
+CREATE TABLE public.snake (
+    id numeric(20,0) NOT NULL,
+    punteggio integer DEFAULT 0
+);
+
+
+ALTER TABLE public.snake OWNER TO putfahxs;
+
+--
+-- TOC entry 215 (class 1259 OID 8334580)
+-- Name: statistica; Type: TABLE; Schema: public; Owner: putfahxs
+--
+
+CREATE TABLE public.statistica (
+    id numeric(20,0) NOT NULL,
+    esercizio1 numeric(20,0) DEFAULT 0,
+    esercizio2 numeric(20,0) DEFAULT 0,
+    esercizio3 numeric(20,0) DEFAULT 0
+);
+
+
+ALTER TABLE public.statistica OWNER TO putfahxs;
+
+--
+-- TOC entry 212 (class 1259 OID 8334530)
+-- Name: utente; Type: TABLE; Schema: public; Owner: putfahxs
+--
+
+CREATE TABLE public.utente (
+    id integer NOT NULL,
+    nick character varying(50) DEFAULT NULL::character varying,
+    email character varying(125) DEFAULT NULL::character varying,
+    nome character varying(40) DEFAULT NULL::character varying,
+    cognome character varying(40) DEFAULT NULL::character varying,
+    password character varying(255) DEFAULT NULL::character varying
+);
+
+
+ALTER TABLE public.utente OWNER TO putfahxs;
+
+--
+-- TOC entry 216 (class 1259 OID 8334586)
+-- Name: utente_id_seq; Type: SEQUENCE; Schema: public; Owner: putfahxs
+--
+
+CREATE SEQUENCE public.utente_id_seq
+    START WITH 2
+    INCREMENT BY 2
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.utente_id_seq OWNER TO putfahxs;
+
+--
+-- TOC entry 3523 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: utente_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: putfahxs
+--
+
+ALTER SEQUENCE public.utente_id_seq OWNED BY public.utente.id;
+
+
+--
+-- TOC entry 3361 (class 2604 OID 8334588)
+-- Name: utente id; Type: DEFAULT; Schema: public; Owner: putfahxs
+--
+
+ALTER TABLE ONLY public.utente ALTER COLUMN id SET DEFAULT nextval('public.utente_id_seq'::regclass);
+
+
+--
+-- TOC entry 3491 (class 0 OID 8334568)
+-- Dependencies: 213
+-- Data for Name: logica; Type: TABLE DATA; Schema: public; Owner: putfahxs
+--
+
+COPY public.logica (id, esercizio1, esercizio2, esercizio3) FROM stdin;
+2	0	0	0
+4	0	0	0
+6	0	0	0
+8	0	0	0
+10	0	0	0
+12	0	0	0
+16	0	0	0
+18	0	0	0
+20	0	0	0
+22	0	0	0
+24	0	0	0
+26	0	0	0
+28	0	0	0
+30	0	0	0
+32	0	0	0
+34	0	0	0
+36	0	0	0
+38	0	0	0
+40	0	0	0
+42	0	0	0
+44	0	0	0
+46	0	0	0
+62	0	0	0
+48	5	3	4
+66	2	0	0
+68	0	0	0
+50	0	0	0
+52	0	0	0
+54	0	0	0
+14	0	3	4
+56	0	0	0
+58	3	0	0
+64	3	3	0
+60	2	3	2
+70	0	0	0
+72	0	0	0
+74	0	0	0
+76	0	0	0
+78	0	0	0
+\.
+
+
+--
+-- TOC entry 3492 (class 0 OID 8334574)
+-- Dependencies: 214
+-- Data for Name: python; Type: TABLE DATA; Schema: public; Owner: putfahxs
+--
+
+COPY public.python (id, esercizio1, esercizio2, esercizio3) FROM stdin;
+2	0	0	0
+4	0	0	0
+6	0	0	0
+10	0	0	0
+12	0	0	0
+16	0	0	0
+18	0	0	0
+20	0	0	0
+22	0	0	0
+24	0	0	0
+26	0	0	0
+28	0	0	0
+30	0	0	0
+32	0	0	0
+34	0	0	0
+36	0	0	0
+38	0	0	0
+40	0	0	0
+42	0	0	0
+44	0	0	0
+46	0	0	0
+50	0	0	0
+54	0	0	0
+52	0	0	3
+56	0	3	3
+58	0	0	0
+48	2	0	2
+8	1	0	0
+60	0	0	0
+62	0	0	1
+66	0	0	0
+68	0	0	0
+14	1	0	0
+64	1	0	0
+70	0	0	0
+72	0	0	0
+74	0	0	0
+76	0	0	0
+78	0	0	0
+\.
+
+
+--
+-- TOC entry 3495 (class 0 OID 8365587)
+-- Dependencies: 217
+-- Data for Name: snake; Type: TABLE DATA; Schema: public; Owner: putfahxs
+--
+
+COPY public.snake (id, punteggio) FROM stdin;
+6	0
+2	0
+12	0
+16	0
+18	0
+24	0
+32	0
+36	0
+34	0
+10	7
+22	6
+26	12
+4	16
+28	8
+30	8
+20	8
+8	62
+38	26
+14	17
+40	42
+42	39
+44	0
+46	0
+50	0
+48	48
+52	0
+54	0
+56	0
+58	0
+60	54
+62	36
+64	102
+66	23
+68	0
+72	0
+74	0
+70	114
+76	0
+78	0
+\.
+
+
+--
+-- TOC entry 3493 (class 0 OID 8334580)
+-- Dependencies: 215
+-- Data for Name: statistica; Type: TABLE DATA; Schema: public; Owner: putfahxs
+--
+
+COPY public.statistica (id, esercizio1, esercizio2, esercizio3) FROM stdin;
+34	0	0	0
+60	3	2	4
+70	0	0	0
+72	0	0	0
+74	0	0	0
+76	0	0	0
+36	0	0	0
+4	0	0	0
+78	0	0	0
+6	0	3	0
+2	0	2	4
+10	0	3	0
+20	4	3	4
+8	4	3	4
+38	0	0	0
+40	0	0	0
+44	0	0	0
+46	0	0	0
+12	3	0	3
+48	3	3	4
+42	3	0	0
+16	0	0	0
+18	0	0	0
+22	0	0	0
+24	0	0	0
+26	0	0	0
+28	0	0	0
+30	0	0	0
+50	1	3	4
+52	0	0	0
+54	0	0	0
+56	0	0	0
+58	0	0	0
+32	0	0	3
+62	0	0	0
+66	0	0	0
+68	0	0	0
+14	1	1	1
+64	2	2	4
+\.
+
+
+--
+-- TOC entry 3490 (class 0 OID 8334530)
+-- Dependencies: 212
+-- Data for Name: utente; Type: TABLE DATA; Schema: public; Owner: putfahxs
+--
+
+COPY public.utente (id, nick, email, nome, cognome, password) FROM stdin;
+2	fili	XXXXsecret_mailXXX	fili	fili	$2y$10$z7M2MpgKRTIDenzN1NK5keZy4JVKl2JSzZPUV6IWT1RWQpeUpmPPu
+4	ciao	XXXXsecret_mailXXX	ciao	ciaoq	$2y$10$37Ekk9yE4lZxb3ktmU9yq.bWjjBVyaS8FNw2l6w9tcy6vM2iH3XU6
+6	FRA	XXXXsecret_mailXXX	FRA	FRA	$2y$10$fk7rPnYkrkKRAc5pCO3lludRTPLcN/6n455QRbwMaVzxgLmbXqM6W
+8	Simone	XXXXsecret_mailXXX	Simone	Rotondi	$2y$10$tj6y3tIjkAd0seMy4OTE0OrSnVGRkqlmyuNoo5EoynFMKd0i9soZ6
+10	hello	XXXXsecret_mailXXX	world	my	$2y$10$zQ6ArCisXSWjhDU05Q1ieeb8PID6caPf4TGbo4tEfMVNU0YVTOoBG
+12	ele	XXXXsecret_mailXXX	eleonora	eleonora	$2y$10$hdh.C/JNz.bHNEa5LqQi9.e38KsxCxEDuyQyB4wG283EMvN7Cr5qm
+14	ciao	XXXXsecret_mailXXX	ciao	ciao	$2y$10$b7OiabhBQtSHGr4FtxOm5er.l54Six2rcHN2udPKPLCRM2Cj6fkDi
+16	Nafiaba_	XXXXsecret_mailXXX	fabiana	palozzi	$2y$10$j0ernYNkWeoIQwRGpbxRAeQYa6ZIG8/HmvH9ZJ/JG.WV2Nl4w6xhi
+18	fab	XXXXsecret_mailXXX	bi	ana	$2y$10$HEWXA9eOk737wDozWpkTJuH5nUA5WzEMeyOHkxSOk97OKgaM7rzwK
+22	ste	XXXXsecret_mailXXX	Stefano	Rucci	$2y$10$BahupbFmL3Zyl92Zi4fUBedTayE84LEMbVGLO33gp1NxsK6gb.9L6
+24	Leonardo	XXXXsecret_mailXXX	Leonardo	Leonardo	$2y$10$c06eOrGHtVAggm2x5xqaV.ljnwKf2cu8E0CkmhTjr7rRKxd.OxS72
+26	gianmarcom99	XXXXsecret_mailXXX	Gianmarco	Montillo	$2y$10$jRtGeY6AnI6.pJfKpY4/MeHilLRbNj/2RE.tLLOUqxH30dsir822u
+28	a	XXXXsecret_mailXXX	a	a	$2y$10$LfBtZBO5U49HS12O/q.42eqwnNOkxgkhtWiRcfeLw2lU0At84ulja
+30	kkk	XXXXsecret_mailXXX	kkk	kkk	$2y$10$mVUehbaFiBLTC77SjlpRU.0rf3TYoS6fwILeXqPrnyhZmjElmyBoq
+32	Samu636	XXXXsecret_mailXXX	Samuel	Stefanelli	$2y$10$WPA1nU1AdJgbpR1bjOvG3eZAvQzBcxcgoSU5ueH/LQnK.gZfWhykO
+34	ciao	XXXXsecret_mailXXX	Ciao	Ciao	$2y$10$KQWLxpcrrABMADIy/kLyB.UkpRsuHDIWB.8KU56y9xNSuhY9ghDfq
+36	ciao	XXXXsecret_mailXXX	ciao	ciao	$2y$10$Vbb9h02pJlBu2uAPEXQaH.7An7AfLOmPMbts9ziXM8.4Yzn1KLmrW
+20	hello	XXXXsecret_mailXXX	hello	hello	$2y$10$Ws1c5lpkv.3BvXsWW6QvAe4NIyMndnirNAwhFeT.hEjb5XCLCQ3wu
+38	helloWOrld	XXXXsecret_mailXXX	Hello	World	$2y$10$nmAYXplXmhTKPfnCjTw24.2svT5htzbHN8N4StPHh3emke7Cp2G5e
+40	sim	XXXXsecret_mailXXX	sim	one	$2y$10$LCtMyGB4ZlWfA2lF2OoaPOSBCuvc3B/BkBKAQI2lG9Khi9b2X915y
+42	het_	XXXXsecret_mailXXX	simon	tond	$2y$10$.7Ek9IxxC67Cw7uG4SVaRe9Fk3HRDyPlGUowsP4eeMunegc1GffPm
+44	SaraP	XXXXsecret_mailXXX	Sara	Pieri	$2y$10$51nlpFplbODO2c1zU1wzIeROv51cllkaW0v5OI1LTX1ky02WH.sP.
+46	Nick	XXXXsecret_mailXXX	Nick	Nick	$2y$10$OAC32otZPm4K96yStfzEM.Vwyxdl9AWGfnGPKhUtLPXaZ/xz4OdYe
+48	ciao_belli	XXXXsecret_mailXXX	hell	heaven	$2y$10$t093ik/VvI3iUwnHfqgJRO3KPhBViLVGcdB/1i7uiprU1l0k73qfe
+50	Sincizio	XXXXsecret_mailXXX	Alessandro	Chiabrera	$2y$10$sgMoBz8iZGZene77iHNwjemsZeZmEqFjBa44JgyI/t3HshFTrBm6m
+52	ciao	XXXXsecret_mailXXX	ciao	ciao	$2y$10$QmOJXipYpXsxJBvYMTfBqeCKSafBdWSGcHTOWjkKXCj0wlQqXZz5.
+54	Justfalle 	XXXXsecret_mailXXX	Simone	Falletti	$2y$10$l2jeyRk300ojMpY/gI/44ObIEEzFXBk69IQaSD9qBFF3BT/kG.Ltm
+56	ciao	XXXXsecret_mailXXX	ciao	ciao	$2y$10$VRfmoDcxi3HS2RuCsEqB.OfnuO0Ehhb8TDkAtdquURnRft3EhM7w2
+58	Bruzz	XXXXsecret_mailXXX	Fe	Bruzzese	$2y$10$IA0EUC/I2LXoUQuAK8F2z.LKdQgOXqI90rrpXti7adtFMoYuFYeD.
+60	prova	XXXXsecret_mailXXX	ESame	esame	$2y$10$.PtcIlkD1mUME4E38QkJOumhogVuTGoTr1kr23wqFcLegtzICYlX.
+62	Johnny	XXXXsecret_mailXXX	c	13t	$2y$10$ineWHWaiEeKLp3oxBntWrea6cNsNEqKBt8lL2cyH5MAPou7eH.FoO
+64	sara	XXXXsecret_mailXXX	sara	palox	$2y$10$y20oe4aPYuBorx03spxxre6n2nuywnpsUSuyXZqrYvUlT/rI8UhES
+66	pippo	XXXXsecret_mailXXX	pippo	pippo	$2y$10$3qsMgspQ064HJQEun5wP/euws4s4UXjaBzjlM.NaQx4GTFcCELAUe
+68	Johnny	XXXXsecret_mailXXX	ciao	ciao	$2y$10$X.E8Mb1okJ.aA2HgIM7S0eF62q7dM7aLPBhseR9OYUiI7ePylLHWS
+70	cofons	XXXXsecret_mailXXX	Lorenzo	Cofone	$2y$10$F1FLlXpNlldVcFIh3RqQjuoj8KFhv1m6Ev0rkBwDP3Cugl/Yg1IhC
+72	ciao	XXXXsecret_mailXXX	ciao	ciaoaiaoaiao	$2y$10$X7W.xQpX78ZjLz0ispKLt.yqzCskhpklW0uURqEL0Oalk2698E0m6
+74	samu6366	XXXXsecret_mailXXX	saaaa	asasasasa	$2y$10$caoyAvYMz0TsX3Xjh6F8s.zpMPpt.KbT3tdQIjwSc88BtSx3BOKdy
+76	Ciao	XXXXsecret_mailXXX	Ciao	Ciao ciao	$2y$10$aQpHVi1mtzC2mBMA.02Pl.l5lIqkTfKU44NExmjuWl./xFGkhMQUC
+78	Ketto	XXXXsecret_mailXXX	Mirko	Di leone	$2y$10$mluCs3S6zBRzIfVbMiGLSOcH3FJfxdPtboyfP34QfQHDflCgR7Cv6
+\.
+
+
+--
+-- TOC entry 3524 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: utente_id_seq; Type: SEQUENCE SET; Schema: public; Owner: putfahxs
+--
+
+SELECT pg_catalog.setval('public.utente_id_seq', 78, true);
+
+
+-- Completed on 2020-06-02 11:07:02 CEST
+
+--
+-- PostgreSQL database dump complete
+--
+
